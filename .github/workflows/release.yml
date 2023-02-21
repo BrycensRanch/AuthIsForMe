@@ -37,6 +37,6 @@ jobs:
           git_push_gpgsign: always
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_URL: "https://api.github.com/"
         run: npx --legacy-peer-deps -p @semantic-release/changelog -p @semantic-release/git -p semantic-release semantic-release
