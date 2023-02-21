@@ -44,7 +44,7 @@ tasks:
     command: cp .env.example .env && docker compose up cache -d && pnpm build && pnpm dev
 
 # security issues, unauthorised commits to our repository 
-image: brycensranch/gitpod-enhanced
+image: ghcr.io/brycensranch/gitpod-enhanced:latest
 vscode:
   extensions:
     - bradlc.vscode-tailwindcss
