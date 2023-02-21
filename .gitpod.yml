@@ -19,7 +19,7 @@ tasks:
   - before: >
       [[ ! -z $WAKATIME_API_KEY_64  ]] &&
       cd ~ &&
-      echo $WAKATIME_API_KEY_64 | base64 -d > ~/.wakatime.cfg
+      echo $WAKATIME_API_KEY_64 | base64 -d > ~/.wakatime.cfg &&
       mkdir -p ~/.ssh &&
       [[ ! -z $SSH_PUBLIC_KEY  ]] &&
       echo $SSH_PUBLIC_KEY > ~/.ssh/id_rsa.pub &&
