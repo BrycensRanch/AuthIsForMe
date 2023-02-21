@@ -1,0 +1,42 @@
+name: Release
+on:
+  repository_dispatch:
+    types: [semantic-release]
+  workflow_run:
+    workflows: [CI-docker]
+    branches: [master, beta, alpha]
+    types: 
+      - completed
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+        
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+      # - name: 📥 Monorepo install all deps & pnpm
+      #   uses: ./.github/actions/pnpm-install
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+          git_tag_gpgsign: true
+          git_push_gpgsign: always
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_URL: "https://api.github.com/"
+        run: npx --legacy-peer-deps -p @semantic-release/changelog -p @semantic-release/git -p semantic-release semantic-release

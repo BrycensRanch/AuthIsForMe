@@ -1,0 +1,112 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator zod {
+  provider = "prisma-zod-generator"
+}
+
+generator jsonSchema {
+  provider = "prisma-json-schema-generator"
+}
+
+model Following {
+  // not really a meaningful value
+  followId Int  @id @default(autoincrement())
+  userId   Int
+  User     User @relation(fields: [userId], references: [id])
+}
+
+model User {
+  id             Int      @id @default(autoincrement())
+  userId         Int
+  // Double Slash Comment: It will NOT show up in JSON schema
+  createdAt      DateTime @default(now())
+  banned         Boolean  @default(false)
+  profilePrivate Boolean  @default(false)
+  profileViews   Int      @default(0)
+  lastSeen       DateTime @default(now())
+  avatar         String?
+  // following  User[]   @relation("Following")
+  // followedBy User[]   @relation("Followers")
+
+  /// Triple Slash Comment: It will show up in JSON schema [EMAIL]
+  email          String          @unique
+  /// Username 
+  username       String          @unique
+  role           Role            @default(USER)
+  posts          Post[]
+  biography      String          @db.VarChar(240)
+  apiKeys        ApiKey[]
+  Following      Following[]
+  mojangAccount  MojangAccount?
+  // The user's password hash
+  // HAHAHA No, we don't do that here
+  // I can't be trusted with passwords ☠️
+  DiscordAccount DiscordAccount?
+
+  TwitchAccount TwitchAccount?
+}
+
+model MojangAccount {
+  uuid             String @id @unique
+  username         String @unique
+  user             User   @relation(fields: [userId], references: [id])
+  userId           Int    @unique
+  accessTokenHash  String @unique
+  refreshtokenHash String @unique
+}
+
+model DiscordAccount {
+  userId           Int    @id @unique
+  user             User   @relation(fields: [userId], references: [id])
+  accessTokenHash  String @unique
+  refreshtokenHash String @unique
+}
+
+model TwitchAccount {
+  userId           Int    @id @unique
+  user             User   @relation(fields: [userId], references: [id])
+  accessTokenHash  String @unique
+  refreshtokenHash String @unique
+}
+
+model Post {
+  id     Int  @id @default(autoincrement())
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+}
+
+enum Role {
+  USER
+  MODERATOR
+  ADMIN
+  OWNER
+}
+
+enum ApiKeyType {
+  FREE
+  HOBBY
+  BUSINESS
+}
+
+model ApiKey {
+  id         Int        @id @default(autoincrement())
+  /// memorable name for api key 
+  name       String     @db.VarChar(60)
+  /// there are different types of api keys for rate limiting and other purposes
+  type       ApiKeyType @default(FREE)
+  key        String     @unique
+  owner      User       @relation(references: [id], fields: [userId])
+  createdAt  DateTime   @default(now())
+  validUntil DateTime
+  userId     Int
+}

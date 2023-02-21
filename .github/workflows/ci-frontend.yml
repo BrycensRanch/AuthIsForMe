@@ -1,0 +1,159 @@
+name: CI-frontend
+
+on:
+  push:
+    branches:
+      - "*"
+    # Only consider those paths to trigger the action
+    paths:
+      - 'frontend/**'
+      - '.github/**'
+
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    # Only consider those paths to trigger the action
+    paths:
+      - 'frontend/**'
+      - '.github/**'
+
+jobs:
+  build-and-test-frontend:
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+
+    runs-on: ${{ matrix.os }}
+    # Service containers to run with `runner-job`
+    services:
+      # Label used to access the service container
+      redis:
+        # Docker Hub image
+        image: redis:alpine
+        # Set health checks to wait until redis has started
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          # Maps port 6379 on service container to the host
+          - 6379:6379
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js 
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: 📥 Monorepo install all deps & pnpm
+        uses: ./.github/actions/pnpm-install
+
+      # - name: Install Cypress
+      #   uses: cypress-io/github-action@v5
+      #   with:
+      #     # just perform install
+      #     runTests: false
+
+      # see https://github.com/vercel/next.js/pull/27362
+      - name: Restore frontend build from cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/frontend/.next/cache
+            ${{ github.workspace }}/.cache
+            ~/.cache
+            ${{ github.workspace }}/**/tsconfig.tsbuildinfo
+          key: ${{ runner.os }}-frontend-${{ hashFiles('**/pnpm.lock') }}-${{ hashFiles('frontend/src/**.[jt]sx?', 'frontend/src/**.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-app-${{ hashFiles('**/pnpm.lock') }}-
+
+      # - name: Create and seed test database
+      #   working-directory: backend
+      #   run: |
+      #     pnpm exec prisma db push
+      #     pnpm exec prisma db seed
+      #   env:
+      #     PRISMA_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/auth-frontend?schema=public
+
+      - name: Build Frontend
+        working-directory: frontend
+        run: |
+          pnpm build
+        env:
+          # PRISMA_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/auth-frontend?schema=public
+          NEXTJS_SENTRY_UPLOAD_DRY_RUN: true
+          NODE_ENV: production
+      
+      - name: 🔢 Run Unit tests
+        working-directory: frontend
+        continue-on-error: true
+        run: |
+          pnpm test:jest
+        # for cypress it loads up the server as dev, so we NEED redis access.
+      - name: 🚀Rename .env.example
+        run: |
+          mv .env.example .env
+      # - name: Start docker compose
+      #   run: pnpm frontend-start
+      # - name: 🧪 Run E2E Tests (Cypress)
+      #   if: ${{ !env.ACT }} 
+      #   uses: cypress-io/github-action@v5
+      #   with:
+      #     working-directory: ./frontend
+      #     # just for full picture after installing Cypress
+      #     # print information about detected browsers, etc
+      #     # see https://on.cypress.io/command-line#cypress-info
+      #     build: pnpm build
+      #     start: pnpm e2e:headless
+      #     wait-on: 'http://localhost:3000'
+      #     install: false
+      - name: 🧪 Run E2E Tests (Cypress bash)
+        if: ${{ !env.ACT }} 
+        working-directory: ./frontend
+        run: |
+          pnpm e2e:headless
+        # uses: cypress-io/github-action@v5
+        # with:
+        #   working-directory: ./frontend
+          # just for full picture after installing Cypress
+          # print information about detected browsers, etc
+          # see https://on.cypress.io/command-line#cypress-info
+          # build: pnpm build
+          # start: pnpm e2e:headless
+          # wait-on: 'http://localhost:3000'
+          # install: false
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: ./frontend/cypress/screenshots
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-videos
+          path: ./frontend/cypress/videos
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: build
+          path: |
+            ./frontend/.next
+            ./frontend/out
+            ./frontend/public
+      - uses: codecov/codecov-action@v3
+        if: ${{ !env.ACT }}
+        with:
+          flags: unittests # optional
+          name: codecov-frontend # optional
+          fail_ci_if_error: true # optional (default = false)
+          verbose: false # optional (default = false)
