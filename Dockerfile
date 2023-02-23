@@ -36,7 +36,8 @@ ENV NODE_ENV=production
 ENV PNPM_HOME=/home/nodejs/.local/share/pnpm    
 ENV PATH=$PATH:$PNPM_HOME   
 
-COPY --chown=nodejs:nodejs package.json pnpm-lock.yaml pnpm-workspace.yaml dockerStartServices.mjs dockerBuildAndInstall.mjs ./
+COPY --chown=nodejs:nodejs scripts/* ./
+COPY --chown=nodejs:nodejs package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 
 # Non built files first
@@ -50,9 +51,6 @@ COPY --chown=nodejs:nodejs backend/*.json ./backend/
 COPY --chown=nodejs:nodejs backend/.env* ./backend/
 # Technically, this file is already on the system, but this is just for consistency's sake
 COPY --chown=nodejs:nodejs backend/pm2.config.js* ./backend
-
-
-COPY --chown=nodejs:nodejs dockerBuildAndInstall.mjs /home/nodejs/app
 
 # Couldn't find a `pages` directory. Please create one under the project root
 COPY --chown=nodejs:nodejs frontend/src /home/nodejs/app/frontend/src
