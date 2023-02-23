@@ -63,6 +63,7 @@ importers:
       eslint-config-airbnb-typescript: ^17.0.0
       eslint-config-prettier: ^8.6.0
       eslint-plugin-import: ^2.27.5
+      eslint-plugin-jest: ^27.2.1
       eslint-plugin-prettier: ^4.2.1
       eslint-plugin-simple-import-sort: ^10.0.0
       eslint-plugin-unused-imports: ^2.0.0
@@ -157,6 +158,7 @@ importers:
       eslint-config-airbnb-typescript: 17.0.0_35k7dt2qpwvbiggvzogcbhdb4i
       eslint-config-prettier: 8.6.0_eslint@8.34.0
       eslint-plugin-import: 2.27.5_mcvs2y73sfmcxqzpjj5lr7a2m4
+      eslint-plugin-jest: 27.2.1_t72awa2z3vpak2uwxwh5zj752m
       eslint-plugin-prettier: 4.2.1_u5wnrdwibbfomslmnramz52buy
       eslint-plugin-simple-import-sort: 10.0.0_eslint@8.34.0
       eslint-plugin-unused-imports: 2.0.0_vqeavzxdzk2atb75l6fx3anzpi
@@ -3593,7 +3595,7 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.21.1
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
 
   /@types/eslint/8.21.1:
     resolution: {integrity: sha512-rc9K8ZpVjNcLs8Fp0dkozd5Pt2Apk1glO4Vgz8ix1u6yFByxfqo5Yavpy65o+93TAe24jr7v+eSBtFLvOQtCRQ==}

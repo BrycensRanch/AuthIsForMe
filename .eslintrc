@@ -3,7 +3,12 @@
   "extends": [
     "airbnb-base",
     "next/core-web-vitals", // Needed to avoid warning in next.js build: 'The Next.js plugin was not detected in your ESLint configuration'
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended"
+  ],
+  "plugins": [
+    "prettier", 
+    "jest"
   ],
   "rules": {
     "prettier/prettier": [
@@ -22,13 +27,16 @@
         "@typescript-eslint",
         "unused-imports",
         "tailwindcss",
-        "simple-import-sort"
+        "simple-import-sort",
+        "prettier",
+        "jest"
       ],
       "extends": [
         "plugin:tailwindcss/recommended",
         "airbnb-typescript",
         "next/core-web-vitals",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "plugin:jest/recommended"
       ],
       "parserOptions": {
         "project": "./tsconfig.json"
