@@ -43,7 +43,11 @@ const __dirname = dirname(__filename);
 // @ts-expect-error
 expand(loadMonoRepoEnv())
 
-expand(loadEnvDefaultsAndRegularEnv())
+expand(loadEnvDefaultsAndRegularEnv({
+  path: './.env',
+  encoding: 'utf8',
+  defaults: './.env.example', // This is new
+}))
 
 export type AppOptions = {
   // // Place your custom options for app below here.
