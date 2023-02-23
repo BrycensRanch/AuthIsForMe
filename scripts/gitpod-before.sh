@@ -1,4 +1,6 @@
-#/bin
+#!/bin/bash
+
+
       [[ ! -z $WAKATIME_API_KEY_64  ]] 
       cd ~ 
       echo $WAKATIME_API_KEY_64 | base64 -d > ~/.wakatime.cfg 
