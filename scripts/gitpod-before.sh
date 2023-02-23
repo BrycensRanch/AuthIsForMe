@@ -22,5 +22,5 @@
       rm -rf .gnupg 
       gpg --verbose --batch --import <(echo $GNUPG_KEY|base64 -d) 
       echo 'pinentry-mode loopback' >> ~/.gnupg/gpg.conf 
-      git config --global user.signingkey $GNUPG_SIGNING_KEY 
+      git config --global user.signingkey $GPG_KEY_ID 
       git config --global commit.gpgsign true
