@@ -16,7 +16,7 @@ github:
 # add a label once the prebuild is ready to pull requests (defaults to false)
     addLabel: prebuilt-in-gitpod
 tasks:
-  - before: ./gitpod-before.sh
+  - before: ./scripts/gitpod-before.sh
   - init: pnpm install 
     command: cp .env.example .env && docker compose up db db2 cache -d && pnpm build && pnpm dev
 
