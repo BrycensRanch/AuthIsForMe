@@ -1,0 +1,15 @@
+{
+  "folders": [
+    {
+      "name": "frontend",
+      "path": "frontend"
+    },
+    {
+      "name": "backend",
+      "path": "backend"
+    }
+  ],
+  "settings": {
+    "jest.disabledWorkspaceFolders": ["AuthIsForMe"]
+  }
+}
