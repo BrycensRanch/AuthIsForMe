@@ -3,6 +3,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 // all of these are the default values...
+require('dotenv-mono').load();
+
 require(`dotenv-defaults`).config({
   path: './.env',
   encoding: 'utf8',
