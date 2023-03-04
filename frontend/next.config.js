@@ -27,6 +27,7 @@ const ContentSecurityPolicy = `
   style-src 'self' authisfor.me ${
     process.env.BACKEND_SERVER || 'http://localhost:8000'
   };
+  img-src 'self' namemc.com crafatar.com authisfor.me livzmc.net
   font-src 'self';  
 `;
 
@@ -114,15 +115,15 @@ const BuildingConfig = ConfigBuilder.defineConfig({
   // Copies only the necessary files for a production deployment including select files in node_modules.
   // output: 'standalone',
   //  Use React while developing and only replace it with Preact in production.
-  async headers() {
-    return [
-      {
-        // Apply these headers to all routes in your application.
-        source: '/:path*',
-        headers,
-      },
-    ];
-  },
+  // async headers() {
+  //   return [
+  //     {
+  //       // Apply these headers to all routes in your application.
+  //       source: '/:path*',
+  //       headers,
+  //     },
+  //   ];
+  // },
 
   sentry: {
     // Use `hidden-source-map` rather than `source-map` as the Webpack `devtool`

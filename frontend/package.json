@@ -58,15 +58,20 @@
   },
   "keywords": [],
   "dependencies": {
+    "@headlessui/react": "^1.7.11",
+    "@heroicons/react": "^2.0.16",
     "@sentry/nextjs": "^7.38.0",
     "autoprefixer": "^10.4.13",
     "dotenv-defaults": "^5.0.2",
+    "http-proxy": "^1.18.1",
     "next": "^13.1.6",
     "next-recompose-plugins": "^1.0.2",
     "next-seo": "^5.15.0",
     "next-sitemap": "^3.1.52",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "skinview3d": "3.0.0-alpha.1",
+    "three": "^0.149.0"
   },
   "devDependencies": {
     "@bahmutov/cypress-code-coverage": "^1.3.2",
@@ -86,6 +91,7 @@
     "@types/node": "^18.14.0",
     "@types/react": "^18.0.28",
     "@types/testing-library__cypress": "^5.0.9",
+    "@types/three": "^0.149.0",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
     "babel-plugin-istanbul": "^6.1.1",
