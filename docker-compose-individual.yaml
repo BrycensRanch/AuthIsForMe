@@ -28,8 +28,7 @@ services:
     networks:
       - app_network
     volumes:
-      - ./backend/PostgresData:/var/lib/postgresql/data
-      - ./init-database.sh:/docker-entrypoint-initdb.d/init-database.sh
+      - ./scripts/init-database.sh:/docker-entrypoint-initdb.d/init-database.sh
 
     restart: unless-stopped
     healthcheck:
@@ -48,8 +47,7 @@ services:
     networks:
       - app_network
     volumes:
-      - ./backend/PostgresData2:/var/lib/postgresql/data
-      - ./init-database.sh:/docker-entrypoint-initdb.d/init-database.sh
+      - ./scripts/init-database.sh:/docker-entrypoint-initdb.d/init-database.sh
 
     restart: unless-stopped
     healthcheck:

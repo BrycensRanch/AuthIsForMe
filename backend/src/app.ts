@@ -21,6 +21,7 @@ import fastifySwaggerUi from '@fastify/swagger-ui';
 import { fileURLToPath } from 'node:url';
 import {load as loadMonoRepoEnv} from 'dotenv-mono'; 
 import {config as loadEnvDefaultsAndRegularEnv} from 'dotenv-defaults';
+import {expand} from 'dotenv-expand'
 import printRoutes from 'fastify-print-routes';
 import fastifyResponseTime from 'fastify-request-timing';
 import fastifyImpressions from 'fastify-impressions';
@@ -29,15 +30,24 @@ import fastifyAllow from 'fastify-allow'
 import fastifyIP from 'fastify-ip';
 import fastifyUserAgent from 'fastify-user-agent';
 import userAgent from 'useragent'
-import { Session } from '@fastify/secure-session';
+import fastifySession, { Session } from '@mgcrea/fastify-session'
+import fastifyCookie from '@fastify/cookie';
+import { PrismaStore } from '@mgcrea/fastify-session-prisma-store';
+import { SODIUM_AUTH } from '@mgcrea/fastify-session-sodium-crypto';
+import { PrismaClient } from '@prisma/client';
 
 const __filename = fileURLToPath(import.meta.url);
 
 const __dirname = dirname(__filename);
 
-loadMonoRepoEnv()
+// @ts-expect-error
+expand(loadMonoRepoEnv())
 
-loadEnvDefaultsAndRegularEnv()
+expand(loadEnvDefaultsAndRegularEnv({
+  path: './.env',
+  encoding: 'utf8',
+  defaults: './.env.example', // This is new
+}))
 
 export type AppOptions = {
   // // Place your custom options for app below here.
@@ -121,6 +131,18 @@ const fastify: FastifyPluginAsync<AppOptions> = async (
   void app.register(AutoLoad, {
     dir: join(__dirname, 'plugins'),
   });
+
+  const prisma = new PrismaClient()
+
+  await prisma.$connect();
+  const ttl = 600000
+  await app.register(fastifyCookie);
+  await app.register(fastifySession, {
+    crypto: SODIUM_AUTH,
+    store: new PrismaStore({prisma, ttl }),
+    secret: "a secret with minimum length of 32 characters",
+    cookie: { maxAge: ttl },
+  });
   await app.register(bootstrap, {
     directory: join(__dirname, 'controllers'),
   });
@@ -142,6 +164,7 @@ export default fastify;
 export { fastify, options };
 declare module 'fastify' {
   export interface FastifyRequest {
-      userAgent: userAgent.Agent
+      userAgent: userAgent.Agent,
+      session: Session
   }
 }

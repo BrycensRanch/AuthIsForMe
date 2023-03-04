@@ -5,5 +5,5 @@
     "noEmit": true,
     "composite": true
   },
-  "include": ["../src/**/*.ts", "**/*.ts", "**/*.test.ts", "../src/controllers/auth.controller.mts", "../src/controllers/auth.controller.mts", "../src/plugins/swagger.mts", "../src/plugins/sentry.mts", "../src/plugins/exit.mts", "../src/plugins/errorHandler.mts"]
+  "include": ["../src/**/*.ts", "**/*.ts", "**/*.mts", "**/*.test.ts"]
 }

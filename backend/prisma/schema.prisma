@@ -7,7 +7,8 @@ datasource db {
 }
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["interactiveTransactions"]
 }
 
 generator zod {
@@ -96,6 +97,17 @@ enum ApiKeyType {
   FREE
   HOBBY
   BUSINESS
+}
+
+model Session {
+  id        BigInt   @id @default(autoincrement()) @db.BigInt
+  sid       String   @unique
+  expires   DateTime
+  data      Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("tbEts_Session")
 }
 
 model ApiKey {

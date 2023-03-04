@@ -1,5 +1,9 @@
+import { PrismaClient } from '@prisma/client';
 import type { FastifyReply, FastifyRequest, FastifySchema } from 'fastify';
 import { Controller, DELETE, GET, Hook, POST } from 'fastify-decorators';
+import Redis from 'ioredis';
+import DatabaseService from '../services/database.service.js';
+import RedisService from '../services/redis.service.js';
 // import { MessageFacade } from '@/src/facades/message.facade.js';
 // import { messageInputSchema, messageSchema } from '@/src/schemas/message.schema.js';
 
@@ -12,9 +16,12 @@ export default class AuthController {
 
   @GET('/info')
   getAll(request: FastifyRequest, reply: FastifyReply) {
-    request.session.user = { name: 'John'}
+    const db = new DatabaseService(new RedisService(new Redis()), new PrismaClient())
+    db.init()
+    request.session.set('name', 'john')
+    request.session.set('vsl', {name: 'johnny'})
       // .options takes any parameter that you can pass to setCookie
-  request.session.options({ maxAge: 1000 * 60 * 60 })
+  // request.session.options({ maxAge: 1000 * 60 * 60 })
     reply.send({ message: 'hello world'})
   }
   // @GET('/z')

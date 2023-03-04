@@ -25,7 +25,7 @@ export const collectCoverage = true;
 export const collectCoverageFrom = [
   './routes/**/*.{js,ts}',
   './plugins/**/*.{js,ts}',
-  './init.{js,ts}',
+  './app.{js,ts}',
   '!**/*.d.ts',
   '!**/node_modules/**',
 ];
