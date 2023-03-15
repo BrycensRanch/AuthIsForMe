@@ -49,7 +49,7 @@
     "frontend",
     "backend"
   ],
-  "packageManager": "pnpm@7.29.1",
+  "packageManager": "pnpm@7.29.3",
   "engines": {
     "node": ">=16",
     "pnpm": ">=7",
