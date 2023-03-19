@@ -61,7 +61,7 @@
     "prisma-redis-middleware": "^4.6.1",
     "prisma-zod-generator": "^0.8.11",
     "scan-env": "github:BrycensRanch/scan-env",
-    "typescript": "^4.9.5",
+    "typescript": "^5.0.0",
     "useragent": "^2.3.0",
     "zod": "^3.20.6"
   },
