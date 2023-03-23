@@ -36,7 +36,7 @@
     "@fastify/swagger": "^8.3.1",
     "@fastify/swagger-ui": "^1.4.0",
     "@immobiliarelabs/fastify-sentry": "^5.0.2",
-    "@mgcrea/fastify-graceful-exit": "^0.4.0",
+    "@mgcrea/fastify-graceful-exit": "^1.0.0",
     "@mgcrea/fastify-session": "^1.1.0",
     "@mgcrea/fastify-session-prisma-store": "^0.4.0",
     "@mgcrea/fastify-session-sodium-crypto": "^1.0.1",

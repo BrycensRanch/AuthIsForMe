@@ -42,7 +42,7 @@ importers:
       '@fastify/swagger-ui': ^1.4.0
       '@immobiliarelabs/fastify-sentry': ^5.0.2
       '@jest/globals': ^29.4.3
-      '@mgcrea/fastify-graceful-exit': ^0.4.0
+      '@mgcrea/fastify-graceful-exit': ^1.0.0
       '@mgcrea/fastify-session': ^1.1.0
       '@mgcrea/fastify-session-prisma-store': ^0.4.0
       '@mgcrea/fastify-session-sodium-crypto': ^1.0.1
@@ -117,7 +117,7 @@ importers:
       '@fastify/swagger': 8.3.1
       '@fastify/swagger-ui': 1.4.0
       '@immobiliarelabs/fastify-sentry': 5.0.2
-      '@mgcrea/fastify-graceful-exit': 0.4.0
+      '@mgcrea/fastify-graceful-exit': 1.0.0
       '@mgcrea/fastify-session': 1.1.0
       '@mgcrea/fastify-session-prisma-store': 0.4.0_@prisma+client@4.10.1
       '@mgcrea/fastify-session-sodium-crypto': 1.0.1_gitx6voefidnv2w35hemc5cd3e
@@ -2501,10 +2501,10 @@ packages:
       make-plural: 7.2.0
     dev: true
 
-  /@mgcrea/fastify-graceful-exit/0.4.0:
-    resolution: {integrity: sha512-dMPW+w5h/tR4COygu2dBqQeV8uUxmwF+3jEfZUr0DGlPn5kiA1eLdE1Pxi73OZN8lCOgBh5uTFEoh+Eyc0gipg==}
+  /@mgcrea/fastify-graceful-exit/1.0.0:
+    resolution: {integrity: sha512-VDnCdYikPCbF2rzF7bGOcKLsM7g2LoJegQz6q2JtnaxpPPNDxbBN70YKE4YqJl6AWvDfJPpUDY+Sfk/vtG1YBg==}
     dependencies:
-      fastify-plugin: 3.0.1
+      fastify-plugin: 4.5.0
     dev: false
 
   /@mgcrea/fastify-session-prisma-store/0.4.0_@prisma+client@4.10.1:
