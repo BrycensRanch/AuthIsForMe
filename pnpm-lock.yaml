@@ -44,7 +44,7 @@ importers:
       '@jest/globals': ^29.4.3
       '@mgcrea/fastify-graceful-exit': ^1.0.0
       '@mgcrea/fastify-session': ^1.1.0
-      '@mgcrea/fastify-session-prisma-store': ^0.4.0
+      '@mgcrea/fastify-session-prisma-store': ^1.0.0
       '@mgcrea/fastify-session-sodium-crypto': ^1.0.1
       '@prisma/client': ^4.10.1
       '@types/dotenv-defaults': ^2.0.1
@@ -119,7 +119,7 @@ importers:
       '@immobiliarelabs/fastify-sentry': 5.0.2
       '@mgcrea/fastify-graceful-exit': 1.0.0
       '@mgcrea/fastify-session': 1.1.0
-      '@mgcrea/fastify-session-prisma-store': 0.4.0_@prisma+client@4.10.1
+      '@mgcrea/fastify-session-prisma-store': 1.0.0_@prisma+client@4.10.1
       '@mgcrea/fastify-session-sodium-crypto': 1.0.1_gitx6voefidnv2w35hemc5cd3e
       '@prisma/client': 4.10.1_prisma@4.10.1
       dotenv-defaults: 5.0.2
@@ -2507,8 +2507,8 @@ packages:
       fastify-plugin: 4.5.0
     dev: false
 
-  /@mgcrea/fastify-session-prisma-store/0.4.0_@prisma+client@4.10.1:
-    resolution: {integrity: sha512-6RhOMlAXBQ3OaUdIiGsaSqzz5XNy72GHMToSR9uNfEaK2i9ZhSk4/6ig+PSuvVHruSqu5nW4gDsa4M7stbSO5w==}
+  /@mgcrea/fastify-session-prisma-store/1.0.0_@prisma+client@4.10.1:
+    resolution: {integrity: sha512-O0EH0COGL/mQMpj1tlT3Z13pqg/eiyR+85S7JKXObfv3V/Mfce5LzROAcR9xy3AUC3j9lF8kS2a4BXDSCUPJOQ==}
     engines: {node: '>=12'}
     peerDependencies:
       '@prisma/client': '>=3'
