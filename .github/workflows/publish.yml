@@ -179,6 +179,7 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    needs: [build-and-test-docker]
     steps:
         - name: Checkout
           uses: actions/checkout@v3
