@@ -6,8 +6,9 @@
   "main": "dist/app.js",
   "type": "module",
   "scripts": {
-    "test": "cross-env NODE_ENV=test NODE_OPTIONS=\"--experimental-vm-modules --no-warnings\" jest",
-    "test:watch": "cross-env NODE_ENV=test NODE_OPTIONS=\"--experimental-vm-modules --no-warnings\" jest --watch",
+    "test": "cross-env NODE_ENV=test jest",
+    "test:jest": "pnpm test",
+    "test:watch": "cross-env NODE_ENV=test jest --watch",
     "start": "cross-env NODE_ENV=production node dist/app.js",
     "prepm2": "pnpm cleanbuild",
     "pm2": "cross-env NODE_ENV=production pm2 start --watch --interpreter ts-node-dev pm2.config.js",
