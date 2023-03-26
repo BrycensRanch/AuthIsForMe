@@ -4,6 +4,7 @@
 	"description": "",
 	"private": true,
 	"main": "index.js",
+	"type": "module",
 	"scripts": {
 		"start": "pnpm docker-start-other-services && concurrently -c \"auto\" \"npm run start -w=frontend\" \"npm:start:backend\"",
 		"build": "concurrently -c \"auto\" \"npm run build -w=backend\" \"npm run build -w=frontend\"",
