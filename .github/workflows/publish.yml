@@ -1,0 +1,216 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - "*"
+
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  build-and-test-docker:
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+
+    runs-on: ${{ matrix.os }}
+    services:
+      # Label used to access the service container
+      redis:
+        # Docker Hub image
+        image: redis:alpine
+        # Set health checks to wait until redis has started
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          # Maps port 6379 on service container to the host
+          - 6379:6379
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+        
+      - name: Check out current repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: 📥 Monorepo install all deps & pnpm
+        uses: ./.github/actions/pnpm-install
+
+      - name: Restore backend build from cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/backend/dist
+            ~/.cache
+            ${{ github.workspace }}/.cache
+            ${{ github.workspace }}/**/tsconfig.tsbuildinfo
+          key: ${{ runner.os }}-backend-${{ hashFiles('**/pnpm.lock') }}-${{ hashFiles('backend/src/**.[jt]s?', 'backend/src/**.json') }}
+          restore-keys: |
+            ${{ runner.os }}-backend-${{ hashFiles('**/pnpm.lock') }}-
+
+      # see https://github.com/vercel/next.js/pull/27362
+      - name: Restore frontend build from cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ github.workspace }}/frontend/.next/cache
+            ${{ github.workspace }}/.cache
+            ~/.cache
+            ${{ github.workspace }}/**/tsconfig.tsbuildinfo
+          key: ${{ runner.os }}-frontend-${{ hashFiles('**/pnpm.lock') }}-${{ hashFiles('frontend/src/**.[jt]sx?', 'frontend/src/**.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-app-${{ hashFiles('**/pnpm.lock') }}-
+      # - name: Create and seed test database
+      #   working-directory: backend
+      #   run: |
+      #     pnpm exec prisma db push
+      #     pnpm exec prisma db seed
+      #   env:
+      #     PRISMA_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/auth-backend?schema=public
+      - name: ⚡ Lint Backend Code
+        working-directory: backend
+        run: |
+          pnpm lint:check
+      - name: 🏗️ Format Backend Code
+        working-directory: backend
+        run: |
+          pnpm format
+      - name: Build Backend
+        working-directory: backend
+        run: |
+          pnpm build
+        env: 
+          NODE_ENV: production
+      - name: 🧪 Run Backend Unit Tests
+        working-directory: backend
+        run: |
+          pnpm test:jest
+      - name: 🔬 Run Backend Integration Tests
+        run: |
+          echo "They don't exist LMFAOO"
+      - uses: codecov/codecov-action@v3
+        name: 📤 Upload Backend coverage to Codecov
+        with:
+          flags: unittests-backend # optional
+          name: codecov-backend # optional
+          fail_ci_if_error: true # optional (default = false)
+          verbose: false # optional (default = false)
+          working-directory: backend
+      - name: 🔃 Lint Frontend Code
+        working-directory: frontend
+        run: |
+          pnpm lint:check
+      - name: 🚧 Format Frontend Code
+        working-directory: frontend
+        run: |
+          pnpm format
+      - name: Build Frontend
+        working-directory: frontend
+        run: |
+          pnpm build
+        env: 
+          NODE_ENV: production
+      - name: 🥳 Run Frontend Unit/Integration Tests
+        working-directory: frontend
+        run: |
+          pnpm test:jest
+      - name: 🐌 Run Frontend E2E Tests
+        uses: cypress-io/github-action@v5
+        with:
+          working-directory: ./frontend
+          # just for full picture after installing Cypress
+          # print information about detected browsers, etc
+          # see https://on.cypress.io/command-line#cypress-info
+          build: pnpm build
+          start: pnpm e2e:headless
+          wait-on: 'http://localhost:3000'
+          install: true
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-screenshots
+          path: ./frontend/cypress/screenshots
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-videos
+          path: ./frontend/cypress/videos
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: build
+          path: |
+            ./frontend/.next
+            ./frontend/out
+            ./frontend/public
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: Backend Build
+          path: ./backend/dist
+      - name: 🐳🐳🐳🐳 RUN DOCKER COMPOSE!!!! 🐳🐳🐳🐳
+        run: |
+          docker compose up --build
+      - name: 📤 Upload Frontend coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          flags: unittests-frontend # optional
+          name: codecov-frontend # optional
+          fail_ci_if_error: true # optional (default = false)
+          verbose: false # optional (default = false)
+          working-directory: frontend
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+          with:
+            fetch-depth: 0
+        - name: Setup Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version-file: '.nvmrc'
+        - name: 📥 Monorepo install all deps & pnpm
+          uses: ./.github/actions/pnpm-install
+        - name: Import GPG key
+          id: import_gpg
+          uses: crazy-max/ghaction-import-gpg@v5
+          with:
+            gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+            passphrase: ${{ secrets.PASSPHRASE }}
+            git_user_signingkey: true
+            git_commit_gpgsign: true
+            git_tag_gpgsign: false
+            git_push_gpgsign: false
+        - name: Release
+          env:
+            GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+            GIT_AUTHOR_NAME: ${{ steps.import_gpg.outputs.name }}
+            GIT_AUTHOR_EMAIL: ${{ steps.import_gpg.outputs.email }}
+            GIT_COMMITTER_NAME: ${{ steps.import_gpg.outputs.name }}
+            GIT_COMMITTER_EMAIL: ${{ steps.import_gpg.outputs.email }}
+            signingKeyId: ${{ steps.import_gpg.outputs.keyid }}
+            signingKey: ${{ secrets.GPG_PRIVATE_KEY }}
+            signingPassword: ${{ secrets.PASSPHRASE }}
+            GH_URL: "https://api.github.com/"
+          run: |
+            pnpm semantic-release
+        

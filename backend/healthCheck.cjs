@@ -21,38 +21,38 @@
 
 // use Node.js 'http' integrated module,
 // even to avoid dependencies clash
-const http = require('node:http');
+const http = require("node:http");
 
 const options = {
-  timeout: 5000, // 5 sec
-  log: true, // if enabled, write log to console
+	timeout: 5000, // 5 sec
+	log: true // if enabled, write log to console
 };
-const url = process.argv[2] || `${process.env.BACKEND_SERVER || 'http://localhost:8000'}/v1/health`;
+const url = process.argv[2] || `${process.env.BACKEND_SERVER || "http://localhost:8000"}/v1/health`;
 if (options.log === true) {
-  console.log(`GET call for healthcheck at: ${url} ...`);
+	console.log(`GET call for healthcheck at: ${url} ...`);
 }
 
-const request = http.get(url, (res) => {
-  if (options.log === true) {
-    console.log(`statusCode: ${res.statusCode}`);
-    if (res.statusMessage) {
-      console.log(`statusMessage: '${res.statusMessage}'`);
-    }
-    console.log('----------------');
-  }
-  if (res.statusCode === 200) {
-    process.exit(0);
-  } else {
-    process.exit(res.statusCode || 1);
-  }
+const request = http.get(url, res => {
+	if (options.log === true) {
+		console.log(`statusCode: ${res.statusCode}`);
+		if (res.statusMessage) {
+			console.log(`statusMessage: '${res.statusMessage}'`);
+		}
+		console.log("----------------");
+	}
+	if (res.statusCode === 200) {
+		process.exit(0);
+	} else {
+		process.exit(res.statusCode || 1);
+	}
 });
 request.setTimeout(options.timeout);
 
-request.on('error', (err) => {
-  if (options.log === true) {
-    console.log(`error: ${err.message}`);
-  }
-  process.exit(err.statusCode || 1);
+request.on("error", err => {
+	if (options.log === true) {
+		console.log(`error: ${err.message}`);
+	}
+	process.exit(err.statusCode || 1);
 });
 
 request.end();

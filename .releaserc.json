@@ -1,37 +1,43 @@
 {
-  "branches": [
-    "+([0-9])?(.{+([0-9]),x}).x",
-    "master",
-    "next",
-    "next-major",
-    { "name": "beta", "prerelease": true },
-    { "name": "alpha", "prerelease": true }
-  ],
-  "plugins": [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
-    [
-      "@semantic-release/github",
-      {
-        "assets": [
-          { "path": "/frontend/.next", "label": "Frontend Build" },
-          { "path": "/backend/dist", "label": "Backend Build (ESNext)" }
-        ]
-      }
-    ],
-    [
-      "@semantic-release/git",
-      {
-        "assets": [
-          "backend/dist/**/*.{js,cjs,ts}",
-          "frontend/.next/**/*.{js,cjs,ts,jsx,tsx}",
-          "package.json",
-          "frontend/package.json",
-          "backend/package.json"
-        ],
-        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-      }
-    ]
-  ]
+	"branches": [
+		"+([0-9])?(.{+([0-9]),x}).x",
+		"master",
+		"next",
+		"next-major",
+		{ "name": "beta", "prerelease": true },
+		{ "name": "alpha", "prerelease": true }
+	],
+	"plugins": [
+		"@semantic-release/commit-analyzer",
+		"@semantic-release/release-notes-generator",
+		"@semantic-release/changelog",
+		[
+			"@semantic-release/github",
+			{
+				"assets": [
+					{ "path": "/frontend/.next", "label": "Frontend Build" },
+					{ "path": "/backend/dist", "label": "Backend Build (ESNext)" }
+				]
+			}
+		],
+		[
+			"semantic-release-major-tag",
+			{
+				"customTags": ["v${major}", "v${major}.${minor}", "v{major}.x", "v{major}.{minor}.x"]
+			}
+		],
+		[
+			"@semantic-release/git",
+			{
+				"assets": [
+					"backend/dist/**/*.{js,cjs,ts}",
+					"frontend/.next/**/*.{js,cjs,ts,jsx,tsx}",
+					"package.json",
+					"frontend/package.json",
+					"backend/package.json"
+				],
+				"message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+			}
+		]
+	]
 }

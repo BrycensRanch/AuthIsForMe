@@ -1,0 +1,9 @@
+**/dist/
+**/lib/
+**/node_modules/
+**/.next/
+**/coverage/
+**/out/
+**/build/
+**/jest-coverage/
+**/prisma/generated/

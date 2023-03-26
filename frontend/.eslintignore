@@ -1,0 +1,6 @@
+node_modules
+out
+jest-coverage
+coverage
+.next 
+.swc

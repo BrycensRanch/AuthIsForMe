@@ -1,54 +1,55 @@
-import { Destructor, Initializer, Service } from '@fastify-decorators/simple-di';
-import { PrismaClient } from '@prisma/client';
+import { Destructor, Initializer, Service } from "@fastify-decorators/simple-di";
+import { PrismaClient } from "@prisma/client";
 import { createPrismaRedisCache } from "prisma-redis-middleware";
-import RedisService from './redis.service.js'
+import RedisService from "./redis.service.js";
 
 // Otherwise known as @Injectable()
 @Service()
 export default class DatabaseService {
-  constructor(
-    private redisService: RedisService, private prisma: PrismaClient) { }
-  public get cache() {
-    return this.redisService.cache;
-  }
-  public get db() {
-    return this.prisma;
-  }
+	constructor(private redisService: RedisService, private prisma: PrismaClient) {}
 
-  @Initializer()
-  async init(): Promise<void> {
-    console.log('Initializing DatabaseService');
-    this.prisma = new PrismaClient()
+	public get cache() {
+		return this.redisService.cache;
+	}
 
-    await this.prisma.$connect();
+	public get db() {
+		return this.prisma;
+	}
 
-    const cacheMiddleware = createPrismaRedisCache({
-      models: [
-        { model: "User", excludeMethods: ["findMany"] },
-        { model: "Post", cacheTime: 180, cacheKey: "article" },
-      ],
-      storage: { type: "redis", options: { client: this.cache, invalidation: { referencesTTL: 300 }, log: console } },
-      cacheTime: 300,
-      excludeModels: ["Product", "Cart"],
-      excludeMethods: ["count", "groupBy"],
-      onHit: (key) => {
-        console.log("hit", key);
-      },
-      onMiss: (key) => {
-        console.log("miss", key);
-      },
-      onError: (key) => {
-        console.log("error", key);
-      },
-    });
-    this.prisma.$use(cacheMiddleware);
-  }
+	@Initializer()
+	async init(): Promise<void> {
+		console.log("Initializing DatabaseService");
+		this.prisma = new PrismaClient();
 
-  @Destructor()
-  async destroy(): Promise<void> {
-    await this.prisma.$disconnect();
-  }
-  // remove(id: number) {
-  //   return this.prisma.article.delete({ where: { id } });
-  // }
+		await this.prisma.$connect();
+
+		// const cacheMiddleware = createPrismaRedisCache({
+		//   models: [
+		//     { model: "User", excludeMethods: ["findMany"] },
+		//     { model: "Post", cacheTime: 180, cacheKey: "article" },
+		//   ],
+		//   storage: { type: "redis", options: { client: this.cache, invalidation: { referencesTTL: 300 }, log: console } },
+		//   cacheTime: 300,
+		//   excludeModels: ["Product", "Cart"],
+		//   excludeMethods: ["count", "groupBy"],
+		//   onHit: (key) => {
+		//     console.log("hit", key);
+		//   },
+		//   onMiss: (key) => {
+		//     console.log("miss", key);
+		//   },
+		//   onError: (key) => {
+		//     console.log("error", key);
+		//   },
+		// });
+		// this.prisma.$use(cacheMiddleware);
+	}
+
+	@Destructor()
+	async destroy(): Promise<void> {
+		await this.prisma.$disconnect();
+	}
+	// remove(id: number) {
+	//   return this.prisma.article.delete({ where: { id } });
+	// }
 }

@@ -42,6 +42,9 @@
       src="https://github.com/codespaces/badge.svg"
       />
     </a>
+          <a href="https://depfu.com/github/BrycensRanch/AuthIsForMe">
+       <img src="https://img.shields.io/depfu/dependencies/github/BrycensRanch/AuthIsForMe?style=for-the-badge" alt="dependencies status" />
+    </a>
     <a aria-label="Open in Stackblitz Badge" href="https://stackblitz.com/github/BrycensRanch/AuthIsForMe">
     <img
     alt="Open in Stackblitz Badge"

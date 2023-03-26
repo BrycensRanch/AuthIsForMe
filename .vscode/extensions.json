@@ -1,15 +1,16 @@
 {
-  "recommendations": [
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "rvest.vs-code-prettier-eslint",
-    "mikestead.dotenv",
-    "csstools.postcss",
-    "bradlc.vscode-tailwindcss",
-    "orta.vscode-jest",
-    "knisterpeter.vscode-commitizen",
-    "ms-edgedevtools.vscode-edge-devtools",
-    "ms-azuretools.vscode-docker",
-    "davidanson.vscode-markdownlint"
-  ]
+	"recommendations": [
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"rvest.vs-code-prettier-eslint",
+		"mikestead.dotenv",
+		"csstools.postcss",
+		"bradlc.vscode-tailwindcss",
+		"orta.vscode-jest",
+		"knisterpeter.vscode-commitizen",
+		"ms-edgedevtools.vscode-edge-devtools",
+		"ms-azuretools.vscode-docker",
+		"davidanson.vscode-markdownlint",
+		"deepscan.vscode-deepscan"
+	]
 }

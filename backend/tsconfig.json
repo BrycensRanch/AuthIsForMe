@@ -1,55 +1,50 @@
 {
-  "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "strict": true,
-    "alwaysStrict": true,
-    "strictNullChecks": true,
-    "noUncheckedIndexedAccess": true,
+	"compilerOptions": {
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"strict": true,
+		"alwaysStrict": true,
+		"strictNullChecks": true,
+		"noUncheckedIndexedAccess": true,
 
-    "noImplicitAny": false,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "allowUnreachableCode": false,
-    "noFallthroughCasesInSwitch": true,
-    "experimentalDecorators": true,
-    "target": "ESNext",
-    "outDir": "dist",
-    "declaration": true,
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
+		"noImplicitAny": false,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		// these settings are fucking stupid
+		// seriously, why would I fail builds because of unused variables?
+		// leave it to linters to do that
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"allowUnreachableCode": false,
+		"noFallthroughCasesInSwitch": true,
+		"experimentalDecorators": true,
+		"target": "ESNext",
+		"outDir": "dist",
+		"declaration": true,
+		"sourceMap": true,
+		"emitDecoratorMetadata": true,
 
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "allowJs": true,
-    "checkJs": false,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"allowJs": true,
+		"checkJs": false,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
 
-    "isolatedModules": true,
-    "incremental": true,
+		"isolatedModules": true,
+		"incremental": true,
 
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"],
-      "@/src/*": ["./src/*"],
-      "@/public/*": ["./public/*"]
-    }
-  },
-  "include": ["./**/*"],
-  "exclude": [
-    "node_modules",
-    "test",
-    "dist",
-    "/**/*.test.ts",
-    "/**/*.test.js",
-    "/**/helper.ts",
-    "/**/helper.js"
-  ]
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./*"],
+			"@/src/*": ["./src/*"],
+			"@/public/*": ["./public/*"]
+		}
+	},
+	"include": ["./**/*"],
+	"exclude": ["node_modules", "dist", "coverage"]
 }

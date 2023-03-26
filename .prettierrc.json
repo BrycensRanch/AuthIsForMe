@@ -1,0 +1,9 @@
+{
+	"printWidth": 120,
+	"semi": true,
+	"useTabs": true,
+	"proseWrap": "never",
+	"singleQuote": false,
+	"quoteProps": "as-needed",
+	"arrowParens": "avoid"
+}

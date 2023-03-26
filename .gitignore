@@ -11,6 +11,8 @@
 /cypress-coverage
 /reports
 
+
+**/node_modules/
 npmlist.json
 
 # cypress

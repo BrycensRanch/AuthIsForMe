@@ -15,18 +15,18 @@ const jestConfig: JestConfigWithTsJest = {
 	resolver: "jest-ts-webcompat-resolver",
 	clearMocks: true,
 	collectCoverage: true,
-  collectCoverageFrom: [
-    './routes/**/*.{js,ts, mts, mjs, cjs, cts}',
-    './plugins/**/*.{js,ts, mts, mjs, cjs, cts}',
-    './app.{js,ts, mts, mjs, cjs, cts}',
-    '!**/*.d.ts',
-    '!**/node_modules/**',
-  ],
+	collectCoverageFrom: [
+		"./routes/**/*.{js,ts, mts, mjs, cjs, cts}",
+		"./plugins/**/*.{js,ts, mts, mjs, cjs, cts}",
+		"./app.{js,ts, mts, mjs, cjs, cts}",
+		"!**/*.d.ts",
+		"!**/node_modules/**",
+	],
 	testMatch: ["**/*.test.ts"],
 	moduleNameMapper: {
-      // Handle module aliases (this will be automatically configured for you soon)
+		// Handle module aliases (this will be automatically configured for you soon)
 		"^@/(.*)$": "<rootDir>/src/$1",
-  '^@/public/(.*)$': '<rootDir>/public/$1',
+		"^@/public/(.*)$": "<rootDir>/public/$1",
 	},
 	verbose: true,
 	transform: {
