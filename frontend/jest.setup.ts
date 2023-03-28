@@ -4,9 +4,12 @@
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
 
+import jestMockFetch from 'jest-fetch-mock';
+
 // eslint-disable-next-line no-undef
+// @ts-expect-error
 global.setImmediate = jest.useRealTimers;
-global.fetch = require('jest-mock-fetch').default;
+global.fetch = jestMockFetch;
 
 // require('jest-fetch-mock').enableMocks();
 // eslint-disable-next-line no-undef

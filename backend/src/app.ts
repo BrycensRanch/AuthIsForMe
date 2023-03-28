@@ -23,6 +23,14 @@ import fastifyUserAgent from "fastify-user-agent";
 import userAgent from "useragent";
 import fastifyCookie from "@fastify/cookie";
 import fastifyIP from "fastify-ip";
+import fastifyOFour from "fastify-204"
+import fastifyRouteStats from "@fastify/routes-stats"
+import { fastifyAnalytics } from 'node-api-analytics';
+import fastifyXML from "fastify-xml-body-parser";
+import fastifyFormidable from 'fastify-formidable'
+import fastifyJSON5 from "fastify-json5";
+
+
 
 import { PrismaClient } from "@prisma/client";
 
@@ -88,10 +96,27 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app, _options): Promise<v
 	//   blacklist: [], // specify URL's that are not to be tracked
 	//   trackSuccessOnly: false // track only success responses
 	// })
-	// await app.register(fastifyGetHead)
 	await app.register(fastifyUserAgent);
 	await app.register(fastifyAllow);
 	await app.register(fastifyIP);
+	await app.register(fastifyXML);
+	await app.register(fastifyFormidable, {
+		addContentTypeParser: true,
+		removeFilesFromBody: true,
+	})
+	await app.register(fastifyJSON5);
+		await app.register(fastifyOFour, {
+		onUndefined: true,
+		onNull: true,
+		onEmptyArray: true
+	})
+	await app.register(fastifyRouteStats, {
+		printInterval: 30000, // milliseconds
+		decoratorName: "performanceMarked", // decorator is set to true if a performace.mark was called for the request
+	})
+	if (process.env.FASTIFY_ANALYTICS_API_KEY) {
+		app.addHook('onRequest', fastifyAnalytics(process.env.FASTIFY_ANALYTICS_API_KEY)); 
+	}
 
 	app.addHook("onRequest", async (request, _reply) => {
 		// Some code

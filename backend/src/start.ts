@@ -6,8 +6,14 @@ import getRepoInfo from "git-repo-info";
 import ciDetect from "@npmcli/ci-detect";
 import isDocker from "is-docker";
 import scanEnv from "scan-env";
+import fastifyTLS from "fastify-tls-keygen"
 
 import * as app from "./app.js";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 
 async function readJsonFile(path: string): Promise<Record<string, ProjectReference>> {
 	const file = await readFile(path, "utf8");
@@ -82,13 +88,25 @@ const start = async () => {
 			},
 		},
 		trustProxy: process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test",
+		  // Required: Enable TLS
+			// https: true,
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+			// Optional: Enable HTTP/2
+			// http2: true
 	});
 	await server.register(app.fastify);
+	// await server.register(fastifyTLS, {
+	// 	// Optional (default: ./key.pem)
+	// 	key: join(__dirname, 'certs', 'key.pem'),
+	// 	// Optional (default: ./cert.pem)
+	// 	cert: join(__dirname, 'certs', 'cert.pem'),
+	// })
 
 	// @ts-ignore
 	server.listen(
 		{
-			port: process.env.PORT || process.env.FASTIFY_PORT || "8000",
+			// Tip: Port 443 (HTTPS) requires root permissions. Use a port >1024.
+			port: process.env.PORT || process.env.FASTIFY_PORT || "8443",
 			host: "::",
 		},
 		(error, address) => {
