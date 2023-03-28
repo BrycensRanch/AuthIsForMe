@@ -57,6 +57,7 @@
 			"path": "@commitlint/cz-commitlint"
 		}
 	},
+	"commitlint": "commitlint.config.cjs",
 	"workspaces": [
 		"frontend",
 		"backend"
