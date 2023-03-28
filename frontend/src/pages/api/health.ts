@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const handler = (_request: NextApiRequest, res: NextApiResponse) => {
-	res.status(200).json({
+const handler = (_request: NextApiRequest, response: NextApiResponse) => {
+	response.status(200).json({
 		statusCode: 200,
 		status: 'ok',
 		uptime: process.uptime(),

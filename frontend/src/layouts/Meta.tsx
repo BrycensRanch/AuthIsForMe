@@ -16,7 +16,7 @@ const Meta = (properties: IMetaProperties) => {
 	return (
 		<>
 			<Head>
-				<meta charSet="UTF-8" key="charset" />
+				<meta charSet="utf8" key="charset" />
 				<meta name="viewport" content="width=device-width,initial-scale=1" key="viewport" />
 				<link rel="icon" href={`${router.basePath}/favicon.ico`} key="favicon" />
 				<meta name="application-name" content={`${AppConfig.site_name}`} />

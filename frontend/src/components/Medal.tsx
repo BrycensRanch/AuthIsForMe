@@ -7,6 +7,10 @@ type IMedalProperties = {
 	body?: string;
 };
 
+const delQuery = (asPath: string) => {
+	return asPath.split('?')[0];
+};
+
 const Modal = (properties: IMedalProperties) => {
 	const router = useRouter();
 
@@ -24,7 +28,7 @@ const Modal = (properties: IMedalProperties) => {
 				>
 					Open regular modal
 				</button>
-			) : null}
+			) : undefined}
 			{showModal ? (
 				<>
 					<div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden outline-none focus:outline-none">
@@ -72,10 +76,6 @@ const Modal = (properties: IMedalProperties) => {
 										data-testid="medal-button3"
 										id="medalDismiss"
 										onClick={() => {
-											const delQuery = (asPath: string) => {
-												return asPath.split('?')[0];
-											};
-
 											setShowModal(false);
 											router.push(`${delQuery(router.asPath)}`);
 										}}
@@ -88,7 +88,7 @@ const Modal = (properties: IMedalProperties) => {
 					</div>
 					<div className="fixed inset-0 z-40 bg-black opacity-25"></div>
 				</>
-			) : null}
+			) : undefined}
 		</>
 	);
 };

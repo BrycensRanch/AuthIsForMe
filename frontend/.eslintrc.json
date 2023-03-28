@@ -16,12 +16,9 @@
 				"endOfLine": "lf"
 			}
 		],
-		"unicorn/filename-case": [
-			"error",
-			{
-				"case": "camelCase"
-			}
-		]
+		"unicorn/prefer-module": "off",
+		"unicorn/prefer-top-level-await": "off",
+		"unicorn/filename-case": "off"
 	},
 	"overrides": [
 		// Configuration for TypeScript files

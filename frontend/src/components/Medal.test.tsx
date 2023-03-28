@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import Medal from './Medal';
@@ -25,11 +26,12 @@ afterEach(() => {
 	jest.restoreAllMocks();
 });
 
+const title = 'Random title';
+const body = 'Random description';
+
 describe('Medal component', () => {
 	describe('Render method', () => {
 		it('medal should NOT render right away', async () => {
-			const title = 'Random title';
-			const body = 'Random description';
 			render(<Medal initialValue={false} title={title} body={body} />);
 			await fireEvent.click(screen.getByTestId('medal-button1'));
 			await waitFor(() => {
@@ -44,8 +46,6 @@ describe('Medal component', () => {
 		});
 
 		it('medal should render right away', async () => {
-			const title = 'Random title2';
-			const body = 'Random description2';
 			render(<Medal initialValue={true} title={title} body={body} />);
 			const medalTitle = screen.getByTestId('medal-title');
 			expect(medalTitle).toHaveTextContent(title);
@@ -58,8 +58,6 @@ describe('Medal component', () => {
 		});
 
 		it('medal should render right away and close', async () => {
-			const title = 'Random title2';
-			const body = 'Random description2';
 			render(<Medal initialValue={true} title={title} body={body} />);
 			const medalTitle = screen.getByTestId('medal-title');
 			expect(medalTitle).toHaveTextContent(title);

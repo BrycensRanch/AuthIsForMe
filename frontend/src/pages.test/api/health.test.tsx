@@ -1,4 +1,4 @@
-/* eslint-disable no-underscore-dangle */
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { createMocks } from 'node-mocks-http';
 
 import healthAPI from '../../pages/api/health';

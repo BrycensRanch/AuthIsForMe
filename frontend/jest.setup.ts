@@ -9,6 +9,7 @@ import jestMockFetch from 'jest-fetch-mock';
 // eslint-disable-next-line no-undef
 // @ts-expect-error
 global.setImmediate = jest.useRealTimers;
+// @ts-expect-error
 global.fetch = jestMockFetch;
 
 // require('jest-fetch-mock').enableMocks();

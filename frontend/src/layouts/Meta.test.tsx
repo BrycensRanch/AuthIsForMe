@@ -7,6 +7,7 @@ import { Meta } from './Meta';
 jest.mock(
 	'next/head',
 	() =>
+		// eslint-disable-next-line unicorn/consistent-function-scoping
 		function Head(properties: { children: ReactNode }) {
 			// eslint-disable-next-line testing-library/no-node-access
 			return <>{properties.children}</>;

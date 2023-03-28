@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 
 type IMainProperties = {
 	meta: ReactNode;
-	children: ReactNode;
+	children?: ReactNode;
 };
 
 const Main = (properties: IMainProperties) => (
@@ -13,7 +13,7 @@ const Main = (properties: IMainProperties) => (
 		{properties.meta}
 		{/* <MinecraftBackground /> */}
 		<Navbar />
-		{properties.children}
+		{properties.children ?? undefined}
 		<Footer />
 	</>
 );

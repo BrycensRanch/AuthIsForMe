@@ -9,7 +9,7 @@ export const defaultProps = {
 	control: true,
 };
 
-export type MinecraftSkinViewerProps = {
+export type MinecraftSkinViewerProperties = {
 	skin?: string;
 	width?: number;
 	height?: number;
@@ -27,7 +27,7 @@ export const MinecraftSkinViewer = ({
 	control = true,
 	background = 'https://wallpapercave.com/wp/wp6005486.jpg',
 	cape = 'https://livzmc.net/banner/?=paeieAeheGekpmec',
-}: MinecraftSkinViewerProps) => {
+}: MinecraftSkinViewerProperties) => {
 	const canvas = React.useRef<HTMLCanvasElement>(null);
 
 	React.useLayoutEffect(() => {
