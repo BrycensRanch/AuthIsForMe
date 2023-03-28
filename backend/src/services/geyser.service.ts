@@ -9,14 +9,12 @@ export default class GeyserService {
 	private prisma: PrismaClient;
 
 	constructor(prisma = new PrismaClient()) {
-		console.log("Constructing GeyserService");
 		// You aint got the answers sway, you aint got the answers sway
 		this.prisma = prisma;
 	}
 
 	@Initializer()
 	async init(): Promise<void> {
-		console.log("Initializing GeyserService");
 		this.prisma.$on("beforeExit", async () => {
 			console.log("HACK THE PLANET!!! ");
 		});

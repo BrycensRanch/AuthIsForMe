@@ -18,7 +18,6 @@ export default class DatabaseService {
 
 	@Initializer()
 	async init(): Promise<void> {
-		console.log("Initializing DatabaseService");
 		this.prisma = new PrismaClient();
 
 		await this.prisma.$connect();

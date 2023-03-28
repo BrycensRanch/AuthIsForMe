@@ -12,7 +12,6 @@ export default class RedisService {
 
 	@Initializer()
 	async init() {
-		console.log("Initializing RedisService");
 		await this.redis.connect();
 	}
 
