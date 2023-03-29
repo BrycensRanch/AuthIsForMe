@@ -23,16 +23,28 @@ import fastifyUserAgent from "fastify-user-agent";
 import userAgent from "useragent";
 import fastifyCookie from "@fastify/cookie";
 import fastifyIP from "fastify-ip";
-import fastifyOFour from "fastify-204"
+import fastify405 from "fastify-204"
 import fastifyRouteStats from "@fastify/routes-stats"
 import { fastifyAnalytics } from 'node-api-analytics';
 import fastifyXML from "fastify-xml-body-parser";
 import fastifyFormidable from 'fastify-formidable'
 import fastifyJSON5 from "fastify-json5";
+import fastifyQS from "fastify-qs";
+import fastifyFormBody from "@fastify/formbody";
+import fastifyAcceptsSerializer from "@fastify/accepts-serializer";
+import YAML from 'yaml'
+import { XMLParser, XMLBuilder, XMLValidator } from "fast-xml-parser";
+import serverVersion from 'fastify-server-version';
+import fastifyZodValidate from 'fastify-zod-validate'
+
+
+
+
 
 
 
 import { PrismaClient } from "@prisma/client";
+import { zodValidateRouter } from "./controllers/auth.controller.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -100,16 +112,51 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app, _options): Promise<v
 	await app.register(fastifyAllow);
 	await app.register(fastifyIP);
 	await app.register(fastifyXML);
+	await app.register(fastifyFormBody);
+	await app.register(fastifyQS);
 	await app.register(fastifyFormidable, {
 		addContentTypeParser: true,
 		removeFilesFromBody: true,
 	})
 	await app.register(fastifyJSON5);
-		await app.register(fastifyOFour, {
+	await app.register(serverVersion())
+		await app.register(fastify405, {
 		onUndefined: true,
 		onNull: true,
 		onEmptyArray: true
 	})
+	const parser = new XMLParser({
+		ignoreAttributes: true,
+	});
+	const builder = new XMLBuilder({
+		ignoreAttributes: true,
+	});
+  // register the plugin
+  await app.register(fastifyZodValidate, {
+    // optional custom validation error handler
+    handleValidatorError: (error, data) => {
+
+      
+      return { error: error, statusCode: 422, message: "Unprocessable Entity - Zod Errors or something, man..." }
+    },
+  })
+
+  // register the router
+  await app.register(zodValidateRouter, { prefix: 'route' })
+	await app.register(fastifyAcceptsSerializer, {
+		serializers: [
+			{
+				regex: /^(application\/yaml|text\/yaml)$/,
+				serializer: body => YAML.stringify(body)
+			},
+			{
+				regex: /^(application\/xml|text\/xml)$/,
+				serializer: body => builder.build(body)
+			}
+		],
+		default: 'application/json' // MIME type used if Accept header don't match anything
+	})
+	
 	await app.register(fastifyRouteStats, {
 		printInterval: 30000, // milliseconds
 		decoratorName: "performanceMarked", // decorator is set to true if a performace.mark was called for the request
@@ -147,13 +194,13 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app, _options): Promise<v
 	void app.register(AutoLoad, {
 		dir: join(__dirname, "plugins"),
 	});
-	try {
-		await new PrismaClient().$connect();
-	} catch (error) {
-		if (process.env.NODE_ENV !== "production") console.error(error);
+	// try {
+	// 	await new PrismaClient().$connect();
+	// } catch (error) {
+	// 	if (process.env.NODE_ENV !== "production") console.error(error);
 
-		throw error;
-	}
+	// 	throw error;
+	// }
 	await app.register(fastifyCookie);
 	await app.register(bootstrap, {
 		directory: join(__dirname, "controllers"),
