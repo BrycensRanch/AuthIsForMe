@@ -81,6 +81,7 @@
 		"@commitlint/cz-commitlint": "^17.5.0",
 		"@cypress/browserify-preprocessor": "^3.0.2",
 		"@cypress/code-coverage": "^3.10.0",
+		"@jest/globals": "^29.5.0",
 		"@next/bundle-analyzer": "^13.2.4",
 		"@next/env": "^13.2.4",
 		"@percy/cli": "^1.21.0",

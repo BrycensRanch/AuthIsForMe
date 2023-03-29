@@ -23,11 +23,11 @@ import fastifyUserAgent from "fastify-user-agent";
 import userAgent from "useragent";
 import fastifyCookie from "@fastify/cookie";
 import fastifyIP from "fastify-ip";
-import fastify405 from "fastify-204"
-import fastifyRouteStats from "@fastify/routes-stats"
-import { fastifyAnalytics } from 'node-api-analytics';
+import fastify405 from "fastify-204";
+import fastifyRouteStats from "@fastify/routes-stats";
+import { fastifyAnalytics } from "node-api-analytics";
 import fastifyXML from "fastify-xml-body-parser";
-import fastifyFormidable from 'fastify-formidable'
+import fastifyFormidable from "fastify-formidable";
 import fastifyJSON5 from "fastify-json5";
 import fastifyQS from "fastify-qs";
 import fastifyFormBody from "@fastify/formbody";
@@ -36,8 +36,6 @@ import YAML from 'yaml'
 import { XMLParser, XMLBuilder, XMLValidator } from "fast-xml-parser";
 import serverVersion from 'fastify-server-version';
 import fastifyZodValidate from 'fastify-zod-validate'
-
-
 
 
 
@@ -117,14 +115,14 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app, _options): Promise<v
 	await app.register(fastifyFormidable, {
 		addContentTypeParser: true,
 		removeFilesFromBody: true,
-	})
+	});
 	await app.register(fastifyJSON5);
 	await app.register(serverVersion())
-		await app.register(fastify405, {
+	await app.register(fastify405, {
 		onUndefined: true,
 		onNull: true,
-		onEmptyArray: true
-	})
+		onEmptyArray: true,
+	});
 	const parser = new XMLParser({
 		ignoreAttributes: true,
 	});
@@ -160,9 +158,9 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app, _options): Promise<v
 	await app.register(fastifyRouteStats, {
 		printInterval: 30000, // milliseconds
 		decoratorName: "performanceMarked", // decorator is set to true if a performace.mark was called for the request
-	})
+	});
 	if (process.env.FASTIFY_ANALYTICS_API_KEY) {
-		app.addHook('onRequest', fastifyAnalytics(process.env.FASTIFY_ANALYTICS_API_KEY)); 
+		app.addHook("onRequest", fastifyAnalytics(process.env.FASTIFY_ANALYTICS_API_KEY));
 	}
 
 	app.addHook("onRequest", async (request, _reply) => {

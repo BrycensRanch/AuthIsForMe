@@ -2,7 +2,7 @@ module.exports = {
 	defaults: {
 		origin: process.env.NEXT_PUBLIC_BACKEND_SERVER || "http://localhost:8000",
 		transport: "session",
-		state: true
+		state: true,
 	},
 	google: {
 		key: "...",
@@ -10,12 +10,12 @@ module.exports = {
 		scope: ["openid"],
 		nonce: true,
 		custom_params: { access_type: "offline" },
-		callback: "/v1/auth/google/callback"
+		callback: "/v1/auth/google/callback",
 	},
 	twitter: {
 		key: "...",
 		secret: "...",
-		callback: "/v1/auth/twitter/callback"
+		callback: "/v1/auth/twitter/callback",
 	},
 	twitch: {
 		clientId: process.env.CLIENT_ID || "",
@@ -30,8 +30,8 @@ module.exports = {
 			"channel:read:subscriptions", // for streamers, check if a user is subscribed
 			"moderation:read", // for streamers, check if a user is a moderator or banned
 			"viewing_activity_read", // for streamers, check if a user is watching
-			"moderator:read:followers" // for streamers, check if a user is following
-		]
+			"moderator:read:followers", // for streamers, check if a user is following
+		],
 	},
 	github: {
 		key: "...",
@@ -42,12 +42,12 @@ module.exports = {
 			notifications: {
 				key: "...",
 				secret: "...",
-				scope: ["notifications"]
+				scope: ["notifications"],
 			},
 			all: {
 				scope: ["repo", "gist", "user"],
-				callback: "/hey"
-			}
-		}
-	}
+				callback: "/hey",
+			},
+		},
+	},
 };

@@ -1,33 +1,41 @@
-
 github:
   prebuilds:
     # enable for the master/default branch (defaults to true)
     master: true
-# enable for all branches in this repo (defaults to false)
+    # enable for all branches in this repo (defaults to false)
     branches: true
-# enable for pull requests coming from this repo (defaults to true)
+    # enable for pull requests coming from this repo (defaults to true)
     pullRequests: true
-# enable for pull requests coming from forks (defaults to false)
+    # enable for pull requests coming from forks (defaults to false)
     pullRequestsFromForks: true
-# add a "Review in Gitpod" button as a comment to pull requests (defaults to true)
+    # add a "Review in Gitpod" button as a comment to pull requests (defaults to true)
     addComment: true
-# add a "Review in Gitpod" button to pull requests (defaults to false)
+    # add a "Review in Gitpod" button to pull requests (defaults to false)
     addBadge: true
-# add a label once the prebuild is ready to pull requests (defaults to false)
+    # add a label once the prebuild is ready to pull requests (defaults to false)
     addLabel: prebuilt-in-gitpod
 tasks:
   - before: ./scripts/gitpod-before.sh
-  - init: pnpm install 
-    command: cp .env.example .env && docker compose up db db2 cache -d && pnpm build && pnpm dev
+  # Init should work now
+  - init: pnpm install
+    command: cp .env.example .env && docker compose up db db2 cache -d && pnpm dev
 
-# security issues, unauthorised commits to our repository 
+# security issues, unauthorised commits to our repository
 image: ghcr.io/brycensranch/gitpod-enhanced:latest
 vscode:
   extensions:
     - bradlc.vscode-tailwindcss
     - davidanson.vscode-markdownlint
     - mikestead.dotenv
-    - Prisma.prisma 
+    - Prisma.prisma
     - rvest.vs-code-prettier-eslint
     - ms-azuretools.vscode-docker
     - dbaeumer.vscode-eslint
+    - prantlf.fold-on-open
+    - aaron-bond.better-comments
+    - vivaxy.vscode-conventional-commits
+    - christian-kohler.path-intellisense
+    - christian-kohler.npm-intellisense
+    - sndst00m.markdown-github-dark-pack
+    - GitHub.vscode-pull-request-github
+    - cschleiden.vscode-github-actions

@@ -15,9 +15,9 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import '@testing-library/cypress/add-commands';
-import '@percy/cypress';
-import '@cypress/code-coverage/support';
+import "@testing-library/cypress/add-commands";
+import "@percy/cypress";
+import "@cypress/code-coverage/support";
 // import '@bahmutov/cypress-code-coverage/support';
 
 // Alternatively you can use CommonJS syntax:

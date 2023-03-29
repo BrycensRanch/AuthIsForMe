@@ -1,20 +1,20 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { createMocks } from 'node-mocks-http';
+import { createMocks } from "node-mocks-http";
 
-import healthAPI from '../../pages/api/health';
+import healthAPI from "../../pages/api/health";
 
-describe('/api/health', () => {
-	describe('request health status', () => {
-		it('should give process cluster id', async () => {
+describe("/api/health", () => {
+	describe("request health status", () => {
+		it("should give process cluster id", async () => {
 			const { req, res } = createMocks({
-				method: 'GET',
+				method: "GET",
 			});
 			await healthAPI(req, res);
 
 			expect(res._getStatusCode()).toBe(200);
 			expect(JSON.parse(res._getData())).toEqual(
 				expect.objectContaining({
-					'cluster-id': '0',
+					"cluster-id": "0",
 				})
 			);
 		});

@@ -1,10 +1,9 @@
 # 👷‍♂️🏗️ AuthIsForMe (WIP) 🚧👷 (Minecraft Authentication/User API)
 
-- "Make it **work**, make it **right**, make it **fast**" - *Kent Beck*
-- "The function of **good software** is to **make** the **complex** appear to be **simple**." - *Grady Booch*
+- "Make it **work**, make it **right**, make it **fast**" - _Kent Beck_
+- "The function of **good software** is to **make** the **complex** appear to be **simple**." - _Grady Booch_
 
-> Being built with love with modernity in mind.
-> May be *slightly* overengineered
+> Being built with love with modernity in mind. May be _slightly_ overengineered
 
 <p align="center">
   </a>
@@ -73,7 +72,7 @@
 - Data exporting
 - Link to NameMC, maybe?
 - Gravatar Implementation
-- Use of Tydium Skin API for bedrock users *only*
+- Use of Tydium Skin API for bedrock users _only_
 - Fastify API that generates types and schemas and OpenAPI Specification files for API consumers and VSCode
 - Switch to pnpm since a certain someone likes to run `npm install` a lot more than they should (`✅`)
 
@@ -108,8 +107,7 @@ no
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to add tests as appropriate. In-depth ones, not one that checks if 1 + 1 === 2.
 
@@ -117,5 +115,4 @@ Please read the [Contributing Guidelines](CONTRIBUTING.md) before submitting any
 
 ## License
 
-[MIT](./LICENSE)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FBrycensRanch%2FChatting-Platform.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FBrycensRanch%2FChatting-Platform?ref=badge_large)
+[MIT](./LICENSE) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FBrycensRanch%2FChatting-Platform.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FBrycensRanch%2FChatting-Platform?ref=badge_large)

@@ -25,7 +25,7 @@ const http = require("node:http");
 
 const options = {
 	timeout: 5000, // 5 sec
-	log: true // if enabled, write log to console
+	log: true, // if enabled, write log to console
 };
 const url = process.argv[2] || `${process.env.BACKEND_SERVER || "http://localhost:8000"}/v1/health`;
 if (options.log === true) {

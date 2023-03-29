@@ -9,11 +9,11 @@
 #   - vs @setup/node: https://github.com/actions/setup-node/issues/325                 #
 ########################################################################################
 
-name: 'Monorepo install (pnpm)'
-description: 'Run pnpm install with cache enabled'
+name: "Monorepo install (pnpm)"
+description: "Run pnpm install with cache enabled"
 
 runs:
-  using: 'composite'
+  using: "composite"
 
   steps:
     - uses: pnpm/action-setup@v2
@@ -56,4 +56,4 @@ runs:
       run: pnpm install --frozen-lockfile --strict-peer-dependencies --prefer-offline
       env:
         # Other environment variables
-        HUSKY: '0' # By default do not run HUSKY install     
+        HUSKY: "0" # By default do not run HUSKY install

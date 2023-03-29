@@ -1,7 +1,6 @@
 # Backend (Fastify)
 
-[![Deploy to Zeet](https://deploy.zeet.co/fastify.svg)](https://deploy.zeet.co/?url=https://github.com/BrycensRanch/Chatting-Platform)
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2FBrycensRanch%2FChatting-Platform&plugins=redis)
+[![Deploy to Zeet](https://deploy.zeet.co/fastify.svg)](https://deploy.zeet.co/?url=https://github.com/BrycensRanch/Chatting-Platform) [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2FBrycensRanch%2FChatting-Platform&plugins=redis)
 
 ## Notes
 
@@ -75,9 +74,7 @@ Stages:
 
 ## Explanation of dependencies
 
-This project was bootstrapped with Fastify-CLI.
-As such, our testing framework is Node-Tap.
-While I'd love to use Jest as our test framework for consistency, this type of configuration should be more appropriate for Fastify.
+This project was bootstrapped with Fastify-CLI. As such, our testing framework is Node-Tap. While I'd love to use Jest as our test framework for consistency, this type of configuration should be more appropriate for Fastify.
 
 ## Available Scripts
 

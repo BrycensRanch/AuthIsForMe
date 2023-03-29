@@ -1,13 +1,17 @@
 {
+	"root": true,
+	"env": {
+		"node": true
+	},
+	"$schema": "https://json.schemastore.org/eslintrc",
 	// Configuration for JavaScript files
 	"extends": [
-		"next/core-web-vitals", // Needed to avoid warning in next.js build: 'The Next.js plugin was not detected in your ESLint configuration'
+		"next/core-web-vitals",
 		"plugin:prettier/recommended",
-		"plugin:jest/recommended",
 		"plugin:unicorn/recommended",
 		"plugin:sonarjs/recommended"
 	],
-	"plugins": ["prettier", "jest", "sonarjs", "unicorn"],
+	"plugins": ["prettier", "sonarjs"],
 	"rules": {
 		"prettier/prettier": [
 			"error",
@@ -29,7 +33,8 @@
 				"plugin:tailwindcss/recommended",
 				"airbnb-typescript",
 				"next/core-web-vitals",
-				"plugin:prettier/recommended"
+				"plugin:prettier/recommended",
+				"react-hooks"
 			],
 			"parserOptions": {
 				"project": "./tsconfig.json"

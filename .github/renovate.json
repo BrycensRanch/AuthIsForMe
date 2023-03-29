@@ -5,11 +5,7 @@
 	"semanticCommits": "enabled",
 	"automerge": true,
 	"labels": ["dependencies"],
-	"automergeSchedule": [
-		"after 10pm every weekday",
-		"before 5am every weekday",
-		"every weekend"
-	],
+	"automergeSchedule": ["after 10pm every weekday", "before 5am every weekday", "every weekend"],
 	"prConcurrentLimit": 0,
 	"prHourlyLimit": 0,
 	"branchConcurrentLimit": 20,

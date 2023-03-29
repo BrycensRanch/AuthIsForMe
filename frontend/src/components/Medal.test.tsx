@@ -1,14 +1,14 @@
 /* eslint-disable sonarjs/no-duplicate-string */
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 
-import Medal from './Medal';
+import Medal from "./Medal";
 // eslint-disable-next-line import/no-extraneous-dependencies
-jest.mock('next/router', () => ({
+jest.mock("next/router", () => ({
 	__esModule: true,
 	useRouter: () => ({
 		query: {},
-		pathname: '/',
-		asPath: '/',
+		pathname: "/",
+		asPath: "/",
 		events: {
 			emit: jest.fn(),
 			on: jest.fn(),
@@ -26,44 +26,44 @@ afterEach(() => {
 	jest.restoreAllMocks();
 });
 
-const title = 'Random title';
-const body = 'Random description';
+const title = "Random title";
+const body = "Random description";
 
-describe('Medal component', () => {
-	describe('Render method', () => {
-		it('medal should NOT render right away', async () => {
+describe("Medal component", () => {
+	describe("Render method", () => {
+		it("medal should NOT render right away", async () => {
 			render(<Medal initialValue={false} title={title} body={body} />);
-			await fireEvent.click(screen.getByTestId('medal-button1'));
+			await fireEvent.click(screen.getByTestId("medal-button1"));
 			await waitFor(() => {
-				const medalTitle = screen.getByTestId('medal-title');
+				const medalTitle = screen.getByTestId("medal-title");
 				expect(medalTitle).toHaveTextContent(title);
 			});
 			// dismiss button
-			await fireEvent.click(screen.getByTestId('medal-button3'));
+			await fireEvent.click(screen.getByTestId("medal-button3"));
 			// medal is gone
 			// eslint-disable-next-line testing-library/no-await-sync-query, testing-library/prefer-presence-queries
 			// expect(screen.getByText('Close')).not.toBeInTheDocument();
 		});
 
-		it('medal should render right away', async () => {
+		it("medal should render right away", async () => {
 			render(<Medal initialValue={true} title={title} body={body} />);
-			const medalTitle = screen.getByTestId('medal-title');
+			const medalTitle = screen.getByTestId("medal-title");
 			expect(medalTitle).toHaveTextContent(title);
 
 			// dismiss button
-			await fireEvent.click(screen.getByTestId('medal-button3'));
+			await fireEvent.click(screen.getByTestId("medal-button3"));
 			// medal is gone
 			// eslint-disable-next-line testing-library/no-await-sync-query, testing-library/prefer-presence-queries
 			// expect(screen.getByText('Close')).not.toBeInTheDocument();
 		});
 
-		it('medal should render right away and close', async () => {
+		it("medal should render right away and close", async () => {
 			render(<Medal initialValue={true} title={title} body={body} />);
-			const medalTitle = screen.getByTestId('medal-title');
+			const medalTitle = screen.getByTestId("medal-title");
 			expect(medalTitle).toHaveTextContent(title);
 
 			// dismiss button
-			await fireEvent.click(screen.getByTestId('medal-button2'));
+			await fireEvent.click(screen.getByTestId("medal-button2"));
 			// medal is gone
 			// eslint-disable-next-line testing-library/no-await-sync-query, testing-library/prefer-presence-queries
 			// expect(screen.getByText('Close')).not.toBeInTheDocument();
