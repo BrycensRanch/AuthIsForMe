@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { fastify } from "fastify";
 import { readFile } from "node:fs/promises";
 import { ProjectReference } from "typescript";
@@ -6,14 +5,14 @@ import getRepoInfo from "git-repo-info";
 import ciDetect from "@npmcli/ci-detect";
 import isDocker from "is-docker";
 import scanEnv from "scan-env";
-import fastifyTLS from "fastify-tls-keygen"
 
-import * as app from "./app.js";
-import { dirname, join } from "node:path";
+import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import figlet from "figlet";
+import chalk from "chalk";
+import * as app from "./app.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-
 
 async function readJsonFile(path: string): Promise<Record<string, ProjectReference>> {
 	const file = await readFile(path, "utf8");
@@ -21,8 +20,8 @@ async function readJsonFile(path: string): Promise<Record<string, ProjectReferen
 }
 
 const start = async () => {
+	console.log(`Currently running in ${__dirname}`);
 	if (process.env.NODE_ENV !== "production") {
-		const chalk = (await import("chalk")).default;
 		let name, version;
 		try {
 			const { name: packageName, version: packageVersion } = await readJsonFile("./package.json");
@@ -33,9 +32,8 @@ const start = async () => {
 			version = process.env.npm_package_version || "Unknown";
 		}
 		const gitInfo = getRepoInfo(),
-			// @ts-expect-error
-			bannerText = `${(await import("figlet")).default.textSync(`<${name}>`, {
-				font: "ANSI shadow",
+			bannerText = `${figlet.textSync(`<${name}>`, {
+				font: "ANSI Shadow",
 				horizontalLayout: "default",
 				verticalLayout: "default",
 				width: 150,
@@ -53,7 +51,7 @@ const start = async () => {
 			warning =
 				process.env.NODE_ENV !== "production" || gitInfo.branch !== "master"
 					? chalk.redBright.bold("WARNING: This is a development build. Do not use in production.")
-					: null,
+					: undefined,
 			dockerWarning = chalk.redBright.bold(
 				"Psst! Make sure you've set up your .env file and launched the database and redis containers!\nYou can do this with the command: docker compose up -d db db2 cache"
 			),
@@ -88,11 +86,11 @@ const start = async () => {
 			},
 		},
 		trustProxy: process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test",
-		  // Required: Enable TLS
-			// https: true,
-			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-			// Optional: Enable HTTP/2
-			// http2: true
+		// Required: Enable TLS
+		// https: true,
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		// Optional: Enable HTTP/2
+		// http2: true
 	});
 	await server.register(app.fastify);
 	// await server.register(fastifyTLS, {
@@ -102,7 +100,8 @@ const start = async () => {
 	// 	cert: join(__dirname, 'certs', 'cert.pem'),
 	// })
 
-	// @ts-ignore
+	// @ts-expect-error I honestly have no idea why this doesn't work
+	// TODO: Remove all ts comments
 	server.listen(
 		{
 			// Tip: Port 443 (HTTPS) requires root permissions. Use a port >1024.
@@ -110,10 +109,8 @@ const start = async () => {
 			host: "::",
 		},
 		(error, address) => {
-			if (error) {
-				console.error(error);
-				process.exit(1);
-			}
+			if (error) throw error;
+
 			if (process.env.NODE_APP_INSTANCE === "0" || (!process.env.NODE_APP_INSTANCE && process.env.NODE_ENV !== "test"))
 				server.log.info(`Server listening at ${address}`);
 		}

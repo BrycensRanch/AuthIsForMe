@@ -13,7 +13,7 @@ on:
     #        │  │ │ │ │
     #        │  │ │ │ │
     #        *  * * * *
-    - cron: '30 1 * * 0'
+    - cron: "30 1 * * 0"
 name: dead links destroyer
 jobs:
   linkinator:
@@ -70,12 +70,12 @@ jobs:
     name: Broken-Links-Crawler
     needs: await-for-vercel-deployment
     steps:
-    - name: Checking links
-      id: checking
-      uses: ScholliYT/Broken-Links-Crawler-Action@v3
-      with:
-        website_url: ${{needs.await-for-vercel-deployment.outputs.VERCEL_DEPLOYMENT}}
-        exclude_url_prefix: 'mailto:,https://www.linkedin.com,https://linkedin.com,https://twitter.com'
-        verbose: 'true'
-        max_retry_time: 30
-        max_retries: 5
+      - name: Checking links
+        id: checking
+        uses: ScholliYT/Broken-Links-Crawler-Action@v3
+        with:
+          website_url: ${{needs.await-for-vercel-deployment.outputs.VERCEL_DEPLOYMENT}}
+          exclude_url_prefix: "mailto:,https://www.linkedin.com,https://linkedin.com,https://twitter.com"
+          verbose: "true"
+          max_retry_time: 30
+          max_retries: 5

@@ -6,6 +6,8 @@
 	},
 	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
 	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.formatOnType": true,
 	"editor.codeActionsOnSave": ["source.addMissingImports", "source.fixAll.eslint"],
 	"jest.disabledWorkspaceFolders": [".next"],
 	"jest.autoRun": {
@@ -16,7 +18,6 @@
 	"jest.showTerminalOnLaunch": false, // Don't automatically open test explorer terminal on launch
 	// Multiple language settings for json and jsonc files
 	"[json][jsonc]": {
-		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[prisma]": {

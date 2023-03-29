@@ -11,6 +11,13 @@
 		"ms-edgedevtools.vscode-edge-devtools",
 		"ms-azuretools.vscode-docker",
 		"davidanson.vscode-markdownlint",
-		"deepscan.vscode-deepscan"
+		"deepscan.vscode-deepscan",
+		"aaron-bond.better-comments",
+		"prantlf.fold-on-open",
+		"vivaxy.vscode-conventional-commits",
+		"christian-kohler.path-intellisense",
+		"christian-kohler.npm-intellisense",
+		"sndst00m.markdown-github-dark-pack",
+		"cschleiden.vscode-github-actions"
 	]
 }
