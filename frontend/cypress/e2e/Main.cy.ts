@@ -43,7 +43,7 @@ describe("Navigation", () => {
 		// });
 		it("should join a room and request for puppeteer to join too and screenshot", () => {
 			cy.request(
-				`http://localhost:8081/connect?url=http://localhost:3000/room/${roomName}&message=freedom1&message=freedom2&kick=true`
+				`http://localhost:8081/connect?url=http://localhost:3000/room/${roomName}&message=freedom1&message=freedom2&kick=true`,
 			);
 			cy.visit(`/room/${roomName}`);
 			cy.get("#message").type("WASSUP G", { force: true });
@@ -63,7 +63,7 @@ describe("Navigation", () => {
 			// ).to.throw();
 			// cy.get('#medalDismiss').click();
 			cy.request(
-				`http://localhost:8081/connect?url=http://localhost:3000/room/${roomName}&waitAfterSendingMessage=true`
+				`http://localhost:8081/connect?url=http://localhost:3000/room/${roomName}&waitAfterSendingMessage=true`,
 			);
 			cy.get("#medalDismiss").click();
 			cy.get("#message").type("SEE YA LATA ALLEGATOR >:)");
@@ -75,11 +75,11 @@ describe("Navigation", () => {
 			cy.get("#leaveRoom").click({ force: true });
 			cy.reload();
 			cy.request(
-				`http://localhost:8081/connect?url=http://localhost:3000/room/${roomName}&waitAfterSendingMessage=true`
+				`http://localhost:8081/connect?url=http://localhost:3000/room/${roomName}&waitAfterSendingMessage=true`,
 			);
 			cy.visit("/");
 			cy.request(
-				`http://localhost:8081/connect?url=http://localhost:3000/room/${roomName}&waitAfterSendingMessage=true`
+				`http://localhost:8081/connect?url=http://localhost:3000/room/${roomName}&waitAfterSendingMessage=true`,
 			);
 			cy.get(`#room-${roomName}`).click({ force: true });
 			cy.title().should("contain", roomName);
@@ -87,12 +87,12 @@ describe("Navigation", () => {
 			const roomsThatPuppeteerWillLeave = ["sons of github", "sons of githubv2"];
 			cy.visit(`/room/${roomsThatPuppeteerWillLeave[0]}`);
 			cy.request(
-				`http://localhost:8081/connect?url=http://localhost:3000/room/${roomsThatPuppeteerWillLeave[0]}&waitAfterSendingMessage=true`
+				`http://localhost:8081/connect?url=http://localhost:3000/room/${roomsThatPuppeteerWillLeave[0]}&waitAfterSendingMessage=true`,
 			);
 			cy.get("#kickButton").click({ force: true });
 			cy.visit(`/room/${roomsThatPuppeteerWillLeave[1]}`);
 			cy.request(
-				`http://localhost:8081/connect?url=http://localhost:3000/room/${roomsThatPuppeteerWillLeave[1]}&waitAfterSendingMessage=true&leave=true`
+				`http://localhost:8081/connect?url=http://localhost:3000/room/${roomsThatPuppeteerWillLeave[1]}&waitAfterSendingMessage=true&leave=true`,
 			);
 			cy.get("#peerVideo")
 				.invoke("attr", "data-connected")
@@ -123,7 +123,7 @@ describe("Navigation", () => {
 		it("should try to join a full room", () => {
 			const roomName = "full room";
 			cy.request(
-				`http://localhost:8081/connect?url=http://localhost:3000/room/${roomName}&message=freedom1&message=freedom2&waitAfterSendingMessage=true`
+				`http://localhost:8081/connect?url=http://localhost:3000/room/${roomName}&message=freedom1&message=freedom2&waitAfterSendingMessage=true`,
 			);
 			// backend code emits 'full' when it detects Cypress and the name 'full room', regardless whether or not the room is full for testing purposes
 			cy.visit(`/room/${roomName}`);
