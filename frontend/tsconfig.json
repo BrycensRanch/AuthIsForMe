@@ -10,7 +10,6 @@
 		"alwaysStrict": true,
 		"strictNullChecks": true,
 		"noUncheckedIndexedAccess": true,
-
 		// "noImplicitAny": false,
 		"noImplicitReturns": true,
 		"noImplicitThis": true,
@@ -19,8 +18,8 @@
 		"noUnusedParameters": false,
 		"allowUnreachableCode": false,
 		"noFallthroughCasesInSwitch": true,
-
-		"target": "es5",
+		// Dependencies are very upset about us targetting ES5
+		"target": "ESNext",
 		"outDir": "out",
 		"declaration": true,
 		"sourceMap": true,
@@ -29,12 +28,10 @@
 		"allowJs": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
-
 		"jsx": "preserve",
 		"noEmit": true,
 		"isolatedModules": true,
 		"incremental": true,
-
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"],

@@ -48,5 +48,5 @@
 		}
 	},
 	"include": ["./**/*"],
-	"exclude": ["node_modules", "dist", "coverage", "prisma/generated", "prisma/json-schema"]
+	"exclude": ["node_modules", "**/node_modules", "dist", "coverage", "prisma/generated", "prisma/json-schema"]
 }

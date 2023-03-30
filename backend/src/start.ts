@@ -85,28 +85,28 @@ const start = async () => {
 	}
 
 	const nestApp = await NestFactory.create<NestFastifyApplication>(
-			AppModule,
-			new FastifyAdapter({
-				logger: {
-					level: "info",
-					transport: {
-						target: "pino-pretty",
-					},
+		AppModule,
+		new FastifyAdapter({
+			logger: {
+				level: "info",
+				transport: {
+					target: "pino-pretty",
 				},
-				trustProxy: process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test",
-				// Required: Enable TLS
-				// https: true,
-				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-				// Optional: Enable HTTP/2
-				// http2: true
-			})
-		),
-		server = nestApp.getHttpAdapter().getInstance() as FastifyInstance;
+			},
+			trustProxy: process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test",
+			// Required: Enable TLS
+			// https: true,
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+			// Optional: Enable HTTP/2
+			// http2: true
+		}),
+	);
+	const server = nestApp.getHttpAdapter().getInstance() as FastifyInstance;
 	// Validate all endpoints
 	nestApp.useGlobalPipes(
 		new ValidationPipe({
 			whitelist: true,
-		})
+		}),
 	);
 	await server.register(app.fastify);
 	// await server.register(fastifyTLS, {

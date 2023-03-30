@@ -8,7 +8,7 @@ import cors from "@fastify/cors";
 import helmet from "@fastify/helmet";
 import type { FastifyPluginAsync } from "fastify";
 // import inputValidation from 'openapi-validator-middleware';
-import fs from "node:fs";
+import { existsSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 
 import { fileURLToPath } from "node:url";
@@ -64,16 +64,16 @@ export type AppOptions = {
 } & Partial<AutoloadPluginOptions>;
 // Application SSL, for Nginx to use to ensure that this Fastify instance is trusted.
 // This SSL shouldn't effect clients though. That's NGINX's job. It'll use Cloudflare SSL instead.
-const SSLFolder = "./ssl",
-	// Pass --options via CLI arguments in command to enable these options.
-	options: AppOptions = {
-		// https: true,
-		// https: {
-		//   key: path.join(SSLFolder, 'key.pem'),
-		//   cert: path.join(SSLFolder, 'certificate.pem'),
-		// },
-	};
-if (!fs.existsSync(SSLFolder) && process.env.NODE_ENV === "production") fs.mkdirSync(SSLFolder, { recursive: true });
+const SSLFolder = "./ssl";
+// Pass --options via CLI arguments in command to enable these options.
+const options: AppOptions = {
+	// https: true,
+	// https: {
+	//   key: path.join(SSLFolder, 'key.pem'),
+	//   cert: path.join(SSLFolder, 'certificate.pem'),
+	// },
+};
+if (!existsSync(SSLFolder) && process.env.NODE_ENV === "production") mkdirSync(SSLFolder, { recursive: true });
 
 const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	// Let's not run this while testing/prod... It's done repeatedly and it's very very annoying.

@@ -23,7 +23,7 @@
 		"dev": "cross-env DEBUG=prisma:* node-dev --timestamp --respawn --vm --loader ts-node/esm src/start.ts",
 		"lint": "eslint --fix .",
 		"lint:check": "eslint .",
-		"format": "prettier-eslint --write \"{,!(node_modules|coverage|dist|prisma/generated)/**/}*.{js,jsx,ts,mts,cjs,mjs,cts,tsx}\"",
+		"format": "prettier --write .",
 		"commit": "cz",
 		"migrate:postgres": "dotenv -e ../.env -- npx prisma migrate deploy"
 	},

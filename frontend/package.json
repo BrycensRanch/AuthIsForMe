@@ -21,6 +21,7 @@
 		"build-prod": "run-s clean build export",
 		"clean": "rimraf .next out",
 		"lint": "next lint --fix",
+		"lint-staged": "run-s lint format",
 		"lint:check": "next lint",
 		"precheck-types": "tsc --noEmit --pretty -p tsconfig-build.json",
 		"check-types": "tsc --project cypress --noEmit --pretty -p tsconfig-build.json",
@@ -45,7 +46,7 @@
 		"dev:cypress": "concurrently --raw \"node testPuppeteer.js\" \"cd .. && npm run dev\"",
 		"e2e": "start-server-and-test 'npm run dev:cypress' http://localhost:3000 cypress",
 		"e2e:headless": "start-server-and-test 'npm run dev:cypress' http://localhost:3000 cypress:headless",
-		"format": "prettier-eslint --log-level info --write \"{,!(node_modules|coverage|dist|out|build|jest-coverage)/**/}*.{js,jsx,ts,tsx}\"",
+		"format": "prettier --write .",
 		"env": "sync-dotenv"
 	},
 	"nyc": {
@@ -144,12 +145,6 @@
 		"sync-dotenv": "^2.7.0",
 		"tailwindcss": "^3.2.7",
 		"typescript": "^5.0.2"
-	},
-	"author": "",
-	"config": {
-		"commitizen": {
-			"path": "@commitlint/cz-commitlint"
-		}
 	},
 	"license": "MIT",
 	"packageManager": "pnpm@7.30.3",

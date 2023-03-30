@@ -30,7 +30,8 @@
 		"postformat": "prettier --write .",
 		"test": "npm run test -w=frontend && npm run test -w=backend",
 		"test:jest": "npm run test:jest -w=frontend && npm run test:jest -w=backend",
-		"test:watch": "npm run test:watch -w=frontend && npm run test:watch -w=backend"
+		"test:watch": "npm run test:watch -w=frontend && npm run test:watch -w=backend",
+		"check-types": "concurrently -c \"auto\" \"npm run check-types -w=frontend\" \"npm run check-types -w=backend\""
 	},
 	"keywords": [],
 	"author": "",
