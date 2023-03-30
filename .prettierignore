@@ -7,3 +7,4 @@
 **/build/
 **/jest-coverage/
 backend/prisma/generated
+**/pnpm-lock.yaml
