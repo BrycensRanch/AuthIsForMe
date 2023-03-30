@@ -10,7 +10,6 @@ import type { FastifyPluginAsync } from "fastify";
 // import inputValidation from 'openapi-validator-middleware';
 import fs from "node:fs";
 import { join, dirname } from "node:path";
-import { bootstrap } from "fastify-decorators";
 
 import { fileURLToPath } from "node:url";
 import { load as loadMonoRepoEnvironment } from "dotenv-mono";
@@ -32,17 +31,10 @@ import fastifyJSON5 from "fastify-json5";
 import fastifyQS from "fastify-qs";
 import fastifyFormBody from "@fastify/formbody";
 import fastifyAcceptsSerializer from "@fastify/accepts-serializer";
-import YAML from 'yaml'
-import { XMLParser, XMLBuilder, XMLValidator } from "fast-xml-parser";
-import serverVersion from 'fastify-server-version';
-import fastifyZodValidate from 'fastify-zod-validate'
-
-
-
-
-
-import { PrismaClient } from "@prisma/client";
-import { zodValidateRouter } from "./controllers/auth.controller.js";
+import YAML from "yaml";
+import { XMLBuilder } from "fast-xml-parser";
+import serverVersion from "fastify-server-version";
+import fastifyZodValidate from "fastify-zod-validate";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -68,7 +60,7 @@ export type AppOptions = {
 	//   cert: string;
 	// };
 	// https: boolean;
-	logger: {};
+	// logger: {};
 } & Partial<AutoloadPluginOptions>;
 // Application SSL, for Nginx to use to ensure that this Fastify instance is trusted.
 // This SSL shouldn't effect clients though. That's NGINX's job. It'll use Cloudflare SSL instead.
@@ -80,16 +72,10 @@ const SSLFolder = "./ssl",
 		//   key: path.join(SSLFolder, 'key.pem'),
 		//   cert: path.join(SSLFolder, 'certificate.pem'),
 		// },
-		logger: {
-			level: "info",
-			transport: {
-				target: "pino-pretty",
-			},
-		},
 	};
 if (!fs.existsSync(SSLFolder) && process.env.NODE_ENV === "production") fs.mkdirSync(SSLFolder, { recursive: true });
 
-const fastify: FastifyPluginAsync<AppOptions> = async (app, _options): Promise<void> => {
+const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	// Let's not run this while testing/prod... It's done repeatedly and it's very very annoying.
 	if (process.env.NODE_APP_INSTANCE === "0" || (!process.env.NODE_APP_INSTANCE && process.env.NODE_ENV !== "test"))
 		await app.register(printRoutes);
@@ -117,53 +103,45 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app, _options): Promise<v
 		removeFilesFromBody: true,
 	});
 	await app.register(fastifyJSON5);
-	await app.register(serverVersion())
+	await app.register(serverVersion());
 	await app.register(fastify405, {
 		onUndefined: true,
 		onNull: true,
 		onEmptyArray: true,
 	});
-	const parser = new XMLParser({
-		ignoreAttributes: true,
-	});
 	const builder = new XMLBuilder({
 		ignoreAttributes: true,
 	});
-  // register the plugin
-  await app.register(fastifyZodValidate, {
-    // optional custom validation error handler
-    handleValidatorError: (error, data) => {
+	// register the plugin
+	await app.register(fastifyZodValidate, {
+		// optional custom validation error handler
+		handleValidatorError: error => {
+			return { error, statusCode: 422, message: "Unprocessable Entity - Zod Errors or something, man..." };
+		},
+	});
 
-      
-      return { error: error, statusCode: 422, message: "Unprocessable Entity - Zod Errors or something, man..." }
-    },
-  })
-
-  // register the router
-  await app.register(zodValidateRouter, { prefix: 'route' })
+	// register the router
 	await app.register(fastifyAcceptsSerializer, {
 		serializers: [
 			{
 				regex: /^(application\/yaml|text\/yaml)$/,
-				serializer: body => YAML.stringify(body)
+				serializer: body => YAML.stringify(body),
 			},
 			{
 				regex: /^(application\/xml|text\/xml)$/,
-				serializer: body => builder.build(body)
-			}
+				serializer: body => builder.build(body),
+			},
 		],
-		default: 'application/json' // MIME type used if Accept header don't match anything
-	})
-	
+		default: "application/json", // MIME type used if Accept header don't match anything
+	});
+
 	await app.register(fastifyRouteStats, {
-		printInterval: 30000, // milliseconds
+		printInterval: 30_000, // milliseconds
 		decoratorName: "performanceMarked", // decorator is set to true if a performace.mark was called for the request
 	});
-	if (process.env.FASTIFY_ANALYTICS_API_KEY) {
+	if (process.env.FASTIFY_ANALYTICS_API_KEY)
 		app.addHook("onRequest", fastifyAnalytics(process.env.FASTIFY_ANALYTICS_API_KEY));
-	}
-
-	app.addHook("onRequest", async (request, _reply) => {
+	app.addHook("onRequest", async request => {
 		// Some code
 		app.log.info(`Request from ${request.ip.trim() || "localhost"} from user agent ${request.userAgent.toString()}`);
 	});
@@ -189,6 +167,7 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app, _options): Promise<v
 	// This loads all plugins defined in plugins
 	// those should be support plugins that are reused
 	// through your application
+	// eslint-disable-next-line no-void
 	void app.register(AutoLoad, {
 		dir: join(__dirname, "plugins"),
 	});
@@ -200,9 +179,6 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app, _options): Promise<v
 	// 	throw error;
 	// }
 	await app.register(fastifyCookie);
-	await app.register(bootstrap, {
-		directory: join(__dirname, "controllers"),
-	});
 	/*
 Since fastify-print-routes uses an onRoute hook, you have to either:
 
@@ -214,7 +190,7 @@ See: https://www.fastify.io/docs/latest/Guides/Migration-Guide-V4/#synchronous-r
 };
 // Are we running under PM2 or similar?
 if (process.env.NODE_APP_INSTANCE) {
-	// @ts-ignore
+	// @ts-expect-error pm2
 	process.send("ready");
 }
 export default fastify;

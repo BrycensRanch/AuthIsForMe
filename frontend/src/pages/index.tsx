@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 // eslint-disable-next-line @next/next/no-document-import-in-page
 
-import { MinecraftSkinViewer } from "@/components/SkinViewer";
-import { Meta } from "@/layouts/Meta";
-import { Main } from "@/templates/Main";
+import { MinecraftSkinViewer } from '@/components/SkinViewer';
+import { Meta } from '@/layouts/Meta';
+import { Main } from '@/templates/Main';
 
 const Index = () => {
 	return (

@@ -139,7 +139,6 @@
 			"plugins": ["mocha"]
 		}
 	],
-	"noInlineConfig": true,
 	"ignorePatterns": ["node_modules/", "dist/", "coverage/", "build/", "public/"],
 	"plugins": ["@typescript-eslint", "no-one-time-vars", "unicorn", "prettier", "sonarjs"]
 }

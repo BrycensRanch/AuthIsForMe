@@ -1,11 +1,11 @@
-import { render, waitFor } from "@testing-library/react";
-import type { ReactNode } from "react";
+import { render, waitFor } from '@testing-library/react';
+import type { ReactNode } from 'react';
 
-import { Meta } from "./Meta";
+import { Meta } from './Meta';
 
 // Mock `next/head`: https://bradgarropy.com/blog/mocking-nextjs
 jest.mock(
-	"next/head",
+	'next/head',
 	() =>
 		// eslint-disable-next-line unicorn/consistent-function-scoping
 		function Head(properties: { children: ReactNode }) {
@@ -14,10 +14,10 @@ jest.mock(
 		}
 );
 
-describe("Meta component", () => {
-	describe("Render method", () => {
-		it("should a page title", async () => {
-			const title = "Random title";
+describe('Meta component', () => {
+	describe('Render method', () => {
+		it('should a page title', async () => {
+			const title = 'Random title';
 
 			render(<Meta title={title} description="Random description" />);
 

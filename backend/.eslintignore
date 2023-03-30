@@ -3,3 +3,6 @@ dist
 __taprc
 coverage
 prisma/generated
+prisma/seed.ts
+../node_modules
+**/node_modules

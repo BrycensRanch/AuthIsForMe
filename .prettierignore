@@ -6,4 +6,4 @@
 **/out/
 **/build/
 **/jest-coverage/
-**/prisma/generated/
+backend/prisma/generated

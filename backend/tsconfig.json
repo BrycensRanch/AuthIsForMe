@@ -12,6 +12,7 @@
 		"alwaysStrict": true,
 		"strictNullChecks": true,
 		"noUncheckedIndexedAccess": true,
+		"esModuleInterop": true,
 
 		"noImplicitAny": false,
 		"noImplicitReturns": true,
@@ -30,7 +31,6 @@
 		"sourceMap": true,
 		"emitDecoratorMetadata": true,
 
-		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
 		"allowJs": true,
 		"checkJs": false,
@@ -48,5 +48,5 @@
 		}
 	},
 	"include": ["./**/*"],
-	"exclude": ["node_modules", "dist", "coverage"]
+	"exclude": ["node_modules", "dist", "coverage", "prisma/generated", "prisma/json-schema"]
 }
