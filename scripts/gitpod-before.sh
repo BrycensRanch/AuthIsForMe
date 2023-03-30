@@ -1,19 +1,7 @@
 #!/bin/bash
-
-# Gitpod-enhanced has some ENHANCED issues.
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-nvm install 
-nvm use
-
+sh ./scripts/gitpod-env.sh
 
       [[ ! -z $WAKATIME_API_KEY_64  ]] 
-      cd ~ 
       echo $WAKATIME_API_KEY_64 | base64 -d > ~/.wakatime.cfg 
       mkdir -p ~/.ssh 
       [[ ! -z $SSH_PUBLIC_KEY  ]] 
@@ -28,9 +16,10 @@ nvm use
       git config --global --unset gpg.program 
       git config --global --unset core.editor 
       git config --global --unset safe.directory 
+      git config --global user.name BrycensRanch
+      git config --global user.email brycengranville@outlook.com
       [[ ! -z $GNUPG_KEY  ]] 
-      cd ~ 
-      rm -rf .gnupg 
+      rm -rf ~/.gnupg 
       gpg --verbose --batch --import <(echo $GNUPG_KEY|base64 -d) 
       echo 'pinentry-mode loopback' >> ~/.gnupg/gpg.conf 
       git config --global user.signingkey $GPG_KEY_ID 

@@ -17,7 +17,7 @@ github:
 tasks:
   - before: ./scripts/gitpod-before.sh
   # Init should work now
-  - init: pnpm install
+  - init: sh ./scripts/gitpod-env.sh && pnpm install
     command: cp .env.example .env && docker compose up db db2 cache -d && pnpm dev
 
 # security issues, unauthorised commits to our repository
