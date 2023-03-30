@@ -11,7 +11,7 @@
 		"plugin:unicorn/recommended",
 		"plugin:sonarjs/recommended"
 	],
-	"plugins": ["prettier", "sonarjs"],
+	"plugins": ["node", "prettier", "sonarjs"],
 	"rules": {
 		"prettier/prettier": [
 			"error",

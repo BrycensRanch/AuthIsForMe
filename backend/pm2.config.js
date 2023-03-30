@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 // const os = require('os');
 
 // const cpuCount = os.cpus().length;

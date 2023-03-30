@@ -32,16 +32,11 @@ import fastifyJSON5 from "fastify-json5";
 import fastifyQS from "fastify-qs";
 import fastifyFormBody from "@fastify/formbody";
 import fastifyAcceptsSerializer from "@fastify/accepts-serializer";
-import YAML from 'yaml'
-import { XMLParser, XMLBuilder, XMLValidator } from "fast-xml-parser";
-import serverVersion from 'fastify-server-version';
-import fastifyZodValidate from 'fastify-zod-validate'
+import YAML from "yaml";
+import { XMLParser, XMLBuilder } from "fast-xml-parser";
+import serverVersion from "fastify-server-version";
+import fastifyZodValidate from "fastify-zod-validate";
 
-
-
-
-
-import { PrismaClient } from "@prisma/client";
 import { zodValidateRouter } from "./controllers/auth.controller.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -50,7 +45,7 @@ expand(
 	loadMonoRepoEnvironment({
 		path: join(__dirname, "../.env"),
 		encoding: "utf8",
-	}) as DotenvExpandOptions
+	}) as DotenvExpandOptions,
 );
 
 expand(
@@ -58,7 +53,7 @@ expand(
 		path: "./.env",
 		encoding: "utf8",
 		defaults: "./.env.example", // This is new
-	})
+	}),
 );
 
 export type AppOptions = {
@@ -72,21 +67,21 @@ export type AppOptions = {
 } & Partial<AutoloadPluginOptions>;
 // Application SSL, for Nginx to use to ensure that this Fastify instance is trusted.
 // This SSL shouldn't effect clients though. That's NGINX's job. It'll use Cloudflare SSL instead.
-const SSLFolder = "./ssl",
-	// Pass --options via CLI arguments in command to enable these options.
-	options: AppOptions = {
-		// https: true,
-		// https: {
-		//   key: path.join(SSLFolder, 'key.pem'),
-		//   cert: path.join(SSLFolder, 'certificate.pem'),
-		// },
-		logger: {
-			level: "info",
-			transport: {
-				target: "pino-pretty",
-			},
+const SSLFolder = "./ssl";
+// Pass --options via CLI arguments in command to enable these options.
+const options: AppOptions = {
+	// https: true,
+	// https: {
+	//   key: path.join(SSLFolder, 'key.pem'),
+	//   cert: path.join(SSLFolder, 'certificate.pem'),
+	// },
+	logger: {
+		level: "info",
+		transport: {
+			target: "pino-pretty",
 		},
-	};
+	},
+};
 if (!fs.existsSync(SSLFolder) && process.env.NODE_ENV === "production") fs.mkdirSync(SSLFolder, { recursive: true });
 
 const fastify: FastifyPluginAsync<AppOptions> = async (app, _options): Promise<void> => {
@@ -117,7 +112,7 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app, _options): Promise<v
 		removeFilesFromBody: true,
 	});
 	await app.register(fastifyJSON5);
-	await app.register(serverVersion())
+	await app.register(serverVersion());
 	await app.register(fastify405, {
 		onUndefined: true,
 		onNull: true,
@@ -129,39 +124,36 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app, _options): Promise<v
 	const builder = new XMLBuilder({
 		ignoreAttributes: true,
 	});
-  // register the plugin
-  await app.register(fastifyZodValidate, {
-    // optional custom validation error handler
-    handleValidatorError: (error, data) => {
+	// register the plugin
+	await app.register(fastifyZodValidate, {
+		// optional custom validation error handler
+		handleValidatorError: (error, _data) => {
+			return { error, statusCode: 422, message: "Unprocessable Entity - Zod Errors or something, man..." };
+		},
+	});
 
-      
-      return { error: error, statusCode: 422, message: "Unprocessable Entity - Zod Errors or something, man..." }
-    },
-  })
-
-  // register the router
-  await app.register(zodValidateRouter, { prefix: 'route' })
+	// register the router
+	await app.register(zodValidateRouter, { prefix: "route" });
 	await app.register(fastifyAcceptsSerializer, {
 		serializers: [
 			{
 				regex: /^(application\/yaml|text\/yaml)$/,
-				serializer: body => YAML.stringify(body)
+				serializer: body => YAML.stringify(body),
 			},
 			{
 				regex: /^(application\/xml|text\/xml)$/,
-				serializer: body => builder.build(body)
-			}
+				serializer: body => builder.build(body),
+			},
 		],
-		default: 'application/json' // MIME type used if Accept header don't match anything
-	})
-	
+		default: "application/json", // MIME type used if Accept header don't match anything
+	});
+
 	await app.register(fastifyRouteStats, {
-		printInterval: 30000, // milliseconds
+		printInterval: 30_000, // milliseconds
 		decoratorName: "performanceMarked", // decorator is set to true if a performace.mark was called for the request
 	});
-	if (process.env.FASTIFY_ANALYTICS_API_KEY) {
+	if (process.env.FASTIFY_ANALYTICS_API_KEY)
 		app.addHook("onRequest", fastifyAnalytics(process.env.FASTIFY_ANALYTICS_API_KEY));
-	}
 
 	app.addHook("onRequest", async (request, _reply) => {
 		// Some code

@@ -22,7 +22,8 @@ async function readJsonFile(path: string): Promise<Record<string, ProjectReferen
 const start = async () => {
 	console.log(`Currently running in ${__dirname}`);
 	if (process.env.NODE_ENV !== "production") {
-		let name, version;
+		let name;
+		let version;
 		try {
 			const { name: packageName, version: packageVersion } = await readJsonFile("./package.json");
 			name = packageName;
@@ -31,37 +32,37 @@ const start = async () => {
 			name = process.env.npm_package_name || "auth-app";
 			version = process.env.npm_package_version || "Unknown";
 		}
-		const gitInfo = getRepoInfo(),
-			bannerText = `${figlet.textSync(`<${name}>`, {
-				font: "ANSI Shadow",
-				horizontalLayout: "default",
-				verticalLayout: "default",
-				width: 150,
-				whitespaceBreak: true,
-			})}\n`,
-			gitText = chalk.yellowBright.bold(
-				`Version: ${version}\n${chalk.blueBright(
-					`Commit: ${gitInfo.abbreviatedSha} (${gitInfo.lastTag === "null" ? "unknown" : gitInfo.lastTag})\nAuthor: ${
-						gitInfo.author
-					} (${gitInfo.authorDate})\nMessage: ${gitInfo.commitMessage}\nCommits since tag: ${
-						gitInfo.commitsSinceLastTag
-					}\n${chalk.blueBright(`Branch: ${gitInfo.branch}`)}`
-				)}`
-			),
-			warning =
-				process.env.NODE_ENV !== "production" || gitInfo.branch !== "master"
-					? chalk.redBright.bold("WARNING: This is a development build. Do not use in production.")
-					: undefined,
-			dockerWarning = chalk.redBright.bold(
-				"Psst! Make sure you've set up your .env file and launched the database and redis containers!\nYou can do this with the command: docker compose up -d db db2 cache"
-			),
-			contextInfo = chalk.yellowBright.bold(
-				`CI: ${ciDetect()}\nInside Docker?: ${isDocker() ? "YES!!" : "no🤡"}\nNODE_ENV: ${
-					process.env.NODE_ENV
-				}\nNODE_APP_INSTANCE: ${process.env.NODE_APP_INSTANCE}\nPORT: ${process.env.PORT}\nFASTIFY_PORT: ${
-					process.env.FASTIFY_PORT
-				}\n`
-			);
+		const gitInfo = getRepoInfo();
+		const bannerText = `${figlet.textSync(`<${name}>`, {
+			font: "ANSI Shadow",
+			horizontalLayout: "default",
+			verticalLayout: "default",
+			width: 150,
+			whitespaceBreak: true,
+		})}\n`;
+		const gitText = chalk.yellowBright.bold(
+			`Version: ${version}\n${chalk.blueBright(
+				`Commit: ${gitInfo.abbreviatedSha} (${gitInfo.lastTag === "null" ? "unknown" : gitInfo.lastTag})\nAuthor: ${
+					gitInfo.author
+				} (${gitInfo.authorDate})\nMessage: ${gitInfo.commitMessage}\nCommits since tag: ${
+					gitInfo.commitsSinceLastTag
+				}\n${chalk.blueBright(`Branch: ${gitInfo.branch}`)}`,
+			)}`,
+		);
+		const warning =
+			process.env.NODE_ENV !== "production" || gitInfo.branch !== "master"
+				? chalk.redBright.bold("WARNING: This is a development build. Do not use in production.")
+				: undefined;
+		const dockerWarning = chalk.redBright.bold(
+			"Psst! Make sure you've set up your .env file and launched the database and redis containers!\nYou can do this with the command: docker compose up -d db db2 cache",
+		);
+		const contextInfo = chalk.yellowBright.bold(
+			`CI: ${ciDetect()}\nInside Docker?: ${isDocker() ? "YES!!" : "no🤡"}\nNODE_ENV: ${
+				process.env.NODE_ENV
+			}\nNODE_APP_INSTANCE: ${process.env.NODE_APP_INSTANCE}\nPORT: ${process.env.PORT}\nFASTIFY_PORT: ${
+				process.env.FASTIFY_PORT
+			}\n`,
+		);
 		console.log(chalk.greenBright.bold.italic(bannerText));
 		console.log(gitText);
 		if (warning) console.log(warning);
@@ -113,7 +114,7 @@ const start = async () => {
 
 			if (process.env.NODE_APP_INSTANCE === "0" || (!process.env.NODE_APP_INSTANCE && process.env.NODE_ENV !== "test"))
 				server.log.info(`Server listening at ${address}`);
-		}
+		},
 	);
 };
 start();

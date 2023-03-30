@@ -1,4 +1,3 @@
-/* eslint-disable unused-imports/no-unused-vars */
 import type { FastifyGracefulExitOptions } from "@mgcrea/fastify-graceful-exit";
 import fastifyGracefulExit from "@mgcrea/fastify-graceful-exit";
 import fp from "fastify-plugin";

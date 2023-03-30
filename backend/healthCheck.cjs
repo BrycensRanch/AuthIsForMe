@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/no-process-exit */
 /* eslint-disable no-console */
 /*
  * Copyright 2018-2022 the original author or authors.
@@ -21,38 +22,31 @@
 
 // use Node.js 'http' integrated module,
 // even to avoid dependencies clash
-const http = require("node:http");
 
 const options = {
-	timeout: 5000, // 5 sec
-	log: true, // if enabled, write log to console
-};
-const url = process.argv[2] || `${process.env.BACKEND_SERVER || "http://localhost:8000"}/v1/health`;
-if (options.log === true) {
-	console.log(`GET call for healthcheck at: ${url} ...`);
-}
+		timeout: 5000, // 5 sec
+		log: true, // if enabled, write log to console
+	},
+	url = process.argv[2] || `${process.env.BACKEND_SERVER || "http://localhost:8000"}/v1/health`;
+if (options.log === true) console.log(`GET call for healthcheck at: ${url} ...`);
 
-const request = http.get(url, res => {
+const request = require("node:http").get(url, response => {
 	if (options.log === true) {
-		console.log(`statusCode: ${res.statusCode}`);
-		if (res.statusMessage) {
-			console.log(`statusMessage: '${res.statusMessage}'`);
-		}
+		console.log(`statusCode: ${response.statusCode}`);
+		if (response.statusMessage) console.log(`statusMessage: '${response.statusMessage}'`);
+
 		console.log("----------------");
 	}
-	if (res.statusCode === 200) {
-		process.exit(0);
-	} else {
-		process.exit(res.statusCode || 1);
-	}
+	if (response.statusCode === 200) process.exit(0);
+	else process.exit(response.statusCode || 1);
 });
+
 request.setTimeout(options.timeout);
 
-request.on("error", err => {
-	if (options.log === true) {
-		console.log(`error: ${err.message}`);
-	}
-	process.exit(err.statusCode || 1);
+request.on("error", error => {
+	if (options.log === true) console.log(`error: ${error.message}`);
+
+	process.exit(error.statusCode || 1);
 });
 
 request.end();

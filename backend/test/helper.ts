@@ -6,19 +6,19 @@ import fp from "fastify-plugin";
 import { afterAll, beforeAll, expect, jest, test } from "@jest/globals";
 import App from "../src/app";
 
-const config = {},
-	// Automatically build and tear down our instance
-	build = () => {
-		const app = Fastify();
-		void app.register(fp(App));
+const config = {};
+// Automatically build and tear down our instance
+const build = () => {
+	const app = Fastify();
+	void app.register(fp(App));
 
-		beforeAll(async () => {
-			await app.ready();
-		});
+	beforeAll(async () => {
+		await app.ready();
+	});
 
-		afterAll(() => app.close());
+	afterAll(() => app.close());
 
-		return app;
-	};
+	return app;
+};
 
 export { build, config };
