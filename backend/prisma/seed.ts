@@ -1,3 +1,5 @@
+/* eslint-disable no-await-in-loop unicorn/no-process-exit unicorn/prefer-top-level-await */
+
 import { PrismaClient, Prisma } from "@prisma/client";
 
 const prisma = new PrismaClient();

@@ -28,7 +28,6 @@
 		"migrate:postgres": "dotenv -e ../.env -- npx prisma migrate deploy"
 	},
 	"dependencies": {
-		"@fastify-decorators/simple-di": "4.0.0-next.4",
 		"@fastify/accepts": "^4.1.0",
 		"@fastify/accepts-serializer": "^5.2.0",
 		"@fastify/autoload": "^5.7.1",
@@ -44,8 +43,14 @@
 		"@fastify/swagger-ui": "^1.5.0",
 		"@immobiliarelabs/fastify-sentry": "^5.0.2",
 		"@mgcrea/fastify-graceful-exit": "^1.0.0",
+		"@nestjs/common": "^9.3.12",
+		"@nestjs/config": "^2.3.1",
+		"@nestjs/core": "^9.3.12",
+		"@nestjs/platform-fastify": "^9.3.12",
 		"@ory/kratos-client": "^0.11.1",
 		"@prisma/client": "^4.12.0",
+		"class-transformer": "^0.5.1",
+		"class-validator": "^0.14.0",
 		"dotenv-defaults": "^5.0.2",
 		"dotenv-expand": "^10.0.0",
 		"dotenv-mono": "^1.3.10",
@@ -54,7 +59,6 @@
 		"fastify-204": "^4.0.1",
 		"fastify-allow": "^1.2.2",
 		"fastify-cli": "^5.7.1",
-		"fastify-decorators": "^3.15.0",
 		"fastify-formidable": "^3.0.2",
 		"fastify-get-head": "^1.1.0",
 		"fastify-grant": "^5.4.8",
@@ -82,6 +86,9 @@
 	},
 	"devDependencies": {
 		"@jest/globals": "^29.5.0",
+		"@nestjs/cli": "^9.3.0",
+		"@nestjs/schematics": "^9.0.4",
+		"@nestjs/testing": "^9.3.12",
 		"@npmcli/ci-detect": "^3.0.2",
 		"@types/dotenv-defaults": "^2.0.1",
 		"@types/figlet": "^1.5.5",
@@ -128,6 +135,7 @@
 		"prisma-json-schema-generator": "^3.1.3",
 		"reflect-metadata": "^0.1.13",
 		"rimraf": "^4.4.1",
+		"source-map-support": "^0.5.21",
 		"ts-jest": "^29.0.5",
 		"ts-node": "^10.9.1",
 		"ts-node-dev": "^2.0.0"

@@ -28,13 +28,19 @@
 		// Configuration for TypeScript files
 		{
 			"files": ["**/*.ts", "**/*.tsx"],
-			"plugins": ["@typescript-eslint", "unused-imports", "tailwindcss", "simple-import-sort", "prettier"],
+			"plugins": [
+				"@typescript-eslint",
+				"unused-imports",
+				"tailwindcss",
+				"simple-import-sort",
+				"react-hooks",
+				"prettier"
+			],
 			"extends": [
 				"plugin:tailwindcss/recommended",
 				"airbnb-typescript",
 				"next/core-web-vitals",
-				"plugin:prettier/recommended",
-				"react-hooks"
+				"plugin:prettier/recommended"
 			],
 			"parserOptions": {
 				"project": "./tsconfig.json"

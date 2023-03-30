@@ -5,7 +5,7 @@
 	"private": true,
 	"main": "index.js",
 	"scripts": {
-    "prepare":"husky install",
+		"prepare": "husky install",
 		"start": "pnpm docker-start-other-services && concurrently -c \"auto\" \"npm run start -w=frontend\" \"npm:start:backend\"",
 		"build": "concurrently -c \"auto\" \"npm run build -w=backend\" \"npm run build -w=frontend\"",
 		"start:pm2": "concurrently -c \"auto\" \"npm:pm2:frontend\" \"npm:pm2:backend\" && pm2 save && pm2 logs --lines 1000",
@@ -46,7 +46,7 @@
 		"@testing-library/jest-dom": "^5.16.5",
 		"commitizen": "^4.3.0",
 		"commitlint-config-monorepo": "^2.0.2",
-		"concurrently": "^7.6.0",
+		"concurrently": "^8.0.1",
 		"execa": "^7.1.1",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.0",

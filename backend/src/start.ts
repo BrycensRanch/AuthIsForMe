@@ -1,4 +1,4 @@
-import { fastify } from "fastify";
+import { FastifyInstance } from "fastify";
 import { readFile } from "node:fs/promises";
 import { ProjectReference } from "typescript";
 import getRepoInfo from "git-repo-info";
@@ -10,7 +10,11 @@ import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import figlet from "figlet";
 import chalk from "chalk";
+import { ValidationPipe } from "@nestjs/common";
+import { NestFactory } from "@nestjs/core";
+import { FastifyAdapter, NestFastifyApplication } from "@nestjs/platform-fastify";
 import * as app from "./app.js";
+import { AppModule } from "./app.module.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -37,7 +41,7 @@ const start = async () => {
 			font: "ANSI Shadow",
 			horizontalLayout: "default",
 			verticalLayout: "default",
-			width: 150,
+			width: 80,
 			whitespaceBreak: true,
 		})}\n`;
 		const gitText = chalk.yellowBright.bold(
@@ -68,6 +72,7 @@ const start = async () => {
 		if (warning) console.log(warning);
 		console.log(dockerWarning);
 		console.log(contextInfo);
+		console.log(chalk.bgWhiteBright.greenBright("Now Nest.js based!"));
 	}
 	try {
 		const scanResult = scanEnv("../../.env.example");
@@ -79,20 +84,30 @@ const start = async () => {
 		console.error("failed to check if environment variables are missing, likely due to a missing .env.example");
 	}
 
-	const server = fastify({
-		logger: {
-			level: "info",
-			transport: {
-				target: "pino-pretty",
-			},
-		},
-		trustProxy: process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test",
-		// Required: Enable TLS
-		// https: true,
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// Optional: Enable HTTP/2
-		// http2: true
-	});
+	const nestApp = await NestFactory.create<NestFastifyApplication>(
+			AppModule,
+			new FastifyAdapter({
+				logger: {
+					level: "info",
+					transport: {
+						target: "pino-pretty",
+					},
+				},
+				trustProxy: process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test",
+				// Required: Enable TLS
+				// https: true,
+				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+				// Optional: Enable HTTP/2
+				// http2: true
+			})
+		),
+		server = nestApp.getHttpAdapter().getInstance() as FastifyInstance;
+	// Validate all endpoints
+	nestApp.useGlobalPipes(
+		new ValidationPipe({
+			whitelist: true,
+		})
+	);
 	await server.register(app.fastify);
 	// await server.register(fastifyTLS, {
 	// 	// Optional (default: ./key.pem)
