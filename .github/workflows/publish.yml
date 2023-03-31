@@ -12,7 +12,7 @@ on:
       - reopened
 
 jobs:
-  build-and-test-docker:
+  build-lint-test-docker:
     timeout-minutes: 30
     strategy:
       fail-fast: false
@@ -35,9 +35,6 @@ jobs:
           # Maps port 6379 on service container to the host
           - 6379:6379
     steps:
-      - name: 🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.11.0
-
       - name: Check out current repository
         uses: actions/checkout@v3
         with:
@@ -82,14 +79,14 @@ jobs:
       #     pnpm exec prisma db seed
       #   env:
       #     PRISMA_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/auth-backend?schema=public
-      - name: ⚡ Lint Backend Code
+      - name: ⚡ Ensure Backend Code is Linted
         working-directory: backend
         run: |
           pnpm lint:check
-      - name: 🏗️ Format Backend Code
+      - name: 🏗️ Ensure Backend Code is Formatted
         working-directory: backend
         run: |
-          pnpm format
+          pnpm format:check
       - name: Build Backend
         working-directory: backend
         run: |
@@ -103,6 +100,9 @@ jobs:
       - name: 🔬 Run Backend Integration Tests
         run: |
           echo "They don't exist LMFAOO"
+      - name: 🤖 Run Backend E2E Tests
+        run: |
+          echo "They don't exist LMFAOO"
       - uses: codecov/codecov-action@v3
         name: 📤 Upload Backend coverage to Codecov
         with:
@@ -111,14 +111,14 @@ jobs:
           fail_ci_if_error: true # optional (default = false)
           verbose: false # optional (default = false)
           working-directory: backend
-      - name: 🔃 Lint Frontend Code
+      - name: 🔃 Ensure Frontend Code is Linted
         working-directory: frontend
         run: |
           pnpm lint:check
-      - name: 🚧 Format Frontend Code
+      - name: 🚧 Ensure Frontend Code is Formatted
         working-directory: frontend
         run: |
-          pnpm format
+          pnpm format:check
       - name: Build Frontend
         working-directory: frontend
         run: |
@@ -178,7 +178,8 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: [build-and-test-docker]
+    needs: [build-lint-test-docker]
+    if: ${{ !github.event.act }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
