@@ -10,7 +10,7 @@ const deepReadDir = async dirPath =>
 		).map(async dirent => {
 			const path = join(dirPath, dirent.name);
 			return dirent.isDirectory() ? await deepReadDir(path) : path;
-		})
+		}),
 	);
 function execPromise(command) {
 	return new Promise(function (resolve, reject) {
@@ -30,7 +30,7 @@ deepReadDir(process.cwd()).then(async nonFlatFileArrays => {
 	console.log(files);
 	if (!files.toString().includes(".next")) {
 		console.log(
-			"Shame on you, you didn't compile builds before building this Dockerfile, enjoy the INCREASED image size and build times."
+			"Shame on you, you didn't compile builds before building this Dockerfile, enjoy the INCREASED image size and build times.",
 		);
 		const stdoutInstall = await execPromise(`NODE_ENV=development HUSKY=0 CYPRESS_INSTALL_BINARY=0 pnpm install`);
 		console.log(`stdout for Install step: ${stdoutInstall}`);

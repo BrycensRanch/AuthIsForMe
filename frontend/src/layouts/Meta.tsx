@@ -28,9 +28,10 @@ const Meta = (properties: IMetaProperties) => {
 				title={properties.title}
 				description={properties.description}
 				canonical={properties.canonical}
+				themeColor="#AAFF00"
 				openGraph={{
 					title: properties.title,
-					description: properties.description,
+					description: properties.description || AppConfig.description,
 					url: properties.canonical,
 					locale: AppConfig.locale,
 					site_name: AppConfig.site_name,

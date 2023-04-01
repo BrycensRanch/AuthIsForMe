@@ -145,6 +145,7 @@
 		"seed": "ts-node-esm ./prisma/seed.ts"
 	},
 	"keywords": [],
+	"packageManager": "pnpm@8.1.0",
 	"author": "",
 	"license": "MIT"
 }

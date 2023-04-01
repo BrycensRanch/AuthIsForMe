@@ -4,3 +4,13 @@ jest-coverage
 coverage
 .next 
 .swc
+**/dist/
+**/lib/
+**/node_modules/
+**/.next/
+**/coverage/
+**/out/
+**/build/
+**/jest-coverage/
+backend/prisma/generated
+**/pnpm-lock.yaml

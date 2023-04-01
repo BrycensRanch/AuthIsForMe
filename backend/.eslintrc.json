@@ -6,7 +6,6 @@
 	},
 	"extends": [
 		"eslint:recommended",
-		"plugin:prettier/recommended",
 		"plugin:import/recommended",
 		"plugin:sonarjs/recommended",
 		"plugin:unicorn/recommended"
@@ -102,7 +101,6 @@
 			"files": ["**/*.ts", "**/*.cts", "**/*.mts"],
 			"extends": [
 				"eslint:recommended",
-				"plugin:prettier/recommended",
 				"plugin:import/recommended",
 				"plugin:sonarjs/recommended",
 				"plugin:unicorn/recommended",
@@ -110,7 +108,7 @@
 				"plugin:@typescript-eslint/recommended",
 				"eslint-config-airbnb-base-typescript-prettier"
 			],
-			"plugins": ["@typescript-eslint", "unicorn", "sonarjs", "no-one-time-vars", "prettier"],
+			"plugins": ["@typescript-eslint", "unicorn", "sonarjs", "no-one-time-vars"],
 			"parser": "@typescript-eslint/parser",
 			"parserOptions": {
 				"ecmaVersion": "latest",
@@ -198,9 +196,9 @@
 		{
 			"files": ["test/unit/*.test.js", "test/unit/*.test.ts"],
 			"extends": ["plugin:mocha/recommended"],
-			"plugins": ["mocha", "sonarjs", "unicorn", "node", "prettier"]
+			"plugins": ["mocha", "sonarjs", "unicorn", "node"]
 		}
 	],
 	"ignorePatterns": ["node_modules/", "dist/", "coverage/", "build/", "public/"],
-	"plugins": ["node", "no-one-time-vars", "unicorn", "prettier", "sonarjs"]
+	"plugins": ["node", "no-one-time-vars", "unicorn", "sonarjs"]
 }

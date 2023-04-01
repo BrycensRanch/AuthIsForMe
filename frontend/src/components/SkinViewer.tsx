@@ -2,7 +2,7 @@
 
 import React from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { SkinViewer, WalkingAnimation } from "skinview3d";
+import { FlyingAnimation, SkinViewer } from "skinview3d";
 
 export const defaultProps = {
 	walk: false,
@@ -20,13 +20,13 @@ export type MinecraftSkinViewerProperties = {
 } & typeof defaultProps;
 
 export const MinecraftSkinViewer = ({
-	skin = "https://s.namemc.com/i/71587fdb702f359a.png",
+	skin = "http://localhost:3000/assets/images/71587fdb702f359a.png",
 	width = 300,
 	height = 300,
-	walk = false,
+	walk = true,
 	control = true,
-	background = "https://wallpapercave.com/wp/wp6005486.jpg",
-	cape = "https://livzmc.net/banner/?=paeieAeheGekpmec",
+	background = "http://localhost:3000/assets/images/wp6005486.webp",
+	cape = "http://localhost:3000/assets/images/cape.png",
 }: MinecraftSkinViewerProperties) => {
 	const canvas = React.useRef<HTMLCanvasElement>(null);
 
@@ -35,21 +35,24 @@ export const MinecraftSkinViewer = ({
 			skin,
 			width,
 			height,
-			background,
 			canvas: canvas.current as HTMLCanvasElement,
 			cape,
 		});
 
 		if (control) {
 			skinViewer.controls.enablePan = false;
-			skinViewer.controls.enableZoom = true;
+			skinViewer.controls.enableZoom = false;
 			skinViewer.controls.enableRotate = true;
 		}
+		skinViewer.autoRotate = true;
 
 		// Animations
-		if (walk) {
-			skinViewer.animation = new WalkingAnimation();
-		}
+		skinViewer.animation = new FlyingAnimation();
+		skinViewer.animation.speed = 3;
+		skinViewer.fov = 30;
+		// skinViewer.nameTag = new NameTagObject('OldestAnarchy', {
+		// 	textStyle: 'cyan',
+		// });
 		// const rotate = skinViewer.animations.add(skinview3d.RotatingAnimation);
 		// const run = skinViewer.animations.add(skinview3d.RunningAnimation);
 		// Set the speed of an animation

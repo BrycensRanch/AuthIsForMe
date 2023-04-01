@@ -5,10 +5,7 @@
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
 	"customizations": {
 		"vscode": {
-			"extensions": [
-				"dbaeumer.vscode-eslint",
-				"rvest.vs-code-prettier-eslint"
-			]
+			"extensions": ["dbaeumer.vscode-eslint", "rvest.vs-code-prettier-eslint"]
 		}
 	}
 }

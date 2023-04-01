@@ -5,21 +5,9 @@
 	},
 	"$schema": "https://json.schemastore.org/eslintrc",
 	// Configuration for JavaScript files
-	"extends": [
-		"next/core-web-vitals",
-		"plugin:prettier/recommended",
-		"plugin:unicorn/recommended",
-		"plugin:sonarjs/recommended"
-	],
-	"plugins": ["node", "prettier", "sonarjs"],
+	"extends": ["next/core-web-vitals", "plugin:unicorn/recommended", "plugin:sonarjs/recommended"],
+	"plugins": ["node", "sonarjs"],
 	"rules": {
-		"prettier/prettier": [
-			"error",
-			{
-				"singleQuote": false,
-				"endOfLine": "lf"
-			}
-		],
 		"unicorn/prefer-module": "off",
 		"unicorn/prefer-top-level-await": "off",
 		"unicorn/filename-case": "off"
@@ -28,32 +16,14 @@
 		// Configuration for TypeScript files
 		{
 			"files": ["**/*.ts", "**/*.tsx"],
-			"plugins": [
-				"@typescript-eslint",
-				"unused-imports",
-				"tailwindcss",
-				"simple-import-sort",
-				"react-hooks",
-				"prettier"
-			],
-			"extends": [
-				"plugin:tailwindcss/recommended",
-				"airbnb-typescript",
-				"next/core-web-vitals",
-				"plugin:prettier/recommended"
-			],
+			"plugins": ["@typescript-eslint", "unused-imports", "tailwindcss", "simple-import-sort", "react-hooks"],
+			"extends": ["plugin:tailwindcss/recommended", "airbnb-typescript", "next/core-web-vitals"],
 			"parserOptions": {
 				"project": "./tsconfig.json"
 			},
 			"rules": {
-				"prettier/prettier": [
-					"error",
-					{
-						"singleQuote": true,
-						"endOfLine": "auto"
-					}
-				],
 				"no-console": "off",
+				"@typescript-eslint/indent": "off", // Avoid conflict rule between Eslint and Prettier
 				"react/no-unescaped-entities": "off",
 				"react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
 				"react/require-default-props": "off", // Allow non-defined react props as undefined
