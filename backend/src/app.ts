@@ -6,7 +6,7 @@ import type { AutoloadPluginOptions } from "@fastify/autoload";
 import AutoLoad from "@fastify/autoload";
 import cors from "@fastify/cors";
 import helmet from "@fastify/helmet";
-import type { FastifyPluginAsync } from "fastify";
+import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify";
 // import inputValidation from 'openapi-validator-middleware';
 import { existsSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
@@ -35,6 +35,10 @@ import YAML from "yaml";
 import { XMLBuilder } from "fast-xml-parser";
 import serverVersion from "fastify-server-version";
 import fastifyZodValidate from "fastify-zod-validate";
+import fjwt from "@fastify/jwt";
+import fastifyETag from "@fastify/etag";
+// import fastifyViews from "@fastify/view";
+import * as eta from "eta";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -98,12 +102,28 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	await app.register(fastifyXML);
 	await app.register(fastifyFormBody);
 	await app.register(fastifyQS);
+	await app.register(fastifyETag);
+	// await app.register(fastifyViews, {
+	// 	engine: { eta },
+	// });
 	await app.register(fastifyFormidable, {
 		addContentTypeParser: true,
 		removeFilesFromBody: true,
 	});
 	await app.register(fastifyJSON5);
 	await app.register(serverVersion());
+	await app.register(fjwt, {
+		secret: "supersecret",
+	});
+
+	app.decorate("authenticate", async (request: FastifyRequest, reply: FastifyReply) => {
+		try {
+			await request.jwtVerify();
+			return;
+		} catch (error) {
+			reply.send(error);
+		}
+	});
 	await app.register(fastify405, {
 		onUndefined: true,
 		onNull: true,

@@ -18,6 +18,8 @@
 		"christian-kohler.path-intellisense",
 		"christian-kohler.npm-intellisense",
 		"sndst00m.markdown-github-dark-pack",
-		"cschleiden.vscode-github-actions"
+		"cschleiden.vscode-github-actions",
+		"rangav.vscode-thunder-client",
+		"digitalbrainstem.javascript-ejs-support"
 	]
 }

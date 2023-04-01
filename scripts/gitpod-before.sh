@@ -1,5 +1,5 @@
 #!/bin/bash
-sh ./scripts/gitpod-env.sh
+source ./scripts/gitpod-env.sh
 
       [[ ! -z $WAKATIME_API_KEY_64  ]] 
       echo $WAKATIME_API_KEY_64 | base64 -d > ~/.wakatime.cfg 

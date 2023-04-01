@@ -6,13 +6,14 @@ import ciDetect from "@npmcli/ci-detect";
 import isDocker from "is-docker";
 import scanEnv from "scan-env";
 
-import { dirname } from "node:path";
+import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import figlet from "figlet";
 import chalk from "chalk";
 import { ValidationPipe } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
 import { FastifyAdapter, NestFastifyApplication } from "@nestjs/platform-fastify";
+import * as eta from "eta";
 import * as app from "./app.js";
 import { AppModule } from "./app.module.js";
 
@@ -101,6 +102,14 @@ const start = async () => {
 			// http2: true
 		}),
 	);
+	nestApp.useStaticAssets({ root: join(__dirname, "..", "public") });
+	nestApp.enableVersioning();
+	// nestApp.useStaticAssets({
+	// 	root: join(__dirname, "..", "views"),
+	// });
+	// nestApp.setViewEngine({
+	// 	engine: eta as never,
+	// });
 	const server = nestApp.getHttpAdapter().getInstance() as FastifyInstance;
 	// Validate all endpoints
 	nestApp.useGlobalPipes(
