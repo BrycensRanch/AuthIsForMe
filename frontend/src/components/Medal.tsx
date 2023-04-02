@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
-import { useState } from "react";
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 type IMedalProperties = {
 	initialValue?: boolean;
@@ -8,7 +8,7 @@ type IMedalProperties = {
 };
 
 const delQuery = (asPath: string) => {
-	return asPath.split("?")[0];
+	return asPath.split('?')[0];
 };
 
 const Modal = (properties: IMedalProperties) => {

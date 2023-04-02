@@ -73,7 +73,6 @@ const BuildingConfig = ConfigBuilder.defineConfig({
 	images: {
 		formats: ["image/avif", "image/webp"],
 	},
-	headers,
 	// Whether or not bundle analyzer is enabled.
 	enabled: process.env.ANALYZE === "true",
 	// Requires SWC from NextJS
@@ -112,17 +111,17 @@ const BuildingConfig = ConfigBuilder.defineConfig({
 	// Helps to identify unsafe lifecycles, legacy API usage, and a number of other features.
 	reactStrictMode: true,
 	// Copies only the necessary files for a production deployment including select files in node_modules.
-	// output: 'standalone',
+	output: 'standalone',
 	//  Use React while developing and only replace it with Preact in production.
-	// async headers() {
-	//   return [
-	//     {
-	//       // Apply these headers to all routes in your application.
-	//       source: '/:path*',
-	//       headers,
-	//     },
-	//   ];
-	// },
+	async headers() {
+	  return [
+	    {
+	      // Apply these headers to all routes in your application.
+	      source: '/:path*',
+	      headers,
+	    },
+	  ];
+	},
 
 	sentry: {
 		// Use `hidden-source-map` rather than `source-map` as the Webpack `devtool`
