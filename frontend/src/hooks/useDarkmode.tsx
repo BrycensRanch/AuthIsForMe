@@ -2,7 +2,11 @@ import { useLayoutEffect, useState } from 'react';
 import usePrefersColorScheme from 'use-prefers-color-scheme';
 
 const useDarkMode = () => {
-  		let prefersColorScheme = usePrefersColorScheme();
+  let prefersColorScheme = 'dark';
+  if (typeof window !== 'undefined' && window.matchMedia !== undefined) {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    prefersColorScheme = usePrefersColorScheme(); 
+  }
 	if (prefersColorScheme === 'no-preference') prefersColorScheme = 'dark';
   const [theme, setTheme] = useState<string>(
     typeof window === 'undefined' ? prefersColorScheme : localStorage.theme as string

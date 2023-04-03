@@ -1,11 +1,16 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 // eslint-disable-next-line @next/next/no-document-import-in-page
 
-import { MinecraftSkinViewer } from '@/components/SkinViewer';
+import dynamic from 'next/dynamic';
+
 import { Meta } from '@/layouts/Meta';
 import { Main } from '@/templates/Main';
 
 const Index = () => {
+  const MinecraftSkinViewer = dynamic(() => import('../components/SkinViewer').then((comp) => comp.MinecraftSkinViewer), {
+    loading: () => <p>Loading...</p>,
+  ssr: false,
+});
 	return (
 		<Main
 			meta={
@@ -16,7 +21,7 @@ const Index = () => {
 			}
 		>
 			<section className="h-screen bg-white dark:bg-gray-900">
-				<div className="mx-auto max-w-screen-xl py-8 px-4 text-center lg:py-16">
+				<div className="mx-auto max-w-screen-xl px-4 py-8 text-center lg:py-16">
 					<h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
 						We invest in you.
 					</h1>
@@ -24,15 +29,15 @@ const Index = () => {
 						Your one stop shop for all your Minecraft account needs. Easily link all your favorite services to your
 						Minecraft/Mojang/Xbox Live account and streamline your online experience.
 					</p>
-					<div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+					<div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
 						<a
 							href="#"
-							className="inline-flex items-center justify-center rounded-lg bg-blue-700 py-3 px-5 text-center text-base font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+							className="inline-flex items-center justify-center rounded-lg bg-blue-700 px-5 py-3 text-center text-base font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
 						>
 							Get started
 							<svg
 								aria-hidden="true"
-								className="ml-2 -mr-1 h-5 w-5"
+								className="-mr-1 ml-2 h-5 w-5"
 								fill="currentColor"
 								viewBox="0 0 20 20"
 								xmlns="http://www.w3.org/2000/svg"
@@ -46,19 +51,20 @@ const Index = () => {
 						</a>
 						<a
 							href="#"
-							className="inline-flex items-center justify-center rounded-lg border border-gray-300 py-3 px-5 text-center text-base font-medium text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+							className="inline-flex items-center justify-center rounded-lg border border-gray-300 px-5 py-3 text-center text-base font-medium text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
 						>
 							Learn more
 						</a>
 					</div>
 				</div>
-			</section>
-			<main className="mx-auto max-w-7xl py-6 px-4">
+      </section>
+      <section className='w-screen bg-white dark:bg-gray-900'>
+			<main className="mx-auto max-w-7xl px-4 py-6 ">
 				<div className="mb-10">
-					<h1 className="text-4xl font-extrabold text-gray-900">
+					<h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">
 						Link your Minecraft account to YouTube, Twitch, Discord, and more
 					</h1>
-					<p className="mt-4 text-xl text-gray-600">
+					<p className="mt-4 text-xl text-gray-600 dark:text-gray-400">
 						AuthIsForMe makes it easy to link your Minecraft account to all of your favorite services, so you can focus
 						on playing the game you love.
 					</p>
@@ -70,9 +76,9 @@ const Index = () => {
 							We take all the hassle out of integrating with multiple services and make it easy for you to get started.
 						</p>
 					</div>
-					<div className="rounded-lg bg-white px-6 py-8 shadow-lg">
-						<div className="mb-4 text-3xl font-bold text-gray-900">Bedrock Support</div>
-						<p className="text-lg text-gray-600">
+					<div className="rounded-lg bg-gray-900 px-6 py-8 shadow-lg dark:bg-white">
+						<div className="mb-4 text-3xl font-bold text-white dark:text-gray-900">Bedrock Support</div>
+						<p className="text-lg text-gray-200 dark:text-gray-600">
 							Our service now supports bedrock players and Geyser! We also have added support for Microsoft specific
 							APIs for Xbox Live accounts.
 						</p>
@@ -99,9 +105,10 @@ const Index = () => {
 							All of the code relating to our service is open source, even our frontend code!
 						</p>
 					</div>
-				</div>
-				<MinecraftSkinViewer />
-
+        </div>
+ 
+        <MinecraftSkinViewer walk={false} control={false} />
+        
 				<h2>Providing seamless integration with various platforms.</h2>
 				<p>
 					With AuthIsForMe, you can easily link your various platforms to your Minecraft account and you're done.
@@ -150,7 +157,9 @@ const Index = () => {
 					a whole. As such, I've gone out of my way to accept multiple data formats in and out of the API. I've also
 					worked hard to try and follow the best practices for API design and HTTP semantics.
 				</p>
-			</main>
+        
+        </main>
+      </section>
 		</Main>
 	);
 };

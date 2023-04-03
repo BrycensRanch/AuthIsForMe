@@ -3,7 +3,8 @@
 	"compilerOptions": {
 		"target": "es5",
 		"lib": ["es5", "dom"],
-		"isolatedModules": false
+		"isolatedModules": false,
+		"sourceMap": false
 	},
 	"include": ["**/*.ts", "**/*.js"],
 	"exclude": []

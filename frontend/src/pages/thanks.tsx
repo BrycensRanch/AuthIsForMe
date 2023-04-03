@@ -97,7 +97,8 @@ const Thanks = () => {
 	}, []);
 	return (
 		<Main meta={<Meta title="Thanks" description={''} />}>
-			<main className="mx-auto max-w-7xl py-6 px-4">
+      <section className="w-screen bg-white px-4 py-6 dark:bg-gray-900">
+			<main className="mx-auto max-w-7xl px-4 py-6">
 				<h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
 					Our service wouldn't be possible without:
 				</h1>
@@ -126,7 +127,7 @@ const Thanks = () => {
 					wrapperClass="yt-lite h-full w-full rounded-lg shadow-xl dark:shadow-gray-800" // Default as "yt-lite" for the div wrapping the area, the most important class and needs extra attention, please refer to LiteYouTubeEmbed.css for a reference.
 				/>
 				<br />
-				<p className="ml-2 font-semibold">
+				<p className="ml-2 font-semibold dark:text-gray-500">
 					The above video is loaded in a way that does not use cookies. This is to protect your privacy. If you would
 					like to watch the video with cookies enabled, please click{' '}
 					<a href="https://www.youtube.com/watch?v=I14b-C67EXY">here</a>.
@@ -140,10 +141,10 @@ const Thanks = () => {
 					<span className="font-medium">Danger, Will Robinson!</span> According to our tests, GitHub's API tracks your
 					IP address and cookies when you load this page. Due to us needing to fetch data from our dependency's repos
 					in-order to give you an accurate overview. Please consider viewing GitHub's privacy policy{' '}
-					<a href="https://github.com/privacy/cookies">here</a>.
+					<a href="https://github.com/privacy/cookies" className='font-semibold'>here</a>.
 				</div>
 				<hr className="my-4" />
-				<p className="ml-2 font-semibold">
+				<p className="ml-2 font-semibold dark:text-gray-200">
 					Please keep in mind that this page uses the <a href="https://registry.npmjs.org">NPM Registry</a> to fetch the
 					licenses of the dependencies. This means that the licenses may not be accurate. If you find any inaccuracies,
 					it is not our fault. Please report them to the package author. Furthermore, licenses are not shown on this
@@ -151,9 +152,9 @@ const Thanks = () => {
 					can see the types of licenses <a href="https://spdx.org/licenses/">here</a>.
 				</p>
 				<h1 className="text-5xl font-extrabold dark:text-white">
-					<small className="ml-2 font-semibold text-gray-500 dark:text-gray-400">Production Dependencies</small>
+					<small className="font-semibold text-gray-500 dark:text-white">Production Dependencies</small>
 				</h1>
-				<p className="ml-2 font-semibold">
+				<p className="my-5 font-semibold dark:text-white">
 					Dependencies likely used in production. However, this is not a guarantee. You should always check the source
 					code
 				</p>
@@ -169,9 +170,9 @@ const Thanks = () => {
 					);
 				})}
 				<h1 className="text-5xl font-extrabold dark:text-white">
-					<small className="ml-2 font-semibold text-gray-500 dark:text-gray-400">Development Dependencies</small>
+					<small className="font-semibold text-gray-500 dark:text-white">Development Dependencies</small>
 				</h1>
-				<p className="ml-2 font-semibold">
+				<p className="my-5 font-semibold dark:text-white">
 					Dependencies likely used in development. However, this is not a guarantee. You should always check the source
 					code
 				</p>
@@ -186,16 +187,19 @@ const Thanks = () => {
 					);
 				})}
 				<h1 className="text-5xl font-extrabold dark:text-white">
-					<small className="ml-2 font-semibold text-gray-500 dark:text-gray-400">Licenses</small>
-				</h1>
-				<p className="ml-2 font-semibold">
+					<small className="ml-2 font-semibold text-gray-500 dark:text-white">Licenses</small>
+          </h1>
+				<p className="my-5 ml-2 font-semibold dark:text-white">
 					Of course, this doesn't include transitive or nested dependencies. You'll have to look into each dependency's
 					dependencies for that. FOSS FOREVER!! 💘
 				</p>
+        <hr className="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700" />
+
 				{licenses.map(license => {
-					return <p key={license as Key}>{license}</p>;
-				})}
-			</main>
+					return <p key={license as Key} className="ml-2 dark:text-white">{license}</p>;
+        })}
+          </main>
+			</section>
 		</Main>
 	);
 };

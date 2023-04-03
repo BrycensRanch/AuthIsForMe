@@ -19,7 +19,7 @@
 		"allowUnreachableCode": false,
 		"noFallthroughCasesInSwitch": true,
 		// Dependencies are very upset about us targetting ES5
-		"target": "ESNext",
+		"target": "es5",
 		"outDir": "out",
 		"declaration": true,
 		"sourceMap": true,
@@ -39,5 +39,5 @@
 		}
 	},
 	"exclude": ["./out/**/*", "./.next/**/*", "./.swc/**/*", "./node_modules/**/*", "cypress/**/*.ts", "cypress/**/*.js"],
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.setup.ts", "jest.config.ts", "jest.config.cts"]
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.setup.ts", "jest.config.ts"]
 }

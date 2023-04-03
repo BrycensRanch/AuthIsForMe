@@ -11,7 +11,7 @@ require(`dotenv-defaults`).config({
 	defaults: "./.env.example", // This is new
 });
 
-const { ConfigBuilder } = require("next-recompose-plugins");
+const { Config } = require("next-recompose-plugins");
 
 // const BrotliPlugin = require('brotli-webpack-plugin');
 
@@ -61,7 +61,7 @@ const headers = [
 		value: ContentSecurityPolicy.replace(/\s{2,}/g, " ").trim(),
 	},
 ];
-const BuildingConfig = ConfigBuilder.defineConfig({
+const BuildingConfig = new Config({
 	// NextJS Eslint setup, see https://nextjs.org/docs/basic-features/eslint
 	eslint: {
 		dirs: ["."],
@@ -71,6 +71,7 @@ const BuildingConfig = ConfigBuilder.defineConfig({
 	// I'm not entirely sure what this does, but I'm not gonna touch it.
 	trailingSlash: true,
 	images: {
+		domains: ['crafatar.com', 'namemc.com', 'livzmc.net', 'tydiumcraft.net'],
 		formats: ["image/avif", "image/webp"],
 	},
 	// Whether or not bundle analyzer is enabled.
@@ -81,25 +82,6 @@ const BuildingConfig = ConfigBuilder.defineConfig({
 	compiler: {
 		removeConsole: process.env.NODE_ENV === "production",
 		exclude: ["error"],
-	},
-	experimental: {
-		swcPlugins: [
-			[
-				"swc-plugin-coverage-instrument",
-				{
-					produceSourceMap: true,
-					preserveComments: true,
-					instrumentLog: {
-						// Currently there aren't logs other than spans.
-						// Enabling >= info can display span traces.
-						level: "trace",
-						// Emits spans along with any logs
-						// Only effective if level sets higher than info.
-						enableTrace: true,
-					},
-				},
-			],
-		],
 	},
 	// Minify files in production. Shouldn't effect Sentry error logging.
 	// Requires testing
@@ -130,11 +112,11 @@ const BuildingConfig = ConfigBuilder.defineConfig({
 		// https://webpack.js.org/configuration/devtool/ and
 		// https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/#use-hidden-source-map
 		// for more information.
-		hideSourceMaps: true,
+		hideSourceMaps: false,
 	},
 });
 if (process.env.ANALYZE === "true") {
-	BuildingConfig.applyPlugin((phase, arguments_, config) => {
+	BuildingConfig.applyPlugin((phase, config) => {
 		// enhance the config with the desired plugin and return it back
 		return require("@next/bundle-analyzer")({
 			enabled: process.env.ANALYZE === "true",
@@ -143,7 +125,7 @@ if (process.env.ANALYZE === "true") {
 	});
 }
 if (process.env.NODE_ENV === "production") {
-	BuildingConfig.applyPlugin((phase, arguments_, config) => {
+	BuildingConfig.applyPlugin((phase, config) => {
 		// enhance the config with the desired plugin and return it back
 		return require("@sentry/nextjs").withSentryConfig({
 			// Additional config options for the Sentry Webpack plugin. Keep in mind that
@@ -151,7 +133,7 @@ if (process.env.NODE_ENV === "production") {
 			// recommended:
 			//   release, url, org, project, authToken, configFile, stripPrefix,
 			//   urlPrefix, include, ignore
-			hideSourceMaps: true,
+			hideSourceMaps: false,
 			silent: true, // Suppresses all logs
 			// For all available options, see:
 			// https://github.com/getsentry/sentry-webpack-plugin#options.
@@ -159,6 +141,4 @@ if (process.env.NODE_ENV === "production") {
 	});
 }
 BuildingConfig.build();
-
-BuildingConfig.configFactory = undefined;
-module.exports = BuildingConfig;
+module.exports = Object.freeze(BuildingConfig);

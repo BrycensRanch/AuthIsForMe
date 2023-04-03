@@ -2,7 +2,7 @@
 
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { FlyingAnimation, SkinViewer } from 'skinview3d';
+import { SkinViewer, WalkingAnimation } from 'skinview3d';
 
 export const defaultProps = {
 	walk: false,
@@ -47,9 +47,9 @@ export const MinecraftSkinViewer = ({
 		skinViewer.autoRotate = true;
 
 		// Animations
-		skinViewer.animation = new FlyingAnimation();
-		skinViewer.animation.speed = 3;
-		skinViewer.fov = 30;
+		skinViewer.animation = new WalkingAnimation();
+		skinViewer.animation.speed = 20;
+		skinViewer.fov = 80;
 		// skinViewer.nameTag = new NameTagObject('OldestAnarchy', {
 		// 	textStyle: 'cyan',
 		// });

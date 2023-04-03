@@ -1,47 +1,58 @@
+
 import useDarkMode from '../hooks/useDarkmode';
+
 
 
 const ColorPicker = () => {
     const [colorTheme, setTheme] = useDarkMode();
 
-  return (
-       <div className="h-screen w-screen bg-indigo-200 p-10 dark:bg-gray-900">
-
-       {colorTheme === 'light' ? (
-        <svg
-          onClick={() => setTheme('light')}
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-10 w-10  text-gray-200"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-          />
-        </svg>
-      ) : (
-        <svg
-          onClick={() => setTheme('dark')}
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-10 w-10 text-indigo-900"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-          />
-        </svg>
-      )}
-    </div>
-  );
+  return <div>
+    <a
+      id="theme-switcher"
+      className="block w-full whitespace-nowrap bg-transparent px-3 py-2 text-sm font-normal text-gray-700 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none active:text-zinc-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100 dark:hover:bg-gray-600 focus:dark:bg-gray-600"
+      onClick={() => setTheme(colorTheme === 'dark' ? 'light' : 'dark')}
+      data-theme="light">
+      <div className="pointer-events-none">
+        <div
+          className="inline-block w-[24px] text-center"
+          data-theme-icon="light">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="inline-block h-6 w-6">
+            <path
+              d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+          </svg>
+        </div>
+        <span data-theme-name="light">Light</span>
+      </div>
+    </a>
+    <a
+      id="theme-switcher"
+      className="block w-full whitespace-nowrap bg-transparent px-3 py-2 text-sm font-normal text-gray-700 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none active:text-zinc-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100 dark:hover:bg-gray-600 focus:dark:bg-gray-600"
+      onClick={() => setTheme(colorTheme === 'dark' ? 'light' : 'dark')}
+      data-theme="dark"
+      data-te-dropdown-item-ref>
+      <div className="pointer-events-none">
+        <div
+          className="inline-block w-[24px] text-center"
+          data-theme-icon="dark">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="inline-block h-6 w-6">
+            <path
+              fillRule="evenodd"
+              d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+              clipRule="evenodd" />
+          </svg>
+        </div>
+        <span data-theme-name="dark">Dark</span>
+      </div>
+    </a>
+  </div>;
 }; 
 
 export default ColorPicker;

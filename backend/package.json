@@ -6,7 +6,7 @@
 	"main": "dist/app.js",
 	"type": "module",
 	"scripts": {
-		"prepare": "husky install && prisma generate",
+		"prepare": "prisma generate",
 		"test": "cross-env NODE_ENV=test jest",
 		"test:jest": "pnpm test",
 		"test:watch": "cross-env NODE_ENV=test jest --watch",

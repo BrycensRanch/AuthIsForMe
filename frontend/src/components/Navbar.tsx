@@ -2,6 +2,8 @@ import { Disclosure } from '@headlessui/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+import ColorPicker from './colorPicker';
+
 
 const Navbar = () => {
   const router = useRouter();
@@ -61,7 +63,8 @@ const Navbar = () => {
 						</div>
 					</div>
 					<div className="hidden md:block">
-						<div className="ml-4 flex items-center md:ml-6">
+            <div className="ml-4 flex items-center md:ml-6">
+              <ColorPicker />
 							<button
 								className="rounded-full border-2 border-transparent p-1 text-gray-400 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none"
 								aria-label="Notifications"

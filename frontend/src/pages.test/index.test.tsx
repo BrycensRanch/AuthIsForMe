@@ -42,28 +42,10 @@ describe('Index page', () => {
 			render(<Index />);
 
 			const heading = screen.getByRole('heading', {
-				name: /Rooms:/,
+				name: /We invest in you\./,
 			});
 			await waitFor(() => {
 				expect(heading).toBeInTheDocument();
-			});
-		});
-
-		it('should have room notification', async () => {
-			render(<Index />);
-
-			const rooms = screen.getByTestId('roomNotification');
-			await waitFor(() => {
-				expect(rooms).toBeInTheDocument();
-			});
-		});
-
-		it('should have loading status', async () => {
-			render(<Index />);
-
-			const loadingStatus = screen.getByTestId('isLoading');
-			await waitFor(() => {
-				expect(loadingStatus).toHaveTextContent('Loading...');
 			});
 		});
 	});
