@@ -28,7 +28,6 @@ const jestConfig: JestConfigWithTsJest = {
 		"^@/(.*)$": "<rootDir>/src/$1",
 		"^@/public/(.*)$": "<rootDir>/public/$1",
 	},
-	verbose: true,
 	transform: {
 		// ".(t|j)s$": "babel-jest",
 		// '^.+\\.[tj]sx?$' to process js/ts with `ts-jest`

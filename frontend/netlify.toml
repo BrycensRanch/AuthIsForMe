@@ -1,6 +1,6 @@
 [build]
   publish = "out"
-  command = "npm run build"
+  command = "npm run export"
 
 [build.environment]
   NODE_ENV = "production"

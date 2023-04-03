@@ -1,4 +1,5 @@
 import '../styles/global.css';
+import '../styles/satoshi.css';
 
 import type { AppProps } from 'next/app';
 import NextNProgress from 'nextjs-progressbar';

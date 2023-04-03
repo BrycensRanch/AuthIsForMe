@@ -70,7 +70,10 @@
 		"flowbite": "^1.6.4",
 		"flowbite-react": "^0.4.2",
 		"http-proxy": "^1.18.1",
+		"jsvectormap": "^1.5.1",
 		"ky": "^0.33.3",
+		"localforage": "^1.10.0",
+		"match-sorter": "^6.3.1",
 		"next": "^13.2.4",
 		"next-recompose-plugins": "^2.0.0",
 		"next-seo": "^6.0.0",
@@ -84,6 +87,7 @@
 		"react-sortablejs": "^6.1.4",
 		"semver": "^7.3.8",
 		"skinview3d": "3.0.0-alpha.1",
+		"sort-by": "^1.2.0",
 		"svgmap": "^2.10.1",
 		"three": "^0.151.2",
 		"use-prefers-color-scheme": "^1.1.3"
