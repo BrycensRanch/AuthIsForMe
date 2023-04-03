@@ -1,4 +1,4 @@
-import crypto from "crypto";
+import crypto from "node:crypto";
 
 /**
  * When the user register this will generate a random salt to use to hash the password provided
@@ -6,11 +6,9 @@ import crypto from "crypto";
  * @returns hash, salt
  */
 export function hashPassword(password: string) {
-  const salt = crypto.randomBytes(32).toString("hex");
-  const hash = crypto
-    .pbkdf2Sync(password, salt, 100000, 64, "sha512")
-    .toString("hex");
-  return { hash, salt };
+	const salt = crypto.randomBytes(32).toString("hex");
+
+	return { hash: crypto.pbkdf2Sync(password, salt, 100_000, 64, "sha512").toString("hex"), salt };
 }
 
 //
@@ -23,16 +21,13 @@ export function hashPassword(password: string) {
  * @returns Boolean
  */
 export function isPasswordCorrect({
-  candidatePassword,
-  salt,
-  hash,
+	candidatePassword,
+	salt,
+	hash,
 }: {
-  candidatePassword: string;
-  salt: string;
-  hash: string;
+	candidatePassword: string;
+	salt: string;
+	hash: string;
 }) {
-  const candidateHash = crypto
-    .pbkdf2Sync(candidatePassword, salt, 100000, 64, "sha512")
-    .toString("hex");
-  return candidateHash === hash;
+	return crypto.pbkdf2Sync(candidatePassword, salt, 100_000, 64, "sha512").toString("hex") === hash;
 }

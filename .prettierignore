@@ -9,3 +9,13 @@
 backend/prisma/generated
 **/pnpm-lock.yaml
 frontend/src/js
+**/.next
+pnpm-lock.yaml
+prisma
+out
+dist
+jest-coverage
+coverage
+cypress-coverage
+.next
+build

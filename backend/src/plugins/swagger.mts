@@ -12,17 +12,17 @@ export default fp(async (app: FastifyInstance) => {
 	await app.register(fastifySwagger, {
 		openapi: {
 			info: { title: "Test openapi", description: "testing the fastify swagger api", version: "0.1.0" },
-      servers: [{ url: "http://localhost:8000" }],
-            components: {
-        securitySchemes: {
-          apiKey: {
-            type: "apiKey",
-            name: "apiKey",
-            in: "header",
-          },
-        },
-      },
-      security: [{ apiKey: [] }],
+			servers: [{ url: "http://localhost:8000" }],
+			components: {
+				securitySchemes: {
+					apiKey: {
+						type: "apiKey",
+						name: "apiKey",
+						in: "header",
+					},
+				},
+			},
+			security: [{ apiKey: [] }],
 		},
 	});
 	await app.register(fastifySwaggerUi);

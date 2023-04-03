@@ -71,7 +71,7 @@ const BuildingConfig = new Config({
 	// I'm not entirely sure what this does, but I'm not gonna touch it.
 	trailingSlash: true,
 	images: {
-		domains: ['crafatar.com', 'namemc.com', 'livzmc.net', 'tydiumcraft.net'],
+		domains: ["crafatar.com", "namemc.com", "livzmc.net", "tydiumcraft.net"],
 		formats: ["image/avif", "image/webp"],
 	},
 	// Whether or not bundle analyzer is enabled.
@@ -93,16 +93,16 @@ const BuildingConfig = new Config({
 	// Helps to identify unsafe lifecycles, legacy API usage, and a number of other features.
 	reactStrictMode: true,
 	// Copies only the necessary files for a production deployment including select files in node_modules.
-	output: 'standalone',
+	output: "standalone",
 	//  Use React while developing and only replace it with Preact in production.
 	async headers() {
-	  return [
-	    {
-	      // Apply these headers to all routes in your application.
-	      source: '/:path*',
-	      headers,
-	    },
-	  ];
+		return [
+			{
+				// Apply these headers to all routes in your application.
+				source: "/:path*",
+				headers,
+			},
+		];
 	},
 
 	sentry: {

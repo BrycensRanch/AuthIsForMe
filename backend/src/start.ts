@@ -13,7 +13,7 @@ import chalk from "chalk";
 import { ValidationPipe } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
 import { FastifyAdapter, NestFastifyApplication } from "@nestjs/platform-fastify";
-import * as eta from "eta";
+// import * as eta from "eta";
 import * as app from "./app.js";
 import { AppModule } from "./app.module.js";
 

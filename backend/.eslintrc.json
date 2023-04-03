@@ -158,7 +158,7 @@
 				"unicorn/no-empty-file": "error",
 				"unicorn/no-for-loop": "error",
 				"unicorn/no-instanceof-array": "error",
-        "class-methods-use-this":"off",
+				"class-methods-use-this": "off",
 				"unicorn/no-lonely-if": "error",
 				"unicorn/prefer-array-find": "error",
 				"unicorn/prefer-array-flat": "error",

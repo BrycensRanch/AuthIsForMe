@@ -1,12 +1,11 @@
-import { Disclosure } from '@headlessui/react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { Disclosure } from "@headlessui/react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-import ColorPicker from './colorPicker';
-
+import ColorPicker from "./colorPicker";
 
 const Navbar = () => {
-  const router = useRouter();
+	const router = useRouter();
 
 	return (
 		<Disclosure as="nav" className="bg-gray-800">
@@ -18,11 +17,11 @@ const Navbar = () => {
 								<span
 									className="text-xl font-semibold tracking-tight"
 									style={{
-										cursor: 'pointer',
+										cursor: "pointer",
 									}}
-                  onClick={() => {
-                    router.push('/');
-                  }}
+									onClick={() => {
+										router.push("/");
+									}}
 								>
 									AuthIsForMe
 								</span>
@@ -63,8 +62,8 @@ const Navbar = () => {
 						</div>
 					</div>
 					<div className="hidden md:block">
-            <div className="ml-4 flex items-center md:ml-6">
-              <ColorPicker />
+						<div className="ml-4 flex items-center md:ml-6">
+							<ColorPicker />
 							<button
 								className="rounded-full border-2 border-transparent p-1 text-gray-400 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none"
 								aria-label="Notifications"
