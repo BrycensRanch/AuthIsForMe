@@ -25,6 +25,7 @@
 		"lint": "eslint --fix .",
 		"lint:check": "eslint .",
 		"format": "prettier --write .",
+		"format:check": "prettier --check .",
 		"commit": "cz",
 		"migrate:postgres": "dotenv -e ../.env -- npx prisma migrate deploy"
 	},
