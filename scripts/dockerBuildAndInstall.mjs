@@ -1,7 +1,7 @@
-import { promises } from "fs";
-import { exec } from "child_process";
-import { readdir } from "node:fs/promises";
-import { join } from "node:path";
+import { promises } from 'fs';
+import { exec } from 'child_process';
+import { readdir } from 'node:fs/promises';
+import { join } from 'node:path';
 
 const deepReadDir = async dirPath =>
 	await Promise.all(
@@ -28,7 +28,7 @@ function execPromise(command) {
 deepReadDir(process.cwd()).then(async nonFlatFileArrays => {
 	const files = nonFlatFileArrays.flat(Number.POSITIVE_INFINITY);
 	console.log(files);
-	if (!files.toString().includes(".next")) {
+	if (!files.toString().includes('.next')) {
 		console.log(
 			"Shame on you, you didn't compile builds before building this Dockerfile, enjoy the INCREASED image size and build times.",
 		);
@@ -37,6 +37,6 @@ deepReadDir(process.cwd()).then(async nonFlatFileArrays => {
 		const stdoutBuild = await execPromise(`NODE_ENV=production pnpm build -r`);
 		console.log(`stdout for Build step: ${stdoutBuild}`);
 	} else {
-		console.log("Using detected precompiled builds, woo!");
+		console.log('Using detected precompiled builds, woo!');
 	}
 });

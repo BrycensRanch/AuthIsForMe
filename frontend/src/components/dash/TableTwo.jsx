@@ -1,9 +1,9 @@
-import React from "react";
-import Image from "next/image";
-const ProductOne = "/assets/images/product/product-01.png";
-const ProductTwo = "/assets/images/product/product-02.png";
-const ProductThree = "/assets/images/product/product-03.png";
-const ProductFour = "/assets/images/product/product-04.png";
+import React from 'react';
+import Image from 'next/image';
+const ProductOne = '/assets/images/product/product-01.png';
+const ProductTwo = '/assets/images/product/product-02.png';
+const ProductThree = '/assets/images/product/product-03.png';
+const ProductFour = '/assets/images/product/product-04.png';
 
 const TableTwo = () => {
 	return (

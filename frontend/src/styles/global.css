@@ -20,8 +20,8 @@ a:hover {
 	@apply my-6;
 }
 @font-face {
-	font-family: "Minecraft";
-	src: url("/assets/fonts/minecraft.woff2") format("woff2");
+	font-family: 'Minecraft';
+	src: url('/assets/fonts/minecraft.woff2') format('woff2');
 }
 
 @layer base {

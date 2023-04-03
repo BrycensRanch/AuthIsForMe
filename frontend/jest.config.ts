@@ -1,54 +1,54 @@
-import nextJest from "next/jest";
+import nextJest from 'next/jest';
 
 // fuck you
-const esmModules = ["skinview3d", "skinview3d@3.0.0-alpha.1"];
+const esmModules = ['skinview3d', 'skinview3d@3.0.0-alpha.1'];
 
-const babelConfig = require("./babel.config");
+const babelConfig = require('./babel.config');
 
 const createJestConfig = nextJest({
 	// Provide the path to your Next.js app to load next.config.js and .env files in your test environment
-	dir: "./",
+	dir: './',
 });
 
 const customJestConfig = {
 	moduleNameMapper: {
 		// Handle module aliases (this will be automatically configured for you soon)
-		"^@/(.*)$": "<rootDir>/$1",
+		'^@/(.*)$': '<rootDir>/$1',
 
-		"^@/public/(.*)$": "<rootDir>/public/$1",
+		'^@/public/(.*)$': '<rootDir>/public/$1',
 
 		// Handle CSS imports (with CSS modules)
 		// https://jestjs.io/docs/webpack#mocking-css-modules
-		"^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
+		'^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
 
 		// Handle CSS imports (without CSS modules)
-		"^.+\\.(css|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
+		'^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/styleMock.js',
 
 		// Handle image imports
 		// https://jestjs.io/docs/webpack#handling-static-assets
-		"^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$": "<rootDir>/__mocks__/fileMock.js",
+		'^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$': '<rootDir>/__mocks__/fileMock.js',
 	},
 	transform: {
 		// Use babel-jest to transpile tests with the next/babel preset
 		// https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object
-		"^.+\\.(js|jsx|ts|tsx)$": ["babel-jest", babelConfig],
+		'^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', babelConfig],
 	},
-	transformIgnorePatterns: [`node_modules/(?!(?:.pnpm/)?(${esmModules.join("|")}))`],
-	moduleFileExtensions: ["js", "jsx", "ts", "tsx"],
+	transformIgnorePatterns: [`node_modules/(?!(?:.pnpm/)?(${esmModules.join('|')}))`],
+	moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
 
 	// if using TypeScript with a baseUrl set to the root directory then you need the snippet below for alias' to work
 	// moduleDirectories: ['node_modules', '<rootDir>/'],
-	setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+	setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 	clearMocks: true,
 	collectCoverage: true,
 	collectCoverageFrom: [
-		"./src/**/*.{js,jsx,ts,tsx}",
-		"!./src/**/_*.{js,jsx,ts,tsx}",
-		"!**/*.d.ts",
-		"!**/node_modules/**",
+		'./src/**/*.{js,jsx,ts,tsx}',
+		'!./src/**/_*.{js,jsx,ts,tsx}',
+		'!**/*.d.ts',
+		'!**/node_modules/**',
 	],
-	coverageProvider: "v8",
-	coverageDirectory: "jest-coverage",
+	coverageProvider: 'v8',
+	coverageDirectory: 'jest-coverage',
 	coverageThreshold: {
 		global: {
 			branches: 0,
@@ -57,7 +57,7 @@ const customJestConfig = {
 			statements: 0,
 		},
 	},
-	testEnvironment: "jest-environment-jsdom",
+	testEnvironment: 'jest-environment-jsdom',
 };
 
 module.exports = createJestConfig(customJestConfig);

@@ -3,12 +3,12 @@
 // Makes our app look older than it is.
 
 // eslint-disable-next-line no-unused-expressions
-process.env.NODE_ENV === "production"
+process.env.NODE_ENV === 'production'
 	? (module.exports = {
-			presets: ["next/babel"],
+			presets: ['next/babel'],
 			plugins: [],
 	  })
 	: (module.exports = {
-			presets: ["next/babel"],
-			plugins: ["istanbul"],
+			presets: ['next/babel'],
+			plugins: ['istanbul'],
 	  });

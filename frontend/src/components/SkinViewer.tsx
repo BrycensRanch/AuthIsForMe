@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { SkinViewer, WalkingAnimation } from "skinview3d";
+import { SkinViewer, WalkingAnimation } from 'skinview3d';
 
 export const defaultProps = {
 	walk: false,
@@ -20,13 +20,13 @@ export type MinecraftSkinViewerProperties = {
 } & typeof defaultProps;
 
 export const MinecraftSkinViewer = ({
-	skin = "http://localhost:3000/assets/images/71587fdb702f359a.png",
+	skin = 'http://localhost:3000/assets/images/71587fdb702f359a.png',
 	width = 300,
 	height = 300,
 	walk = true,
 	control = true,
-	background = "http://localhost:3000/assets/images/wp6005486.webp",
-	cape = "http://localhost:3000/assets/images/cape.png",
+	background = 'http://localhost:3000/assets/images/wp6005486.webp',
+	cape = 'http://localhost:3000/assets/images/cape.png',
 }: MinecraftSkinViewerProperties) => {
 	const canvas = React.useRef<HTMLCanvasElement>(null);
 

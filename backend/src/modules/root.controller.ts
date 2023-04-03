@@ -1,12 +1,12 @@
-import { Controller, Get, Render } from "@nestjs/common";
+import { Controller, Get, Render } from '@nestjs/common';
 
-@Controller("/")
+@Controller('/')
 export class RootController {
 	@Get()
-	@Render("index")
+	@Render('index')
 	root() {
 		return {
-			message: "The oldest",
+			message: 'The oldest',
 		};
 	}
 }

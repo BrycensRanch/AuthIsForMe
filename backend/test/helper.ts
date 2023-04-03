@@ -1,9 +1,9 @@
 // This file contains code that we reuse between our tests.
-import Fastify from "fastify";
+import Fastify from 'fastify';
 
-import fp from "fastify-plugin";
-import { afterAll, beforeAll } from "@jest/globals";
-import App from "../src/app";
+import fp from 'fastify-plugin';
+import { afterAll, beforeAll } from '@jest/globals';
+import App from '../src/app';
 
 const config = {};
 // Automatically build and tear down our instance

@@ -3,7 +3,7 @@ name: Publish
 on:
   push:
     branches:
-      - "*"
+      - '*'
 
   pull_request:
     types:
@@ -43,7 +43,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
+          node-version-file: '.nvmrc'
 
       - name: 📥 Monorepo install all deps & pnpm
         uses: ./.github/actions/pnpm-install
@@ -138,7 +138,7 @@ jobs:
           # see https://on.cypress.io/command-line#cypress-info
           build: pnpm build
           start: pnpm e2e:headless
-          wait-on: "http://localhost:3000"
+          wait-on: 'http://localhost:3000'
           install: true
       - uses: actions/upload-artifact@v3
         if: always()
@@ -188,7 +188,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version-file: ".nvmrc"
+          node-version-file: '.nvmrc'
       - name: 📥 Monorepo install all deps & pnpm
         uses: ./.github/actions/pnpm-install
       - name: Import GPG key
@@ -211,6 +211,6 @@ jobs:
           signingKeyId: ${{ steps.import_gpg.outputs.keyid }}
           signingKey: ${{ secrets.GPG_PRIVATE_KEY }}
           signingPassword: ${{ secrets.PASSPHRASE }}
-          GH_URL: "https://api.github.com/"
+          GH_URL: 'https://api.github.com/'
         run: |
           pnpm semantic-release

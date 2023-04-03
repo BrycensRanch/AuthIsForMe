@@ -1,6 +1,6 @@
-import type { FastifyGracefulExitOptions } from "@mgcrea/fastify-graceful-exit";
-import fastifyGracefulExit from "@mgcrea/fastify-graceful-exit";
-import fp from "fastify-plugin";
+import type { FastifyGracefulExitOptions } from '@mgcrea/fastify-graceful-exit';
+import fastifyGracefulExit from '@mgcrea/fastify-graceful-exit';
+import fp from 'fastify-plugin';
 
 /**
  * This plugins adds some utilities to handle http errors

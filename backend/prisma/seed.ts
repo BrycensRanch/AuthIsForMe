@@ -1,54 +1,54 @@
 /* eslint-disable no-await-in-loop unicorn/no-process-exit unicorn/prefer-top-level-await */
 
-import { PrismaClient, Prisma } from "@prisma/client";
+import { PrismaClient, Prisma } from '@prisma/client';
 
 const prisma = new PrismaClient();
 const userData: Prisma.UserCreateInput[] = [
 	{
-		username: "Alice",
-		email: "alice@prisma.io",
+		username: 'Alice',
+		email: 'alice@prisma.io',
 		userId: 1,
-		biography: "i am do",
+		biography: 'i am do',
 		posts: {
 			create: [
 				{
-					title: "Join the Prisma Slack",
-					content: "https://slack.prisma.io",
+					title: 'Join the Prisma Slack',
+					content: 'https://slack.prisma.io',
 					published: true,
 				},
 			],
 		},
 	},
 	{
-		username: "Nilu",
-		email: "nilu@prisma.io",
+		username: 'Nilu',
+		email: 'nilu@prisma.io',
 		userId: 2,
-		biography: "i am ddo",
+		biography: 'i am ddo',
 		posts: {
 			create: [
 				{
-					title: "Follow Prisma on Twitter",
-					content: "https://www.twitter.com/prisma",
+					title: 'Follow Prisma on Twitter',
+					content: 'https://www.twitter.com/prisma',
 					published: true,
 				},
 			],
 		},
 	},
 	{
-		username: "Mahmoud",
-		email: "mahmoud@prisma.io",
+		username: 'Mahmoud',
+		email: 'mahmoud@prisma.io',
 		userId: 3,
-		biography: "i am dfvdsfdo",
+		biography: 'i am dfvdsfdo',
 		posts: {
 			create: [
 				{
-					title: "Ask a question about Prisma on GitHub",
-					content: "https://www.github.com/prisma/prisma/discussions",
+					title: 'Ask a question about Prisma on GitHub',
+					content: 'https://www.github.com/prisma/prisma/discussions',
 					published: true,
 				},
 				{
-					title: "Prisma on YouTube",
-					content: "https://pris.ly/youtube",
+					title: 'Prisma on YouTube',
+					content: 'https://pris.ly/youtube',
 				},
 			],
 		},
@@ -57,14 +57,14 @@ const userData: Prisma.UserCreateInput[] = [
 
 export async function main() {
 	try {
-		console.log("Start seeding ...");
+		console.log('Start seeding ...');
 		for (const u of userData) {
 			const user = await prisma.user.create({
 				data: u,
 			});
 			console.log(`Created user with id: ${user.id}`);
 		}
-		console.log("Seeding finished.");
+		console.log('Seeding finished.');
 	} catch (error) {
 		console.error(error);
 		process.exit(1);

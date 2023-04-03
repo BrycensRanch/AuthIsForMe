@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import React, { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-const UserOne = "/assets/images/user/user-01.png";
-const UserTwo = "/assets/images/user/user-02.png";
-const UserThree = "/assets/images/user/user-03.png";
-const UserFour = "/assets/images/user/user-04.png";
+const UserOne = '/assets/images/user/user-01.png';
+const UserTwo = '/assets/images/user/user-02.png';
+const UserThree = '/assets/images/user/user-03.png';
+const UserFour = '/assets/images/user/user-04.png';
 
 const DropdownMessage = () => {
 	const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -20,8 +20,8 @@ const DropdownMessage = () => {
 			if (!dropdownOpen || dropdown.current.contains(target) || trigger.current.contains(target)) return;
 			setDropdownOpen(false);
 		};
-		document.addEventListener("click", clickHandler);
-		return () => document.removeEventListener("click", clickHandler);
+		document.addEventListener('click', clickHandler);
+		return () => document.removeEventListener('click', clickHandler);
 	});
 
 	// close if the esc key is pressed
@@ -30,8 +30,8 @@ const DropdownMessage = () => {
 			if (!dropdownOpen || keyCode !== 27) return;
 			setDropdownOpen(false);
 		};
-		document.addEventListener("keydown", keyHandler);
-		return () => document.removeEventListener("keydown", keyHandler);
+		document.addEventListener('keydown', keyHandler);
+		return () => document.removeEventListener('keydown', keyHandler);
 	});
 
 	return (
@@ -79,7 +79,7 @@ const DropdownMessage = () => {
 				onFocus={() => setDropdownOpen(true)}
 				onBlur={() => setDropdownOpen(false)}
 				className={`absolute -right-16 mt-2.5 flex h-90 w-75 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80 ${
-					dropdownOpen === true ? "block" : "hidden"
+					dropdownOpen === true ? 'block' : 'hidden'
 				}`}
 			>
 				<div className="px-4.5 py-3">

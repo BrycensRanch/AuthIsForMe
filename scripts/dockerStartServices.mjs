@@ -1,4 +1,4 @@
-import { exec } from "child_process";
+import { exec } from 'child_process';
 
 function execPromise(command) {
 	return new Promise(function (resolve, reject) {
@@ -14,13 +14,13 @@ function execPromise(command) {
 }
 
 if (process.env.CI) {
-	console.log("Not starting any Docker containers, CI mode is activated.");
+	console.log('Not starting any Docker containers, CI mode is activated.');
 } else {
 	try {
-		if (process.stdout.isTTY && process.env.GIT_PROXY?.includes("stackblitz")) {
-			execPromise("docker compose up cache -d");
+		if (process.stdout.isTTY && process.env.GIT_PROXY?.includes('stackblitz')) {
+			execPromise('docker compose up cache -d');
 		} else {
-			console.log("not tty or whatever, not starting any Docker containers");
+			console.log('not tty or whatever, not starting any Docker containers');
 		}
 	} catch (e) {
 		console.log(`SILENT ERROR: ${e.message}`);

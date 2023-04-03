@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const SidebarLinkGroup = ({ children, activeCondition }) => {
 	const [open, setOpen] = useState(activeCondition);

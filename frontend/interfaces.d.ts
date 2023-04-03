@@ -1,4 +1,4 @@
-import type { TypeFramework } from "supertokens-node/lib/build/framework/types";
+import type { TypeFramework } from 'supertokens-node/lib/build/framework/types';
 
 export interface AuthConfig {
 	framework: TypeFramework;

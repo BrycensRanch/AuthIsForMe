@@ -3,11 +3,11 @@ name: Hodolint
 on:
   push:
     branches:
-      - "*"
+      - '*'
     paths:
       - .github/workflows/hodolint.yml
       - .hadolint.yaml
-      - "**/Dockerfile"
+      - '**/Dockerfile'
   pull_request:
     types:
       - opened
@@ -16,7 +16,7 @@ on:
     paths:
       - .github/workflows/hodolint.yml
       - .hadolint.yaml
-      - "**/Dockerfile"
+      - '**/Dockerfile'
 
 jobs:
   hadolint:
@@ -41,7 +41,7 @@ jobs:
         with:
           files: |
             **/Dockerfile
-          separator: " "
+          separator: ' '
 
       - name: Run linting on Dockerfile(s) if changed
         uses: jbergstroem/hadolint-gh-action@v1
@@ -49,7 +49,7 @@ jobs:
         if: steps.changed-files-excluded.outputs.any_changed == 'true'
         with:
           output_format: checkstyle
-          dockerfile: "${{ steps.changed-files.outputs.other_changed_files }}"
+          dockerfile: '${{ steps.changed-files.outputs.other_changed_files }}'
       - name: Update Pull Request
         uses: actions/github-script@v6
         if: github.event_name == 'pull_request'

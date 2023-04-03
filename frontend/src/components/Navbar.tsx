@@ -1,8 +1,8 @@
-import { Disclosure } from "@headlessui/react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { Disclosure } from '@headlessui/react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import ColorPicker from "./colorPicker";
+import ColorPicker from './colorPicker';
 
 const Navbar = () => {
 	const router = useRouter();
@@ -17,10 +17,10 @@ const Navbar = () => {
 								<span
 									className="text-xl font-semibold tracking-tight"
 									style={{
-										cursor: "pointer",
+										cursor: 'pointer',
 									}}
 									onClick={() => {
-										router.push("/");
+										router.push('/');
 									}}
 								>
 									AuthIsForMe

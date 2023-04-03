@@ -1,13 +1,13 @@
 // This file is used by commitlint to validate commit messages.
 // It was adapted for monorepos
 // While we're technically not a monorepo, it keeps things consistent
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
-const { dirname: dirName, basename: baseName } = require("path");
-const { lstatSync: fileInfo } = require("fs");
+const { dirname: dirName, basename: baseName } = require('path');
+const { lstatSync: fileInfo } = require('fs');
 
-const readdirSync = (p, a = [], ignored = ["node_modules", ".git", ".next", ".husky"]) => {
+const readdirSync = (p, a = [], ignored = ['node_modules', '.git', '.next', '.husky']) => {
 	if (fs.statSync(p).isDirectory())
 		fs.readdirSync(p)
 			.filter(f => {
@@ -19,23 +19,23 @@ const readdirSync = (p, a = [], ignored = ["node_modules", ".git", ".next", ".hu
 };
 
 const DEFAULT_SCOPES = [
-	"repo",
-	"frontend",
-	"backend",
-	"commitlint",
-	"sec",
-	"security",
-	"deps",
-	"dependencies",
-	"release",
-	"actions",
-	"docker",
-	"config",
-	"swc",
+	'repo',
+	'frontend',
+	'backend',
+	'commitlint',
+	'sec',
+	'security',
+	'deps',
+	'dependencies',
+	'release',
+	'actions',
+	'docker',
+	'config',
+	'swc',
 ];
-const blacklistedScopes = ["src", "next", "dist", "out"];
+const blacklistedScopes = ['src', 'next', 'dist', 'out'];
 
-const dirNames = readdirSync("./")
+const dirNames = readdirSync('./')
 	.map(e => dirName(e))
 	.map(entry => {
 		const newEntry = fileInfo(entry);
@@ -44,14 +44,14 @@ const dirNames = readdirSync("./")
 	})
 	.map(dir => dir.name)
 	.map(s => {
-		if (s.charAt(0) === ".") {
+		if (s.charAt(0) === '.') {
 			return s.slice(1);
 		}
 		return s;
 	})
 	.map(s => {
-		if (s.includes("-")) {
-			return s.split("-");
+		if (s.includes('-')) {
+			return s.split('-');
 		}
 		return s;
 	})
@@ -59,7 +59,7 @@ const dirNames = readdirSync("./")
 
 const scopes = [...new Set(DEFAULT_SCOPES.concat(dirNames))]
 	.map(s => {
-		return s.replace(/_/g, "");
+		return s.replace(/_/g, '');
 	})
 	.filter(s => {
 		return s.length >= 1;
@@ -68,8 +68,8 @@ const scopes = [...new Set(DEFAULT_SCOPES.concat(dirNames))]
 
 console.log(scopes);
 module.exports = {
-	extends: ["@commitlint/config-conventional", "monorepo"],
+	extends: ['@commitlint/config-conventional', 'monorepo'],
 	rules: {
-		"scope-enum": [2, "always", scopes],
+		'scope-enum': [2, 'always', scopes],
 	},
 };

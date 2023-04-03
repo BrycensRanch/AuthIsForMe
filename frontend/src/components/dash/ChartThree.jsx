@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import ReactApexChart from "react-apexcharts";
+import React, { Component } from 'react';
+import ReactApexChart from 'react-apexcharts';
 
 class ChartThree extends Component {
 	constructor(properties) {
@@ -9,21 +9,21 @@ class ChartThree extends Component {
 			series: [65, 34, 45, 12],
 			options: {
 				chart: {
-					fontFamily: "Satoshi, sans-serif",
-					type: "donut",
+					fontFamily: 'Satoshi, sans-serif',
+					type: 'donut',
 				},
-				colors: ["#3C50E0", "#6577F3", "#8FD0EF", "#0FADCF"],
-				labels: ["Desktop", "Tablet", "Mobile", "Unknown"],
+				colors: ['#3C50E0', '#6577F3', '#8FD0EF', '#0FADCF'],
+				labels: ['Desktop', 'Tablet', 'Mobile', 'Unknown'],
 				legend: {
 					show: false,
-					position: "bottom",
+					position: 'bottom',
 				},
 
 				plotOptions: {
 					pie: {
 						donut: {
-							size: "65%",
-							background: "transparent",
+							size: '65%',
+							background: 'transparent',
 						},
 					},
 				},

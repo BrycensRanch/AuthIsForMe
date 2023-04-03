@@ -1,14 +1,14 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
-import ky from "ky";
+import ky from 'ky';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import LiteYouTubeEmbed from "react-lite-youtube-embed";
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 
-import { Meta } from "@/layouts/Meta";
-import { Main } from "@/templates/Main";
+import { Meta } from '@/layouts/Meta';
+import { Main } from '@/templates/Main';
 
-const noRepoProvided = "No repo provided";
+const noRepoProvided = 'No repo provided';
 
 // It's recommended to use a VPN while testing this, as GitHub will block your IP if you make too many requests
 // Mullvad is a great VPN to use for this https://mullvad.net/en/
@@ -16,23 +16,23 @@ const noRepoProvided = "No repo provided";
 
 // const regexp = /class="(.*)branch-name(.*)>(.*)</g; // The default branch is always the first on the page
 
-import type { GitHubUserAPIResponse, NPMRegistryResponse } from "env";
-import type { Key } from "react";
-import { useLayoutEffect } from "react";
-import { useState } from "react";
+import type { GitHubUserAPIResponse } from 'env';
+import type { Key } from 'react';
+import { useLayoutEffect } from 'react';
+import { useState } from 'react';
 
-import packageInfo from "../../package.json";
+import packageInfo from '../../package.json';
 const { dependencies, devDependencies } = packageInfo;
 
 const clean = (string_: string) => {
-	if (!string_) return "UNKNOWN";
-	return string_.replace("^", "").trim();
+	if (!string_) return 'UNKNOWN';
+	return string_.replace('^', '').trim();
 };
 
 const getRepoAuthor = (repoUrl: string) => {
 	if (!repoUrl) throw new Error(noRepoProvided);
-	const repoAuthor = repoUrl.split("/")[3];
-	if (!repoAuthor) return "UNKNOWN AUTHOR";
+	const repoAuthor = repoUrl.split('/')[3];
+	if (!repoAuthor) return 'UNKNOWN AUTHOR';
 	return repoAuthor;
 };
 
@@ -45,7 +45,7 @@ const getAuthorEmail = async (githubRepo: string) => {
 
 const getRepoDefaultBranch = async (repoUrl: string) => {
 	if (!repoUrl) throw new Error(noRepoProvided);
-	return "master";
+	return 'master';
 	// let branchesHTML;
 	// try {
 	// 	branchesHTML = await ky
@@ -66,14 +66,15 @@ const Thanks = () => {
 		setLicenses(
 			await Promise.all(
 				[...Object.keys(dependencies), ...Object.keys(devDependencies)].map(async dep => {
-					let npmPackage: NPMRegistryResponse;
+					// TODO: Add back types in a more sane way
+					let npmPackage: any;
 					try {
 						npmPackage = await ky.get(`https://registry.npmjs.org/${dep}`).json();
 						const normalizedRepoURL = new URL(
-							npmPackage.repository?.url.replace(/\.git$/, "").replace("git+", "") || `https://github.com/npm/${dep}`,
+							npmPackage.repository?.url.replace(/\.git$/, '').replace('git+', '') || `https://github.com/npm/${dep}`,
 						);
-						normalizedRepoURL.protocol = "https";
-						if (npmPackage.repository?.url && npmPackage.repository?.type === "git") {
+						normalizedRepoURL.protocol = 'https';
+						if (npmPackage.repository?.url && npmPackage.repository?.type === 'git') {
 							const repoDefaultBranch = await getRepoDefaultBranch(normalizedRepoURL.href);
 							console.log(normalizedRepoURL.href, repoDefaultBranch);
 							// license = await ky
@@ -82,10 +83,10 @@ const Thanks = () => {
 							// 	})
 							// 	.text();
 						}
-						return `${npmPackage.name} - ${npmPackage.license || "UNKNOWN LICENSE"} - 
+						return `${npmPackage.name} - ${npmPackage.license || 'UNKNOWN LICENSE'} - 
               ${normalizedRepoURL} - Authored by ${npmPackage.author?.name || getRepoAuthor(normalizedRepoURL.href)} (${
 							npmPackage.author?.email || (await getAuthorEmail(normalizedRepoURL.href))
-						}) -  ${npmPackage.description || "No description provided"}`;
+						}) -  ${npmPackage.description || 'No description provided'}`;
 					} catch (error) {
 						console.debug(error);
 						return `${dep} - Unknown, rate limited? ⚠️`;
@@ -98,10 +99,13 @@ const Thanks = () => {
 		fetchLicenses();
 	}, []);
 	return (
-		<Main meta={<Meta title="Thanks" description={""} />}>
+		<Main meta={<Meta title="Thanks" description={''} />}>
 			<section className="w-screen bg-white px-4 py-6 dark:bg-gray-900">
 				<main className="mx-auto max-w-7xl px-4 py-6">
-					<h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+					<h1
+						data-testid="thanks-h1"
+						className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl"
+					>
 						Our service wouldn't be possible without:
 					</h1>
 					<h3 className="text-5xl font-extrabold dark:text-white">
@@ -114,7 +118,7 @@ const Thanks = () => {
 					<h2 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl" style={{}}>
 						<span className="from-sky-400 bg-gradient-to-r to-emerald-600 bg-clip-text text-transparent">
 							Powered By <a href="https://pnpm.io">PNPM</a>
-						</span>{" "}
+						</span>{' '}
 					</h2>
 					<LiteYouTubeEmbed
 						id="I14b-C67EXY"
@@ -131,7 +135,7 @@ const Thanks = () => {
 					<br />
 					<p className="ml-2 font-semibold dark:text-gray-500">
 						The above video is loaded in a way that does not use cookies. This is to protect your privacy. If you would
-						like to watch the video with cookies enabled, please click{" "}
+						like to watch the video with cookies enabled, please click{' '}
 						<a href="https://www.youtube.com/watch?v=I14b-C67EXY">here</a>.
 					</p>
 					<hr className="my-4" />
@@ -142,7 +146,7 @@ const Thanks = () => {
 					>
 						<span className="font-medium">Danger, Will Robinson!</span> According to our tests, GitHub's API tracks your
 						IP address and cookies when you load this page. Due to us needing to fetch data from our dependency's repos
-						in-order to give you an accurate overview. Please consider viewing GitHub's privacy policy{" "}
+						in-order to give you an accurate overview. Please consider viewing GitHub's privacy policy{' '}
 						<a href="https://github.com/privacy/cookies" className="font-semibold">
 							here
 						</a>
@@ -199,7 +203,11 @@ const Thanks = () => {
 						dependency's dependencies for that. FOSS FOREVER!! 💘
 					</p>
 					<hr className="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700" />
-
+					{licenses.length === 0 ? (
+						<p data-testid="thanks-loading" id="licenses-loading" className="my-5 ml-2 font-semibold dark:text-white">
+							Licenses are being fetched right now...
+						</p>
+					) : undefined}
 					{licenses.map(license => {
 						return (
 							<p key={license as Key} className="ml-2 dark:text-white">

@@ -14,11 +14,11 @@
 #   Build images: docker-compose build
 #      Start app: docker-compose up -d
 #
-version: "3"
+version: '3'
 
 services:
   db:
-    image: "postgres:alpine"
+    image: 'postgres:alpine'
     environment:
       POSTGRES_USER: supertokens_user
       POSTGRES_PASSWORD: ${DB_PASSWORD}
@@ -32,12 +32,12 @@ services:
 
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "pg_isready -U supertokens_user"]
+      test: ['CMD', 'pg_isready -U supertokens_user']
       interval: 5s
       timeout: 5s
       retries: 5
   db2:
-    image: "postgres:alpine"
+    image: 'postgres:alpine'
     environment:
       POSTGRES_USER: prisma_user
       POSTGRES_PASSWORD: ${DB_PASSWORD}
@@ -51,7 +51,7 @@ services:
 
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "pg_isready -U supertokens_user"]
+      test: ['CMD', 'pg_isready -U supertokens_user']
       interval: 5s
       timeout: 5s
       retries: 5
@@ -67,7 +67,7 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: user@domain.com
       PGADMIN_DEFAULT_PASSWORD: ${DB_PASSWORD}
-      PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: "True"
+      PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: 'True'
       PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 10
 
   supertokens:
@@ -78,7 +78,7 @@ services:
       - 3567:3567
     environment:
       POSTGRESQL_USER: supertokens_user
-      POSTGRESQL_HOST: "host.docker.internal"
+      POSTGRESQL_HOST: 'host.docker.internal'
       POSTGRESQL_PORT: 5432
       API_KEYS: ${SUPERTOKENS_API_KEY}
       POSTGRESQL_PASSWORD: ${DB_PASSWORD}
@@ -174,12 +174,12 @@ services:
     image: redis:alpine
     restart: always
     ports:
-      - "6379:6379"
+      - '6379:6379'
     command: redis-server --save 20 1 --loglevel warning --requirepass ${REDIS_PASSWORD}
     networks:
       - app_network
     healthcheck:
-      test: ["CMD", "redis-cli ping | grep PONG"]
+      test: ['CMD', 'redis-cli ping | grep PONG']
       interval: 1s
       timeout: 3s
       retries: 5

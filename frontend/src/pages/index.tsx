@@ -1,13 +1,13 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 // eslint-disable-next-line @next/next/no-document-import-in-page
 
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 
-import { Meta } from "@/layouts/Meta";
-import { Main } from "@/templates/Main";
+import { Meta } from '@/layouts/Meta';
+import { Main } from '@/templates/Main';
 
 const Index = () => {
-	const MinecraftSkinViewer = dynamic(() => import("../components/SkinViewer").then(comp => comp.MinecraftSkinViewer), {
+	const MinecraftSkinViewer = dynamic(() => import('../components/SkinViewer').then(comp => comp.MinecraftSkinViewer), {
 		loading: () => <p>Loading...</p>,
 		ssr: false,
 	});
@@ -22,7 +22,10 @@ const Index = () => {
 		>
 			<section className="h-screen bg-white dark:bg-gray-900">
 				<div className="mx-auto max-w-screen-xl px-4 py-8 text-center lg:py-16">
-					<h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+					<h1
+						data-testid="index-h1"
+						className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl"
+					>
 						We invest in you.
 					</h1>
 					<p className="mb-8 text-lg font-normal text-gray-500 dark:text-gray-400 sm:px-16 lg:px-48 lg:text-xl">

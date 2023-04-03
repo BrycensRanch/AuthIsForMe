@@ -1,6 +1,6 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import packageInfo from "../../package.json";
+import packageInfo from '../../package.json';
 const { version } = packageInfo;
 
 const Footer = () => {
@@ -59,7 +59,7 @@ const Footer = () => {
 					<hr className="my-8 h-1 border-0 bg-gray-200 dark:bg-gray-700" />
 					<div className="sm:flex sm:items-center sm:justify-between">
 						<span className="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
-							&copy; {new Date().getFullYear()} <a href="https://github.com/BrycensRanch">BrycensRanch</a> (Version{" "}
+							&copy; {new Date().getFullYear()} <a href="https://github.com/BrycensRanch">BrycensRanch</a> (Version{' '}
 							{version}). All Rights Reserved.
 						</span>
 					</div>

@@ -1,42 +1,42 @@
 /* eslint-disable no-underscore-dangle */
 
 /* eslint-disable no-console */
-import "reflect-metadata";
-import type { AutoloadPluginOptions } from "@fastify/autoload";
-import AutoLoad from "@fastify/autoload";
-import cors from "@fastify/cors";
-import helmet from "@fastify/helmet";
-import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify";
+import 'reflect-metadata';
+import type { AutoloadPluginOptions } from '@fastify/autoload';
+import AutoLoad from '@fastify/autoload';
+import cors from '@fastify/cors';
+import helmet from '@fastify/helmet';
+import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from 'fastify';
 // import inputValidation from 'openapi-validator-middleware';
-import { existsSync, mkdirSync } from "node:fs";
-import { join, dirname } from "node:path";
+import { existsSync, mkdirSync } from 'node:fs';
+import { join, dirname } from 'node:path';
 
-import { fileURLToPath } from "node:url";
-import { load as loadMonoRepoEnvironment } from "dotenv-mono";
-import { config as loadEnvironmentDefaultsAndRegularEnvironment } from "dotenv-defaults";
-import { DotenvExpandOptions, expand } from "dotenv-expand";
-import printRoutes from "fastify-print-routes";
-import fastifyResponseTime from "fastify-request-timing";
-import fastifyAllow from "fastify-allow";
-import fastifyUserAgent from "fastify-user-agent";
-import userAgent from "useragent";
-import fastifyCookie from "@fastify/cookie";
-import fastifyIP from "fastify-ip";
-import fastify405 from "fastify-204";
-import fastifyRouteStats from "@fastify/routes-stats";
-import { fastifyAnalytics } from "node-api-analytics";
-import fastifyXML from "fastify-xml-body-parser";
-import fastifyFormidable from "fastify-formidable";
-import fastifyJSON5 from "fastify-json5";
-import fastifyQS from "fastify-qs";
-import fastifyFormBody from "@fastify/formbody";
-import fastifyAcceptsSerializer from "@fastify/accepts-serializer";
-import YAML from "yaml";
-import { XMLBuilder } from "fast-xml-parser";
-import serverVersion from "fastify-server-version";
-import fastifyZodValidate from "fastify-zod-validate";
-import fjwt from "@fastify/jwt";
-import fastifyETag from "@fastify/etag";
+import { fileURLToPath } from 'node:url';
+import { load as loadMonoRepoEnvironment } from 'dotenv-mono';
+import { config as loadEnvironmentDefaultsAndRegularEnvironment } from 'dotenv-defaults';
+import { DotenvExpandOptions, expand } from 'dotenv-expand';
+import printRoutes from 'fastify-print-routes';
+import fastifyResponseTime from 'fastify-request-timing';
+import fastifyAllow from 'fastify-allow';
+import fastifyUserAgent from 'fastify-user-agent';
+import userAgent from 'useragent';
+import fastifyCookie from '@fastify/cookie';
+import fastifyIP from 'fastify-ip';
+import fastify405 from 'fastify-204';
+import fastifyRouteStats from '@fastify/routes-stats';
+import { fastifyAnalytics } from 'node-api-analytics';
+import fastifyXML from 'fastify-xml-body-parser';
+import fastifyFormidable from 'fastify-formidable';
+import fastifyJSON5 from 'fastify-json5';
+import fastifyQS from 'fastify-qs';
+import fastifyFormBody from '@fastify/formbody';
+import fastifyAcceptsSerializer from '@fastify/accepts-serializer';
+import YAML from 'yaml';
+import { XMLBuilder } from 'fast-xml-parser';
+import serverVersion from 'fastify-server-version';
+import fastifyZodValidate from 'fastify-zod-validate';
+import fjwt from '@fastify/jwt';
+import fastifyETag from '@fastify/etag';
 // import fastifyViews from "@fastify/view";
 // import * as eta from "eta";
 
@@ -44,16 +44,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 expand(
 	loadMonoRepoEnvironment({
-		path: join(__dirname, "../.env"),
-		encoding: "utf8",
+		path: join(__dirname, '../.env'),
+		encoding: 'utf8',
 	}) as DotenvExpandOptions,
 );
 
 expand(
 	loadEnvironmentDefaultsAndRegularEnvironment({
-		path: "./.env",
-		encoding: "utf8",
-		defaults: "./.env.example", // This is new
+		path: './.env',
+		encoding: 'utf8',
+		defaults: './.env.example', // This is new
 	}),
 );
 
@@ -68,7 +68,7 @@ export type AppOptions = {
 } & Partial<AutoloadPluginOptions>;
 // Application SSL, for Nginx to use to ensure that this Fastify instance is trusted.
 // This SSL shouldn't effect clients though. That's NGINX's job. It'll use Cloudflare SSL instead.
-const SSLFolder = "./ssl";
+const SSLFolder = './ssl';
 // Pass --options via CLI arguments in command to enable these options.
 const options: AppOptions = {
 	// https: true,
@@ -77,11 +77,11 @@ const options: AppOptions = {
 	//   cert: path.join(SSLFolder, 'certificate.pem'),
 	// },
 };
-if (!existsSync(SSLFolder) && process.env.NODE_ENV === "production") mkdirSync(SSLFolder, { recursive: true });
+if (!existsSync(SSLFolder) && process.env.NODE_ENV === 'production') mkdirSync(SSLFolder, { recursive: true });
 
 const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	// Let's not run this while testing/prod... It's done repeatedly and it's very very annoying.
-	if (process.env.NODE_APP_INSTANCE === "0" || (!process.env.NODE_APP_INSTANCE && process.env.NODE_ENV !== "test"))
+	if (process.env.NODE_APP_INSTANCE === '0' || (!process.env.NODE_APP_INSTANCE && process.env.NODE_ENV !== 'test'))
 		await app.register(printRoutes);
 
 	// It's perfectly fine to add one liner type of Fastify Plugins here.
@@ -113,10 +113,10 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	await app.register(fastifyJSON5);
 	await app.register(serverVersion());
 	await app.register(fjwt, {
-		secret: "supersecret",
+		secret: 'supersecret',
 	});
 
-	app.decorate("authenticate", async (request: FastifyRequest, reply: FastifyReply) => {
+	app.decorate('authenticate', async (request: FastifyRequest, reply: FastifyReply) => {
 		try {
 			await request.jwtVerify();
 			return;
@@ -136,7 +136,7 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	await app.register(fastifyZodValidate, {
 		// optional custom validation error handler
 		handleValidatorError: error => {
-			return { error, statusCode: 422, message: "Unprocessable Entity - Zod Errors or something, man..." };
+			return { error, statusCode: 422, message: 'Unprocessable Entity - Zod Errors or something, man...' };
 		},
 	});
 
@@ -152,33 +152,33 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 				serializer: body => builder.build(body),
 			},
 		],
-		default: "application/json", // MIME type used if Accept header don't match anything
+		default: 'application/json', // MIME type used if Accept header don't match anything
 	});
 
 	await app.register(fastifyRouteStats, {
 		printInterval: 30_000, // milliseconds
-		decoratorName: "performanceMarked", // decorator is set to true if a performace.mark was called for the request
+		decoratorName: 'performanceMarked', // decorator is set to true if a performace.mark was called for the request
 	});
 	if (process.env.FASTIFY_ANALYTICS_API_KEY)
-		app.addHook("onRequest", fastifyAnalytics(process.env.FASTIFY_ANALYTICS_API_KEY));
-	app.addHook("onRequest", async request => {
+		app.addHook('onRequest', fastifyAnalytics(process.env.FASTIFY_ANALYTICS_API_KEY));
+	app.addHook('onRequest', async request => {
 		// Some code
-		app.log.info(`Request from ${request.ip.trim() || "localhost"} from user agent ${request.userAgent.toString()}`);
+		app.log.info(`Request from ${request.ip.trim() || 'localhost'} from user agent ${request.userAgent.toString()}`);
 	});
-	app.get("/helloz", async () => {
-		return "Hello World!";
+	app.get('/helloz', async () => {
+		return 'Hello World!';
 	});
-	app.get("/exit", async (_request, reply) => {
-		app.log.info("Recieved request to exit. EXITING 😭😭😭");
+	app.get('/exit', async (_request, reply) => {
+		app.log.info('Recieved request to exit. EXITING 😭😭😭');
 		reply.send({
-			message: "Exiting",
+			message: 'Exiting',
 		});
-		throw new Error("Exiting");
+		throw new Error('Exiting');
 	});
 
 	await app.register(cors, {
-		origin: [process.env.FRONTEND_SERVER || "http://localhost:3000"],
-		methods: ["GET", "PUT", "POST", "DELETE"],
+		origin: [process.env.FRONTEND_SERVER || 'http://localhost:3000'],
+		methods: ['GET', 'PUT', 'POST', 'DELETE'],
 		credentials: true,
 	});
 
@@ -189,7 +189,7 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	// through your application
 	// eslint-disable-next-line no-void
 	void app.register(AutoLoad, {
-		dir: join(__dirname, "plugins"),
+		dir: join(__dirname, 'plugins'),
 	});
 	// try {
 	// 	await new PrismaClient().$connect();
@@ -211,11 +211,11 @@ See: https://www.fastify.io/docs/latest/Guides/Migration-Guide-V4/#synchronous-r
 // Are we running under PM2 or similar?
 if (process.env.NODE_APP_INSTANCE) {
 	// @ts-expect-error pm2
-	process.send("ready");
+	process.send('ready');
 }
 export default fastify;
 export { fastify, options };
-declare module "fastify" {
+declare module 'fastify' {
 	export interface FastifyRequest {
 		userAgent: userAgent.Agent;
 	}

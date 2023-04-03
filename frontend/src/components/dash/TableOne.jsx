@@ -1,10 +1,10 @@
-import React from "react";
-import Image from "next/image";
-const BrandOne = "/assets/images/brand/brand-01.svg";
-const BrandTwo = "/assets/images/brand/brand-02.svg";
-const BrandThree = "/assets/images/brand/brand-03.svg";
-const BrandFour = "/assets/images/brand/brand-04.svg";
-const BrandFive = "/assets/images/brand/brand-05.svg";
+import React from 'react';
+import Image from 'next/image';
+const BrandOne = '/assets/images/brand/brand-01.svg';
+const BrandTwo = '/assets/images/brand/brand-02.svg';
+const BrandThree = '/assets/images/brand/brand-03.svg';
+const BrandFour = '/assets/images/brand/brand-04.svg';
+const BrandFive = '/assets/images/brand/brand-05.svg';
 
 const TableOne = () => {
 	return (

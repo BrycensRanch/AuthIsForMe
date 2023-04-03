@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import Link from "next/link";
+import React, { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 
 const DropdownNotification = () => {
 	const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -14,8 +14,8 @@ const DropdownNotification = () => {
 			if (!dropdownOpen || dropdown.current.contains(target) || trigger.current.contains(target)) return;
 			setDropdownOpen(false);
 		};
-		document.addEventListener("click", clickHandler);
-		return () => document.removeEventListener("click", clickHandler);
+		document.addEventListener('click', clickHandler);
+		return () => document.removeEventListener('click', clickHandler);
 	});
 
 	// close if the esc key is pressed
@@ -24,8 +24,8 @@ const DropdownNotification = () => {
 			if (!dropdownOpen || keyCode !== 27) return;
 			setDropdownOpen(false);
 		};
-		document.addEventListener("keydown", keyHandler);
-		return () => document.removeEventListener("keydown", keyHandler);
+		document.addEventListener('keydown', keyHandler);
+		return () => document.removeEventListener('keydown', keyHandler);
 	});
 
 	return (
@@ -60,7 +60,7 @@ const DropdownNotification = () => {
 				onFocus={() => setDropdownOpen(true)}
 				onBlur={() => setDropdownOpen(false)}
 				className={`absolute -right-27 mt-2.5 flex h-90 w-75 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80 ${
-					dropdownOpen === true ? "block" : "hidden"
+					dropdownOpen === true ? 'block' : 'hidden'
 				}`}
 			>
 				<div className="px-4.5 py-3">

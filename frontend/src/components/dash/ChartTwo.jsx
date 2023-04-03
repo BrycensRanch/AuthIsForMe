@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import ReactApexChart from "react-apexcharts";
+import React, { Component } from 'react';
+import ReactApexChart from 'react-apexcharts';
 
 class ChartTwo extends Component {
 	constructor(properties) {
@@ -8,19 +8,19 @@ class ChartTwo extends Component {
 		this.state = {
 			series: [
 				{
-					name: "Sales",
+					name: 'Sales',
 					data: [44, 55, 41, 67, 22, 43, 65],
 				},
 				{
-					name: "Revenue",
+					name: 'Revenue',
 					data: [13, 23, 20, 8, 13, 27, 15],
 				},
 			],
 			options: {
-				colors: ["#3C50E0", "#80CAEE"],
+				colors: ['#3C50E0', '#80CAEE'],
 				chart: {
-					fontFamily: "Satoshi, sans-serif",
-					type: "bar",
+					fontFamily: 'Satoshi, sans-serif',
+					type: 'bar',
 					height: 335,
 					stacked: true,
 					toolbar: {
@@ -38,7 +38,7 @@ class ChartTwo extends Component {
 							plotOptions: {
 								bar: {
 									borderRadius: 0,
-									columnWidth: "25%",
+									columnWidth: '25%',
 								},
 							},
 						},
@@ -48,9 +48,9 @@ class ChartTwo extends Component {
 					bar: {
 						horizontal: false,
 						borderRadius: 0,
-						columnWidth: "25%",
-						borderRadiusApplication: "end",
-						borderRadiusWhenStacked: "last",
+						columnWidth: '25%',
+						borderRadiusApplication: 'end',
+						borderRadiusWhenStacked: 'last',
 					},
 				},
 				dataLabels: {
@@ -58,14 +58,14 @@ class ChartTwo extends Component {
 				},
 
 				xaxis: {
-					categories: ["M", "T", "W", "T", "F", "S", "S"],
+					categories: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
 				},
 				legend: {
-					position: "top",
-					horizontalAlign: "left",
-					fontFamily: "Satoshi",
+					position: 'top',
+					horizontalAlign: 'left',
+					fontFamily: 'Satoshi',
 					fontWeight: 500,
-					fontSize: "14px",
+					fontSize: '14px',
 
 					markers: {
 						radius: 99,

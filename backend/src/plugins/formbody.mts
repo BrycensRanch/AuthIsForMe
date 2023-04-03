@@ -1,6 +1,6 @@
-import type { FastifyInstance } from "fastify";
-import fp from "fastify-plugin";
-import fastifyFormBody from "@fastify/formbody";
+import type { FastifyInstance } from 'fastify';
+import fp from 'fastify-plugin';
+import fastifyFormBody from '@fastify/formbody';
 
 /**
  *

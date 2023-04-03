@@ -22,13 +22,13 @@
 
 // use Node.js 'http' integrated module,
 // even to avoid dependencies clash
-const http = require("node:http");
+const http = require('node:http');
 
 const options = {
 	timeout: 5000, // 5 sec
 	log: true, // if enabled, write log to console
 };
-const url = process.argv[2] || `${process.env.FRONTEND_SERVER || "http://localhost:3000"}/api/health`;
+const url = process.argv[2] || `${process.env.FRONTEND_SERVER || 'http://localhost:3000'}/api/health`;
 if (options.log === true) {
 	console.log(`GET call for healthcheck at: ${url} ...`);
 }
@@ -39,7 +39,7 @@ const request = http.get(url, response => {
 		if (response.statusMessage) {
 			console.log(`statusMessage: '${response.statusMessage}'`);
 		}
-		console.log("----------------");
+		console.log('----------------');
 	}
 	if (response.statusCode === 200) {
 		process.exit(0);
@@ -49,7 +49,7 @@ const request = http.get(url, response => {
 });
 request.setTimeout(options.timeout);
 
-request.on("error", error => {
+request.on('error', error => {
 	if (options.log === true) {
 		console.log(`error: ${error.message}`);
 	}

@@ -27,15 +27,15 @@ const options = {
 		timeout: 5000, // 5 sec
 		log: true, // if enabled, write log to console
 	},
-	url = process.argv[2] || `${process.env.BACKEND_SERVER || "http://localhost:8000"}/v1/health`;
+	url = process.argv[2] || `${process.env.BACKEND_SERVER || 'http://localhost:8000'}/v1/health`;
 if (options.log === true) console.log(`GET call for healthcheck at: ${url} ...`);
 
-const request = require("node:http").get(url, response => {
+const request = require('node:http').get(url, response => {
 	if (options.log === true) {
 		console.log(`statusCode: ${response.statusCode}`);
 		if (response.statusMessage) console.log(`statusMessage: '${response.statusMessage}'`);
 
-		console.log("----------------");
+		console.log('----------------');
 	}
 	if (response.statusCode === 200) process.exit(0);
 	else process.exit(response.statusCode || 1);
@@ -43,7 +43,7 @@ const request = require("node:http").get(url, response => {
 
 request.setTimeout(options.timeout);
 
-request.on("error", error => {
+request.on('error', error => {
 	if (options.log === true) console.log(`error: ${error.message}`);
 
 	process.exit(error.statusCode || 1);

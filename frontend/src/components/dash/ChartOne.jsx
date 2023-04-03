@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import ReactApexChart from "react-apexcharts";
+import React, { Component } from 'react';
+import ReactApexChart from 'react-apexcharts';
 
 class ChartOne extends Component {
 	constructor(properties) {
@@ -8,29 +8,29 @@ class ChartOne extends Component {
 		this.state = {
 			series: [
 				{
-					name: "Product One",
+					name: 'Product One',
 					data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30, 45],
 				},
 
 				{
-					name: "Product Two",
+					name: 'Product Two',
 					data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39, 51],
 				},
 			],
 			options: {
 				legend: {
 					show: false,
-					position: "top",
-					horizontalAlign: "left",
+					position: 'top',
+					horizontalAlign: 'left',
 				},
-				colors: ["#3C50E0", "#80CAEE"],
+				colors: ['#3C50E0', '#80CAEE'],
 				chart: {
-					fontFamily: "Satoshi, sans-serif",
+					fontFamily: 'Satoshi, sans-serif',
 					height: 335,
-					type: "area",
+					type: 'area',
 					dropShadow: {
 						enabled: true,
-						color: "#623CEA14",
+						color: '#623CEA14',
 						top: 10,
 						blur: 4,
 						left: 0,
@@ -61,11 +61,11 @@ class ChartOne extends Component {
 				],
 				stroke: {
 					width: [2, 2],
-					curve: "straight",
+					curve: 'straight',
 				},
 				labels: {
 					show: false,
-					position: "top",
+					position: 'top',
 				},
 				grid: {
 					xaxis: {
@@ -84,8 +84,8 @@ class ChartOne extends Component {
 				},
 				markers: {
 					size: 4,
-					colors: "#fff",
-					strokeColors: ["#3056D3", "#80CAEE"],
+					colors: '#fff',
+					strokeColors: ['#3056D3', '#80CAEE'],
 					strokeWidth: 3,
 					strokeOpacity: 0.9,
 					strokeDashArray: 0,
@@ -97,8 +97,8 @@ class ChartOne extends Component {
 					},
 				},
 				xaxis: {
-					type: "category",
-					categories: ["Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+					type: 'category',
+					categories: ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
 					axisBorder: {
 						show: false,
 					},
@@ -109,7 +109,7 @@ class ChartOne extends Component {
 				yaxis: {
 					title: {
 						style: {
-							fontSize: "0px",
+							fontSize: '0px',
 						},
 					},
 					min: 0,
