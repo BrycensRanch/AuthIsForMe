@@ -12,14 +12,14 @@
   </a>
   <a aria-label="Semantic Release" href="https://github.com/semantic-release/semantic-release">
     <img alt="Semantic Release Badge Badge" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge">
-    <a aria-label="Build Status" href="https://github.com/BrycensRanch/AuthIsForMe/actions?query=workflow%3publish.yml">
+    <a aria-label="Build Status" href="https://github.com/BrycensRanch/AuthIsForMe/actions/workflows/publish.yml">
       <img alt="GitHub Workflow Status Badge" src="https://img.shields.io/github/actions/workflow/status/BrycensRanch/AuthIsForMe/publish.yml?label=BUILD&logo=github&style=for-the-badge">
     </a>
     <a aria-label="Frontend Code Coverage" href="https://github.com/BrycensRanch/AuthIsForMe/actions?query=workflow%3ci-frontend.yml">
-      <img alt="Codecov Badge" src="https://img.shields.io/codecov/c/github/BrycensRanch/AuthIsForMe?flag=unittests&label=FRONTEND%20COVERAGE&logo=codecov&style=for-the-badge">
+      <img alt="Codecov Badge" src="https://img.shields.io/codecov/c/github/BrycensRanch/AuthIsForMe?flag=unittests-frontend&label=FRONTEND%20COVERAGE&logo=codecov&style=for-the-badge">
     </a>
-    <a aria-label="Backend Code Coverage" href="https://github.com/BrycensRanch/AuthIsForMe/actions?query=workflow%3ci-backend.yml">
-      <img alt="Coveralls Badge" src="https://img.shields.io/coverallsCoverage/github/BrycensRanch/AuthIsForMe?label=BACKEND%20UNIT%20tests%20COVERAGE&style=for-the-badge">
+    <a aria-label="Backend Code Coverage" href="https://codecov.io/gh/BrycensRanch/AuthIsForMe">
+    <img alt="Codecov" src="https://img.shields.io/codecov/c/github/BrycensRanch/AuthIsForMe?flag=unittests-backend&label=BACKEND%20CODE%20COVERAGE&style=for-the-badge">
     </a>
     <a aria-label="Licence" href="https://github.com/BrycensRanch/AuthIsForMe/blob/master/LICENSE">
       <img alt="Licence Badge" src="https://img.shields.io/github/license/BrycensRanch/AuthIsForMe?style=for-the-badge&labelColor=000000" />
@@ -37,12 +37,6 @@
     </a>
           <a href="https://depfu.com/github/BrycensRanch/AuthIsForMe">
        <img src="https://img.shields.io/depfu/dependencies/github/BrycensRanch/AuthIsForMe?style=for-the-badge" alt="dependencies status" />
-    </a>
-    <a aria-label="Open in Stackblitz Badge" href="https://stackblitz.com/github/BrycensRanch/AuthIsForMe">
-    <img
-    alt="Open in Stackblitz Badge"
-    src="https://img.shields.io/badge/StackBlitz-Edit-blue?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAABECAYAAAD+1gcLAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH5AINBw4X0bTGRQAABSxJREFUaN7VmVtsFFUYx//fmQW79bbd2QKpaIIaDcGoifFBEgMGqTTRRA01SgxE5Rbi7QG6S3lgo9J2twpeotxEQlCigLdoQwJ4ARN9QB9MRCNRDBdRzE7LJbTSmTl/H4BYStmd2Z3tDOdt5lzml/9833fO9x0gYi2xgom6Tt5aapyKEnRDlrVGPzfGT+G3SwZ87HLGT8f5uYD7jmSl99IAX80RfTY3A5wMqDVepoQPnqVKHtMbAN4PyJeFtPwafXBSknG9UoDHAIDQq7xODRU8mdc5Aeaeffy7O2F8GnnwZM5dKsCic88CrMU8sSMNbubdZwTIDnjlOoZa52eNYQc3c84sEK+d/1a6ji2UA5EFN3POw4C8fcYy/m+a3p1y2MGTOXsqIJsAxAZ1Hei53tgeSfBkBycK1McALrswJGIVHhE3cuD1ed4uorsAXD5Ed7/hqvXlrFtV8LpO3qKpdwJIDLn/AB/+s0SORgp8VJ43KK23AzAvNsagWlXu+lKV6LGc14itvyEwrsiwX6wWNQEijITiY9pYD1vvKAENAG+VC40hQlNlNt3Bq22lt4EYX2Jor6PVe5V8KzDFG7KsFXE/A3GHB/vcdHyx9IQPnuXI/ji3CuRuT+N1+U4ZHPhmGqk43yXY5C0ccE9hsfwQLjgp5n69hmCz9ylYGcRPrgg8ldfLIXjSx5RjNX3GB6GCm3m3ncDz/v4QNnjJ4KsGbubdVhAZ35YFtTaoKOY7jps5dwGIZf73aH7dnZa9QYH72vLNDmcmRNaX86eEnGvT2BoIdA0o3pV2HgRkS9C7bXnRDGlPypmd9r2AvB8FaAFetDJGvqTiyU7eJWeOp1cgfOo3rRbj6ZJRJdHB20TrrkhAAxutXvVsSedMtfEmGno3gNHhM8snVp80IytO0The18HraOgdkYCm7KyLy6MDoYdUfNQyjnZjeheAm8NXmt/FlDH16CI5dUHaN/DhypeZUqK/AkomAsMQ8fCjq41GKy0nim75ydd51UjX3QZgQgQccV/MUfcVSzYM4Mw1hnPa7QJkYgSgD2qqe6xWOVL8kLWaI3ptbgFkUgSgjwpUY09GDpY8ZJnH9UsExhPYH8CuVgtgTJlzC5pqipXxdpUSaF3FzLkdANJleOIJETWlkJbvh78glOVIM64PARjlc2afiGoqtMiuUMoTqRp3ehnQtpDNfqEDBdeC+T6nuELOLGRiXVVPJC5u2xwP6L0+1qOQ8wqZWNmpXECK6wV+RBCipRLoQBRvyLL2dFwfBlDnTWos7W4xXgi3IATg31p3hldoEG8EAR0IuEC8OuUGK62eCyoYVARutvNOL9VZQD6yxqmnKqmHB6u46PkejHp7XVxmlHOzVhXnTKxgwujXhzH0bdo56m9jymgcKhEITXFl61lFoYV7BMa0akCjkjqJEHOKdP/U7xhNJ1vlZLXOv2Upnmq3JxfJlH4XRzWebBWrmgf38hRXav5F4vSfjqGmHl8if1W/NuSzjWljvW3oQxh0Ly9AQRtqUvdC+Xk4UiXfpmLH9JzB0CBOQKtpwwXtHzxLJcTsQW97FdQDQVxIVc3GUzVuEyEDb4z7NTndysju4c6qfSlOOc8pXQof78nEtoVRDvDsnMlXeK04+o+ztRgSnNOdjq1DSM2z4uLoeecKSCQWhgntXfEsY2ZcHwDQAMESq8VoC7ty5EnxZK37EIAGAV6NArT3c3def2Hm3HdASlSYSipe384bAR6x+tTsIBOBqoMTzlirVz2BrOgoWcF/mizikfkwKiQAAAAASUVORK5CYII="
-    />
     </a>
 </p>
 
@@ -102,7 +96,7 @@ no
 
 ## READMEs (more info on the separate projects)
 
-- [Frontend](./frontend/README.md)
+- Doesn't exist yet
 - [Backend](./backend/README.md)
 
 ## Contributing
@@ -115,4 +109,4 @@ Please read the [Contributing Guidelines](CONTRIBUTING.md) before submitting any
 
 ## License
 
-[MIT](./LICENSE) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FBrycensRanch%2FChatting-Platform.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FBrycensRanch%2FChatting-Platform?ref=badge_large)
+[MIT](./LICENSE)
