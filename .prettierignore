@@ -8,3 +8,4 @@
 **/jest-coverage/
 backend/prisma/generated
 **/pnpm-lock.yaml
+frontend/src/js
