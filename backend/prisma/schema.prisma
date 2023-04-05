@@ -48,6 +48,7 @@ model User {
   biography      String          @db.VarChar(240)
   apiKeys        ApiKey[]
   Following      Following[]
+  posts          Post[]
   mojangAccount  MojangAccount?
   // The user's password hash
   // HAHAHA No, we don't do that here
@@ -82,6 +83,9 @@ model TwitchAccount {
 
 model Post {
   id     Int  @id @default(autoincrement())
+  title     String
+  content   String?
+  published Boolean? @default(false)
   user   User @relation(fields: [userId], references: [id])
   userId Int
 }
@@ -106,8 +110,6 @@ model Session {
   data      Json
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-
-  @@map("tbEts_Session")
 }
 
 model ApiKey {
