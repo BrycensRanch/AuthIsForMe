@@ -48,7 +48,6 @@ model User {
   biography      String          @db.VarChar(240)
   apiKeys        ApiKey[]
   Following      Following[]
-  posts          Post[]
   mojangAccount  MojangAccount?
   // The user's password hash
   // HAHAHA No, we don't do that here
