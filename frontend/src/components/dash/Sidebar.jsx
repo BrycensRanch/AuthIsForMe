@@ -1,13 +1,13 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import React, { useState, useEffect, useRef } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import router from 'next/router';
+import NavLink from './NavLink';
 import SidebarLinkGroup from './SidebarLinkGroup';
 const Logo = '/assets/images/logo/logo.svg';
 import Image from 'next/image';
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
-	const location = useLocation();
-	const { pathname } = location;
+	const { pathname } = router;
 
 	const trigger = useRef(null);
 	const sidebar = useRef(null);
@@ -56,7 +56,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 		>
 			{/* <!-- SIDEBAR HEADER --> */}
 			<div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-				<NavLink to="/">
+				<NavLink href="/">
 					<Image src={Logo} alt="Logo" />
 				</NavLink>
 
@@ -98,7 +98,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 									return (
 										<React.Fragment>
 											<NavLink
-												to="#"
+												href="#"
 												className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
 													(pathname === '/' || pathname.includes('dashboard')) && 'bg-graydark dark:bg-meta-4'
 												}`}
@@ -154,7 +154,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 												<ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
 													<li>
 														<NavLink
-															to="/"
+															href="/"
 															className={({ isActive }) =>
 																'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
 																(isActive && '!text-white')
@@ -175,7 +175,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 							{/* <!-- Menu Item Calendar --> */}
 							<li>
 								<NavLink
-									to="/calendar"
+									href="/calendar"
 									className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
 										pathname.includes('calendar') && 'bg-graydark dark:bg-meta-4'
 									}`}
@@ -201,7 +201,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 							{/* <!-- Menu Item Profile --> */}
 							<li>
 								<NavLink
-									to="/profile"
+									href="/profile"
 									className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
 										pathname.includes('profile') && 'bg-graydark dark:bg-meta-4'
 									}`}
@@ -234,7 +234,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 									return (
 										<React.Fragment>
 											<NavLink
-												to="#"
+												href="#"
 												className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
 													(pathname === '/forms' || pathname.includes('forms')) && 'bg-graydark dark:bg-meta-4'
 												}`}
@@ -294,7 +294,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 												<ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
 													<li>
 														<NavLink
-															to="/forms/form-elements"
+															href="/forms/form-elements"
 															className={({ isActive }) =>
 																'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
 																(isActive && '!text-white')
@@ -305,7 +305,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 													</li>
 													<li>
 														<NavLink
-															to="/forms/form-layout"
+															href="/forms/form-layout"
 															className={({ isActive }) =>
 																'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
 																(isActive && '!text-white')
@@ -326,7 +326,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 							{/* <!-- Menu Item Tables --> */}
 							<li>
 								<NavLink
-									to="/tables"
+									href="/tables"
 									className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
 										pathname.includes('tables') && 'bg-graydark dark:bg-meta-4'
 									}`}
@@ -359,7 +359,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 							{/* <!-- Menu Item Settings --> */}
 							<li>
 								<NavLink
-									to="/settings"
+									href="/settings"
 									className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
 										pathname.includes('settings') && 'bg-graydark dark:bg-meta-4'
 									}`}
@@ -403,7 +403,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 							{/* <!-- Menu Item Chart --> */}
 							<li>
 								<NavLink
-									to="/chart"
+									href="/chart"
 									className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
 										pathname.includes('chart') && 'bg-graydark dark:bg-meta-4'
 									}`}
@@ -443,7 +443,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 									return (
 										<React.Fragment>
 											<NavLink
-												to="#"
+												href="#"
 												className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
 													(pathname === '/ui' || pathname.includes('ui')) && 'bg-graydark dark:bg-meta-4'
 												}`}
@@ -502,7 +502,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 												<ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
 													<li>
 														<NavLink
-															to="/ui/alerts"
+															href="/ui/alerts"
 															className={({ isActive }) =>
 																'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
 																(isActive && '!text-white')
@@ -513,7 +513,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 													</li>
 													<li>
 														<NavLink
-															to="/ui/buttons"
+															href="/ui/buttons"
 															className={({ isActive }) =>
 																'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
 																(isActive && '!text-white')
@@ -537,7 +537,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 									return (
 										<React.Fragment>
 											<NavLink
-												to="#"
+												href="#"
 												className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
 													(pathname === '/auth' || pathname.includes('auth')) && 'bg-graydark dark:bg-meta-4'
 												}`}
@@ -592,7 +592,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 												<ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
 													<li>
 														<NavLink
-															to="/auth/signin"
+															href="/auth/signin"
 															className={({ isActive }) =>
 																'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
 																(isActive && '!text-white')
@@ -603,7 +603,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 													</li>
 													<li>
 														<NavLink
-															to="/auth/signup"
+															href="/auth/signup"
 															className={({ isActive }) =>
 																'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
 																(isActive && '!text-white')

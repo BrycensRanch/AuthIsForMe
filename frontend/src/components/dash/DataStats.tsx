@@ -6,7 +6,7 @@ const DataStats = () => {
 			<div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4 xl:gap-0">
 				<div className="flex items-center justify-center gap-2 border-b border-stroke pb-5 dark:border-strokedark xl:border-b-0 xl:border-r xl:pb-0">
 					<div>
-						<h4 className="mb-0.5 text-xl font-semibold text-black dark:text-white md:text-title-lg">$4,350</h4>
+						<h4 className="md:text-title-lg mb-0.5 text-xl font-semibold text-black dark:text-white">$4,350</h4>
 						<p className="text-sm font-medium">Unique Visitors</p>
 					</div>
 					<div className="flex items-center gap-1">
@@ -21,7 +21,7 @@ const DataStats = () => {
 				</div>
 				<div className="flex items-center justify-center gap-2 border-b border-stroke pb-5 dark:border-strokedark xl:border-b-0 xl:border-r xl:pb-0">
 					<div>
-						<h4 className="mb-0.5 text-xl font-semibold text-black dark:text-white md:text-title-lg">55.9K</h4>
+						<h4 className="md:text-title-lg mb-0.5 text-xl font-semibold text-black dark:text-white">55.9K</h4>
 						<p className="text-sm font-medium">Total Pageviews</p>
 					</div>
 					<div className="flex items-center gap-1">
@@ -36,7 +36,7 @@ const DataStats = () => {
 				</div>
 				<div className="flex items-center justify-center gap-2 border-b border-stroke pb-5 dark:border-strokedark sm:border-b-0 sm:pb-0 xl:border-r">
 					<div>
-						<h4 className="mb-0.5 text-xl font-semibold text-black dark:text-white md:text-title-lg">54%</h4>
+						<h4 className="md:text-title-lg mb-0.5 text-xl font-semibold text-black dark:text-white">54%</h4>
 						<p className="text-sm font-medium">Bounce Rate</p>
 					</div>
 					<div className="flex items-center gap-1">
@@ -51,8 +51,8 @@ const DataStats = () => {
 				</div>
 				<div className="flex items-center justify-center gap-2">
 					<div>
-						<h4 className="mb-0.5 text-xl font-semibold text-black dark:text-white md:text-title-lg">2m 56s</h4>
-						<p className="font-medium text-sm">Visit Duration</p>
+						<h4 className="md:text-title-lg mb-0.5 text-xl font-semibold text-black dark:text-white">2m 56s</h4>
+						<p className="text-sm font-medium">Visit Duration</p>
 					</div>
 					<div className="flex items-center gap-1">
 						<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">

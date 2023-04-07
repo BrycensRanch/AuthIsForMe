@@ -8,7 +8,7 @@ import { Main } from '@/templates/Main';
 
 const Index = () => {
 	const MinecraftSkinViewer = dynamic(() => import('../components/SkinViewer').then(comp => comp.MinecraftSkinViewer), {
-		loading: () => <p>Loading...</p>,
+		loading: () => <p>Initializing MinecraftSkinViewer...</p>,
 		ssr: false,
 	});
 	return (

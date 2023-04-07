@@ -1,6 +1,8 @@
 import { useLayoutEffect, useState } from 'react';
 import usePrefersColorScheme from 'use-prefers-color-scheme';
 
+import UseLocalStorage from './useLocalStorage';
+
 const useDarkMode = () => {
 	let prefersColorScheme = 'dark';
 	if (typeof window !== 'undefined' && window.matchMedia !== undefined) {
@@ -21,7 +23,7 @@ const useDarkMode = () => {
 		root.classList.add(theme);
 
 		if (typeof window !== 'undefined') {
-			localStorage.setItem('theme', theme);
+      UseLocalStorage('theme', theme);
 		}
 	}, [theme]);
 

@@ -44,10 +44,15 @@
 
 - Inspired by [minecraftauth.me](https://minecraftauth.me?ref=brycensranchgithubreadme)
 - Based on [AuthApp](https://github.com/Romvnly-Gaming/AuthApp)
+- However, due to creative changes, it falls under free use.
+- ***AuthApp is not licensed***, while it is free to use, [in no way is it FOSS](https://choosealicense.com/no-permission/).
+- Our project has a special license from the author that enables us to relicense, modify, redestribute, and use the code as I wish.
 
-## Project Goals
+Also, we are not affiliated with Mojang, Microsoft, or any of their her partners.
+  
+## Roadmap
 
-- Manage Twitch/YouTube description with list of allowed users at the moment - maybe
+- Manage Twitch/YouTube description with a list of allowed users at the moment - maybe
 - API Key Dashboard
 - Offer plans
 - Login with SuperTokens
@@ -69,6 +74,13 @@
 - Use of Tydium Skin API for bedrock users _only_
 - Fastify API that generates types and schemas and OpenAPI Specification files for API consumers and VSCode
 - Switch to pnpm since a certain someone likes to run `npm install` a lot more than they should (`✅`)
+
+## Self-hosting
+
+Self-hosting support will not be provided for this project.
+I am a student, and I have a life outside of this project, so I will **not** be able to provide support for self-hosting.
+My code is open-source because I want to share my work with the world.
+If you want to self-host this project, you are free to do so, but you are on your own.
 
 ### Planned Technology Stack
 
@@ -92,7 +104,11 @@ This project ships a Docker Compose setup for **testing purposes**, if I were yo
 
 ### Demo
 
-no
+Currently not available, but will be available soon.
+
+## Screenshots
+
+Insert automated screenshots here.
 
 ## READMEs (more info on the separate projects)
 
@@ -103,10 +119,10 @@ no
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to add tests as appropriate. In-depth ones, not one that checks if 1 + 1 === 2.
-
 Please read the [Contributing Guidelines](CONTRIBUTING.md) before submitting any pull requests or opening issues.
 
 ## License
 
-[MIT](./LICENSE)
+[GNU AGPLv3](./LICENSE)
+
+Want to know more about the license? [Click here](https://choosealicense.com/licenses/agpl-3.0/).

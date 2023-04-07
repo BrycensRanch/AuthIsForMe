@@ -485,6 +485,9 @@ importers:
       nextjs-progressbar:
         specifier: ^0.0.16
         version: 0.0.16(next@13.2.4)(react@18.2.0)
+      prop-types:
+        specifier: ^15.8.1
+        version: 15.8.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -549,6 +552,9 @@ importers:
       '@cypress/code-coverage':
         specifier: ^3.10.1
         version: 3.10.1(@babel/core@7.21.4)(@babel/preset-env@7.21.4)(babel-loader@9.1.2)(cypress@12.9.0)(webpack@5.76.3)
+      '@happy-dom/jest-environment':
+        specifier: ^9.1.7
+        version: 9.1.7
       '@jest/globals':
         specifier: ^29.5.0
         version: 29.5.0
@@ -2756,6 +2762,17 @@ packages:
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
     dependencies:
       '@hapi/hoek': 9.3.0
+    dev: true
+
+  /@happy-dom/jest-environment@9.1.7:
+    resolution: {integrity: sha512-SXJauUqcocmlYdQkZBr4DZJYhWAj9DdaUkMXUwKRt+jza/Ep0/0PoQshyYle8YLLYgy6JcuM8cje76L3EbzNxw==}
+    dependencies:
+      '@jest/environment': 29.5.0
+      '@jest/fake-timers': 29.5.0
+      '@jest/types': 29.5.0
+      happy-dom: 9.1.7
+      jest-mock: 29.5.0
+      jest-util: 29.5.0
     dev: true
 
   /@headlessui/react@1.7.13(react-dom@18.2.0)(react@18.2.0):
@@ -10758,6 +10775,17 @@ packages:
       wordwrap: 1.0.0
     optionalDependencies:
       uglify-js: 3.17.4
+    dev: true
+
+  /happy-dom@9.1.7:
+    resolution: {integrity: sha512-tLkzW0w9EclIsV75hlCFStJa7CYSEUe+OVU8vK+3wzSvzFeXrGnCujuMcYQAPUXDl1CXoQ2ySaTZcqt3ZBJbSw==}
+    dependencies:
+      css.escape: 1.5.1
+      he: 1.2.0
+      iconv-lite: 0.6.3
+      webidl-conversions: 7.0.0
+      whatwg-encoding: 2.0.0
+      whatwg-mimetype: 3.0.0
     dev: true
 
   /har-schema@2.0.0:

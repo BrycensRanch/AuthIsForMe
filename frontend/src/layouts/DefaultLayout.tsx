@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import Sidebar from '../components/Sidebar';
-import Header from '../components/Header';
 
-const DefaultLayout = ({ children }) => {
-	const [sidebarOpen, setSidebarOpen] = useState(false);
+import Header from '@/components/dash/Header';
+import Sidebar from '@/components/dash/Sidebar';
+
+const DefaultLayout = ({ children }: {
+  children: React.ReactNode;
+}) => {
+	const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
 	return (
 		<div className="dark:bg-boxdark-2 dark:text-bodydark">
@@ -16,7 +19,7 @@ const DefaultLayout = ({ children }) => {
 				{/* <!-- ===== Content Area Start ===== --> */}
 				<div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
 					{/* <!-- ===== Header Start ===== --> */}
-					<Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+					<Header data-testid="header" sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 					{/* <!-- ===== Header End ===== --> */}
 
 					{/* <!-- ===== Main Content Start ===== --> */}

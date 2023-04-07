@@ -44,6 +44,13 @@ const customJestConfig = {
 	collectCoverageFrom: [
 		'./src/**/*.{js,jsx,ts,tsx}',
 		'!./src/**/_*.{js,jsx,ts,tsx}',
+		// Honestly gonna let Cypress handle this mess.
+		// I don't want to write tests for an experimental part of the app
+		'!./src/components/dash/*.{js,jsx,ts,tsx}',
+		// Not part of our application, they're there for imports
+		'!./src/js/**/*.{js,jsx,ts,tsx}',
+		// Client side only, Jest can't seem to properly test this due to ESM weirdness...
+		'!./src/components/**/SkinViewer.{js,jsx,ts,tsx}',
 		'!**/*.d.ts',
 		'!**/node_modules/**',
 	],
@@ -57,7 +64,7 @@ const customJestConfig = {
 			statements: 0,
 		},
 	},
-	testEnvironment: 'jest-environment-jsdom',
+  testEnvironment: '@happy-dom/jest-environment'
 };
 
 module.exports = createJestConfig(customJestConfig);

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import UserOne from '../images/user/user-01.png';
+const UserOne = '/assets/images/user/user-01.png';
 import Image from 'next/image';
 
 const DropdownUser = () => {
@@ -31,8 +31,13 @@ const DropdownUser = () => {
 	});
 
 	return (
-		<div className="relative">
-			<Link ref={trigger} onClick={() => setDropdownOpen(!dropdownOpen)} className="flex items-center gap-4" to="#">
+        <div className="relative">
+			<Link
+                ref={trigger}
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="flex items-center gap-4"
+                to="#"
+                legacyBehavior>
 				<span className="hidden text-right lg:block">
 					<span className="block text-sm font-medium text-black dark:text-white">Thomas Anree</span>
 					<span className="block text-xs">UX Designer</span>
@@ -71,9 +76,9 @@ const DropdownUser = () => {
 				<ul className="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
 					<li>
 						<Link
-							to="/profile"
-							className="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
-						>
+                            to="/profile"
+                            className="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+                            legacyBehavior>
 							<svg
 								className="fill-current"
 								width="22"
@@ -96,9 +101,9 @@ const DropdownUser = () => {
 					</li>
 					<li>
 						<Link
-							to="#"
-							className="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
-						>
+                            to="#"
+                            className="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+                            legacyBehavior>
 							<svg
 								className="fill-current"
 								width="22"
@@ -117,9 +122,9 @@ const DropdownUser = () => {
 					</li>
 					<li>
 						<Link
-							to="/settings"
-							className="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
-						>
+                            to="/settings"
+                            className="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+                            legacyBehavior>
 							<svg
 								className="fill-current"
 								width="22"
@@ -164,7 +169,7 @@ const DropdownUser = () => {
 			</div>
 			{/* <!-- Dropdown End --> */}
 		</div>
-	);
+    );
 };
 
 export default DropdownUser;

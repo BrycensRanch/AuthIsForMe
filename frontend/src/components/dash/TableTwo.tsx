@@ -1,5 +1,5 @@
-import React from 'react';
 import Image from 'next/image';
+import React from 'react';
 const ProductOne = '/assets/images/product/product-01.png';
 const ProductTwo = '/assets/images/product/product-02.png';
 const ProductThree = '/assets/images/product/product-03.png';
@@ -8,11 +8,11 @@ const ProductFour = '/assets/images/product/product-04.png';
 const TableTwo = () => {
 	return (
 		<div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-			<div className="py-6 px-4 md:px-6 xl:px-7.5">
+			<div className="px-4 py-6 md:px-6 xl:px-7.5">
 				<h4 className="text-xl font-semibold text-black dark:text-white">Top Products</h4>
 			</div>
 
-			<div className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
+			<div className="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
 				<div className="col-span-3 flex items-center">
 					<p className="font-medium">Product Name</p>
 				</div>
@@ -30,7 +30,7 @@ const TableTwo = () => {
 				</div>
 			</div>
 
-			<div className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
+			<div className="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
 				<div className="col-span-3 flex items-center">
 					<div className="flex flex-col gap-4 sm:flex-row sm:items-center">
 						<div className="h-12.5 w-15 rounded-md">
@@ -52,7 +52,7 @@ const TableTwo = () => {
 					<p className="text-sm text-meta-3">$45</p>
 				</div>
 			</div>
-			<div className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
+			<div className="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
 				<div className="col-span-3 flex items-center">
 					<div className="flex flex-col gap-4 sm:flex-row sm:items-center">
 						<div className="h-12.5 w-15 rounded-md">
@@ -74,7 +74,7 @@ const TableTwo = () => {
 					<p className="text-sm text-meta-3">$125</p>
 				</div>
 			</div>
-			<div className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
+			<div className="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
 				<div className="col-span-3 flex items-center">
 					<div className="flex flex-col gap-4 sm:flex-row sm:items-center">
 						<div className="h-12.5 w-15 rounded-md">
@@ -96,7 +96,7 @@ const TableTwo = () => {
 					<p className="text-sm text-meta-3">$247</p>
 				</div>
 			</div>
-			<div className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
+			<div className="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
 				<div className="col-span-3 flex items-center">
 					<div className="flex flex-col gap-4 sm:flex-row sm:items-center">
 						<div className="h-12.5 w-15 rounded-md">

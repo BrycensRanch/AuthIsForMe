@@ -63,10 +63,6 @@ export const MinecraftSkinViewer = ({
 		// skinViewer.animations.paused = true;
 
 		return () => {
-			// if (control) {
-			//   skinViewer.dispose();
-			// }
-
 			skinViewer.dispose();
 		};
 	}, [skin, width, height, control, walk, background, cape]);

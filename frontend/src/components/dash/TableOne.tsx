@@ -1,5 +1,5 @@
-import React from 'react';
 import Image from 'next/image';
+import React from 'react';
 const BrandOne = '/assets/images/brand/brand-01.svg';
 const BrandTwo = '/assets/images/brand/brand-02.svg';
 const BrandThree = '/assets/images/brand/brand-03.svg';
@@ -8,34 +8,34 @@ const BrandFive = '/assets/images/brand/brand-05.svg';
 
 const TableOne = () => {
 	return (
-		<div className="shadow-default rounded-sm border border-stroke dark:border-strokedark bg-white dark:bg-boxdark pt-6 pb-2.5 xl:pb-1 px-5 sm:px-7.5">
-			<h4 className="font-semibold text-xl text-black dark:text-white mb-6">Top Channels</h4>
+		<div className="rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+			<h4 className="mb-6 text-xl font-semibold text-black dark:text-white">Top Channels</h4>
 
 			<div className="flex flex-col">
-				<div className="grid grid-cols-3 sm:grid-cols-5 bg-gray-2 dark:bg-meta-4 rounded-sm">
+				<div className="grid grid-cols-3 rounded-sm bg-gray-2 dark:bg-meta-4 sm:grid-cols-5">
 					<div className="p-2.5 xl:p-5">
-						<h5 className="font-medium text-sm xsm:text-base uppercase">Source</h5>
+						<h5 className="text-sm font-medium uppercase xsm:text-base">Source</h5>
 					</div>
-					<div className="p-2.5 xl:p-5 text-center">
-						<h5 className="font-medium text-sm xsm:text-base uppercase">Visitors</h5>
+					<div className="p-2.5 text-center xl:p-5">
+						<h5 className="text-sm font-medium uppercase xsm:text-base">Visitors</h5>
 					</div>
-					<div className="p-2.5 xl:p-5 text-center">
-						<h5 className="font-medium text-sm xsm:text-base uppercase">Revenues</h5>
+					<div className="p-2.5 text-center xl:p-5">
+						<h5 className="text-sm font-medium uppercase xsm:text-base">Revenues</h5>
 					</div>
-					<div className="hidden sm:block p-2.5 xl:p-5 text-center">
-						<h5 className="font-medium text-sm xsm:text-base uppercase">Sales</h5>
+					<div className="hidden p-2.5 text-center sm:block xl:p-5">
+						<h5 className="text-sm font-medium uppercase xsm:text-base">Sales</h5>
 					</div>
-					<div className="hidden sm:block p-2.5 xl:p-5 text-center">
-						<h5 className="font-medium text-sm xsm:text-base uppercase">Conversion</h5>
+					<div className="hidden p-2.5 text-center sm:block xl:p-5">
+						<h5 className="text-sm font-medium uppercase xsm:text-base">Conversion</h5>
 					</div>
 				</div>
 
-				<div className="grid grid-cols-3 sm:grid-cols-5 border-b border-stroke dark:border-strokedark">
+				<div className="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-5">
 					<div className="flex items-center gap-3 p-2.5 xl:p-5">
-						<div className="flex-shrink-0">
+						<div className="shrink-0">
 							<Image src={BrandOne} alt="Brand" />
 						</div>
-						<p className="hidden sm:block text-black dark:text-white">Google</p>
+						<p className="hidden text-black dark:text-white sm:block">Google</p>
 					</div>
 
 					<div className="flex items-center justify-center p-2.5 xl:p-5">
@@ -46,21 +46,21 @@ const TableOne = () => {
 						<p className="text-meta-3">$5,768</p>
 					</div>
 
-					<div className="hidden sm:flex items-center justify-center p-2.5 xl:p-5">
+					<div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
 						<p className="text-black dark:text-white">590</p>
 					</div>
 
-					<div className="hidden sm:flex items-center justify-center p-2.5 xl:p-5">
+					<div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
 						<p className="text-meta-5">4.8%</p>
 					</div>
 				</div>
 
-				<div className="grid grid-cols-3 sm:grid-cols-5 border-b border-stroke dark:border-strokedark">
+				<div className="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-5">
 					<div className="flex items-center gap-3 p-2.5 xl:p-5">
-						<div className="flex-shrink-0">
+						<div className="shrink-0">
 							<Image src={BrandTwo} alt="Brand" />
 						</div>
-						<p className="hidden sm:block text-black dark:text-white">Twitter</p>
+						<p className="hidden text-black dark:text-white sm:block">Twitter</p>
 					</div>
 
 					<div className="flex items-center justify-center p-2.5 xl:p-5">
@@ -71,21 +71,21 @@ const TableOne = () => {
 						<p className="text-meta-3">$4,635</p>
 					</div>
 
-					<div className="hidden sm:flex items-center justify-center p-2.5 xl:p-5">
+					<div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
 						<p className="text-black dark:text-white">467</p>
 					</div>
 
-					<div className="hidden sm:flex items-center justify-center p-2.5 xl:p-5">
+					<div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
 						<p className="text-meta-5">4.3%</p>
 					</div>
 				</div>
 
-				<div className="grid grid-cols-3 sm:grid-cols-5 border-b border-stroke dark:border-strokedark">
+				<div className="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-5">
 					<div className="flex items-center gap-3 p-2.5 xl:p-5">
-						<div className="flex-shrink-0">
+						<div className="shrink-0">
 							<Image src={BrandThree} alt="Brand" />
 						</div>
-						<p className="hidden sm:block text-black dark:text-white">Github</p>
+						<p className="hidden text-black dark:text-white sm:block">Github</p>
 					</div>
 
 					<div className="flex items-center justify-center p-2.5 xl:p-5">
@@ -96,21 +96,21 @@ const TableOne = () => {
 						<p className="text-meta-3">$4,290</p>
 					</div>
 
-					<div className="hidden sm:flex items-center justify-center p-2.5 xl:p-5">
+					<div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
 						<p className="text-black dark:text-white">420</p>
 					</div>
 
-					<div className="hidden sm:flex items-center justify-center p-2.5 xl:p-5">
+					<div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
 						<p className="text-meta-5">3.7%</p>
 					</div>
 				</div>
 
-				<div className="grid grid-cols-3 sm:grid-cols-5 border-b border-stroke dark:border-strokedark">
+				<div className="grid grid-cols-3 border-b border-stroke dark:border-strokedark sm:grid-cols-5">
 					<div className="flex items-center gap-3 p-2.5 xl:p-5">
-						<div className="flex-shrink-0">
+						<div className="shrink-0">
 							<Image src={BrandFour} alt="Brand" />
 						</div>
-						<p className="hidden sm:block text-black dark:text-white">Vimeo</p>
+						<p className="hidden text-black dark:text-white sm:block">Vimeo</p>
 					</div>
 
 					<div className="flex items-center justify-center p-2.5 xl:p-5">
@@ -121,21 +121,21 @@ const TableOne = () => {
 						<p className="text-meta-3">$3,580</p>
 					</div>
 
-					<div className="hidden sm:flex items-center justify-center p-2.5 xl:p-5">
+					<div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
 						<p className="text-black dark:text-white">389</p>
 					</div>
 
-					<div className="hidden sm:flex items-center justify-center p-2.5 xl:p-5">
+					<div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
 						<p className="text-meta-5">2.5%</p>
 					</div>
 				</div>
 
 				<div className="grid grid-cols-3 sm:grid-cols-5">
 					<div className="flex items-center gap-3 p-2.5 xl:p-5">
-						<div className="flex-shrink-0">
+						<div className="shrink-0">
 							<Image src={BrandFive} alt="Brand" />
 						</div>
-						<p className="hidden sm:block text-black dark:text-white">Facebook</p>
+						<p className="hidden text-black dark:text-white sm:block">Facebook</p>
 					</div>
 
 					<div className="flex items-center justify-center p-2.5 xl:p-5">
@@ -146,11 +146,11 @@ const TableOne = () => {
 						<p className="text-meta-3">$2,740</p>
 					</div>
 
-					<div className="hidden sm:flex items-center justify-center p-2.5 xl:p-5">
+					<div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
 						<p className="text-black dark:text-white">230</p>
 					</div>
 
-					<div className="hidden sm:flex items-center justify-center p-2.5 xl:p-5">
+					<div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
 						<p className="text-meta-5">1.9%</p>
 					</div>
 				</div>
