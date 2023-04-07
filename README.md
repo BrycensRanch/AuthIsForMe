@@ -44,7 +44,6 @@
 
 - Inspired by [minecraftauth.me](https://minecraftauth.me?ref=brycensranchgithubreadme)
 - Based on [AuthApp](https://github.com/Romvnly-Gaming/AuthApp)
-- However, due to creative changes, it falls under free use.
 - ***AuthApp is not licensed***, while it is free to use, [in no way is it FOSS](https://choosealicense.com/no-permission/).
 - Our project has a special license from the author that enables us to relicense, modify, redestribute, and use the code as I wish.
 
