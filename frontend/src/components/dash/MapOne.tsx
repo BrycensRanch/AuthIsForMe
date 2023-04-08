@@ -6,7 +6,7 @@ import React, { useEffect } from 'react';
 
 const MapOne = () => {
 	useEffect(() => {
-		const mapOne = new jsVectorMap({
+		new jsVectorMap({
 			selector: '#mapOne',
 			map: 'us_aea_en',
 			zoomButtons: true,
