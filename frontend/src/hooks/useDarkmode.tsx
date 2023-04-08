@@ -23,7 +23,7 @@ const useDarkMode = () => {
 		root.classList.add(theme);
 
 		if (typeof window !== 'undefined') {
-      UseLocalStorage('theme', theme);
+			UseLocalStorage('theme', theme);
 		}
 	}, [theme]);
 

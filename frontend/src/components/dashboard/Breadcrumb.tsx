@@ -9,7 +9,7 @@ const Breadcrumb = (properties: { pageName: string }) => {
 			<nav>
 				<ol className="flex items-center gap-2">
 					<li>
-						<Link href="/dash">Dashboard /</Link>
+						<Link href="/dashboard">Dashboard /</Link>
 					</li>
 					<li className="text-primary">{properties.pageName}</li>
 				</ol>

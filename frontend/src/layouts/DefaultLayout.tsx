@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 
-import Header from '@/components/dash/Header';
-import Sidebar from '@/components/dash/Sidebar';
+import Header from '@/components/dashboard/Header';
+import Sidebar from '@/components/dashboard/Sidebar';
 
-const DefaultLayout = ({ children }: {
-  children: React.ReactNode;
-}) => {
+const DefaultLayout = ({ children }: { children: React.ReactNode }) => {
 	const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
 	return (

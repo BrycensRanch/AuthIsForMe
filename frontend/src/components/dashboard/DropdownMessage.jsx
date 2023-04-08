@@ -35,13 +35,14 @@ const DropdownMessage = () => {
 	});
 
 	return (
-        <li className="relative" x-data="{ dropdownOpen: false, notifying: true }">
+		<li className="relative" x-data="{ dropdownOpen: false, notifying: true }">
 			<Link
-                ref={trigger}
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="bg-gray relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white"
-                href="#"
-                legacyBehavior>
+				ref={trigger}
+				onClick={() => setDropdownOpen(!dropdownOpen)}
+				className="bg-gray relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white"
+				href="#"
+				legacyBehavior
+			>
 				<span className="absolute -right-0.5 -top-0.5 z-1 h-2 w-2 rounded-full bg-meta-1">
 					<span className="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
 				</span>
@@ -89,9 +90,10 @@ const DropdownMessage = () => {
 				<ul className="flex h-auto flex-col overflow-y-auto">
 					<li>
 						<Link
-                            className="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                            to="/messages"
-                            legacyBehavior>
+							className="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+							href="/messages"
+							legacyBehavior
+						>
 							<div className="h-12.5 w-12.5 rounded-full">
 								<Image src={UserTwo} alt="User" />
 							</div>
@@ -105,9 +107,10 @@ const DropdownMessage = () => {
 					</li>
 					<li>
 						<Link
-                            className="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                            to="/messages"
-                            legacyBehavior>
+							className="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+							href="/messages"
+							legacyBehavior
+						>
 							<div className="h-12.5 w-12.5 rounded-full">
 								<Image src={UserOne} alt="User" />
 							</div>
@@ -121,9 +124,10 @@ const DropdownMessage = () => {
 					</li>
 					<li>
 						<Link
-                            className="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                            to="/messages"
-                            legacyBehavior>
+							className="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+							href="/messages"
+							legacyBehavior
+						>
 							<div className="h-12.5 w-12.5 rounded-full">
 								<Image src={UserThree} alt="User" />
 							</div>
@@ -137,9 +141,10 @@ const DropdownMessage = () => {
 					</li>
 					<li>
 						<Link
-                            className="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                            to="/messages"
-                            legacyBehavior>
+							className="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+							href="/messages"
+							legacyBehavior
+						>
 							<div className="h-12.5 w-12.5 rounded-full">
 								<Image src={UserFour} alt="User" />
 							</div>
@@ -153,9 +158,10 @@ const DropdownMessage = () => {
 					</li>
 					<li>
 						<Link
-                            className="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
-                            to="/messages"
-                            legacyBehavior>
+							className="flex gap-4.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+							href="/messages"
+							legacyBehavior
+						>
 							<div className="h-12.5 w-12.5 rounded-full">
 								<Image src={UserTwo} alt="User" />
 							</div>
@@ -171,7 +177,7 @@ const DropdownMessage = () => {
 			</div>
 			{/* <!-- Dropdown End --> */}
 		</li>
-    );
+	);
 };
 
 export default DropdownMessage;

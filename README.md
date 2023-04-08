@@ -6,12 +6,12 @@
 > Being built with love with modernity in mind. May be _slightly_ overengineered
 
 <p align="center">
-  </a>
   <a aria-label="Commitizen" href="https://commitizen.github.io/cz-cli/">
     <img alt="Commitizen Friendly Badge" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge">
   </a>
   <a aria-label="Semantic Release" href="https://github.com/semantic-release/semantic-release">
     <img alt="Semantic Release Badge Badge" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge">
+    </a>
     <a aria-label="Build Status" href="https://github.com/BrycensRanch/AuthIsForMe/actions/workflows/publish.yml">
       <img alt="GitHub Workflow Status Badge" src="https://img.shields.io/github/actions/workflow/status/BrycensRanch/AuthIsForMe/publish.yml?label=BUILD&logo=github&style=for-the-badge">
     </a>
@@ -35,7 +35,7 @@
       src="https://github.com/codespaces/badge.svg"
       />
     </a>
-          <a href="https://depfu.com/github/BrycensRanch/AuthIsForMe">
+    <a aria-label="Open Depfu Status" href="https://depfu.com/github/BrycensRanch/AuthIsForMe">
        <img src="https://img.shields.io/depfu/dependencies/github/BrycensRanch/AuthIsForMe?style=for-the-badge" alt="dependencies status" />
     </a>
 </p>

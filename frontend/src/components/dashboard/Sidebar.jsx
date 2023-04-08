@@ -448,7 +448,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 													(pathname === '/ui' || pathname.includes('ui')) && 'bg-graydark dark:bg-meta-4'
 												}`}
 												onClick={event => {
-													e.preventDefault();
+													event.preventDefault();
 													sidebarExpanded ? handleClick() : setSidebarExpanded(true);
 												}}
 											>

@@ -46,9 +46,9 @@
 		"jest.setup.ts",
 		"jest.config.ts",
 		"src/pages/api/__coverage__.js",
-		"src/components/dash/NavLink.jsx",
-		"src/components/dash/DropdownMessage.jsx",
-		"src/components/dash/DropdownDefault.jsx",
-		"src/components/dash/ChartFour.jsx"
+		"src/components/dashboard/NavLink.jsx",
+		"src/components/dashboard/DropdownMessage.jsx",
+		"src/components/dashboard/DropdownDefault.jsx",
+		"src/components/dashboard/ChartFour.jsx"
 	]
 }

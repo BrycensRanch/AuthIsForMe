@@ -64,7 +64,7 @@ const customJestConfig = {
 			statements: 0,
 		},
 	},
-  testEnvironment: '@happy-dom/jest-environment'
+	testEnvironment: '@happy-dom/jest-environment',
 };
 
 module.exports = createJestConfig(customJestConfig);
