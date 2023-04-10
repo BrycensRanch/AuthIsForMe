@@ -380,6 +380,9 @@ importers:
       jest:
         specifier: ^29.5.0
         version: 29.5.0(@types/node@18.15.10)(ts-node@10.9.1)
+      jest-mock:
+        specifier: ^29.5.0
+        version: 29.5.0
       jest-ts-webcompat-resolver:
         specifier: ^1.0.0
         version: 1.0.0(jest-resolve@29.5.0)

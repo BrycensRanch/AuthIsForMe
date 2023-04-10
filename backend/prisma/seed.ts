@@ -7,7 +7,6 @@ const userData: Prisma.UserCreateInput[] = [
 	{
 		username: 'Alice',
 		email: 'alice@prisma.io',
-		userId: 1,
 		biography: 'i am do',
 		posts: {
 			create: [
@@ -22,7 +21,6 @@ const userData: Prisma.UserCreateInput[] = [
 	{
 		username: 'Nilu',
 		email: 'nilu@prisma.io',
-		userId: 2,
 		biography: 'i am ddo',
 		posts: {
 			create: [
@@ -37,7 +35,6 @@ const userData: Prisma.UserCreateInput[] = [
 	{
 		username: 'Mahmoud',
 		email: 'mahmoud@prisma.io',
-		userId: 3,
 		biography: 'i am dfvdsfdo',
 		posts: {
 			create: [
@@ -62,7 +59,7 @@ export async function main() {
 			const user = await prisma.user.create({
 				data: u,
 			});
-			console.log(`Created user with id: ${user.id}`);
+			console.log(`Created user with id: ${user.userId}`);
 		}
 		console.log('Seeding finished.');
 	} catch (error) {

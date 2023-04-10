@@ -16,12 +16,14 @@ const jestConfig: JestConfigWithTsJest = {
 	clearMocks: true,
 	collectCoverage: true,
 	collectCoverageFrom: [
-		'./routes/**/*.{js,ts, mts, mjs, cjs, cts}',
-		'./plugins/**/*.{js,ts, mts, mjs, cjs, cts}',
-		'./app.{js,ts, mts, mjs, cjs, cts}',
-		'!**/*.d.ts',
+		'./app.{js,ts,mts,mjs,cjs,cts}',
+    '**/*.service.{js,ts,mts,mjs,cjs,cts}',
+    '**/*.controller.{js,ts,mts,mjs,cjs,cts}',
+    '!**/*.d.ts',
+    '!**/dist/**',
 		'!**/node_modules/**',
 	],
+  coverageThreshold,
 	testMatch: ['**/*.test.ts'],
 	moduleNameMapper: {
 		// Handle module aliases (this will be automatically configured for you soon)

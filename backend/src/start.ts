@@ -14,7 +14,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 // import * as eta from "eta";
-import * as app from './app.js';
+// import * as app from './app.js';
 import { AppModule } from './app.module.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -104,11 +104,12 @@ const start = async () => {
 	);
 	nestApp.useStaticAssets({ root: join(__dirname, '..', 'public') });
 	nestApp.enableVersioning();
+	// nestApp.setBaseViewsDir(join(__dirname, '..', 'views'));
 	// nestApp.useStaticAssets({
 	// 	root: join(__dirname, "..", "views"),
 	// });
 	// nestApp.setViewEngine({
-	// 	engine: eta as never,
+	//   engine: 'eta' as never,
 	// });
 	const server = nestApp.getHttpAdapter().getInstance() as FastifyInstance;
 	// Validate all endpoints
@@ -117,7 +118,7 @@ const start = async () => {
 			whitelist: true,
 		}),
 	);
-	await server.register(app.fastify);
+	// await server.register(app.fastify);
 	// await server.register(fastifyTLS, {
 	// 	// Optional (default: ./key.pem)
 	// 	key: join(__dirname, 'certs', 'key.pem'),
@@ -125,20 +126,12 @@ const start = async () => {
 	// 	cert: join(__dirname, 'certs', 'cert.pem'),
 	// })
 
-	// @ts-expect-error I honestly have no idea why this doesn't work
 	// TODO: Remove all ts comments
-	server.listen(
-		{
-			// Tip: Port 443 (HTTPS) requires root permissions. Use a port >1024.
-			port: process.env.PORT || process.env.FASTIFY_PORT || '8443',
-			host: '::',
-		},
-		(error, address) => {
-			if (error) throw error;
+	nestApp.listen(process.env.PORT || process.env.FASTIFY_PORT || '8000', (error, address) => {
+		if (error) throw error;
 
-			if (process.env.NODE_APP_INSTANCE === '0' || (!process.env.NODE_APP_INSTANCE && process.env.NODE_ENV !== 'test'))
-				server.log.info(`Server listening at ${address}`);
-		},
-	);
+		if (process.env.NODE_APP_INSTANCE === '0' || (!process.env.NODE_APP_INSTANCE && process.env.NODE_ENV !== 'test'))
+			server.log.info(`Server listening at ${address}`);
+	});
 };
 start();
