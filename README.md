@@ -2,6 +2,7 @@
 
 - "Make it **work**, make it **right**, make it **fast**" - _Kent Beck_
 - "The function of **good software** is to **make** the **complex** appear to be **simple**." - _Grady Booch_
+- "If debugging is the process of removing software bugs, then programming must be the process of putting them in" - _Edsger Dijkstra_
 
 > Being built with love with modernity in mind. May be _slightly_ overengineered
 
