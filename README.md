@@ -2,6 +2,7 @@
 
 - "Make it **work**, make it **right**, make it **fast**" - _Kent Beck_
 - "The function of **good software** is to **make** the **complex** appear to be **simple**." - _Grady Booch_
+- "If debugging is the process of removing software bugs, then programming must be the process of putting them in" - _Edsger Dijkstra_
 
 > Being built with love with modernity in mind. May be _slightly_ overengineered
 
@@ -44,11 +45,11 @@
 
 - Inspired by [minecraftauth.me](https://minecraftauth.me?ref=brycensranchgithubreadme)
 - Based on [AuthApp](https://github.com/Romvnly-Gaming/AuthApp)
-- ***AuthApp is not licensed***, while it is free to use, [in no way is it FOSS](https://choosealicense.com/no-permission/).
+- **_AuthApp is not licensed_**, while it is free to use, [in no way is it FOSS](https://choosealicense.com/no-permission/).
 - Our project has a special license from the author that enables us to relicense, modify, redestribute, and use the code as I wish.
 
 Also, we are not affiliated with Mojang, Microsoft, or any of their her partners.
-  
+
 ## Roadmap
 
 - Manage Twitch/YouTube description with a list of allowed users at the moment - maybe
@@ -76,10 +77,7 @@ Also, we are not affiliated with Mojang, Microsoft, or any of their her partners
 
 ## Self-hosting
 
-Self-hosting support will not be provided for this project.
-I am a student, and I have a life outside of this project, so I will **not** be able to provide support for self-hosting.
-My code is open-source because I want to share my work with the world.
-If you want to self-host this project, you are free to do so, but you are on your own.
+Self-hosting support will not be provided for this project. I am a student, and I have a life outside of this project, so I will **not** be able to provide support for self-hosting. My code is open-source because I want to share my work with the world. If you want to self-host this project, you are free to do so, but you are on your own.
 
 ### Planned Technology Stack
 
