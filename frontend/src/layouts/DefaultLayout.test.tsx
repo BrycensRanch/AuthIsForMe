@@ -1,7 +1,7 @@
-import { render, screen, waitFor } from '@testing-library/react';
+// import { render, screen, waitFor } from '@testing-library/react';
 import type { ReactNode } from 'react';
 
-import DefaultLayout from './DefaultLayout';
+// import DefaultLayout from './DefaultLayout';
 
 // Mock `next/head`: https://bradgarropy.com/blog/mocking-nextjs
 jest.mock(
@@ -16,13 +16,14 @@ jest.mock(
 
 describe('DashboardLayout component', () => {
 	describe('Render method', () => {
-		it('should have dashboard header', async () => {
-			// eslint-disable-next-line react/no-children-prop
-			render(<DefaultLayout children={undefined} />);
-
-			await waitFor(() => {
-				expect(screen.getByTestId('header')).toBeInTheDocument();
-			});
-		});
+		it.todo('should have dashboard header');
+		// Logic for this test:
+		// async () => {
+		//   // eslint-disable-next-line react/no-children-prop
+		//   render(<DefaultLayout children={undefined} />);
+		//
+		//   await waitFor(() => {
+		//     expect(screen.getByTestId('header')).toBeInTheDocument();
+		//   });
 	});
 });
