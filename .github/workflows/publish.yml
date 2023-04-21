@@ -54,10 +54,10 @@ jobs:
         with:
           path: |
             ${{ github.workspace }}/backend/dist
-            ~/.cache
-            ${{ github.workspace }}/.cache
             ${{ github.workspace }}/**/tsconfig.tsbuildinfo
+          # Generate a new cache whenever packages or source files change.
           key: ${{ runner.os }}-backend-${{ hashFiles('**/pnpm.lock') }}-${{ hashFiles('backend/src/**.[jt]s?', 'backend/src/**.json') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-backend-${{ hashFiles('**/pnpm.lock') }}-
 
@@ -71,9 +71,11 @@ jobs:
             ${{ github.workspace }}/.cache
             ~/.cache
             ${{ github.workspace }}/**/tsconfig.tsbuildinfo
+          # Generate a new cache whenever packages or source files change.
           key: ${{ runner.os }}-frontend-${{ hashFiles('**/pnpm.lock') }}-${{ hashFiles('frontend/src/**.[jt]sx?', 'frontend/src/**.json') }}
+          # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
-            ${{ runner.os }}-nextjs-app-${{ hashFiles('**/pnpm.lock') }}-
+            ${{ runner.os }}-frontend-${{ hashFiles('**/pnpm.lock') }}-
 
       - name: 📥 Monorepo install all deps & pnpm
         uses: ./.github/actions/pnpm-install
