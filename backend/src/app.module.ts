@@ -8,7 +8,7 @@ import { PrismaModule } from './modules/prisma/prisma.module.js';
 		ConfigModule.forRoot({
 			isGlobal: true,
 		}),
-    PrismaModule, // <-- Add this line
+		PrismaModule, // <-- Add this line
 	],
 	controllers: [RootController],
 })

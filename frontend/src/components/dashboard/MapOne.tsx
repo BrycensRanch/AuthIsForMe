@@ -5,7 +5,7 @@ import jsVectorMap from 'jsvectormap';
 import { useLayoutEffect } from 'react';
 
 const MapOne = () => {
-  // "useLayoutEffect can hurt performance" lick my balls
+	// "useLayoutEffect can hurt performance" lick my balls
 	useLayoutEffect(() => {
 		new jsVectorMap({
 			selector: '#mapOne',

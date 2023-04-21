@@ -17,13 +17,13 @@ const jestConfig: JestConfigWithTsJest = {
 	collectCoverage: true,
 	collectCoverageFrom: [
 		'./app.{js,ts,mts,mjs,cjs,cts}',
-    '**/*.service.{js,ts,mts,mjs,cjs,cts}',
-    '**/*.controller.{js,ts,mts,mjs,cjs,cts}',
-    '!**/*.d.ts',
-    '!**/dist/**',
+		'**/*.service.{js,ts,mts,mjs,cjs,cts}',
+		'**/*.controller.{js,ts,mts,mjs,cjs,cts}',
+		'!**/*.d.ts',
+		'!**/dist/**',
 		'!**/node_modules/**',
 	],
-  coverageThreshold,
+	coverageThreshold,
 	testMatch: ['**/*.test.ts'],
 	moduleNameMapper: {
 		// Handle module aliases (this will be automatically configured for you soon)

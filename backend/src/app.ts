@@ -37,8 +37,8 @@ import serverVersion from 'fastify-server-version';
 import fastifyZodValidate from 'fastify-zod-validate';
 import fjwt from '@fastify/jwt';
 import fastifyETag from '@fastify/etag';
-import fastifyViews from "@fastify/view";
-import * as eta from "eta";
+// import fastifyViews from '@fastify/view';
+// import * as eta from 'eta';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

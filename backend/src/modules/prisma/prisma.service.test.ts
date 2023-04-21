@@ -29,11 +29,11 @@ describe('PrismaService', () => {
 			console.log(error);
 		});
 	});
-  it('should throw an error when initialized twice', async function () {
-    await service.onModuleInit();
-    await service.onModuleInit().catch(error => {
-      expect(error).toBeDefined();
-      console.log(error);
-    });
-  });
+	it('should throw an error when initialized twice', async function () {
+		await service.onModuleInit();
+		await service.onModuleInit().catch(error => {
+			expect(error).toBeDefined();
+			console.log(error);
+		});
+	});
 });

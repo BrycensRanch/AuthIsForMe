@@ -192,6 +192,9 @@
 			],
 			"env": {
 				"jest/globals": true
+			},
+			"rules": {
+				"func-names": "off"
 			}
 		},
 		{
