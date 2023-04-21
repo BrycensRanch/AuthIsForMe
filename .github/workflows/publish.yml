@@ -17,6 +17,8 @@ on:
 
 jobs:
   build-lint-test-docker:
+    # Make sure to match this to the version in package.json
+    container: 'cypress/included:12.9.0'
     timeout-minutes: 30
     strategy:
       fail-fast: false
