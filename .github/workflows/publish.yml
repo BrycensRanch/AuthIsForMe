@@ -127,20 +127,9 @@ jobs:
       - name: 🥳 Run Tests (project-wide)
         run: |
           pnpm test
-      - name: 📤 Upload Frontend coverage to Codecov
+      - name: 📤 Upload Code coverage to Codecov
         uses: codecov/codecov-action@v3
         if: ${{ !github.event.act }}
-        with:
-          flags: unittests-frontend # optional
-          name: codecov-frontend # optional
-          working-directory: frontend
-      - name: 🥸 Upload Backend coverage to Codecov
-        uses: codecov/codecov-action@v3
-        if: ${{ !github.event.act }}
-        with:
-          flags: unittests-backend # optional
-          name: codecov-backend # optional
-          working-directory: backend
       - uses: actions/upload-artifact@v3
         if: ${{ !github.event.act }}
         with:
