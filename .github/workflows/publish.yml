@@ -73,10 +73,10 @@ jobs:
             ${{ github.workspace }}/backend/dist
             ${{ github.workspace }}/**/tsconfig.tsbuildinfo
           # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-backend-${{ hashFiles('**/pnpm.lock') }}-${{ hashFiles('backend/src/**.[jt]s?', 'backend/src/**.json') }}
+          key: ${{ runner.os }}-backend-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('backend/src/**.[jt]s?', 'backend/src/**.json') }}
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
-            ${{ runner.os }}-backend-${{ hashFiles('**/pnpm.lock') }}-
+            ${{ runner.os }}-backend-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       # see https://github.com/vercel/next.js/pull/27362
       - name: Restore frontend build from cache
