@@ -110,6 +110,9 @@ jobs:
       - name: 🚧 Ensure Code is Formatted
         run: |
           pnpm format:check
+      - name: 📝 Rename .env.example to .env
+        run: |
+          mv .env.example .env
       - name: 🤖 Build Project
         run: |
           pnpm build
