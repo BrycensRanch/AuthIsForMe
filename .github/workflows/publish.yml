@@ -113,6 +113,9 @@ jobs:
       - name: 📝 Rename .env.example to .env
         run: |
           mv .env.example .env
+      - name: 🏄‍♂️ Copy .env to backend
+        run: |
+          cp .env backend/.env
       - name: 🤖 Build Project
         run: |
           pnpm build
