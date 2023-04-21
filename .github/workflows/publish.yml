@@ -48,9 +48,6 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
-      - name: 📥 Monorepo install all deps & pnpm
-        uses: ./.github/actions/pnpm-install
-
       - name: Restore backend build from cache
         if: ${{ !github.event.act }}
         uses: actions/cache@v3
@@ -77,6 +74,10 @@ jobs:
           key: ${{ runner.os }}-frontend-${{ hashFiles('**/pnpm.lock') }}-${{ hashFiles('frontend/src/**.[jt]sx?', 'frontend/src/**.json') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-app-${{ hashFiles('**/pnpm.lock') }}-
+
+      - name: 📥 Monorepo install all deps & pnpm
+        uses: ./.github/actions/pnpm-install
+        
       # - name: Create and seed test database
       #   working-directory: backend
       #   run: |
