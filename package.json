@@ -44,7 +44,7 @@
 		"@semantic-release/github": "^8.0.7",
 		"@semantic-release/npm": "^10.0.3",
 		"@semantic-release/release-notes-generator": "^10.0.3",
-		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/jest-dom": "^6.0.0",
 		"commitizen": "^4.3.0",
 		"commitlint-config-monorepo": "^2.0.2",
 		"concurrently": "^8.0.1",
