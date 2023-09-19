@@ -5,49 +5,61 @@ import { PrismaClient, Prisma } from '@prisma/client';
 const prisma = new PrismaClient();
 const userData: Prisma.UserCreateInput[] = [
 	{
-		username: 'Alice',
 		email: 'alice@prisma.io',
-		biography: 'i am do',
-		posts: {
-			create: [
-				{
-					title: 'Join the Prisma Slack',
-					content: 'https://slack.prisma.io',
-					published: true,
+		profile: {
+			create: {
+				username: 'Alice',
+				biography: 'i am do',
+				posts: {
+					create: [
+						{
+							title: 'Join the Prisma Slack',
+							content: 'https://slack.prisma.io',
+							published: true,
+						},
+					],
 				},
-			],
+			},
 		},
 	},
 	{
-		username: 'Nilu',
 		email: 'nilu@prisma.io',
-		biography: 'i am ddo',
-		posts: {
-			create: [
-				{
-					title: 'Follow Prisma on Twitter',
-					content: 'https://www.twitter.com/prisma',
-					published: true,
+		profile: {
+			create: {
+				username: 'Nilu',
+				biography: 'i am ddo',
+				posts: {
+					create: [
+						{
+							title: 'Follow Prisma on Twitter',
+							content: 'https://www.twitter.com/prisma',
+							published: true,
+						},
+					],
 				},
-			],
+			},
 		},
 	},
 	{
-		username: 'Mahmoud',
 		email: 'mahmoud@prisma.io',
-		biography: 'i am dfvdsfdo',
-		posts: {
-			create: [
-				{
-					title: 'Ask a question about Prisma on GitHub',
-					content: 'https://www.github.com/prisma/prisma/discussions',
-					published: true,
+		profile: {
+			create: {
+				biography: 'i am dfvdsfdo',
+				username: 'Mahmoud',
+				posts: {
+					create: [
+						{
+							title: 'Ask a question about Prisma on GitHub',
+							content: 'https://www.github.com/prisma/prisma/discussions',
+							published: true,
+						},
+						{
+							title: 'Prisma on YouTube',
+							content: 'https://pris.ly/youtube',
+						},
+					],
 				},
-				{
-					title: 'Prisma on YouTube',
-					content: 'https://pris.ly/youtube',
-				},
-			],
+			},
 		},
 	},
 ];

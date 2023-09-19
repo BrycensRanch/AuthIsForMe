@@ -6,6 +6,25 @@ RUN apk update && apk upgrade
 RUN apk add --no-cache bash
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
 RUN apk add --no-cache libc6-compat
+RUN apk add --no-cache python3
+
+
+# install build dependencies and needed tools
+RUN apk add \
+    wget \
+    gcc \
+    make \
+    g++ \
+    pixman-dev \
+ cairo-dev\
+ pango-dev\
+ jpeg-dev\
+ giflib-dev \
+  zlib-dev \
+    libffi-dev \
+    openssl-dev \
+    musl-dev
+
 
 # RUN apk cache clean
 
@@ -21,20 +40,22 @@ RUN mkdir -p /home/nodejs/app/backend/node_modules && chown -R nodejs:nodejs /ho
 
 
 # PNPM FOR ALPINE LINUX IS KINDA COMPLICATED...
+# TODO: Make this use the project's pnpm version, not the latest version otherwise this could break the project down the road
 RUN wget -qO /bin/pnpm "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64" && chmod +x /bin/pnpm
 RUN mkdir -p /home/nodejs/.pnpm-store && chown -R nodejs:nodejs /home/nodejs/.pnpm-store
 RUN mkdir -p /home/nodejs/.pnpm-global && chown -R nodejs:nodejs /home/nodejs/.pnpm-global
 RUN pnpm config set store-dir /home/nodejs/.pnpm-store
-
+RUN npm i -g concurrently --ignore-scripts
 
 USER nodejs
 WORKDIR /home/nodejs/app
 
 # COPY --chown=nodejs:nodejs . . 
 
-ENV NODE_ENV=production
+# ENV NODE_ENV=production
 ENV PNPM_HOME=/home/nodejs/.local/share/pnpm    
 ENV PATH=$PATH:$PNPM_HOME   
+
 
 COPY --chown=nodejs:nodejs scripts/* ./
 COPY --chown=nodejs:nodejs package.json pnpm-lock.yaml pnpm-workspace.yaml ./
@@ -45,6 +66,7 @@ COPY --chown=nodejs:nodejs frontend/*.json ./frontend/
 COPY --chown=nodejs:nodejs frontend/*.config.js ./frontend/
 COPY --chown=nodejs:nodejs frontend/server.js ./frontend
 COPY --chown=nodejs:nodejs .env* ./
+
 COPY --chown=nodejs:nodejs frontend/healthCheck.js ./frontend/healthCheck.js
 COPY --chown=nodejs:nodejs frontend/.env* ./frontend/
 COPY --chown=nodejs:nodejs backend/*.json ./backend/
@@ -57,7 +79,8 @@ COPY --chown=nodejs:nodejs frontend/src /home/nodejs/app/frontend/src
 COPY --chown=nodejs:nodejs backend /home/nodejs/app/backend
 COPY --chown=nodejs:nodejs frontend/public /home/nodejs/app/frontend/public
 COPY --chown=nodejs:nodejs frontend/__mocks__ /home/nodejs/app/frontend/__mocks__
-
+COPY --chown=nodejs:nodejs frontend/.next /home/nodejs/app/frontend/.next
+COPY --chown=nodejs:nodejs scripts /home/nodejs/app/scripts
 
 
 RUN node dockerBuildAndInstall.mjs
@@ -81,14 +104,16 @@ COPY --chown=nodejs:nodejs backend ./backend
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN pnpm install --prod 
+RUN SHELL=bash pnpm setup
+
+RUN CYPRESS_INSTALL_BINARY=0 pnpm install
+RUN cd backend && pnpm prisma generate
+RUN pnpm build
 
 #RUN npm i -g next
 
 # Work in progress
-RUN SHELL=bash pnpm setup
-# RUN pnpm add -g pm2
-RUN pnpm add -g cross-env rimraf concurrently
+RUN pnpm add -g pm2
 
 EXPOSE 3000
 
@@ -165,5 +190,5 @@ ENV BACKEND_PORT 8000
 
 # ENV BACKEND_PORT 8000
 
-CMD ["pnpm", "start"]
+CMD ["pnpm", "boot:pm2"]
 # CMD ["pnpm", "pm2"]

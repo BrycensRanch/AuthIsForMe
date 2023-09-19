@@ -10,7 +10,7 @@
 		"test": "cross-env DEBUG=prisma:* NODE_ENV=test jest",
 		"test:jest": "pnpm test",
 		"test:watch": "cross-env NODE_ENV=test jest --watch",
-		"start": "cross-env NODE_ENV=production node dist/app.js",
+		"start": "cross-env NODE_ENV=production node dist/src/start.js",
 		"prepm2": "pnpm cleanbuild",
 		"pm2": "cross-env NODE_ENV=production pm2 start --watch --interpreter ts-node-dev pm2.config.js",
 		"healthcheck": "node healthCheck.cjs",
@@ -27,7 +27,7 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"commit": "cz",
-		"migrate:postgres": "dotenv -e ../.env -- npx prisma migrate deploy"
+		"migrate:postgres": "dotenv -e ../.env -- npx prisma migrate dev"
 	},
 	"dependencies": {
 		"@fastify/accepts": "^4.1.0",
@@ -54,6 +54,7 @@
 		"@nestjs/platform-fastify": "^9.3.12",
 		"@ory/kratos-client": "^0.11.1",
 		"@prisma/client": "^4.12.0",
+		"cross-env": "^7.0.3",
 		"class-transformer": "^0.5.1",
 		"class-validator": "^0.14.0",
 		"dotenv-defaults": "^5.0.2",
@@ -88,7 +89,12 @@
 		"typescript": "^5.0.2",
 		"useragent": "^2.3.0",
 		"yaml": "^2.2.1",
-		"zod": "^3.21.4"
+		"zod": "^3.21.4",
+		"chalk": "^5.2.0",
+		"git-repo-info": "^2.1.1",
+		"is-docker": "^3.0.0",
+		"figlet": "^1.5.2",
+		"@npmcli/ci-detect": "^3.0.2"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.21.4",
@@ -98,7 +104,6 @@
 		"@nestjs/cli": "^9.3.0",
 		"@nestjs/schematics": "^9.0.4",
 		"@nestjs/testing": "^9.3.12",
-		"@npmcli/ci-detect": "^3.0.2",
 		"@types/dotenv-defaults": "^2.0.1",
 		"@types/figlet": "^1.5.5",
 		"@types/ioredis-mock": "^8.2.1",
@@ -111,8 +116,6 @@
 		"babel-jest": "^29.5.0",
 		"babel-plugin-transform-import-meta": "^2.2.0",
 		"babel-plugin-transform-vite-meta-env": "^1.0.3",
-		"chalk": "^5.2.0",
-		"cross-env": "^7.0.3",
 		"dotenv-cli": "^7.1.0",
 		"eslint": "^8.36.0",
 		"eslint-config-airbnb-base-typescript-prettier": "^5.1.0",
@@ -130,11 +133,8 @@
 		"eslint-plugin-unicorn": "^46.0.0",
 		"eslint-plugin-unused-imports": "^2.0.0",
 		"fastify-tls-keygen": "^1.1.0",
-		"figlet": "^1.5.2",
 		"fix-esm": "^1.0.1",
-		"git-repo-info": "^2.1.1",
 		"ioredis-mock": "^8.2.7",
-		"is-docker": "^3.0.0",
 		"jest": "^29.5.0",
 		"jest-mock": "^29.5.0",
 		"jest-ts-webcompat-resolver": "^1.0.0",

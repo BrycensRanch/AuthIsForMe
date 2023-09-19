@@ -1,5 +1,4 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query, Render } from '@nestjs/common';
-import { Prisma } from '@prisma/client';
 import { PrismaService } from './prisma/prisma.service.js';
 
 @Controller('/')
@@ -13,11 +12,6 @@ export class RootController {
 		return {
 			message: 'The oldest',
 		};
-	}
-
-	@Get('post/:id')
-	async getPostById(@Param('id') id: string) {
-		return this.prismaService.post.findUnique({ where: { id: Number(id) } });
 	}
 
 	@Get('feed')
@@ -47,56 +41,13 @@ export class RootController {
 		});
 	}
 
-	@Get('users')
-	async getAllUsers() {
-		return this.prismaService.user.findMany();
-	}
-
-	@Get('user/:id/drafts')
-	async getDraftsByUser(@Param('id') id: string) {
-		return this.prismaService.user
-			.findUnique({
-				where: { userId: Number(id) },
-			})
-			.posts({
-				where: {
-					published: false,
-				},
-			});
-	}
-
 	@Post('post')
-	async createDraft(@Body() postData: { title: string; content?: string; authorEmail: string }) {
-		const { title, content, authorEmail } = postData;
+	async createDraft(@Body() postData: { title: string; content?: string }) {
+		const { title, content } = postData;
 		return this.prismaService.post.create({
 			data: {
 				title,
 				content,
-				author: {
-					connect: { email: authorEmail },
-				},
-			},
-		});
-	}
-
-	@Post('signup')
-	async signupUser(
-		@Body()
-		userData: {
-			username: string;
-			email: string;
-			posts?: Prisma.PostCreateInput[];
-		},
-	) {
-		return this.prismaService.user.create({
-			data: {
-				username: userData.username,
-				email: userData.email,
-				posts: {
-					create: userData.posts?.map(post => {
-						return { title: post?.title, content: post?.content };
-					}),
-				},
 			},
 		});
 	}

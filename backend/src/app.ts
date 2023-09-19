@@ -43,18 +43,18 @@ import fastifyETag from '@fastify/etag';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 expand(
-	loadMonoRepoEnvironment({
-		path: join(__dirname, '../.env'),
-		encoding: 'utf8',
-	}) as DotenvExpandOptions,
-);
-
-expand(
 	loadEnvironmentDefaultsAndRegularEnvironment({
 		path: './.env',
 		encoding: 'utf8',
 		defaults: './.env.example', // This is new
 	}),
+);
+
+expand(
+	loadMonoRepoEnvironment({
+		path: join(__dirname, '../.env'),
+		encoding: 'utf8',
+	}) as DotenvExpandOptions,
 );
 
 export type AppOptions = {

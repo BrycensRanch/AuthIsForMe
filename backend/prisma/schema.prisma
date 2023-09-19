@@ -7,8 +7,7 @@ datasource db {
 }
 
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["jsonProtocol"]
+  provider = "prisma-client-js"
 }
 
 generator zod {
@@ -21,13 +20,31 @@ generator jsonSchema {
 
 model Following {
   // not really a meaningful value
-  followId Int  @id @default(autoincrement())
+  followId Int     @id @default(autoincrement())
   userId   Int
-  User     User @relation(fields: [userId], references: [userId])
+  User     Profile @relation(fields: [userId], references: [profileId])
 }
 
+// User model includes sensitive information about the user
+// Should not be exposed to the public
 model User {
-  userId             Int      @id @default(autoincrement()) @unique
+  /// Triple Slash Comment: It will show up in JSON schema [EMAIL]
+  email          String          @unique
+  userId         Int             @id @unique @default(autoincrement())
+  // The user Model derives a Profile model for non sensitive information
+  // Define a one-to-one relationship with the Profile model
+  profile        Profile?        @relation(fields: [profileId], references: [profileId])
+  profileId      Int?
+  apiKeys        ApiKey[]
+  mojangAccount  MojangAccount?
+  DiscordAccount DiscordAccount?
+
+  TwitchAccount TwitchAccount?
+}
+
+// Should not include sensitive information
+model Profile {
+  profileId      Int      @id @default(autoincrement())
   // Double Slash Comment: It will NOT show up in JSON schema
   createdAt      DateTime @default(now())
   banned         Boolean  @default(false)
@@ -38,22 +55,13 @@ model User {
   // following  User[]   @relation("Following")
   // followedBy User[]   @relation("Followers")
 
-  /// Triple Slash Comment: It will show up in JSON schema [EMAIL]
-  email          String          @unique
   /// Username 
-  username       String          @unique
-  role           Role            @default(USER)
-  posts          Post[]
-  biography      String?          @db.VarChar(240)
-  apiKeys        ApiKey[]
-  Following      Following[]
-  mojangAccount  MojangAccount?
-  // The user's password hash
-  // HAHAHA No, we don't do that here
-  // I can't be trusted with passwords ☠️
-  DiscordAccount DiscordAccount?
-
-  TwitchAccount TwitchAccount?
+  username  String      @unique
+  role      Role        @default(USER)
+  posts     Post[]
+  biography String?     @db.VarChar(240)
+  Following Following[]
+  User      User[]
 }
 
 model MojangAccount {
@@ -87,7 +95,7 @@ model Post {
   content   String?
   published Boolean? @default(false)
   viewCount Int      @default(0)
-  author    User?    @relation(fields: [authorId], references: [userId])
+  author    Profile? @relation(fields: [authorId], references: [profileId])
   authorId  Int?
 }
 

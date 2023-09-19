@@ -32,6 +32,7 @@ deepReadDir(process.cwd()).then(async nonFlatFileArrays => {
 		console.log(
 			"Shame on you, you didn't compile builds before building this Dockerfile, enjoy the INCREASED image size and build times.",
 		);
+		console.log(`(Missing expected .next folder in ${process.cwd()})`);
 		const stdoutInstall = await execPromise(`NODE_ENV=development HUSKY=0 CYPRESS_INSTALL_BINARY=0 pnpm install`);
 		console.log(`stdout for Install step: ${stdoutInstall}`);
 		const stdoutBuild = await execPromise(`NODE_ENV=production pnpm build -r`);

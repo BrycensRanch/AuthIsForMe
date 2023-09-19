@@ -9,6 +9,7 @@
 		"build": "concurrently -c \"auto\" \"npm run build -w=backend\" \"npm run build -w=frontend\"",
 		"start:pm2": "concurrently -c \"auto\" \"npm:pm2:frontend\" \"npm:pm2:backend\" && pm2 save && pm2 logs --lines 1000",
 		"start:pm2:ts": "concurrently -c \"auto\" \"npm:pm2:ts:frontend\" \"npm:pm2:ts:backend\" && pm2 save && pm2 logs --lines 1000",
+		"boot:pm2": "cd backend && pm2 start pnpm --name AuthBackend -- run start && cd ../frontend && pm2 start pnpm --name AuthFrontend -- run start && pm2 logs",
 		"dev": "pnpm docker-start-other-services && concurrently -c \"auto\" \"npm:dev:frontend\" \"npm:dev:backend\"",
 		"docker-start-other-services": "node scripts/dockerStartServices.mjs",
 		"healthcheck": "npm run healthcheck -w=frontend && npm run healthcheck -w=backend",
@@ -35,6 +36,9 @@
 	"keywords": [],
 	"author": "",
 	"license": "MIT",
+	"dependencies": {
+		"concurrently": "^8.2.1"
+	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.5.1",
 		"@commitlint/config-conventional": "^17.4.4",

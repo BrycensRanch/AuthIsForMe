@@ -1,11 +1,14 @@
 /* eslint-disable no-console */
+
+// TODO: remove this file in favor of pm2 start pnpm --name AuthFrontend -- run start
+
 const { createServer } = require('node:http');
 const { parse } = require('node:url');
 const { join } = require('node:path');
 const next = require('next');
 
 const development = process.env.NODE_ENV !== 'production';
-const hostname = 'localhost';
+const hostname = '0.0.0.0';
 const port = process.env.PORT || 3000;
 // when using middleware `hostname` and `port` must be provided below
 const app = next({ dev: development, hostname, port });
