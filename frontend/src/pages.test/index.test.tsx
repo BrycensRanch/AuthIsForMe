@@ -42,7 +42,7 @@ describe('Index page', () => {
 			render(<Index />);
 
 			const heading = screen.getByRole('heading', {
-				name: /We invest in you\./,
+				name: /Unify your Minecraft account\./,
 			});
 			await waitFor(() => {
 				expect(heading).toBeInTheDocument();
