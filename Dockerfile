@@ -106,7 +106,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN SHELL=bash pnpm setup
 
-RUN CYPRESS_INSTALL_BINARY=0 pnpm install
+RUN CYPRESS_INSTALL_BINARY=0 pnpm install --frozen-lockfile --prefer-offline
 RUN cd backend && pnpm prisma generate
 RUN pnpm build
 
