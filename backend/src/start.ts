@@ -10,6 +10,9 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import figlet from 'figlet';
 import chalk from 'chalk';
+import { load as loadMonoRepoEnvironment } from 'dotenv-mono';
+import { config as loadEnvironmentDefaultsAndRegularEnvironment } from 'dotenv-defaults';
+import { DotenvExpandOptions, expand } from 'dotenv-expand';
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
@@ -18,6 +21,21 @@ import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify
 import { AppModule } from './app.module.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+expand(
+	loadEnvironmentDefaultsAndRegularEnvironment({
+		path: './.env',
+		encoding: 'utf8',
+		defaults: './.env.example', // This is new
+	}),
+);
+
+expand(
+	loadMonoRepoEnvironment({
+		path: join(__dirname, '../.env'),
+		encoding: 'utf8',
+	}) as DotenvExpandOptions,
+);
 
 async function readJsonFile(path: string): Promise<Record<string, ProjectReference>> {
 	const file = await readFile(path, 'utf8');
@@ -126,7 +144,6 @@ const start = async () => {
 	// 	cert: join(__dirname, 'certs', 'cert.pem'),
 	// })
 
-	// TODO: Remove all ts comments
 	nestApp.listen(process.env.PORT || process.env.FASTIFY_PORT || '8000', (error, address) => {
 		if (error) throw error;
 

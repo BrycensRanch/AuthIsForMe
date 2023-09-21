@@ -12,9 +12,6 @@ import { existsSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 
 import { fileURLToPath } from 'node:url';
-import { load as loadMonoRepoEnvironment } from 'dotenv-mono';
-import { config as loadEnvironmentDefaultsAndRegularEnvironment } from 'dotenv-defaults';
-import { DotenvExpandOptions, expand } from 'dotenv-expand';
 import printRoutes from 'fastify-print-routes';
 import fastifyResponseTime from 'fastify-request-timing';
 import fastifyAllow from 'fastify-allow';
@@ -41,21 +38,6 @@ import fastifyETag from '@fastify/etag';
 // import * as eta from 'eta';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-
-expand(
-	loadEnvironmentDefaultsAndRegularEnvironment({
-		path: './.env',
-		encoding: 'utf8',
-		defaults: './.env.example', // This is new
-	}),
-);
-
-expand(
-	loadMonoRepoEnvironment({
-		path: join(__dirname, '../.env'),
-		encoding: 'utf8',
-	}) as DotenvExpandOptions,
-);
 
 export type AppOptions = {
 	// // Place your custom options for app below here.
