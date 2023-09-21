@@ -21,7 +21,7 @@ tasks:
     command: docker compose up db db2 cache -d && pnpm dev
 
 # security issues, unauthorised commits to our repository
-image: ghcr.io/brycensranch/gitpod-enhanced:latest
+image: nberlette/gitpod-enhanced
 vscode:
   extensions:
     - bradlc.vscode-tailwindcss
