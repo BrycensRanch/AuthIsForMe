@@ -18,6 +18,8 @@ source ./scripts/gitpod-env.sh
       git config --global --unset safe.directory 
       git config --global user.name BrycensRanch
       git config --global user.email brycengranville@outlook.com
+      export GIT_AUTHOR_NAME="Brycen G"
+      export GIT_AUTHOR_EMAIL="brycengranville@outlook.com"
       [[ ! -z $GNUPG_KEY  ]] 
       rm -rf ~/.gnupg 
       gpg --verbose --batch --import <(echo $GNUPG_KEY|base64 -d) 
