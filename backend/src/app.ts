@@ -10,6 +10,7 @@ import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from 'fastify';
 // import inputValidation from 'openapi-validator-middleware';
 import { existsSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
+import { dotenvLoad as loadMonoRepoEnvironment } from 'dotenv-mono';
 
 import { fileURLToPath } from 'node:url';
 import printRoutes from 'fastify-print-routes';
@@ -36,9 +37,11 @@ import fastifyETag from '@fastify/etag';
 import { expand, DotenvExpandOptions } from 'dotenv-expand';
 // import fastifyViews from '@fastify/view';
 // import * as eta from 'eta';
+const defaults = await import(`dotenv-defaults`);
 
+// Initializing the default environment variables
 expand(
-	loadEnvironmentDefaultsAndRegularEnvironment({
+	defaults.config({
 		path: './.env',
 		encoding: 'utf8',
 		defaults: './.env.example', // This is new
