@@ -85,8 +85,8 @@ const Thanks = () => {
 						}
 						return `${npmPackage.name} - ${npmPackage.license || 'UNKNOWN LICENSE'} - 
               ${normalizedRepoURL} - Authored by ${npmPackage.author?.name || getRepoAuthor(normalizedRepoURL.href)} (${
-							npmPackage.author?.email || (await getAuthorEmail(normalizedRepoURL.href))
-						}) -  ${npmPackage.description || 'No description provided'}`;
+								npmPackage.author?.email || (await getAuthorEmail(normalizedRepoURL.href))
+							}) -  ${npmPackage.description || 'No description provided'}`;
 					} catch (error) {
 						console.debug(error);
 						return `${dep} - Unknown, rate limited? ⚠️`;

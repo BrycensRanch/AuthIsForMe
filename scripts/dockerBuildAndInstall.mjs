@@ -5,9 +5,7 @@ import { join } from 'node:path';
 
 const deepReadDir = async dirPath =>
 	await Promise.all(
-		(
-			await readdir(dirPath, { withFileTypes: true })
-		).map(async dirent => {
+		(await readdir(dirPath, { withFileTypes: true })).map(async dirent => {
 			const path = join(dirPath, dirent.name);
 			return dirent.isDirectory() ? await deepReadDir(path) : path;
 		}),
