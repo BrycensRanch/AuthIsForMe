@@ -1,4 +1,4 @@
-import type { SentryPluginOptions } from '@immobiliarelabs/fastify-sentry';
+import type { FastifySentryOptions } from '@immobiliarelabs/fastify-sentry';
 import sentry from '@immobiliarelabs/fastify-sentry';
 import type { FastifyTypeProviderDefault, RawServerDefault } from 'fastify';
 import fp from 'fastify-plugin';
@@ -10,7 +10,7 @@ const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
  *
  * @see https://github.com/immobiliare/fastify-sentry
  */
-export default fp<SentryPluginOptions, RawServerDefault, FastifyTypeProviderDefault>(async fastify => {
+export default fp<FastifySentryOptions, RawServerDefault, FastifyTypeProviderDefault>(async fastify => {
 	if (SENTRY_DSN) {
 		fastify.register(sentry, {
 			dsn: SENTRY_DSN,

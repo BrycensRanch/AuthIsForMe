@@ -3,7 +3,7 @@ import { PrismaService } from './prisma/prisma.service.js';
 
 @Controller('/')
 export class RootController {
-	// eslint-disable-next-line no-useless-constructor
+	// eslint-disable-next-line no-empty-function, no-useless-constructor
 	constructor(private readonly prismaService: PrismaService) {}
 
 	@Get()
@@ -49,6 +49,14 @@ export class RootController {
 				title,
 				content,
 			},
+		});
+	}
+
+	// List posts with no author
+	@Get('drafts')
+	async getDrafts() {
+		return this.prismaService.post.findMany({
+			where: { author: undefined },
 		});
 	}
 

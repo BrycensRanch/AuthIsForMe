@@ -1,5 +1,5 @@
 /* eslint-disable sonarjs/no-duplicate-string */
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import Medal from './Medal';
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -22,7 +22,6 @@ jest.mock('next/router', () => ({
 
 afterEach(() => {
 	// cleaning up the mess left behind the previous test
-	cleanup();
 	jest.restoreAllMocks();
 });
 
@@ -33,15 +32,15 @@ describe('Medal component', () => {
 	describe('Render method', () => {
 		it('medal should NOT render right away', async () => {
 			render(<Medal initialValue={false} title={title} body={body} />);
-			await fireEvent.click(screen.getByTestId('medal-button1'));
+			fireEvent.click(screen.getByTestId('medal-button1'));
 			await waitFor(() => {
 				const medalTitle = screen.getByTestId('medal-title');
 				expect(medalTitle).toHaveTextContent(title);
 			});
 			// dismiss button
-			await fireEvent.click(screen.getByTestId('medal-button3'));
+			fireEvent.click(screen.getByTestId('medal-button3'));
 			// medal is gone
-			// eslint-disable-next-line testing-library/no-await-sync-query, testing-library/prefer-presence-queries
+			// eslint-disable-next-line testing-library/prefer-presence-queries
 			// expect(screen.getByText('Close')).not.toBeInTheDocument();
 		});
 
@@ -51,9 +50,9 @@ describe('Medal component', () => {
 			expect(medalTitle).toHaveTextContent(title);
 
 			// dismiss button
-			await fireEvent.click(screen.getByTestId('medal-button3'));
+			fireEvent.click(screen.getByTestId('medal-button3'));
 			// medal is gone
-			// eslint-disable-next-line testing-library/no-await-sync-query, testing-library/prefer-presence-queries
+			// eslint-disable-next-line testing-library/prefer-presence-queries
 			// expect(screen.getByText('Close')).not.toBeInTheDocument();
 		});
 
@@ -63,9 +62,9 @@ describe('Medal component', () => {
 			expect(medalTitle).toHaveTextContent(title);
 
 			// dismiss button
-			await fireEvent.click(screen.getByTestId('medal-button2'));
+			fireEvent.click(screen.getByTestId('medal-button2'));
 			// medal is gone
-			// eslint-disable-next-line testing-library/no-await-sync-query, testing-library/prefer-presence-queries
+			// eslint-disable-next-line testing-library/prefer-presence-queries
 			// expect(screen.getByText('Close')).not.toBeInTheDocument();
 		});
 	});

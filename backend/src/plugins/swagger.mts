@@ -26,4 +26,5 @@ export default fp(async (app: FastifyInstance) => {
 		},
 	});
 	await app.register(fastifySwaggerUi);
+	console.log('Registered Swagger');
 });

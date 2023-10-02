@@ -20,8 +20,8 @@ app.prepare().then(() => {
 			// Be sure to pass `true` as the second argument to `url.parse`.
 			// This tells it to parse the query portion of the URL.
 			const parsedUrl = parse(request.url, true);
-			const publicFolderPath = join(__dirname, 'public');
-			app.serveStatic(request, response, publicFolderPath);
+			// const publicFolderPath = join(__dirname, 'public');
+			// app.serveStatic(request, response, publicFolderPath);
 			await handle(request, response, parsedUrl);
 		} catch (error) {
 			console.error('Error occurred handling', request.url, error);
@@ -32,8 +32,6 @@ app.prepare().then(() => {
 		if (error) throw error;
 		console.log(`> Ready on http://${hostname}:${port}`);
 		// Are we running under PM2 or similar?
-		if (process.env.NODE_APP_INSTANCE) {
-			process.send('ready');
-		}
+		if (process.send) process.send('ready');
 	});
 });

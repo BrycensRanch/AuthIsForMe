@@ -1,9 +1,9 @@
+/* eslint-disable no-void */
 /* eslint-disable no-underscore-dangle */
 
 /* eslint-disable no-console */
 import 'reflect-metadata';
 import type { AutoloadPluginOptions } from '@fastify/autoload';
-import AutoLoad from '@fastify/autoload';
 import cors from '@fastify/cors';
 import helmet from '@fastify/helmet';
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from 'fastify';
@@ -26,7 +26,6 @@ import fastifyXML from 'fastify-xml-body-parser';
 import fastifyFormidable from 'fastify-formidable';
 import fastifyJSON5 from 'fastify-json5';
 import fastifyQS from 'fastify-qs';
-import fastifyFormBody from '@fastify/formbody';
 import fastifyAcceptsSerializer from '@fastify/accepts-serializer';
 import YAML from 'yaml';
 import { XMLBuilder } from 'fast-xml-parser';
@@ -34,10 +33,24 @@ import serverVersion from 'fastify-server-version';
 import fastifyZodValidate from 'fastify-zod-validate';
 import fjwt from '@fastify/jwt';
 import fastifyETag from '@fastify/etag';
+import { expand, DotenvExpandOptions } from 'dotenv-expand';
 // import fastifyViews from '@fastify/view';
 // import * as eta from 'eta';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+expand(
+	loadEnvironmentDefaultsAndRegularEnvironment({
+		path: './.env',
+		encoding: 'utf8',
+		defaults: './.env.example', // This is new
+	}),
+);
+
+expand(
+	loadMonoRepoEnvironment({
+		path: join(dirname(fileURLToPath(import.meta.url)), '../.env'),
+		encoding: 'utf8',
+	}) as DotenvExpandOptions,
+);
 
 export type AppOptions = {
 	// // Place your custom options for app below here.
@@ -66,6 +79,16 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	if (process.env.NODE_APP_INSTANCE === '0' || (!process.env.NODE_APP_INSTANCE && process.env.NODE_ENV !== 'test'))
 		await app.register(printRoutes);
 
+	// Under no circumstances should these be moved, it's legit the entire application
+	// This loads all plugins defined in plugins
+	// those should be support plugins that are reused
+	// through out your application
+	void (await app.register(import('./plugins/sentry.mjs')));
+	void (await app.register(import('./plugins/swagger.mjs')));
+	void (await app.register(import('./plugins/formbody.mjs')));
+	void (await app.register(import('./plugins/errorHandler.mjs')));
+	void (await app.register(import('./plugins/exit.mjs')));
+
 	// It's perfectly fine to add one liner type of Fastify Plugins here.
 	// If it's longer or more important, it should be in it's own file.
 	await app.register(helmet, {
@@ -82,7 +105,6 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	await app.register(fastifyAllow);
 	await app.register(fastifyIP);
 	await app.register(fastifyXML);
-	await app.register(fastifyFormBody);
 	await app.register(fastifyQS);
 	await app.register(fastifyETag);
 	// await app.register(fastifyViews, {
@@ -101,7 +123,6 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	app.decorate('authenticate', async (request: FastifyRequest, reply: FastifyReply) => {
 		try {
 			await request.jwtVerify();
-			return;
 		} catch (error) {
 			reply.send(error);
 		}
@@ -126,12 +147,24 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	await app.register(fastifyAcceptsSerializer, {
 		serializers: [
 			{
-				regex: /^(application\/yaml|text\/yaml)$/,
+				// Needs to match application/x-yaml too
+				regex: /^(application\/(x-)?yaml|text\/yaml)$/,
 				serializer: body => YAML.stringify(body),
 			},
 			{
 				regex: /^(application\/xml|text\/xml)$/,
 				serializer: body => builder.build(body),
+			},
+			{
+				// application/x-www-form-urlencoded
+				regex: /^(application\/x-www-form-urlencoded)$/,
+				serializer: body => {
+					const form = new URLSearchParams();
+					for (const [key, value] of Object.entries(body)) {
+						form.append(key, value as string);
+					}
+					return form.toString();
+				},
 			},
 		],
 		default: 'application/json', // MIME type used if Accept header don't match anything
@@ -165,14 +198,6 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	});
 
 	// await app.register(inputValidation, {
-	// Under no circumstances should these be moved, it's legit the entire application
-	// This loads all plugins defined in plugins
-	// those should be support plugins that are reused
-	// through your application
-	// eslint-disable-next-line no-void
-	void app.register(AutoLoad, {
-		dir: join(__dirname, 'plugins'),
-	});
 	// try {
 	// 	await new PrismaClient().$connect();
 	// } catch (error) {
@@ -191,8 +216,7 @@ See: https://www.fastify.io/docs/latest/Guides/Migration-Guide-V4/#synchronous-r
 */
 };
 // Are we running under PM2 or similar?
-if (process.env.NODE_APP_INSTANCE) {
-	// @ts-expect-error pm2
+if (process.send) {
 	process.send('ready');
 }
 export default fastify;

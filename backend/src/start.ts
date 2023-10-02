@@ -17,7 +17,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 // import * as eta from "eta";
-// import * as app from './app.js';
+import app from './app.js';
 import { AppModule } from './app.module.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -107,18 +107,19 @@ const start = async () => {
 		AppModule,
 		new FastifyAdapter({
 			logger: {
-				level: 'info',
+				level: 'debug',
 				transport: {
 					target: 'pino-pretty',
 				},
 			},
-			trustProxy: process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test',
+			trustProxy: false,
 			// Required: Enable TLS
 			// https: true,
 			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// Optional: Enable HTTP/2
 			// http2: true
 		}),
+		{ bodyParser: false },
 	);
 	nestApp.useStaticAssets({ root: join(__dirname, '..', 'public') });
 	nestApp.enableVersioning();
@@ -130,6 +131,7 @@ const start = async () => {
 	//   engine: 'eta' as never,
 	// });
 	const server = nestApp.getHttpAdapter().getInstance() as FastifyInstance;
+	await app(server, {});
 	// Validate all endpoints
 	nestApp.useGlobalPipes(
 		new ValidationPipe({
@@ -144,11 +146,12 @@ const start = async () => {
 	// 	cert: join(__dirname, 'certs', 'cert.pem'),
 	// })
 
-	nestApp.listen(process.env.PORT || process.env.FASTIFY_PORT || '8000', (error, address) => {
+	nestApp.listen(process.env.PORT || process.env.FASTIFY_PORT || '8000', '0.0.0.0', (error, address) => {
 		if (error) throw error;
 
 		if (process.env.NODE_APP_INSTANCE === '0' || (!process.env.NODE_APP_INSTANCE && process.env.NODE_ENV !== 'test'))
 			server.log.info(`Server listening at ${address}`);
+		if (process.send) process.send('ready');
 	});
 };
 start();

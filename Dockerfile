@@ -71,6 +71,9 @@ COPY --chown=nodejs:nodejs frontend/healthCheck.js ./frontend/healthCheck.js
 COPY --chown=nodejs:nodejs frontend/.env* ./frontend/
 COPY --chown=nodejs:nodejs backend/*.json ./backend/
 COPY --chown=nodejs:nodejs backend/.env* ./backend/
+COPY --chown=nodejs:nodejs .env ./backend/
+COPY --chown=nodejs:nodejs .env ./frontend/
+
 # Technically, this file is already on the system, but this is just for consistency's sake
 COPY --chown=nodejs:nodejs backend/pm2.config.js* ./backend
 
@@ -81,6 +84,7 @@ COPY --chown=nodejs:nodejs frontend/public /home/nodejs/app/frontend/public
 COPY --chown=nodejs:nodejs frontend/__mocks__ /home/nodejs/app/frontend/__mocks__
 COPY --chown=nodejs:nodejs frontend/.next /home/nodejs/app/frontend/.next
 COPY --chown=nodejs:nodejs scripts /home/nodejs/app/scripts
+COPY --chown=nodejs:nodejs ecosystem.config.js /home/nodejs/app/ecosystem.config.js
 
 
 RUN node dockerBuildAndInstall.mjs
@@ -190,5 +194,7 @@ ENV BACKEND_PORT 8000
 
 # ENV BACKEND_PORT 8000
 
-CMD ["pnpm", "boot:pm2"]
+# CMD ["pnpm", "boot:pm2"]
 # CMD ["pnpm", "pm2"]
+# Before starting the migration, run the following command
+CMD ["pm2-runtime", "ecosystem.config.js"]
