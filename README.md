@@ -36,9 +36,6 @@
       src="https://github.com/codespaces/badge.svg"
       />
     </a>
-    <a aria-label="Open Depfu Status" href="https://depfu.com/github/BrycensRanch/AuthIsForMe">
-       <img src="https://img.shields.io/depfu/dependencies/github/BrycensRanch/AuthIsForMe?style=for-the-badge" alt="dependencies status" />
-    </a>
 <a href="https://wakatime.com/badge/github/BrycensRanch/AuthIsForMe"><img src="https://wakatime.com/badge/github/BrycensRanch/AuthIsForMe.svg?style=for-the-badge" alt="wakatime"></a>
 </p>
 
