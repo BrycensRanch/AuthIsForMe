@@ -33,7 +33,7 @@ jobs:
         if: ${{ !github.event.act }}
         uses: styfle/cancel-workflow-action@0.11.0
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Get changed Dockerfiles
         id: changed-files-excluded
