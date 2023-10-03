@@ -37,7 +37,7 @@ jobs:
 
       - name: Get changed Dockerfiles
         id: changed-files-excluded
-        uses: tj-actions/changed-files@v35
+        uses: tj-actions/changed-files@v39
         with:
           files: |
             **/Dockerfile
