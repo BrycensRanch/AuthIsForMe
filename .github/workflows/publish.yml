@@ -26,20 +26,19 @@ jobs:
 
     runs-on: ${{ matrix.os }}
     # Service containers to run with `container-job`
-    services:
-      # Label used to access the service container
-      postgres:
-        # Docker Hub image
-        image: 'postgres:alpine'
-        # Provide the password for postgres
-        env:
-          POSTGRES_USER: prisma_user
-          POSTGRES_PASSWORD: CHANGE_ME_PLEASE_OR_I_WILL_CRY
-          POSTGRES_DB: prisma
-        # Set health checks to wait until postgres has started
-        options: >-
-          --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
-
+    # services:
+    #   # Label used to access the service container
+    #   postgres:
+    #     # Docker Hub image
+    #     image: 'postgres:alpine'
+    #     # Provide the password for postgres
+    #     env:
+    #       POSTGRES_USER: prisma_user
+    #       POSTGRES_PASSWORD: CHANGE_ME_PLEASE_OR_I_WILL_CRY
+    #       POSTGRES_DB: prisma
+    #     # Set health checks to wait until postgres has started
+    #     options: >-
+    #       --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     #   redis:
     #     # Docker Hub image
