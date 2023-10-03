@@ -18,7 +18,7 @@ if (process.env.CI) {
 } else {
 	try {
 		if (process.stdout.isTTY && process.env.GIT_PROXY?.includes('stackblitz')) {
-			execPromise('docker compose up cache -d');
+			execPromise('docker compose up redis -d');
 		} else {
 			console.log('not tty or whatever, not starting any Docker containers');
 		}

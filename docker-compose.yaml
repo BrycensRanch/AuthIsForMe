@@ -14,12 +14,14 @@
 #   Build images: docker-compose build
 #      Start app: docker-compose up -d
 #
+
+# Rapidfort images are used because of their smaller sizes, even compared to standard Alpine images
 version: '3'
 
 services:
   db:
     container_name: supertokens_db
-    image: 'postgres:alpine'
+    image: rapidfort/postgresql-official:latest
     environment:
       POSTGRES_USER: supertokens_user
       POSTGRES_PASSWORD: CHANGE_ME_PLEASE_OR_I_WILL_CRY
@@ -37,7 +39,7 @@ services:
       retries: 5
   db2:
     container_name: prisma_db
-    image: 'postgres:alpine'
+    image: rapidfort/postgresql-official:latest
     environment:
       POSTGRES_USER: prisma_user
       POSTGRES_PASSWORD: CHANGE_ME_PLEASE_OR_I_WILL_CRY
@@ -53,19 +55,6 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-  pgAdmin:
-    image: dpage/pgadmin4
-    restart: unless-stopped
-    depends_on:
-      - db
-    ports:
-      - 3442:80
-    environment:
-      PGADMIN_DEFAULT_EMAIL: user@domain.com
-      PGADMIN_DEFAULT_PASSWORD: ${DB_PASSWORD:-CHANGE_ME_PLEASE_OR_I_WILL_CRY}
-      PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: 'True'
-      PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 10
-
   supertokens:
     image: registry.supertokens.io/supertokens/supertokens-postgresql
     network_mode: 'host' # Use host network mode
@@ -94,7 +83,7 @@ services:
     network_mode: 'host' # Use host network mode
     build: ./
     depends_on:
-      - cache
+      - redis
     #   - chatbackend
     #   - supertokens
     ports:
@@ -149,17 +138,20 @@ services:
   #     - /Nginx/logs:/remotelogs/nginx:ro #optional
   #   networks:
   #     - app_network
-  cache:
+  redis:
     container_name: redis
-    image: redis:alpine
+    image: rapidfort/redis:latest
     restart: always
     ports:
       - '6379:6379'
     command: redis-server --save 20 1 --loglevel warning --requirepass ${REDIS_PASSWORD:-VERY_SECURE_PASSWORD_THAT_SHOULD_OF_BEEN_GENERATED_WITH_32_CHARACTERS_OR_SOMETHING}
     healthcheck:
-      test: ['CMD', 'redis-cli ping | grep PONG']
+      test: >
+        bash -c 'redis-cli ping | grep PONG'
+
+
       interval: 1s
-      timeout: 3s
+      timeout: 5s
       retries: 5
 
 volumes:

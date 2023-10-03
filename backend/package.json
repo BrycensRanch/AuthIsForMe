@@ -30,6 +30,7 @@
 		"migrate:postgres": "dotenv -e ../.env -- npx prisma migrate dev"
 	},
 	"dependencies": {
+		"@damirn/fastify-formidable": "^3.0.3",
 		"@fastify/accepts": "^4.2.0",
 		"@fastify/accepts-serializer": "^5.2.0",
 		"@fastify/autoload": "^5.7.1",
@@ -52,6 +53,7 @@
 		"@nestjs/config": "^3.1.1",
 		"@nestjs/core": "^10.2.6",
 		"@nestjs/platform-fastify": "^10.2.6",
+		"@nestjs/swagger": "^7.1.12",
 		"@npmcli/ci-detect": "^3.0.2",
 		"@ory/kratos-client": "^1.0.0",
 		"@prisma/client": "^5.3.1",
@@ -68,7 +70,6 @@
 		"fastify-204": "^4.0.2",
 		"fastify-allow": "^1.2.2",
 		"fastify-cli": "^5.8.0",
-		"fastify-formidable": "^3.0.2",
 		"fastify-get-head": "^3.0.0",
 		"fastify-grant": "^5.4.8",
 		"fastify-impressions": "^1.0.5",

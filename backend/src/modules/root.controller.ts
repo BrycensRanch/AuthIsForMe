@@ -1,4 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post, Put, Query, Render } from '@nestjs/common';
+import { ApiOperation } from '@nestjs/swagger';
 import { PrismaService } from './prisma/prisma.service.js';
 
 @Controller('/')
@@ -14,7 +15,16 @@ export class RootController {
 		};
 	}
 
+	@Get('docs')
+	@Render('docs')
+	docs() {
+		return {
+			message: 'The realest',
+		};
+	}
+
 	@Get('feed')
+	@ApiOperation({ summary: 'Feed of published posts' })
 	async getFilteredPosts(
 		@Query('take') take?: number,
 		@Query('skip') skip?: number,

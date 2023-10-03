@@ -17,6 +17,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 // import * as eta from "eta";
+import { ajvBinaryFormat } from '@damirn/fastify-formidable';
 import app from './app.js';
 import { AppModule } from './app.module.js';
 
@@ -112,7 +113,10 @@ const start = async () => {
 					target: 'pino-pretty',
 				},
 			},
-			trustProxy: false,
+			trustProxy: true,
+			ajv: {
+				plugins: [ajvBinaryFormat],
+			},
 			// Required: Enable TLS
 			// https: true,
 			// eslint-disable-next-line @typescript-eslint/ban-ts-comment

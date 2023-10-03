@@ -8,6 +8,7 @@ import cors from '@fastify/cors';
 import helmet from '@fastify/helmet';
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from 'fastify';
 // import inputValidation from 'openapi-validator-middleware';
+import fastifyFormidable from '@damirn/fastify-formidable';
 import { existsSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { dotenvLoad as loadMonoRepoEnvironment } from 'dotenv-mono';
@@ -19,24 +20,25 @@ import fastifyAllow from 'fastify-allow';
 import fastifyUserAgent from 'fastify-user-agent';
 import userAgent from 'useragent';
 import fastifyCookie from '@fastify/cookie';
-import fastifyIP from 'fastify-ip';
-import fastify405 from 'fastify-204';
+// import fastifyIP from 'fastify-ip';
+import fastify204 from 'fastify-204';
 import fastifyRouteStats from '@fastify/routes-stats';
 import { fastifyAnalytics } from 'node-api-analytics';
 import fastifyXML from 'fastify-xml-body-parser';
-import fastifyFormidable from 'fastify-formidable';
 import fastifyJSON5 from 'fastify-json5';
 import fastifyQS from 'fastify-qs';
 import fastifyAcceptsSerializer from '@fastify/accepts-serializer';
 import YAML from 'yaml';
-import { XMLBuilder } from 'fast-xml-parser';
+// import { XMLBuilder } from 'fast-xml-parser';
 import serverVersion from 'fastify-server-version';
 import fastifyZodValidate from 'fastify-zod-validate';
 import fjwt from '@fastify/jwt';
 import fastifyETag from '@fastify/etag';
 import { expand, DotenvExpandOptions } from 'dotenv-expand';
-// import fastifyViews from '@fastify/view';
-// import * as eta from 'eta';
+import fastifyViews from '@fastify/view';
+import { Eta } from 'eta';
+
+const eta = new Eta();
 const defaults = await import(`dotenv-defaults`);
 
 // Initializing the default environment variables
@@ -106,16 +108,17 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	// })
 	await app.register(fastifyUserAgent);
 	await app.register(fastifyAllow);
-	await app.register(fastifyIP);
+	// await app.register(fastifyIP);
 	await app.register(fastifyXML);
 	await app.register(fastifyQS);
 	await app.register(fastifyETag);
-	// await app.register(fastifyViews, {
-	// 	engine: { eta },
-	// });
+	await app.register(fastifyViews, {
+		engine: { eta },
+		templates: join(dirname(fileURLToPath(import.meta.url)), './views'),
+	});
 	await app.register(fastifyFormidable, {
-		addContentTypeParser: true,
 		removeFilesFromBody: true,
+		addHooks: true,
 	});
 	await app.register(fastifyJSON5);
 	await app.register(serverVersion());
@@ -130,14 +133,14 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 			reply.send(error);
 		}
 	});
-	await app.register(fastify405, {
+	await app.register(fastify204, {
 		onUndefined: true,
 		onNull: true,
 		onEmptyArray: true,
 	});
-	const builder = new XMLBuilder({
-		ignoreAttributes: true,
-	});
+	// const builder = new XMLBuilder({
+	// 	ignoreAttributes: true,
+	// });
 	// register the plugin
 	await app.register(fastifyZodValidate, {
 		// optional custom validation error handler
@@ -154,10 +157,10 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 				regex: /^(application\/(x-)?yaml|text\/yaml)$/,
 				serializer: body => YAML.stringify(body),
 			},
-			{
-				regex: /^(application\/xml|text\/xml)$/,
-				serializer: body => builder.build(body),
-			},
+			// {
+			// 	regex: /^(application\/xml|text\/xml)$/,
+			// 	serializer: body => builder.build(body),
+			// },
 			{
 				// application/x-www-form-urlencoded
 				regex: /^(application\/x-www-form-urlencoded)$/,
@@ -181,7 +184,7 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 		app.addHook('onRequest', fastifyAnalytics(process.env.FASTIFY_ANALYTICS_API_KEY));
 	app.addHook('onRequest', async request => {
 		// Some code
-		app.log.info(`Request from ${request.ip.trim() || 'localhost'} from user agent ${request.userAgent.toString()}`);
+		app.log.info(`Request from ${request.ip?.trim() || 'localhost'} from user agent ${request.userAgent.toString()}`);
 	});
 	app.get('/helloz', async () => {
 		return 'Hello World!';
