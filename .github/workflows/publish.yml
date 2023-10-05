@@ -120,9 +120,12 @@ jobs:
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      - name: 🐳 Test Docker Compose
+      - name: 🐳 Build Docker Compose
         run: |
           docker compose build
+      - name: 🐳 Bring up dependent containers
+        run: |
+          docker compose up redis db db2 -d
       - name: 🥳 Run Tests (project-wide)
         run: |
           pnpm test
