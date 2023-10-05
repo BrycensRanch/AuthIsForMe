@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: 🛑 Cancel Previous Runs
         if: ${{ !github.event.act }}
-        uses: styfle/cancel-workflow-action@0.11.0
+        uses: styfle/cancel-workflow-action@0.12.0
 
       # use a fork of the GitHub action - we cannot pull in untrusted third party actions
       # see https://github.com/cypress-io/cypress/pull/20091#discussion_r801799647
