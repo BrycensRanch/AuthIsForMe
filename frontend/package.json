@@ -170,7 +170,7 @@
 		"postcss": "^8.4.31",
 		"prettier": "^3.0.3",
 		"prettier-eslint-cli": "^7.1.0",
-		"rimraf": "^5.0.5",
+		"rimraf": "^4.4.1",
 		"shx": "^0.3.4",
 		"start-server-and-test": "^2.0.1",
 		"sync-dotenv": "^2.7.0",
