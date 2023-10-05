@@ -57,7 +57,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN pnpm build
 
-FROM jellydn/alpine-nodejs:18 AS runner
+FROM jellydn/alpine-nodejs:20 AS runner
 WORKDIR /home/nodejs/app
 
 COPY --from=builder /home/nodejs/app/.next/standalone ./standalone
