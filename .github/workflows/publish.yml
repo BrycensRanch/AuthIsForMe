@@ -56,6 +56,17 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      # Limit Docker builds to only necessary changes.
+      # Unfortunately, this includes dependency changes as well due to the Dockerfile possibly breaking on lack of installed dependencies for building the application.
+      - name: Verify Changed files
+        uses: tj-actions/verify-changed-files@v16
+        id: verify-changed-files
+        with:
+          files: |
+            Dockerfile
+            docker-compose.yml
+            **/*/package.json
+            **/*/pnpm-lock.yaml
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -121,6 +132,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: 🐳 Build Docker Compose
+        if: steps.verify-changed-files.outputs.files_changed == 'true'
         run: |
           docker compose build
       - name: Bring up dependent containers
