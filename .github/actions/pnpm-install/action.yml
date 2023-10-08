@@ -39,7 +39,9 @@ runs:
       name: Setup pnpm cache
       if: ${{ !env.ACT }}
       with:
-        path: ${{ steps.pnpm-config.outputs.STORE_PATH }}
+        path: |
+          ${{ steps.pnpm-config.outputs.STORE_PATH }}
+          ~/.cache/Cypress
         key: ${{ runner.os }}-pnpm-store-cache-${{ steps.cache-rotation.outputs.YEAR_MONTH }}-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: |
           ${{ runner.os }}-pnpm-store-cache-${{ steps.cache-rotation.outputs.YEAR_MONTH }}-

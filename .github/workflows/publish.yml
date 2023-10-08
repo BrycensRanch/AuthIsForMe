@@ -126,9 +126,7 @@ jobs:
       - name: 🐳 Build Docker Compose
         run: |
           docker compose build
-      - name: 🐳 Bring up dependent containers
-        run: |
-          docker compose up redis db db2 -d
+      # TODO: Make this more graceful and make it only test if our Dockerfile builds when changes are made to it.
       - name: 🥳 Run Tests (project-wide)
         run: |
           pnpm test
