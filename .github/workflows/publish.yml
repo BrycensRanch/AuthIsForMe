@@ -93,9 +93,6 @@ jobs:
 
       - name: 📥 Monorepo install all deps & pnpm
         uses: ./.github/actions/pnpm-install
-      - name: Install Cypress Binary
-        run: |
-          pnpm cypress install
 
       # - name: Create and seed test database
       #   working-directory: backend
