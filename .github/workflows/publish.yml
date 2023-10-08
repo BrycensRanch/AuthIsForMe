@@ -124,9 +124,14 @@ jobs:
         run: |
           docker compose build
       # TODO: Make this more graceful and make it only test if our Dockerfile builds when changes are made to it.
-      - name: 🥳 Run Tests (project-wide)
+      - name: 🥳 Run Jest Tests (project-wide)
         run: |
-          pnpm test
+          pnpm test:jest
+      - name: Run Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          start: pnpm start
+          wait-on: 'http://localhost:3000, http://localhost:8000'
       - name: 📤 Upload Code coverage to Codecov
         uses: codecov/codecov-action@v3
         if: ${{ !github.event.act }}
