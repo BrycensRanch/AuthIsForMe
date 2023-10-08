@@ -130,7 +130,8 @@ jobs:
       - name: Run Cypress
         uses: cypress-io/github-action@v6
         with:
-          start: pnpm start
+          working-directory: frontend
+          start: pnpm dev:cypress
           wait-on: 'http://localhost:3000, http://localhost:8000'
       - name: 📤 Upload Code coverage to Codecov
         uses: codecov/codecov-action@v3
