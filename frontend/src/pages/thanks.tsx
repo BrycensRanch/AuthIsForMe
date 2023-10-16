@@ -44,6 +44,7 @@ const getAuthorEmail = async (githubRepo: string) => {
 };
 
 const getRepoDefaultBranch = async (repoUrl: string) => {
+	// I feel like this was ALWAYS A BAD AND UNNECESSARY IDEA
 	if (!repoUrl) throw new Error(noRepoProvided);
 	return 'master';
 	// let branchesHTML;

@@ -17,6 +17,8 @@ module.exports = defineConfig({
 	}),
 	e2e: {
 		baseUrl: 'http://localhost:3000',
+		video: true,
+		videoCompression: true,
 		setupNodeEvents(on, config) {
 			codeCoverageTask(on, config);
 			// include any other plugin code...
