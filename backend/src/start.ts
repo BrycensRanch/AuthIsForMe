@@ -134,7 +134,7 @@ const start = async () => {
 	// nestApp.setViewEngine({
 	//   engine: 'eta' as never,
 	// });
-	const server = nestApp.getHttpAdapter().getInstance() as FastifyInstance;
+	const server = nestApp.getHttpAdapter().getInstance() as unknown as FastifyInstance;
 	await app(server, {});
 	// Validate all endpoints
 	nestApp.useGlobalPipes(
