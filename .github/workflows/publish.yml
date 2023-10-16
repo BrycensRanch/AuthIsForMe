@@ -149,22 +149,23 @@ jobs:
           start: pnpm dev:cypress
           wait-on: 'http://localhost:3000, http://localhost:8000'
       - name: 📤 Upload Code coverage to Codecov
+        if: ${{ !github.event.act }}
         uses: codecov/codecov-action@v3
-        if: ${{ !github.event.act }}
+
       - uses: actions/upload-artifact@v3
-        if: ${{ !github.event.act }}
+        if: failure()
         with:
           name: cypress-screenshots
           path: ./frontend/cypress/screenshots
       - uses: actions/upload-artifact@v3
-        if: ${{ !github.event.act }}
+        if: failure()
         with:
           name: cypress-videos
           path: ./frontend/cypress/videos
       - uses: actions/upload-artifact@v3
         if: ${{ !github.event.act }}
         with:
-          name: build
+          name: Frontend Build
           path: |
             ./frontend/.next
             ./frontend/out
