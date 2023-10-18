@@ -16,7 +16,7 @@ on:
       - reopened
 
 jobs:
-  build-lint-test-docker:
+  build-lint-test-docker-release:
     timeout-minutes: 30
     strategy:
       fail-fast: false
@@ -175,25 +175,9 @@ jobs:
         with:
           name: Backend Build
           path: ./backend/dist
-  release:
-    name: Release
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    needs: [build-lint-test-docker]
-    if: ${{ !github.event.act }} && github.event_name != 'pull_request'
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-      - name: 📥 Monorepo install all deps & pnpm
-        uses: ./.github/actions/pnpm-install
       - name: Import GPG key
         id: import_gpg
+        if: ${{ !github.event.act }} && github.event_name != 'pull_request'
         uses: crazy-max/ghaction-import-gpg@v6
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
@@ -203,6 +187,8 @@ jobs:
           git_tag_gpgsign: false
           git_push_gpgsign: false
       - name: 🌋 Publish to the great interwebs.
+        uses: cycjimmy/semantic-release-action@v4
+        if: ${{ !github.event.act }} && github.event_name != 'pull_request'
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           GIT_AUTHOR_NAME: ${{ steps.import_gpg.outputs.name }}
@@ -213,5 +199,3 @@ jobs:
           signingKey: ${{ secrets.GPG_PRIVATE_KEY }}
           signingPassword: ${{ secrets.PASSPHRASE }}
           GH_URL: 'https://api.github.com/'
-        run: |
-          pnpm semantic-release

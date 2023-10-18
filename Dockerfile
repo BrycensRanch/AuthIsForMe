@@ -110,15 +110,28 @@ ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN SHELL=bash pnpm setup
 
-RUN CYPRESS_INSTALL_BINARY=0 pnpm install --frozen-lockfile --prefer-offline
+RUN --mount=type=cache,id=pnpm,target=/home/nodejs/.pnpm-store CYPRESS_INSTALL_BINARY=0 pnpm install --frozen-lockfile --prefer-offline
 RUN cd backend && pnpm prisma generate
 RUN pnpm build
+
+# Now that the program is built, we need to get rid of development dependencies to minimize
+# Docker size
+RUN pnpm prune --prod
+
+FROM timbru31/node-alpine-git:hydrogen AS runner
+RUN addgroup -S nodejs && adduser -S nodejs -G nodejs
+RUN npm i -g pm2
+USER nodejs
+WORKDIR /home/nodejs/app
+
+COPY --from=init --chown=nodejs:nodejs . .
+
+
+
 
 #RUN npm i -g next
 
 # Work in progress
-RUN pnpm add -g pm2
-
 EXPOSE 3000
 
 ENV FRONTEND_PORT 3000

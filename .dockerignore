@@ -1,0 +1,23 @@
+.devcontainer
+.github
+.husky
+.vscode
+node_modules
+.editorconfig
+.env.example
+.gitattributes
+.gitignore
+.gitpod.yml
+.hintrc
+.markdownlint.json
+.npmrc
+.nvmrc
+.prettierrc.json
+.prettierignore
+commitlint.config.js
+docker-compose*
+Dockerfile
+*.md
+.git
+# Include ALL coverage folders
+**/**/*coverage*
