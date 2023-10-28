@@ -74,7 +74,7 @@
 		"ky": "^1.1.1",
 		"localforage": "^1.10.0",
 		"match-sorter": "^6.3.1",
-		"next": "^14.0.0",
+		"next": "^13.5.0",
 		"next-recompose-plugins": "^2.0.0",
 		"next-seo": "^6.1.0",
 		"next-sitemap": "^4.2.3",
