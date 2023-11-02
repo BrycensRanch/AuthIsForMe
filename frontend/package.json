@@ -151,7 +151,7 @@
 		"eslint-plugin-sonarjs": "^0.21.0",
 		"eslint-plugin-tailwindcss": "^3.13.0",
 		"eslint-plugin-testing-library": "^6.1.0",
-		"eslint-plugin-unicorn": "^48.0.1",
+		"eslint-plugin-unicorn": "^49.0.0",
 		"eslint-plugin-unused-imports": "^3.0.0",
 		"execa": "^8.0.1",
 		"extend-expect": "link:@testing-library/jest-dom/extend-expect",
