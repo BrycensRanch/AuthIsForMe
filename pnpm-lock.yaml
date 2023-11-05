@@ -374,8 +374,8 @@ importers:
         specifier: ^10.0.0
         version: 10.0.0(eslint@8.52.0)
       eslint-plugin-sonarjs:
-        specifier: ^0.21.0
-        version: 0.21.0(eslint@8.52.0)
+        specifier: ^0.23.0
+        version: 0.23.0(eslint@8.52.0)
       eslint-plugin-unicorn:
         specifier: ^49.0.0
         version: 49.0.0(eslint@8.52.0)
@@ -705,8 +705,8 @@ importers:
         specifier: ^10.0.0
         version: 10.0.0(eslint@8.52.0)
       eslint-plugin-sonarjs:
-        specifier: ^0.21.0
-        version: 0.21.0(eslint@8.52.0)
+        specifier: ^0.23.0
+        version: 0.23.0(eslint@8.52.0)
       eslint-plugin-tailwindcss:
         specifier: ^3.13.0
         version: 3.13.0(tailwindcss@3.3.5)
@@ -7327,6 +7327,7 @@ packages:
   /clone@1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
+    requiresBuild: true
     dev: true
 
   /close-with-grace@1.2.0:
@@ -9453,8 +9454,8 @@ packages:
       eslint: 8.52.0
     dev: true
 
-  /eslint-plugin-sonarjs@0.21.0(eslint@8.52.0):
-    resolution: {integrity: sha512-oezUDfFT5S6j3rQheZ4DLPrbetPmMS7zHIKWGHr0CM3g5JgyZroz1FpIKa4jV83NsGpmgIeagpokWDKIJzRQmw==}
+  /eslint-plugin-sonarjs@0.23.0(eslint@8.52.0):
+    resolution: {integrity: sha512-z44T3PBf9W7qQ/aR+NmofOTyg6HLhSEZOPD4zhStqBpLoMp8GYhFksuUBnCxbnf1nfISpKBVkQhiBLFI/F4Wlg==}
     engines: {node: '>=14'}
     peerDependencies:
       eslint: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
