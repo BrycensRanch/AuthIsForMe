@@ -190,8 +190,8 @@ importers:
         specifier: ^4.0.2
         version: 4.0.2
       fastify-allow:
-        specifier: ^1.2.2
-        version: 1.2.2
+        specifier: ^2.0.0
+        version: 2.0.0
       fastify-cli:
         specifier: ^5.8.0
         version: 5.8.0
@@ -10051,10 +10051,10 @@ packages:
       fastify-plugin: 4.5.1
     dev: false
 
-  /fastify-allow@1.2.2:
-    resolution: {integrity: sha512-aUjlPYIbEZ0VvH1LdLOJF4n5DVZcd3T8A5gWZKnVCJKdekMGvywK7LDtSvnshJVxsjsAHkfUVNndmhAx7XNxqw==}
+  /fastify-allow@2.0.0:
+    resolution: {integrity: sha512-AmoL54eiIW2MYJN2ltAudMRyzbPjnYa7i0iVce/JYypGgvQHC1gXP5EDSeo0jB728l07SNxpF3C8ZeYNApipFA==}
     dependencies:
-      fastify-plugin: 3.0.1
+      fastify-plugin: 4.5.1
     dev: false
 
   /fastify-cli@5.8.0:
