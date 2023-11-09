@@ -63,7 +63,7 @@
 	"dependencies": {
 		"@headlessui/react": "^1.7.17",
 		"@heroicons/react": "^2.0.18",
-		"@sentry/nextjs": "^7.76.0",
+		"@sentry/nextjs": "^7.77.0",
 		"apexcharts": "^3.44.0",
 		"autoprefixer": "^10.4.16",
 		"dotenv-defaults": "^5.0.2",
