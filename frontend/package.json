@@ -115,7 +115,7 @@
 		"@testing-library/jest-dom": "^6.1.4",
 		"@testing-library/react": "^14.0.0",
 		"@types/jest": "^29.5.6",
-		"@types/node": "^20.8.9",
+		"@types/node": "^18.14.0",
 		"@types/react": "^18.2.33",
 		"@types/semver": "^7.5.4",
 		"@types/testing-library__cypress": "^5.0.12",
