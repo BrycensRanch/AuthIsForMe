@@ -41,8 +41,6 @@ sentry.server.config.js
 public/sitemap*.xml
 public/robots.txt
 
-
-
 # production
 /build
 

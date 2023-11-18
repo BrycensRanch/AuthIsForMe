@@ -3,7 +3,7 @@ out
 public
 jest-coverage
 coverage
-.next 
+.next
 .swc
 **/dist/
 **/lib/

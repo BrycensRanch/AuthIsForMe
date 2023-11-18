@@ -34,7 +34,7 @@ node_modules
 jspm_packages
 coverage
 jest-coverage
-secret-key 
+secret-key
 # secret key for jwt
 
 # Optional npm cache directory
@@ -63,7 +63,6 @@ profile-*
 profile*
 *clinic*
 *flamegraph*
-
 
 dev.db
 

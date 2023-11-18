@@ -33,7 +33,6 @@ backupPostgres
 .nyc_output
 /cypress
 
-
 _old
 # /*.min.js*
 

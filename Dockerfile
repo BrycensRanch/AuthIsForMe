@@ -17,8 +17,6 @@ RUN adduser --disabled-password --gecos "" nodejs && usermod -a -G nodejs nodejs
 RUN adduser nodejs sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-
-
 # set right (secure) folder permissions
 RUN mkdir -p /home/nodejs/app/node_modules
 RUN mkdir -p /home/nodejs/app/frontend/node_modules
@@ -37,13 +35,12 @@ RUN sudo apt install nodejs
 # TODO: Make this use the project's pnpm version, not the latest version otherwise this could break the project down the road
 RUN sudo npm i -g pnpm concurrently
 
-# COPY --chown=nodejs:nodejs . . 
+# COPY --chown=nodejs:nodejs . .
 
 # ENV NODE_ENV=production
 
 COPY --chown=nodejs:nodejs scripts/* ./
 COPY --chown=nodejs:nodejs package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-
 
 # Non built files first
 COPY --chown=nodejs:nodejs frontend/*.json ./frontend/
@@ -73,9 +70,7 @@ COPY --chown=nodejs:nodejs frontend/.next/static /home/nodejs/app/frontend/.next
 COPY --chown=nodejs:nodejs scripts /home/nodejs/app/scripts
 COPY --chown=nodejs:nodejs ecosystem.config.js /home/nodejs/app/ecosystem.config.js
 
-
 RUN node dockerBuildAndInstall.mjs
-
 
 # Production image, copy all the files and run next
 # FROM timbru31/node-alpine-git:hydrogen AS runner
@@ -90,7 +85,6 @@ COPY --chown=nodejs:nodejs frontend ./frontend
 # COPY --chown=nodejs:nodejs backend/dist/* ./
 COPY --chown=nodejs:nodejs backend ./backend
 
-
 # COPY --chown=nodejs:nodejs healthCheck.js .
 
 RUN --mount=type=cache,id=pnpm,target=/home/nodejs/.pnpm-store CYPRESS_INSTALL_BINARY=0 pnpm install --frozen-lockfile --prefer-offline
@@ -101,7 +95,6 @@ RUN pnpm build
 # Docker size
 RUN pnpm prune --config.ignore-scripts=true --prod
 RUN cd backend && pnpm prune --config.ignore-scripts=true --prod
-
 
 FROM ubuntu AS runner
 RUN adduser --disabled-password --gecos "" nodejs && usermod -a -G nodejs nodejs
@@ -132,8 +125,6 @@ RUN rm -rf node_modules
 RUN cd backend && npx pnpm install -D prisma --ignore-scripts
 RUN HUSKY=0 npx pnpm install --prod
 
-
-
 #RUN npm i -g next
 
 # Work in progress
@@ -149,7 +140,6 @@ ENV BACKEND_PORT 8000
 # FROM timbru31/node-alpine-git:hydrogen AS builder
 # WORKDIR /home/nodejs/app
 
-
 # COPY --from=deps --chown=nodejs:nodejs . .
 # COPY --from=deps /app/node_modules ./node_modules
 # COPY . .
@@ -163,8 +153,6 @@ ENV BACKEND_PORT 8000
 # RUN npm run build
 
 # IMPORTANT: NOT BUILDING, USING PREBUILT
-
-
 
 # COPY --chown=nodejs:nodejs .next/static* ./.next/static
 
@@ -191,9 +179,7 @@ ENV BACKEND_PORT 8000
 
 # COPY --chown=nodejs:nodejs backend/*.json ./
 
-
-
-# # This dockerfile expects the project to already be built locally to make the Dockerfile do less and make it smaller 
+# # This dockerfile expects the project to already be built locally to make the Dockerfile do less and make it smaller
 # COPY --chown=nodejs:nodejs dist ./
 # # Repetitive, ik. For compatability reasons
 # COPY --chown=nodejs:nodejs dist ./dist
