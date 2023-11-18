@@ -94,8 +94,8 @@ importers:
         specifier: ^8.4.0
         version: 8.4.0
       '@fastify/etag':
-        specifier: ^4.2.0
-        version: 4.2.0
+        specifier: ^5.0.0
+        version: 5.0.0
       '@fastify/formbody':
         specifier: ^7.4.0
         version: 7.4.0
@@ -2659,8 +2659,8 @@ packages:
     resolution: {integrity: sha512-e/mafFwbK3MNqxUcFBLgHhgxsF8UT1m8aj0dAlqEa2nJEgPsRtpHTZ3ObgrgkZ2M1eJHPTwgyUl/tXkvabsZdQ==}
     dev: false
 
-  /@fastify/etag@4.2.0:
-    resolution: {integrity: sha512-stvRYricpLAAcDsLFi6gUvFtU8sK+EnygajcgAVhvjw4MabTINNIuh35wu3r4x5JmfD1unh4YCQAFPK2H9vuVQ==}
+  /@fastify/etag@5.0.0:
+    resolution: {integrity: sha512-0K3acXY38cPoBU1ihecjC08lmVMEuMPFtAyHyvHg4xxbhBaCsXi2YhgRfhVbtTBWDGzfp0rRUTmFgxKfq46rFA==}
     dependencies:
       fastify-plugin: 4.5.1
     dev: false
@@ -8393,6 +8393,7 @@ packages:
 
   /defaults@1.0.4:
     resolution: {integrity: sha512-eFuaLoy/Rxalv2kr+lqMlUnrDWV+3j4pljOIJgLIhI058IQfWJ7vXhyEIHu+HtC738klGALYxOKDO0bQP3tg8A==}
+    requiresBuild: true
     dependencies:
       clone: 1.0.4
     dev: true
