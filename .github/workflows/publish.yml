@@ -205,3 +205,4 @@ jobs:
           signingKey: ${{ secrets.GPG_PRIVATE_KEY }}
           signingPassword: ${{ secrets.PASSPHRASE }}
           GH_URL: 'https://api.github.com/'
+          HUSKY: 0
