@@ -38,7 +38,8 @@
 		[
 			"@semantic-release-plus/docker",
 			{
-				"name": "ghcr.io/BrycensRanch/AuthIsForMe"
+				"name": "ghcr.io/BrycensRanch/AuthIsForMe",
+				"skipLogin": true
 			}
 		]
 	]
