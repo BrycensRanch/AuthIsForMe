@@ -39,9 +39,6 @@
 			"@semantic-release-plus/docker",
 			{
 				"name": "ghcr.io/BrycensRanch/AuthIsForMe"
-			},
-			{
-				"name": "docker.io/romvnly/AuthIsForMe"
 			}
 		]
 	]
