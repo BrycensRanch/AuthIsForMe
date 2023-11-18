@@ -2,7 +2,6 @@
 .github
 .husky
 .vscode
-node_modules
 .editorconfig
 .env.example
 .gitattributes
@@ -10,8 +9,6 @@ node_modules
 .gitpod.yml
 .hintrc
 .markdownlint.json
-.npmrc
-.nvmrc
 .prettierrc.json
 .prettierignore
 commitlint.config.js
@@ -21,3 +18,11 @@ Dockerfile
 .git
 # Include ALL coverage folders
 **/**/*coverage*
+node_modules
+# We have output tracing now
+frontend/node_modules
+#**/**/*node_modules*
+#**/**/*out*
+**/**/*reports*
+**/**/*.nyc_output*
+

@@ -1,6 +1,6 @@
-/* eslint-disable global-require */
-/* eslint-disable no-param-reassign */
-/* eslint-disable import/no-extraneous-dependencies */
+// /* eslint-disable global-require */
+// /* eslint-disable no-param-reassign */
+// /* eslint-disable import/no-extraneous-dependencies */
 
 // all of these are the default values...
 require('dotenv-mono').load();
@@ -12,6 +12,7 @@ require(`dotenv-defaults`).config({
 });
 
 const { Config } = require('next-recompose-plugins');
+const { join } = require('node:path');
 
 // const BrotliPlugin = require('brotli-webpack-plugin');
 
@@ -26,7 +27,7 @@ const ContentSecurityPolicy = `
   child-src authisfor.me ${process.env.BACKEND_SERVER || 'http://localhost:8000'};
   style-src 'self' authisfor.me ${process.env.BACKEND_SERVER || 'http://localhost:8000'};
   img-src 'self' namemc.com crafatar.com authisfor.me livzmc.net
-  font-src 'self';  
+  font-src 'self';
 `;
 
 const headers = [
@@ -58,7 +59,7 @@ const headers = [
 	// CSP... Security. Modern. Cool. Yes.
 	{
 		key: 'Content-Security-Policy',
-		value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
+		value: ContentSecurityPolicy.replaceAll(/\s{2,}/g, ' ').trim(),
 	},
 ];
 const BuildingConfig = new Config({
@@ -76,16 +77,19 @@ const BuildingConfig = new Config({
 	},
 	// Whether or not bundle analyzer is enabled.
 	enabled: process.env.ANALYZE === 'true',
+	experimental: {
+		outputFileTracingRoot: join(__dirname, '../'),
+	},
 	// Requires SWC from NextJS
 	// Removes console.log from production builds.
 	// Keeps console.error though.
-	compiler: {
-		removeConsole: process.env.NODE_ENV === 'production',
-		exclude: ['error'],
-	},
+	// compiler: {
+	// 	removeConsole: process.env.NODE_ENV === 'production',
+	// 	exclude: ['error'],
+	// },
 	// Minify files in production. Shouldn't effect Sentry error logging.
 	// Requires testing
-	swcMinify: process.env.NODE_ENV === 'production',
+	// swcMinify: process.env.NODE_ENV === 'production',
 	// The starter code load resources from `public` folder with `router.basePath` in React components.
 	// So, the source code is "basePath-ready".
 	// You can remove `basePath` if you don't need it.
@@ -140,5 +144,4 @@ if (process.env.NODE_ENV === 'production') {
 		})(config);
 	});
 }
-BuildingConfig.build();
-module.exports = Object.freeze(BuildingConfig);
+module.exports = BuildingConfig.build();

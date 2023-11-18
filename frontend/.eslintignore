@@ -9,10 +9,11 @@ coverage
 **/lib/
 **/node_modules/
 **/.next/
-**/coverage/
 **/out/
 **/build/
-**/jest-coverage/
+**/**/*coverage*
 backend/prisma/generated
 **/pnpm-lock.yaml
 src/js
+cluster.js
+next-env.d.ts

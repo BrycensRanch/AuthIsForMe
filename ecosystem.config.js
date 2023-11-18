@@ -22,7 +22,7 @@ const apps = [
 		listen_timeout: 10_000,
 		exec_mode: 'cluster',
 		exp_backoff_restart_delay: 100,
-		script: './server.js',
+		script: './.next/standalone/frontend/server.js',
 		cwd: './frontend',
 	},
 ];
