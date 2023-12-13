@@ -95,7 +95,7 @@
 		"redis-url-plus": "^1.1.0",
 		"scan-env": "github:BrycensRanch/scan-env",
 		"useragent": "^2.3.0",
-		"reflect-metadata": "^0.1.13",
+		"reflect-metadata": "^0.2.0",
 		"yaml": "^2.3.4",
 		"zod": "^3.22.4"
 	},
