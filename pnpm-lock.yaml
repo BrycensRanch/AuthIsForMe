@@ -121,8 +121,8 @@ importers:
         specifier: ^8.12.0
         version: 8.12.0
       '@fastify/swagger-ui':
-        specifier: ^1.10.1
-        version: 1.10.1
+        specifier: ^2.0.0
+        version: 2.0.1
       '@fastify/view':
         specifier: ^8.2.0
         version: 8.2.0
@@ -2790,6 +2790,16 @@ packages:
 
   /@fastify/swagger-ui@1.10.1:
     resolution: {integrity: sha512-u3EJqNKvVr3X+6jY5i6pbs6/tXCrSlqc2Y+PVjnHBTOGh/d36uHMz+z4jPFy9gie2my6iHUrAdM8itlVmoUjog==}
+    dependencies:
+      '@fastify/static': 6.11.2
+      fastify-plugin: 4.5.1
+      openapi-types: 12.1.3
+      rfdc: 1.3.0
+      yaml: 2.3.4
+    dev: false
+
+  /@fastify/swagger-ui@2.0.1:
+    resolution: {integrity: sha512-sQnufSdQ5kJxaTxBisWYQjkunECuRymYRZYEZEEPpmLUzzZoS22tDLVumb3c1TV4MAlD3L1LTLpxLSXcFL+OZw==}
     dependencies:
       '@fastify/static': 6.11.2
       fastify-plugin: 4.5.1
