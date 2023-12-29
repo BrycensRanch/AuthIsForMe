@@ -59,7 +59,7 @@ jobs:
       # Limit Docker builds to only necessary changes.
       # Unfortunately, this includes dependency changes as well due to the Dockerfile possibly breaking on lack of installed dependencies for building the application.
       - name: Verify Changed files
-        uses: tj-actions/verify-changed-files@v16
+        uses: tj-actions/verify-changed-files@v17
         id: verify-changed-files
         with:
           files: |
