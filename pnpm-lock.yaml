@@ -127,8 +127,8 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0
       '@immobiliarelabs/fastify-sentry':
-        specifier: ^7.1.1
-        version: 7.1.1
+        specifier: ^8.0.0
+        version: 8.0.0
       '@mgcrea/fastify-graceful-exit':
         specifier: ^1.1.1
         version: 1.1.1
@@ -2949,14 +2949,14 @@ packages:
     engines: {node: '>=6.9.0'}
     dev: true
 
-  /@immobiliarelabs/fastify-sentry@7.1.1:
-    resolution: {integrity: sha512-V6cIMLhufo81td6nPP7Y/ISgh+MaxH/FXQ7VfGnsPBq6l/B6L2d00mcOe7ER0oHfm0bIwGQa/KdvaGyz5nEVbw==}
-    engines: {node: '>=16', npm: '>=8'}
+  /@immobiliarelabs/fastify-sentry@8.0.0:
+    resolution: {integrity: sha512-W2T7dTIxctBo70vFDjknsQeaITKyY7YmL4OJHV79Qotm0CCcQ8DHW+dJvCOYDOnFrNo92mf73pdC/M2NvDzi+Q==}
+    engines: {node: '>=18'}
     dependencies:
-      '@sentry/node': 7.76.0
+      '@sentry/node': 7.80.1
       '@sentry/tracing': 7.76.0
-      '@sentry/utils': 7.76.0
-      cookie: 0.5.0
+      '@sentry/utils': 7.80.1
+      cookie: 0.6.0
       fastify-plugin: 4.5.1
     transitivePeerDependencies:
       - supports-color
@@ -4736,19 +4736,6 @@ packages:
       webpack: 5.89.0(@swc/core@1.3.96)
     transitivePeerDependencies:
       - encoding
-      - supports-color
-    dev: false
-
-  /@sentry/node@7.76.0:
-    resolution: {integrity: sha512-C+YZ5S5W9oTphdWTBgV+3nDdcV1ldnupIHylHzf2Co+xNtJ76V06N5NjdJ/l9+qvQjMn0DdSp7Uu7KCEeNBT/g==}
-    engines: {node: '>=8'}
-    dependencies:
-      '@sentry-internal/tracing': 7.76.0
-      '@sentry/core': 7.76.0
-      '@sentry/types': 7.76.0
-      '@sentry/utils': 7.76.0
-      https-proxy-agent: 5.0.1
-    transitivePeerDependencies:
       - supports-color
     dev: false
 
@@ -7958,6 +7945,11 @@ packages:
 
   /cookie@0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
+    engines: {node: '>= 0.6'}
+    dev: false
+
+  /cookie@0.6.0:
+    resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
     dev: false
 
