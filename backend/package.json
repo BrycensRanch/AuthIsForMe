@@ -73,7 +73,7 @@
 		"fastify-get-head": "^3.0.0",
 		"fastify-grant": "^5.4.8",
 		"fastify-impressions": "^1.0.5",
-		"fastify-ip": "^0.2.0",
+		"fastify-ip": "^1.0.0",
 		"fastify-json5": "^1.0.0",
 		"fastify-plugin": "^4.5.1",
 		"fastify-print-routes": "^3.0.0",
