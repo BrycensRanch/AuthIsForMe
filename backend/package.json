@@ -76,7 +76,7 @@
 		"fastify-ip": "^0.2.0",
 		"fastify-json5": "^1.0.0",
 		"fastify-plugin": "^4.5.1",
-		"fastify-print-routes": "^2.2.0",
+		"fastify-print-routes": "^3.0.0",
 		"fastify-qs": "^4.0.2",
 		"fastify-request-timing": "^2.0.2",
 		"fastify-server-version": "^1.0.1",
