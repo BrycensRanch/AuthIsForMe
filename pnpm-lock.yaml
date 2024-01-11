@@ -205,8 +205,8 @@ importers:
         specifier: ^1.0.5
         version: 1.0.5
       fastify-ip:
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^1.0.0
+        version: 1.0.0
       fastify-json5:
         specifier: ^1.0.0
         version: 1.0.0
@@ -10302,9 +10302,9 @@ packages:
       fastify-plugin: 3.0.1
     dev: false
 
-  /fastify-ip@0.2.0:
-    resolution: {integrity: sha512-dY3zTH6Zj72l/16xENhhmnHLrbO6BVBtpwnDXcTzYvDSVzoe2Q2KM2r11W9wQ9jTdUZztjYh/cNiaEFvDSenmg==}
-    engines: {node: '>=16.x'}
+  /fastify-ip@1.0.0:
+    resolution: {integrity: sha512-ht6hS48UDmdHd9jARn2BphJUgw5u/nm8ItO9EceM2uSVhlusrkF07CfNvpuJHxFX8Nx+Eik/VJz0QzxOn3KMJA==}
+    engines: {node: '>=18.x'}
     dependencies:
       fastify-plugin: 4.5.1
     dev: false
