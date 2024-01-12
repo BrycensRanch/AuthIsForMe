@@ -91,7 +91,7 @@
 		"prisma-redis-middleware": "^4.8.0",
 		"prisma-json-schema-generator": "^5.0.0",
 		"prisma-zod-generator": "^0.8.13",
-		"rate-limiter-flexible": "^3.0.4",
+		"rate-limiter-flexible": "^4.0.0",
 		"redis-url-plus": "^1.1.0",
 		"scan-env": "github:BrycensRanch/scan-env",
 		"useragent": "^2.3.0",
