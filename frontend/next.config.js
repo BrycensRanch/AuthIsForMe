@@ -21,14 +21,14 @@ const { join } = require('node:path');
 // https://nextjs.org/docs/api-reference/next.config.js/introduction
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
-const ContentSecurityPolicy = `
-  default-src 'self';
-  script-src 'self';
-  child-src authisfor.me ${process.env.BACKEND_SERVER || 'http://localhost:8000'};
-  style-src 'self' authisfor.me ${process.env.BACKEND_SERVER || 'http://localhost:8000'};
-  img-src 'self' namemc.com crafatar.com authisfor.me livzmc.net
-  font-src 'self';
-`;
+// const ContentSecurityPolicy = `
+//   default-src 'self';
+//   script-src 'self';
+//   child-src authisfor.me ${process.env.BACKEND_SERVER || 'http://localhost:8000'};
+//   style-src 'self' authisfor.me ${process.env.BACKEND_SERVER || 'http://localhost:8000'};
+//   img-src 'self' namemc.com crafatar.com authisfor.me livzmc.net
+//   font-src 'self';
+// `;
 
 const headers = [
 	// This header controls DNS prefetching, allowing browsers to proactively perform domain name resolution on external links, images, CSS, JavaScript, and more.
@@ -57,10 +57,10 @@ const headers = [
 		value: 'origin-when-cross-origin',
 	},
 	// CSP... Security. Modern. Cool. Yes.
-	{
-		key: 'Content-Security-Policy',
-		value: ContentSecurityPolicy.replaceAll(/\s{2,}/g, ' ').trim(),
-	},
+	// {
+	// 	key: 'Content-Security-Policy',
+	// 	value: ContentSecurityPolicy.replaceAll(/\s{2,}/g, ' ').trim(),
+	// },
 ];
 const BuildingConfig = new Config({
 	// NextJS Eslint setup, see https://nextjs.org/docs/basic-features/eslint
