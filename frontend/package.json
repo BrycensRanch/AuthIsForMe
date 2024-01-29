@@ -166,7 +166,7 @@
 		"jest-mock-fetch": "^2.0.5",
 		"lint-staged": "^15.1.0",
 		"node-mocks-http": "^1.13.0",
-		"npm-run-all": "^4.1.5",
+		"npm-run-all2": "^5.0.0",
 		"nyc": "^15.1.0",
 		"postcss": "^8.4.31",
 		"prettier": "^3.1.0",
