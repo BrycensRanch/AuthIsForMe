@@ -83,7 +83,7 @@
 		"react": "^18.2.0",
 		"react-apexcharts": "^1.4.1",
 		"react-dom": "^18.2.0",
-		"react-icons": "^4.12.0",
+		"react-icons": "^5.0.0",
 		"react-lite-youtube-embed": "^2.3.52",
 		"react-sortablejs": "^6.1.4",
 		"semver": "^7.5.4",
