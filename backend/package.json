@@ -78,7 +78,7 @@
 		"fastify-plugin": "^4.5.1",
 		"fastify-print-routes": "^3.0.0",
 		"fastify-qs": "^4.0.2",
-		"fastify-request-timing": "^2.0.2",
+		"fastify-request-timing": "^3.0.0",
 		"fastify-server-version": "^1.0.1",
 		"fastify-user-agent": "^1.0.1",
 		"fastify-xml-body-parser": "^2.2.0",
