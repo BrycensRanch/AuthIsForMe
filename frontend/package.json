@@ -104,7 +104,7 @@
 		"@commitlint/cz-commitlint": "^18.4.2",
 		"@cypress/browserify-preprocessor": "^3.0.2",
 		"@cypress/code-coverage": "^3.12.10",
-		"@happy-dom/jest-environment": "^12.10.3",
+		"@happy-dom/jest-environment": "^13.0.0",
 		"@jest/globals": "^29.7.0",
 		"@next/bundle-analyzer": "^14.0.3",
 		"@next/env": "^14.0.3",
