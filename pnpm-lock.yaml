@@ -112,8 +112,8 @@ importers:
         specifier: ^3.4.0
         version: 3.4.0
       '@fastify/secure-session':
-        specifier: ^7.1.0
-        version: 7.1.0
+        specifier: ^7.3.0
+        version: 7.3.0
       '@fastify/sensible':
         specifier: ^5.5.0
         version: 5.5.0
@@ -2770,8 +2770,8 @@ packages:
       fastify-plugin: 4.5.1
     dev: false
 
-  /@fastify/secure-session@7.1.0:
-    resolution: {integrity: sha512-x0ZW57+sf6fQaL05B3n64m7DRe81NAtFAKpCKKuqdX9FDqzOH5uQbfDDfVQy2/qhDn3N343RMlNtY1iQyvvA9A==}
+  /@fastify/secure-session@7.3.0:
+    resolution: {integrity: sha512-9d7CMZ2OrOVsrWtkCf60weyfhQcscrnboUdnETMAAhEyUXrZtO66Zu99DH/g/VfGW1mUU5tKHq7jCkm+itvDWA==}
     hasBin: true
     dependencies:
       '@fastify/cookie': 9.2.0
@@ -4182,7 +4182,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dependencies:
       cross-spawn: 7.0.3
-      fast-glob: 3.3.1
+      fast-glob: 3.3.2
       is-glob: 4.0.3
       open: 9.1.0
       picocolors: 1.0.0
@@ -10387,7 +10387,6 @@ packages:
       glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.5
-    dev: true
 
   /fast-json-stable-stringify@2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
@@ -11458,7 +11457,7 @@ packages:
     dependencies:
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.3.1
+      fast-glob: 3.3.2
       ignore: 5.3.0
       merge2: 1.4.1
       slash: 3.0.0
