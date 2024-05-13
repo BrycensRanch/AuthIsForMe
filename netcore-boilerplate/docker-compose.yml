@@ -1,0 +1,30 @@
+# Containers from MCR are BANNED!
+# It's so damn slow. :pensive:
+
+version: "3.6"
+
+services:
+  postgres:
+    image: rapidfort/postgresql-official
+    container_name: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: employees
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: simplepwd
+  redis:
+    image: rapidfort/redis-official
+    container_name: redis
+    restart: always
+    ports:
+      - 6379:6379
+  netcore-boilerplate:
+    container_name: netcore-boilerplate
+    build:
+      context: .
+    ports:
+      - 5000:80
+    depends_on:
+      - postgres
+      - redis

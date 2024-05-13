@@ -22,6 +22,8 @@ import app from './app.js';
 import { AppModule } from './app.module.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const __filename = fileURLToPath(import.meta.url)
+
 
 expand(
 	loadEnvironmentDefaultsAndRegularEnvironment({
@@ -38,13 +40,35 @@ expand(
 	}) as DotenvExpandOptions,
 );
 
+
 async function readJsonFile(path: string): Promise<Record<string, ProjectReference>> {
 	const file = await readFile(path, 'utf8');
 	return JSON.parse(file);
 }
 
-const start = async () => {
+export const start = async () => {
 	console.log(`Currently running in ${__dirname}`);
+  const nestApp = await NestFactory.create<NestFastifyApplication>(
+  AppModule,
+  new FastifyAdapter({
+    logger: {
+      level: 'debug',
+      transport: {
+        target: 'pino-pretty',
+      },
+    },
+    trustProxy: true,
+    // ajv: {
+    // 	plugins: [ajvBinaryFormat],
+    // },
+    // Required: Enable TLS
+    // https: true,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // Optional: Enable HTTP/2
+    // http2: true
+  }),
+  { bodyParser: false },
+);
 	if (process.env.NODE_ENV !== 'production') {
 		let name;
 		let version;
@@ -64,35 +88,37 @@ const start = async () => {
 			width: 80,
 			whitespaceBreak: true,
 		})}\n`;
-		const gitText = chalk.yellowBright.bold(
-			`Version: ${version}\n${chalk.blueBright(
-				`Commit: ${gitInfo.abbreviatedSha} (${gitInfo.lastTag === 'null' ? 'unknown' : gitInfo.lastTag})\nAuthor: ${
-					gitInfo.author
-				} (${gitInfo.authorDate})\nMessage: ${gitInfo.commitMessage}\nCommits since tag: ${
-					gitInfo.commitsSinceLastTag
-				}\n${chalk.blueBright(`Branch: ${gitInfo.branch}`)}`,
-			)}`,
-		);
-		const warning =
-			process.env.NODE_ENV !== 'production' || gitInfo.branch !== 'master'
-				? chalk.redBright.bold('WARNING: This is a development build. Do not use in production.')
-				: undefined;
-		const dockerWarning = chalk.redBright.bold(
-			"Psst! Make sure you've set up your .env file and launched the database and redis containers!\nYou can do this with the command: docker compose up -d db db2 cache",
-		);
-		const contextInfo = chalk.yellowBright.bold(
-			`CI: ${ciDetect()}\nInside Docker?: ${isDocker() ? 'YES!!' : 'no🤡'}\nNODE_ENV: ${
-				process.env.NODE_ENV
-			}\nNODE_APP_INSTANCE: ${process.env.NODE_APP_INSTANCE}\nPORT: ${process.env.PORT}\nFASTIFY_PORT: ${
-				process.env.FASTIFY_PORT
-			}\n`,
-		);
-		console.log(chalk.greenBright.bold.italic(bannerText));
-		console.log(gitText);
-		if (warning) console.log(warning);
-		console.log(dockerWarning);
-		console.log(contextInfo);
-		console.log(chalk.bgWhiteBright.greenBright('Now Nest.js based!'));
+    if (process.env.NODE_ENV !== 'test') {
+      const gitText = chalk.yellowBright.bold(
+        `Version: ${version}\n${chalk.blueBright(
+          `Commit: ${gitInfo.abbreviatedSha} (${gitInfo.lastTag === 'null' ? 'unknown' : gitInfo.lastTag})\nAuthor: ${
+            gitInfo.author
+          } (${gitInfo.authorDate})\nMessage: ${gitInfo.commitMessage}\nCommits since tag: ${
+            gitInfo.commitsSinceLastTag
+          }\n${chalk.blueBright(`Branch: ${gitInfo.branch}`)}`,
+        )}`,
+      );
+      const warning =
+        process.env.NODE_ENV !== 'production' || gitInfo.branch !== 'master'
+          ? chalk.redBright.bold('WARNING: This is a development build. Do not use in production.')
+          : undefined;
+      const dockerWarning = chalk.redBright.bold(
+        "Psst! Make sure you've set up your .env file and launched the database and redis containers!\nYou can do this with the command: docker compose up -d db db2 cache",
+      );
+      const contextInfo = chalk.yellowBright.bold(
+        `CI: ${ciDetect()}\nInside Docker?: ${isDocker() ? 'YES!!' : 'no🤡'}\nNODE_ENV: ${
+          process.env.NODE_ENV
+        }\nNODE_APP_INSTANCE: ${process.env.NODE_APP_INSTANCE}\nPORT: ${process.env.PORT}\nFASTIFY_PORT: ${
+          process.env.FASTIFY_PORT
+        }\n`,
+      );
+      console.log(chalk.greenBright.bold.italic(bannerText));
+      console.log(gitText);
+      if (warning) console.log(warning);
+      console.log(dockerWarning);
+      console.log(contextInfo);
+      console.log(chalk.bgWhiteBright.greenBright('Now Nest.js based!'));
+    }
 	}
 	try {
 		const scanResult = scanEnv('../../.env.example');
@@ -103,28 +129,6 @@ const start = async () => {
 		console.error(error);
 		console.error('failed to check if environment variables are missing, likely due to a missing .env.example');
 	}
-
-	const nestApp = await NestFactory.create<NestFastifyApplication>(
-		AppModule,
-		new FastifyAdapter({
-			logger: {
-				level: 'debug',
-				transport: {
-					target: 'pino-pretty',
-				},
-			},
-			trustProxy: true,
-			ajv: {
-				plugins: [ajvBinaryFormat],
-			},
-			// Required: Enable TLS
-			// https: true,
-			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-			// Optional: Enable HTTP/2
-			// http2: true
-		}),
-		{ bodyParser: false },
-	);
 	nestApp.useStaticAssets({ root: join(__dirname, '..', 'public') });
 	nestApp.enableVersioning();
 	// nestApp.setBaseViewsDir(join(__dirname, '..', 'views'));
@@ -134,12 +138,12 @@ const start = async () => {
 	// nestApp.setViewEngine({
 	//   engine: 'eta' as never,
 	// });
-	const server = nestApp.getHttpAdapter().getInstance() as unknown as FastifyInstance;
+	const server = nestApp.getHttpAdapter().getInstance();
 	await app(server, {});
 	// Validate all endpoints
 	nestApp.useGlobalPipes(
 		new ValidationPipe({
-			whitelist: true,
+			whitelist: false,
 		}),
 	);
 	// await server.register(app.fastify);
@@ -150,12 +154,17 @@ const start = async () => {
 	// 	cert: join(__dirname, 'certs', 'cert.pem'),
 	// })
 
-	nestApp.listen(process.env.PORT || process.env.FASTIFY_PORT || '8000', '0.0.0.0', (error, address) => {
-		if (error) throw error;
+	await nestApp.listen(process.env.PORT || process.env.FASTIFY_PORT || '8000', '0.0.0.0', (error, address) => {
+    if (error) throw error;
 
-		if (process.env.NODE_APP_INSTANCE === '0' || (!process.env.NODE_APP_INSTANCE && process.env.NODE_ENV !== 'test'))
-			server.log.info(`Server listening at ${address}`);
-		if (process.send) process.send('ready');
-	});
+    if (process.env.NODE_APP_INSTANCE === '0' || (!process.env.NODE_APP_INSTANCE && process.env.NODE_ENV !== 'test'))
+      server.log.info(`Server listening at ${address}`);
+    if (process.send) process.send('ready');
+  });
+    return nestApp;
 };
-start();
+let entryFile = process.argv?.[1];
+
+if (entryFile === __filename) {
+  start();
+}

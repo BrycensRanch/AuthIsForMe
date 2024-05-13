@@ -23,6 +23,12 @@ export class RootController {
 		};
 	}
 
+  // We need a /api/health endpoint
+  @Get('api/health')
+  health() {
+    return { status: 'ok' };
+  }
+
 	@Get('feed')
 	@ApiOperation({ summary: 'Feed of published posts' })
 	async getFilteredPosts(

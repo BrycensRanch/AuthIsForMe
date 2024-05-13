@@ -12,7 +12,7 @@ module.exports = {
 	functions: 80,
 	statements: 80,
 	'report-dir': 'cypress-coverage',
-	all: false, // Whether or not to instrument all files (not just the ones touched by your test suite)
+	all: false, // Whether to instrument all files (not just the ones touched by your test suite)
 	sourceMap: true,
 	instrument: true,
 };

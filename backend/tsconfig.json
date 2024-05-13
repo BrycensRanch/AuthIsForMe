@@ -1,10 +1,10 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
-	"display": "Node 18",
+	"display": "Node 20",
 	"compilerOptions": {
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"module": "ESNext",
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
 		"removeComments": true,
 		"preserveConstEnums": true,
@@ -48,5 +48,5 @@
 		}
 	},
 	"include": ["./**/*"],
-	"exclude": ["node_modules", "**/node_modules", "dist", "coverage", "prisma/generated", "prisma/json-schema"]
+	"exclude": ["node_modules", "**/node_modules", "dist", "coverage"]
 }

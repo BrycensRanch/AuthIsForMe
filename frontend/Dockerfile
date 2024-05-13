@@ -3,10 +3,26 @@
 
 # Goal: Create NextJS docker image that uses multiple cores and should be production ready
 
-FROM timbru31/node-alpine-git:hydrogen AS deps
-RUN apk add --no-cache bash
+FROM timbru31/node-alpine-git:iron AS deps
+# For this stage, we want this alpine container to be as a similar to Ubuntu as possible.
+# No matter what I do, when installing dependencies forces canvas to rebuild itself (node-gyp)
+# This is why I use Ubuntu in the main image, it downloads the pre compiled dependencies and saves CPU time.
 # Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
-RUN apk add --no-cache libc6-compat
+RUN apk add --no-cache \
+	bash \
+	wget \
+	libc6-compat \
+	python3 \
+	gcc \
+	make \
+	g++ \
+	coreutils \
+	pixman-dev \
+	cairo-dev pango-dev jpeg-dev giflib-dev \
+	zlib-dev \
+	libffi-dev \
+	openssl-dev \
+	musl-dev
 
 # RUN apk cache clean
 
@@ -17,8 +33,7 @@ SHELL ["bash", "-c"]
 # set right (secure) folder permissions
 RUN mkdir -p /home/nodejs/app/node_modules && chown -R nodejs:nodejs /home/nodejs/app
 
-# PNPM FOR ALPINE LINUX IS KINDA COMPLICATED...
-RUN wget -qO /bin/pnpm "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64" && chmod +x /bin/pnpm
+RUN npm i -g pnpm
 RUN mkdir -p /home/nodejs/.pnpm-store && chown -R nodejs:nodejs /home/nodejs/.pnpm-store
 RUN mkdir -p /home/nodejs/.pnpm-global && chown -R nodejs:nodejs /home/nodejs/.pnpm-global
 
@@ -30,8 +45,8 @@ WORKDIR /home/nodejs/app
 ENV PNPM_HOME=/home/nodejs/.local/share/pnpm
 ENV PATH=$PATH:$PNPM_HOME
 
-# Install dependencies based on the preferred package manager
-COPY --chown=nodejs:nodejs package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+COPY --chown=nodejs:nodejs . .
+# bro why does this make canvas build itself using node-gyp? I blame expressjs
 RUN HUSKY=0 CYPRESS_INSTALL_BINARY=0 pnpm install
 
 # Work in progress
@@ -39,37 +54,36 @@ RUN HUSKY=0 CYPRESS_INSTALL_BINARY=0 pnpm install
 # RUN pnpm add -g pm2
 # RUN pnpm add -g cross-env rimraf
 
-FROM timbru31/node-alpine-git:hydrogen AS builder
-WORKDIR /home/nodejs/app
-
-# COPY --from=deps --chown=nodejs:nodejs . .
-COPY --from=deps /home/nodejs/app/node_modules ./node_modules
-COPY . .
-
-ENV NODE_ENV=production
+ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN pnpm build
+RUN NODE_ENV=production pnpm build
 
-FROM jellydn/alpine-nodejs:18 AS runner
+FROM jellydn/alpine-nodejs:20 AS runner
+RUN npm install -g pm2 && \
+    addgroup -S nodejs && \
+    adduser -S nodejs -G nodejs
+
+USER nodejs
 WORKDIR /home/nodejs/app
 
-COPY --from=builder /home/nodejs/app/.next/standalone ./standalone
-COPY --from=builder /home/nodejs/app/public /home/nodejs/app/standalone/public
-COPY --from=builder /home/nodejs/app/.next/static /home/nodejs/app/standalone/.next/static
+ENV STANDALONE_PATH=/home/nodejs/app/app/server.js
+
+COPY --from=deps --chown=nodejs:nodejs /home/nodejs/app/.next/standalone .
+COPY --from=deps --chown=nodejs:nodejs /home/nodejs/app/public ./app/public
+COPY --from=deps --chown=nodejs:nodejs /home/nodejs/app/.next/static ./app/.next/static
 
 # Clustering
-RUN npm install -g pm2
 
 EXPOSE 3000
 ENV PORT 3000
+ENV NODE_ENV production
 
-COPY --chown=nodejs:nodejs pm2.config.js .
-COPY --chown=nodejs:nodejs server.js .
-COPY --chown=nodejs:nodejs .env* ./
-COPY --chown=nodejs:nodejs healthCheck.js ./healthCheck.js
+COPY --chown=nodejs:nodejs pm2.config.js ./app
+COPY --chown=nodejs:nodejs .env* ./app
+COPY --chown=nodejs:nodejs healthCheck.js ./app/healthCheck.js
 
-CMD ["node", "./standalone/server.js"]
+CMD ["pm2-runtime", "app/pm2.config.js"]
 
 # This marks the end of the second layer. At this stage, we have the static files which we will push to our final image.
 

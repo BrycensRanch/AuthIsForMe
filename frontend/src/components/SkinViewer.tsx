@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { SkinViewer, WalkingAnimation } from 'skinview3d';
 
@@ -29,8 +29,9 @@ export const MinecraftSkinViewer = ({
 	cape = 'http://localhost:3000/assets/images/cape.png',
 }: MinecraftSkinViewerProperties) => {
 	const canvas = React.useRef<HTMLCanvasElement>(null);
-
-	React.useLayoutEffect(() => {
+	const useIsomorphicLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;
+	useIsomorphicLayoutEffect(() => {
+		// @ts-ignore
 		const skinViewer = new SkinViewer({
 			skin,
 			width,

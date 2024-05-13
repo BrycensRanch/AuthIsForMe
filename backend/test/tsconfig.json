@@ -3,7 +3,12 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"noEmit": true,
-		"composite": true
+		"composite": true,
+    "paths": {
+      "@/*": ["./*"],
+      "@/src/*": ["./src/*"],
+      "@/public/*": ["./public/*"]
+    }
 	},
-	"include": ["../src/**/*.ts", "**/*.ts", "**/*.mts", "**/*.test.ts"]
+	"include": ["./**/*", "**/*.ts", "**/*.mts", "**/*.test.ts"]
 }

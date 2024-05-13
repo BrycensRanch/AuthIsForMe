@@ -4,5 +4,9 @@
 	</head>
 	<body>
 		<h1>Message</h1>
+		<form method="POST" action="/feed">
+      <input type="hidden" name="_method" value="GET">
+      <input type="submit" value="Submit">
+    </form>
 	</body>
 </html>

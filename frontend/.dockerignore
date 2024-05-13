@@ -10,10 +10,14 @@ README.md
 .git
 .vscode
 .husky
+.next
 .github
-
+**/**/*coverage*
+out
 dockerApp
-coverage
+reports
+.nyc_output
 cypress
 __mocks__
 src/pages.test
+.sentryclirc

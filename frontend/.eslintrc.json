@@ -10,7 +10,8 @@
 	"rules": {
 		"unicorn/prefer-module": "off",
 		"unicorn/prefer-top-level-await": "off",
-		"unicorn/filename-case": "off"
+		"unicorn/filename-case": "off",
+		"unicorn/prevent-abbreviations": "off"
 	},
 	"overrides": [
 		// Configuration for TypeScript files

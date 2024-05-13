@@ -13,7 +13,8 @@ const jestConfig: JestConfigWithTsJest = {
 	preset: 'ts-jest/presets/js-with-ts-esm',
 	testEnvironment: 'node',
 	resolver: 'jest-ts-webcompat-resolver',
-	clearMocks: true,
+  // extensionsToTreatAsEsm: ['.ts'],
+  clearMocks: true,
 	collectCoverage: true,
 	collectCoverageFrom: [
 		'./app.{js,ts,mts,mjs,cjs,cts}',

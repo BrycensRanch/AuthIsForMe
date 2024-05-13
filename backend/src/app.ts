@@ -6,6 +6,7 @@ import 'reflect-metadata';
 import type { AutoloadPluginOptions } from '@fastify/autoload';
 import cors from '@fastify/cors';
 import helmet from '@fastify/helmet';
+import autoLoad from '@fastify/autoload';
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from 'fastify';
 // import inputValidation from 'openapi-validator-middleware';
 import fastifyFormidable from '@damirn/fastify-formidable';
@@ -37,18 +38,19 @@ import fastifyETag from '@fastify/etag';
 import { expand, DotenvExpandOptions } from 'dotenv-expand';
 import fastifyViews from '@fastify/view';
 import { Eta } from 'eta';
+import fastifyMethodOverride from 'fastify-method-override';
+
+// import withSentry from './plugins/sentry';
+// import withSwagger from './plugins/swagger';
+// import withErrorHandler from './plugins/errorHandler';
+// import withGracefulExits from './plugins/exit';
+// import withFormBody from './plugins/formBody';
+import protobufjs from 'protobufjs';
+import {Parser} from 'xml2js';
 
 const eta = new Eta();
-const defaults = await import(`dotenv-defaults`);
-
-// Initializing the default environment variables
-expand(
-	defaults.config({
-		path: './.env',
-		encoding: 'utf8',
-		defaults: './.env.example', // This is new
-	}),
-);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename);
 
 expand(
 	loadMonoRepoEnvironment({
@@ -84,15 +86,14 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	if (process.env.NODE_APP_INSTANCE === '0' || (!process.env.NODE_APP_INSTANCE && process.env.NODE_ENV !== 'test'))
 		await app.register(printRoutes);
 
-	// Under no circumstances should these be moved, it's legit the entire application
+	// Under no circumstances should these be moved
 	// This loads all plugins defined in plugins
-	// those should be support plugins that are reused
-	// through out your application
-	void (await app.register(import('./plugins/sentry.mjs')));
-	void (await app.register(import('./plugins/swagger.mjs')));
-	void (await app.register(import('./plugins/formbody.mjs')));
-	void (await app.register(import('./plugins/errorHandler.mjs')));
-	void (await app.register(import('./plugins/exit.mjs')));
+  // Our custom plugins are registered here.
+  // await app.register(withSentry);
+  // await app.register(withErrorHandler);
+  // await app.register(withSwagger);
+  // await app.register(withGracefulExits);
+  // await app.register(withFormBody);
 
 	// It's perfectly fine to add one liner type of Fastify Plugins here.
 	// If it's longer or more important, it should be in it's own file.
@@ -107,19 +108,21 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 	//   trackSuccessOnly: false // track only success responses
 	// })
 	await app.register(fastifyUserAgent);
-	await app.register(fastifyAllow);
+  await app.register(fastifyMethodOverride);
+  await app.register(fastifyAllow);
 	// await app.register(fastifyIP);
 	await app.register(fastifyXML);
+
 	await app.register(fastifyQS);
 	await app.register(fastifyETag);
 	await app.register(fastifyViews, {
 		engine: { eta },
 		templates: join(dirname(fileURLToPath(import.meta.url)), './views'),
 	});
-	await app.register(fastifyFormidable, {
-		removeFilesFromBody: true,
-		addHooks: true,
-	});
+	// await app.register(fastifyFormidable, {
+	// 	removeFilesFromBody: true,
+  //   addContentTypeParser: true,
+	// });
 	await app.register(fastifyJSON5);
 	await app.register(serverVersion());
 	await app.register(fjwt, {
@@ -148,8 +151,21 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 			return { error, statusCode: 422, message: 'Unprocessable Entity - Zod Errors or something, man...' };
 		},
 	});
-
+  const parser = new Parser();
+  await app.addContentTypeParser('application/x-protobuf', function (req, done) {
+    try {
+      // @ts-ignore
+      const res = Package.decode(req.body)
+      return res
+    } catch (err) {
+      return err;
+    }
+  })
+  const protoloadPath =  join(__dirname, 'schema', 'package.proto'), messagePackage ='Package'
+  const root = protobufjs.loadSync(protoloadPath)
+  const Package = root.lookupType(messagePackage)
 	// register the router
+  // @ts-ignore
 	await app.register(fastifyAcceptsSerializer, {
 		serializers: [
 			{
@@ -157,10 +173,21 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 				regex: /^(application\/(x-)?yaml|text\/yaml)$/,
 				serializer: body => YAML.stringify(body),
 			},
-			// {
-			// 	regex: /^(application\/xml|text\/xml)$/,
-			// 	serializer: body => builder.build(body),
-			// },
+      {
+        regex: /^application\/x-protobuf$/,
+        serializer: body => Package.encode(Package.create(body)).finish()
+      },
+			{
+				regex: /^(application\/xml|text\/xml)$/,
+				serializer: body => {
+          parser.parseString(body, (err, result) => {
+            if (err) {
+              throw err;
+            }
+            return result;
+          });
+        }
+			},
 			{
 				// application/x-www-form-urlencoded
 				regex: /^(application\/x-www-form-urlencoded)$/,
@@ -176,15 +203,16 @@ const fastify: FastifyPluginAsync<AppOptions> = async (app): Promise<void> => {
 		default: 'application/json', // MIME type used if Accept header don't match anything
 	});
 
-	await app.register(fastifyRouteStats, {
-		printInterval: 30_000, // milliseconds
-		decoratorName: 'performanceMarked', // decorator is set to true if a performace.mark was called for the request
-	});
+	// await app.register(fastifyRouteStats, {
+	// 	printInterval: 30_000, // milliseconds
+	// 	decoratorName: 'performanceMarked', // decorator is set to true if a performace.mark was called for the request
+	// });
 	if (process.env.FASTIFY_ANALYTICS_API_KEY)
 		app.addHook('onRequest', fastifyAnalytics(process.env.FASTIFY_ANALYTICS_API_KEY));
-	app.addHook('onRequest', async request => {
+	app.addHook('onRequest', async ({ headers, ip, userAgent: userAgent1 }, reply) => {
+    if (headers['user-agent'] && headers['user-agent'].length > 250) return reply.code(422).send({ message: 'User agent too long, should be > 250' });
 		// Some code
-		app.log.info(`Request from ${request.ip?.trim() || 'localhost'} from user agent ${request.userAgent.toString()}`);
+		app.log.info(`Request from ${ip?.trim() || 'localhost'} from user agent ${userAgent1.toString()} (${headers['user-agent']})`);
 	});
 	app.get('/helloz', async () => {
 		return 'Hello World!';

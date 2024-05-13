@@ -1,0 +1,18 @@
+import { z } from 'zod';
+import { ProfileCreateNestedOneWithoutPostsInputObjectSchema } from './ProfileCreateNestedOneWithoutPostsInput.schema';
+
+import type { Prisma } from '@prisma/client';
+
+const Schema: z.ZodType<Prisma.PostCreateInput> = z
+	.object({
+		createdAt: z.coerce.date().optional(),
+		updatedAt: z.coerce.date().optional(),
+		title: z.string(),
+		content: z.string().optional().nullable(),
+		published: z.boolean().optional().nullable(),
+		viewCount: z.number().optional(),
+		author: z.lazy(() => ProfileCreateNestedOneWithoutPostsInputObjectSchema).optional(),
+	})
+	.strict();
+
+export const PostCreateInputObjectSchema = Schema;
