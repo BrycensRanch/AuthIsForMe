@@ -87,7 +87,7 @@
 		"react-lite-youtube-embed": "^2.3.52",
 		"react-sortablejs": "^6.1.4",
 		"semver": "^7.5.4",
-		"sharp": "^0.32.6",
+		"sharp": "^0.33.0",
 		"skinview3d": "3.0.1",
 		"sort-by": "^1.2.0",
 		"svgmap": "^2.10.1",
