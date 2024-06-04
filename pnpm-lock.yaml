@@ -113,7 +113,7 @@ importers:
         version: 3.4.0
       '@fastify/secure-session':
         specifier: ^7.1.0
-        version: 7.1.0
+        version: 7.3.0
       '@fastify/sensible':
         specifier: ^5.5.0
         version: 5.5.0
@@ -2927,13 +2927,13 @@ packages:
       fastify-plugin: 4.5.1
     dev: false
 
-  /@fastify/secure-session@7.1.0:
-    resolution: {integrity: sha512-x0ZW57+sf6fQaL05B3n64m7DRe81NAtFAKpCKKuqdX9FDqzOH5uQbfDDfVQy2/qhDn3N343RMlNtY1iQyvvA9A==}
+  /@fastify/secure-session@7.3.0:
+    resolution: {integrity: sha512-9d7CMZ2OrOVsrWtkCf60weyfhQcscrnboUdnETMAAhEyUXrZtO66Zu99DH/g/VfGW1mUU5tKHq7jCkm+itvDWA==}
     hasBin: true
     dependencies:
       '@fastify/cookie': 9.2.0
       fastify-plugin: 4.5.1
-      sodium-native: 4.0.4
+      sodium-native: 4.1.1
     dev: false
 
   /@fastify/send@2.1.0:
@@ -15345,8 +15345,8 @@ packages:
       formdata-polyfill: 4.0.10
     dev: false
 
-  /node-gyp-build@4.6.1:
-    resolution: {integrity: sha512-24vnklJmyRS8ViBNI8KbtK/r/DmXQMRiOMXTNz2nrTnAYUwjmEEbnnpB/+kt+yWRv73bPsSPRFddrcIbAxSiMQ==}
+  /node-gyp-build@4.8.1:
+    resolution: {integrity: sha512-OSs33Z9yWr148JZcbZd5WiAXhh/n9z8TxQcdMhIOlpN9AhWpLfvVFO73+m77bBABQMaY9XSvIa+qk0jlI7Gcaw==}
     hasBin: true
     dev: false
 
@@ -18058,11 +18058,11 @@ packages:
       - supports-color
     dev: true
 
-  /sodium-native@4.0.4:
-    resolution: {integrity: sha512-faqOKw4WQKK7r/ybn6Lqo1F9+L5T6NlBJJYvpxbZPetpWylUVqz449mvlwIBKBqxEHbWakWuOlUt8J3Qpc4sWw==}
+  /sodium-native@4.1.1:
+    resolution: {integrity: sha512-LXkAfRd4FHtkQS4X6g+nRcVaN7mWVNepV06phIsC6+IZFvGh1voW5TNQiQp2twVaMf05gZqQjuS+uWLM6gHhNQ==}
     requiresBuild: true
     dependencies:
-      node-gyp-build: 4.6.1
+      node-gyp-build: 4.8.1
     dev: false
 
   /sonic-boom@3.7.0:
