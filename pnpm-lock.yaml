@@ -182,7 +182,7 @@ importers:
         version: 3.1.1
       fast-xml-parser:
         specifier: ^4.3.2
-        version: 4.3.2
+        version: 4.4.0
       fastify:
         specifier: ^4.24.3
         version: 4.24.3
@@ -11013,8 +11013,8 @@ packages:
     resolution: {integrity: sha512-WvJe06IfNYlr+6cO3uQkdKdy3Cb1LlCJSF8zRs2eT8yuhdbSlR9nIt+TgQ92RUxiRrQm+/S7RARnMfCs5iuAjw==}
     dev: false
 
-  /fast-xml-parser@4.3.2:
-    resolution: {integrity: sha512-rmrXUXwbJedoXkStenj1kkljNF7ugn5ZjR9FJcwmCfcCbtOMDghPajbc+Tck6vE6F5XsDmx+Pr2le9fw8+pXBg==}
+  /fast-xml-parser@4.4.0:
+    resolution: {integrity: sha512-kLY3jFlwIYwBNDojclKsNAC12sfD6NwW74QB2CoNGPvtVxjliYehVunB3HYyNi+n4Tt1dAcgwYvmKF/Z18flqg==}
     hasBin: true
     dependencies:
       strnum: 1.0.5
@@ -11162,7 +11162,7 @@ packages:
   /fastify-xml-body-parser@2.2.0:
     resolution: {integrity: sha512-Jxltec0Iin4QX+DEQoYCyGmU5cTRtI0x22mRT/3FBQMhTEn7KNTHnnEtbyN3+6SLgW8cSirnOe1t8vqn77vR+Q==}
     dependencies:
-      fast-xml-parser: 4.3.2
+      fast-xml-parser: 4.4.0
       fastify-plugin: 3.0.1
     dev: false
 
@@ -14536,7 +14536,7 @@ packages:
     resolution: {integrity: sha512-Yj9mA8fPiVgOUpByoTZO5pNrcl5Yk37FcSHsUINpAsaBIEZIuqcCclDZJCVxqQShDsmYX8QG63svJiTbOATZwg==}
     engines: {node: 14 || >=16.14}
     dependencies:
-      semver: 7.5.4
+      semver: 7.6.2
     dev: true
 
   /lru-cache@10.2.2:
