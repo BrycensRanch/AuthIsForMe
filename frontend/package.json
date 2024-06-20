@@ -68,7 +68,7 @@
 		"autoprefixer": "^10.4.16",
 		"dotenv-defaults": "^5.0.2",
 		"flowbite": "^2.1.1",
-		"flowbite-react": "^0.6.4",
+		"flowbite-react": "^0.10.0",
 		"http-proxy": "^1.18.1",
 		"jsvectormap": "^1.5.3",
 		"ky": "^1.1.3",
