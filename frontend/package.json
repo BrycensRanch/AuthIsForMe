@@ -171,7 +171,7 @@
 		"node-mocks-http": "^1.14.1",
 		"npm-run-all2": "^6.2.0",
 		"nyc": "^15.1.0",
-		"postcss": "^8.4.38",
+		"postcss": "^8.4.21",
 		"prettier": "^3.2.5",
 		"prettier-eslint-cli": "^8.0.1",
 		"react": "19.0.0-rc-935180c7e0-20240524",
