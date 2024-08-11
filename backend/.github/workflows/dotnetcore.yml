@@ -1,0 +1,59 @@
+---
+name: Build, Test, Code coverage
+
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+  workflow_dispatch:
+
+env:
+  # Disable .NET Core welcome
+  DOTNET_NOLOGO: true
+  # Disable .NET Core SDK telemetry
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Print info
+        run: |
+          echo User $GITHUB_ACTOR triggered build on $GITHUB_REF by $GITHUB_SHA commit.
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.x
+
+      - name: Build sln
+        run: dotnet build -c Release --no-cache /clp:NoSummary ./HappyCode.NetCoreBoilerplate.sln
+
+      - name: Test sln
+        run: dotnet test -c Release --no-build /maxcpucount:1 /p:WarningLevel=0 ./HappyCode.NetCoreBoilerplate.sln
+
+  collect-code-coverage:
+    name: Code coverage
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.x
+
+      - name: Collect code coverage
+        run: dotnet test --filter "FullyQualifiedName~UnitTests" "/p:ExcludeByFile=\"**/Program.cs,**/Startup.cs,**/SerilogConfigurator.cs,**/Registrations/*.cs,**/*Context.cs\"" /maxcpucount:1 /p:WarningLevel=0 /p:CollectCoverage=true /p:CoverletOutput="../" /p:MergeWith="../coverage.json" /p:CoverletOutputFormat=\"json,opencover\" ./me.authisfor.AuthBackend.sln
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./test/coverage.opencover.xml
+          flags: unittests

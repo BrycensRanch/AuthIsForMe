@@ -1,0 +1,21 @@
+{
+	"iisSettings": {
+		"windowsAuthentication": false,
+		"anonymousAuthentication": true,
+		"iisExpress": {
+			"applicationUrl": "http://+:5000/",
+			"sslPort": 0
+		}
+	},
+	"profiles": {
+		"me.authisfor.AuthBackend.Api": {
+			"commandName": "Project",
+			"launchBrowser": true,
+			"launchUrl": "http://0.0.0.0:5000/swagger",
+			"environmentVariables": {
+				"ASPNETCORE_URLS": "http://0.0.0.0:5000",
+				"ASPNETCORE_ENVIRONMENT": "Development"
+			}
+		}
+	}
+}

@@ -1,62 +1,42 @@
-# https://github.com/smartiniOnGitHub/fastify-example/blob/master/Dockerfile.alpine
-# Word for word, bar for bar lmfao
+# Note for contributors: DO NOT USE THE MCR HERE! I HAVE 1Gbps internet and downloading containers from there WAS SO DAMN SLOWWWWWW
 
-# Image where Node 18 (LTS) alpine + git + ssh is installed
-FROM timbru31/node-alpine-git:hydrogen
+FROM bitnami/dotnet-sdk:8 AS build
+#USER app
+WORKDIR /work
+ENV DOTNET_NOLOGO=true
+ENV DOTNET_CLI_TELEMETRY_OPTOUT=true
 
-# update packages, to reduce risk of vulnerabilities
-RUN apk update && apk upgrade
-RUN apk add bash
-RUN apk add libc6-compat
-# RUN apk cache clean
+COPY ./Directory.Build.props ./
+COPY ./Directory.Packages.props ./
+COPY src src
+COPY src/*/*.csproj ./
+COPY ./me.authisfor.AuthBackend.sln me.authisfor.AuthBackend.ruleset global.json NuGet.config ./
+RUN for projectFile in $(ls *.csproj); \
+  do \
+    mkdir -p ${projectFile%.*}/ && mv $projectFile ${projectFile%.*}/; \
+  done
 
-# set a non privileged user to use when running this image
-RUN addgroup -S nodejs && adduser -S nodejs -G nodejs
-SHELL ["bash", "-c"]
+RUN dotnet restore /work/me.authisfor.AuthBackend.Api/me.authisfor.AuthBackend.Api.csproj
 
-# set right (secure) folder permissions
-RUN mkdir -p /home/nodejs/app/node_modules && chown -R nodejs:nodejs /home/nodejs/app
+RUN dotnet publish -c Release -o /app --no-restore
 
-# PNPM FOR ALPINE LINUX IS KINDA COMPLICATED...
-RUN wget -qO /bin/pnpm "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64" && chmod +x /bin/pnpm
-RUN mkdir -p /home/nodejs/.pnpm-store && chown -R nodejs:nodejs /home/nodejs/.pnpm-store
-RUN mkdir -p /home/nodejs/.pnpm-global && chown -R nodejs:nodejs /home/nodejs/.pnpm-global
-RUN pnpm config set store-dir /home/nodejs/.pnpm-store
 
-USER nodejs
-WORKDIR /home/nodejs/app
-SHELL ["bash", "-c"]
+# --------------
+# We can now abuse the Ubuntu chiselled dotnet-aspnet container image for optimal size.
+# Smaller than our old backend with Node.js! (I couldn't use rollup or nexe or pkg to save my life, too many issues!!)
 
-# set default node env
-# to be able to run tests (for example in CI), do not set production as environment
-ENV NODE_ENV=production
-ENV PNPM_HOME=/home/nodejs/.local/share/pnpm
-ENV PATH=$PATH:$PNPM_HOME
+FROM ubuntu/dotnet-aspnet AS final
+WORKDIR /app
+#USER app
 
-COPY --chown=nodejs:nodejs pnpm-workspace.yaml* ./
 
-# Install dependencies
-COPY --chown=nodejs:nodejs package.json yarn.lock* package-lock.json* pnpm-lock.yaml* .npmrc* .pnpmfile.cjs* ./
-RUN pnpm install --prod
+#COPY --from=publish --chown=app:app /app/Release/net8.0/publish .
+COPY --from=build /app/Release/net8.0/publish .
 
-# This dockerfile expects the project to already be built locally to make the Dockerfile do less and make it smaller
-COPY --chown=nodejs:nodejs dist ./
-# Repetitive, ik. For compatability reasons
-COPY --chown=nodejs:nodejs dist ./dist
+ENV DOTNET_NOLOGO=true
+ENV DOTNET_CLI_TELEMETRY_OPTOUT=true
 
-COPY --chown=nodejs:nodejs healthCheck.cjs .
-COPY --chown=nodejs:nodejs .env* ./
-# Technically, this file is already on the system, but this is just for consistency's sake
-COPY --chown=nodejs:nodejs pm2.config.js* ./
+HEALTHCHECK --interval=10s --timeout=3s --start-period=10s --retries=1 \
+  CMD curl --fail http://localhost:80/health || exit 1
 
-# Work in progress
-RUN SHELL=bash pnpm setup
-# RUN pnpm add -g pm2
-RUN pnpm add -g rimraf cross-env
-
-EXPOSE 8000
-
-ENV PORT 8000
-
-CMD [ "npm", "start" ]
-# CMD [ "pm2-runtime", "start", "pm2.config.js" ]
+ENTRYPOINT ["dotnet", "me.authisfor.AuthBackend.Api.dll"]

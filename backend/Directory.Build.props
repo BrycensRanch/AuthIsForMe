@@ -1,0 +1,27 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>12</LangVersion>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <!-- reduces binary size, no debug symbols -->
+<!--    <StripSymbols>true</StripSymbols>-->
+<!--    <PublishAot>true</PublishAot>-->
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+
+
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>BrycensRanch</Authors>
+    <Copyright>Copyright © BrycensRanch 2024</Copyright>
+    <Version>1.0.0</Version>
+    <Description>Blazingly Fast REST API for AuthIsForMe users </Description>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+    <CodeAnalysisRuleSet>$(MSBuildStartupDirectory)\me.authisfor.AuthBackend.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+</Project>

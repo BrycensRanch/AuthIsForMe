@@ -1,0 +1,6 @@
+---
+coverage:
+  precision: 0
+  round: up
+  # i promise this is logical :rofl:
+  range: '30...100'

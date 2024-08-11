@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <Using Include="System" />
+    <Using Include="System.Collections.Generic" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.NpgSql" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" />
+  <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+    <PrivateAssets>all</PrivateAssets>
+    <!-- Remove IncludeAssets to allow compiling against the assembly -->
+<!--    <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>-->
+  </PackageReference>
+  </ItemGroup>
+</Project>
