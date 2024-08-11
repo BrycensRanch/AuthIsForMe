@@ -140,7 +140,7 @@ services:
   #     - app_network
   redis:
     container_name: redis
-    image: rapidfort/redis:latest
+    image: chainguard/valkey:latest
     restart: always
     ports:
       - '6379:6379'

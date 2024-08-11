@@ -171,7 +171,7 @@ services:
   #   networks:
   #     - app_network
   cache:
-    image: redis:alpine
+    image: chainguard/valkey:latest
     restart: always
     ports:
       - '6379:6379'
