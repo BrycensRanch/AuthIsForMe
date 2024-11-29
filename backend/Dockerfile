@@ -1,6 +1,6 @@
 # Note for contributors: DO NOT USE THE MCR HERE! I HAVE 1Gbps internet and downloading containers from there WAS SO DAMN SLOWWWWWW
 
-FROM bitnami/dotnet-sdk:8 AS build
+FROM bitnami/dotnet-sdk:9 AS build
 #USER app
 WORKDIR /work
 ENV DOTNET_NOLOGO=true
