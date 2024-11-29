@@ -176,7 +176,7 @@
 		"prettier-eslint-cli": "^8.0.1",
 		"react": "19.0.0-rc-935180c7e0-20240524",
 		"react-dom": "19.0.0-rc-935180c7e0-20240524",
-		"rimraf": "^5.0.7",
+		"rimraf": "^4.4.1",
 		"shx": "^0.3.4",
 		"start-server-and-test": "^2.0.3",
 		"sync-dotenv": "^2.7.0",
