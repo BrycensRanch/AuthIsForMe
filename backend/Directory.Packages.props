@@ -12,7 +12,7 @@
     <PackageVersion Include="NSwag.AspNetCore" Version="14.2.0" />
     <PackageVersion Include="RedisRateLimiting.AspNetCore" Version="1.2.0" />
     <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1" />
-    <PackageVersion Include="Microsoft.FeatureManagement.AspNetCore" Version="3.3.1" />
+    <PackageVersion Include="Microsoft.FeatureManagement.AspNetCore" Version="3.5.0" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
     <PackageVersion Include="Serilog.AspNetCore" Version="8.0.3" />
     <PackageVersion Include="Serilog.Sinks.Async" Version="1.5.0" />
