@@ -150,7 +150,7 @@ jobs:
           wait-on: 'http://localhost:3000, http://localhost:8000'
       - name: 📤 Upload Code coverage to Codecov
         if: ${{ !github.event.act }}
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
 
       - uses: actions/upload-artifact@v4
         if: failure()
