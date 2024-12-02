@@ -170,7 +170,7 @@
 		"next": "15.0.3",
 		"node-mocks-http": "^1.14.1",
 		"npm-run-all2": "^7.0.0",
-		"nyc": "^15.1.0",
+		"nyc": "^17.0.0",
 		"postcss": "^8.4.21",
 		"prettier": "^3.2.5",
 		"prettier-eslint-cli": "^8.0.1",
