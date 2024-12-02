@@ -1,4 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+// eslint-disable-next-line unicorn/no-anonymous-default-export
 const useBabelRC = require('@cypress/code-coverage/use-babelrc');
 
 module.exports = (on, config) => {

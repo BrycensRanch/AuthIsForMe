@@ -1,7 +1,7 @@
 const { existsSync, appendFileSync } = require('node:fs');
-const { join } = require('node:path');
+const path = require('node:path');
 
-const standAloneNextServerPath = join(__dirname, '.next', 'standalone', 'server.js');
+const standAloneNextServerPath = path.join(__dirname, '.next', 'standalone', 'server.js');
 const standAloneNextServerExists = existsSync(standAloneNextServerPath);
 
 // I used the javascript to modify the javascript

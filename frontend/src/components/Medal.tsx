@@ -51,7 +51,7 @@ const Modal = (properties: IMedalProperties) => {
 										onClick={() => setShowModal(false)}
 										data-testid="medal-button2"
 									>
-										<span className="block h-6 w-6 bg-transparent text-2xl text-black opacity-5 outline-none focus:outline-none">
+										<span className="block size-6 bg-transparent text-2xl text-black opacity-5 outline-none focus:outline-none">
 											×
 										</span>
 									</button>

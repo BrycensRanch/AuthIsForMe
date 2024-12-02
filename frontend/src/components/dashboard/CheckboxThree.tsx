@@ -16,13 +16,13 @@ const CheckboxThree = () => {
 						}}
 					/>
 					<div
-						className={`box mr-4 flex h-5 w-5 items-center justify-center rounded border ${
+						className={`box mr-4 flex size-5 items-center justify-center rounded border ${
 							isChecked && 'bg-gray border-primary dark:bg-transparent'
 						}`}
 					>
 						<span className={`text-primary opacity-0 ${isChecked && '!opacity-100'}`}>
 							<svg
-								className="h-3.5 w-3.5 stroke-current"
+								className="size-3.5 stroke-current"
 								fill="none"
 								viewBox="0 0 24 24"
 								xmlns="http://www.w3.org/2000/svg"

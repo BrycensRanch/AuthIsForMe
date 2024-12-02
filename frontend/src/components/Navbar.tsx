@@ -70,7 +70,7 @@ const Navbar = () => {
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
-									className="h-6 w-6"
+									className="size-6"
 									aria-hidden="true"
 									fill="none"
 									viewBox="0 0 24 24"
@@ -95,7 +95,7 @@ const Navbar = () => {
 									>
 										<span className="sr-only">Open user menu</span>
 										<img
-											className="h-8 w-8 rounded-full"
+											className="size-8 rounded-full"
 											src="https://avatars.githubusercontent.com/u/66782301?s=96&v=4"
 											alt=""
 										/>

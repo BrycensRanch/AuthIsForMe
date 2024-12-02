@@ -4,7 +4,6 @@
 
 const { createServer } = require('node:http');
 const { parse } = require('node:url');
-const { join } = require('node:path');
 const next = require('next');
 
 const development = process.env.NODE_ENV !== 'production';

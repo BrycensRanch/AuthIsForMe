@@ -13,10 +13,10 @@ const DarkModeSwitcher = () => {
 				<input
 					type="checkbox"
 					onChange={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}
-					className="dur absolute top-0 z-50 m-0 h-full w-full cursor-pointer opacity-0"
+					className="dur absolute top-0 z-50 m-0 size-full cursor-pointer opacity-0"
 				/>
 				<span
-					className={`absolute left-[3px] top-1/2 flex h-6 w-6 -translate-y-1/2 translate-x-0 items-center justify-center rounded-full bg-white shadow-switcher duration-75 ease-linear ${
+					className={`absolute left-[3px] top-1/2 flex size-6 -translate-y-1/2 translate-x-0 items-center justify-center rounded-full bg-white shadow-switcher duration-75 ease-linear ${
 						colorMode === 'dark' && '!right-[3px] !translate-x-full'
 					}`}
 				>

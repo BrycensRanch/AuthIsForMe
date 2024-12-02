@@ -17,7 +17,7 @@ const SwitcherThree = () => {
 					/>
 					<div className="block h-8 w-14 rounded-full bg-meta-9 dark:bg-[#5A616B]"></div>
 					<div
-						className={`dot absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white transition ${
+						className={`dot absolute left-1 top-1 flex size-6 items-center justify-center rounded-full bg-white transition ${
 							enabled && '!right-1 !translate-x-full !bg-primary dark:!bg-white'
 						}`}
 					>
@@ -40,7 +40,7 @@ const SwitcherThree = () => {
 						</span>
 						<span className={`${enabled && 'hidden'}`}>
 							<svg
-								className="h-4 w-4 stroke-current"
+								className="size-4 stroke-current"
 								fill="none"
 								viewBox="0 0 24 24"
 								xmlns="http://www.w3.org/2000/svg"
