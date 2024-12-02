@@ -36,7 +36,8 @@
 		"paths": {
 			"@/*": ["./src/*"],
 			"@/public/*": ["./public/*"]
-		}
+		},
+    "types": ["@testing-library/jest-dom"]
 	},
 	"exclude": ["./out/**/*", "./.next/**/*", "./.swc/**/*", "./node_modules/**/*", "cypress/**/*.ts", "cypress/**/*.js"],
 	"include": [

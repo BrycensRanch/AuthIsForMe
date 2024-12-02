@@ -4,7 +4,7 @@
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
 import * as Sentry from '@sentry/nextjs';
-import { ProfilingIntegration } from '@sentry/profiling-node';
+import { nodeProfilingIntegration } from '@sentry/profiling-node';
 
 import { env } from '@/env.mjs';
 
@@ -19,6 +19,6 @@ Sentry.init({
 	debug: false,
 	integrations: [
 		// Add profiling integration to list of integrations
-		new ProfilingIntegration(),
+		nodeProfilingIntegration(),
 	],
 });

@@ -5,13 +5,14 @@
 	},
 	"$schema": "https://json.schemastore.org/eslintrc",
 	// Configuration for JavaScript files
-	"extends": ["next/core-web-vitals", "plugin:unicorn/recommended", "plugin:sonarjs/recommended"],
+	"extends": ["next/core-web-vitals", "plugin:unicorn/recommended"],
 	"plugins": ["node", "sonarjs"],
 	"rules": {
 		"unicorn/prefer-module": "off",
 		"unicorn/prefer-top-level-await": "off",
 		"unicorn/filename-case": "off",
-		"unicorn/prevent-abbreviations": "off"
+		"unicorn/prevent-abbreviations": "off",
+    "unicorn/prefer-global-this": "off"
 	},
 	"overrides": [
 		// Configuration for TypeScript files
@@ -39,7 +40,9 @@
 				"@typescript-eslint/no-unused-vars": "off",
 				"import/extensions": "off", // No. No. No. No. No. No. No. No. No.
 				"unused-imports/no-unused-imports": "error",
-				"unused-imports/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+				"unused-imports/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+				"import/no-extraneous-dependencies": "warn",
+				"unicorn/prefer-global-this": "off"
 			}
 		},
 		// Configuration for testing

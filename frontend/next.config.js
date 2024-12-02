@@ -23,7 +23,7 @@ const { Config } = require('next-recompose-plugins');
 const { PHASE_PRODUCTION_BUILD } = require('next/constants');
 const withBundleAnalyzer = require('@next/bundle-analyzer');
 
-const { join } = require('node:path');
+const path = require('node:path');
 
 // const BrotliPlugin = require('brotli-webpack-plugin');
 
@@ -85,11 +85,8 @@ const basedConfiguration = {
 	images: {
 		domains: ['crafatar.com', 'namemc.com', 'livzmc.net', 'tydiumcraft.net'],
 		formats: ['image/avif', 'image/webp'],
-	},
-	experimental: {
-		outputFileTracingRoot: join(__dirname, '../'),
-		esmExternals: 'loose',
-	},
+  },
+  outputFileTracingRoot: path.join(__dirname, '../'),
 	// Requires SWC from Next.js
 	// Removes console.log from production builds.
 	// Keeps console.error though.
@@ -115,12 +112,6 @@ const basedConfiguration = {
 	},
 	// Helps to identify unsafe lifecycles, legacy API usage, and a number of other features.
 	reactStrictMode: true,
-	sentry: {
-		hideSourceMaps: true,
-		silent: true,
-		tunnelRoute: '/sentry',
-		// disableServerWebpackPlugin: true,
-	},
 	// Copies only the necessary files for a production deployment including select files in node_modules.
 	// Static assets should be uploaded to a CDNN
 	output: process.env.NODE_ENV === 'production' ? 'standalone' : undefined,
@@ -144,7 +135,12 @@ const configWithPlugins = new Config(basedConfiguration)
 
 		let newConfig = withSentryConfig(config, config);
 
-		if (typeof newConfig === 'function') newConfig = newConfig(phase, basedConfiguration.sentry);
+		if (typeof newConfig === 'function') newConfig = newConfig(phase, {
+		hideSourceMaps: true,
+		silent: true,
+		tunnelRoute: '/sentry',
+		// disableServerWebpackPlugin: true,
+	});
 
 		return newConfig;
 	}, '@sentry/nextjs')
