@@ -4,7 +4,7 @@
 	"private": true,
 	"main": "index.js",
 	"scripts": {
-		"prepare": "husky install",
+		"prepare": "husky",
 		"start": "pnpm docker-start-other-services && concurrently -c \"auto\" \"npm run start -w=frontend\" \"npm:start:backend\"",
 		"build": "concurrently -c \"auto\" \"npm run build -w=backend\" \"npm run build -w=frontend\"",
 		"start:pm2": "concurrently -c \"auto\" \"npm:pm2:frontend\" \"npm:pm2:backend\" && pm2 save && pm2 logs --lines 1000",
@@ -37,29 +37,29 @@
 	"author": "",
 	"license": "MIT",
 	"dependencies": {
-		"concurrently": "^9.0.0"
+		"concurrently": "^9.1.0"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^19.3.0",
-		"@commitlint/config-conventional": "^19.2.2",
-		"@commitlint/cz-commitlint": "^19.2.0",
+		"@commitlint/cli": "^19.6.0",
+		"@commitlint/config-conventional": "^19.6.0",
+		"@commitlint/cz-commitlint": "^19.5.0",
 		"@semantic-release-plus/docker": "^3.1.3",
 		"@semantic-release/changelog": "^6.0.3",
 		"@semantic-release/git": "^10.0.1",
-		"@semantic-release/github": "^10.0.5",
+		"@semantic-release/github": "^11.0.1",
 		"@semantic-release/npm": "^12.0.1",
-		"@semantic-release/release-notes-generator": "^13.0.0",
-		"@testing-library/jest-dom": "^6.4.5",
-		"commitizen": "^4.3.0",
+		"@semantic-release/release-notes-generator": "^14.0.1",
+		"@testing-library/jest-dom": "^6.6.3",
+		"commitizen": "^4.3.1",
 		"commitlint-config-monorepo": "^2.0.2",
-		"concurrently": "^9.0.0",
-		"execa": "^9.1.0",
-		"husky": "^9.0.11",
-		"lint-staged": "^15.2.5",
-		"npm-run-all2": "^7.0.0",
+		"concurrently": "^9.1.0",
+		"execa": "^9.5.1",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.2.10",
+		"npm-run-all2": "^7.0.1",
 		"prettier-plugin-prisma": "^5.0.0",
 		"prettier-plugin-sh": "^0.14.0",
-		"semantic-release": "^23.1.1",
+		"semantic-release": "^24.2.0",
 		"semantic-release-major-tag": "^0.3.2"
 	},
 	"config": {
@@ -71,7 +71,7 @@
 		"frontend",
 		"backend"
 	],
-	"packageManager": "pnpm@8.15.9",
+	"packageManager": "pnpm@9.14.4",
 	"engines": {
 		"node": ">=18",
 		"pnpm": ">=7",
