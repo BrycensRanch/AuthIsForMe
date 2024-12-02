@@ -153,7 +153,7 @@
 		"eslint-plugin-simple-import-sort": "^12.1.0",
 		"eslint-plugin-sonarjs": "^2.0.0",
 		"eslint-plugin-tailwindcss": "^3.17.0",
-		"eslint-plugin-testing-library": "^6.2.2",
+		"eslint-plugin-testing-library": "^7.0.0",
 		"eslint-plugin-unicorn": "^53.0.0",
 		"eslint-plugin-unused-imports": "^4.0.0",
 		"execa": "^9.1.0",
