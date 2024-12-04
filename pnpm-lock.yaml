@@ -398,8 +398,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.1
       nyc:
-        specifier: ^15.1.0
-        version: 15.1.0
+        specifier: ^17.0.0
+        version: 17.1.0
       postcss:
         specifier: ^8.4.21
         version: 8.4.49
@@ -18234,7 +18234,7 @@ snapshots:
       foreground-child: 3.3.0
       get-package-type: 0.1.0
       glob: 7.2.3
-      istanbul-lib-coverage: 3.0.0
+      istanbul-lib-coverage: 3.2.2
       istanbul-lib-hook: 3.0.0
       istanbul-lib-instrument: 6.0.3
       istanbul-lib-processinfo: 2.0.3
