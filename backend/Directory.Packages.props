@@ -22,7 +22,7 @@
     <PackageVersion Include="ZNetCS.AspNetCore.IPFiltering" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.1" />
+    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.2" />
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="Sentry.AspNetCore" Version="4.13.0" />
