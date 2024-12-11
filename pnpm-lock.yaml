@@ -119,7 +119,7 @@ importers:
         version: 1.6.0
       ky:
         specifier: ^1.2.4
-        version: 1.7.2
+        version: 1.7.3
       localforage:
         specifier: ^1.10.0
         version: 1.10.0
@@ -6133,8 +6133,8 @@ packages:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
     engines: {node: '>=6'}
 
-  ky@1.7.2:
-    resolution: {integrity: sha512-OzIvbHKKDpi60TnF9t7UUVAF1B4mcqc02z5PIvrm08Wyb+yOcz63GRvEuVxNT18a9E1SrNouhB4W2NNLeD7Ykg==}
+  ky@1.7.3:
+    resolution: {integrity: sha512-Sz49ZWR/BjNOq+2UK1k9ONZUVq8eyuCj30Zgc8VrRNtFlTBZduzuvehUd5kjQF6/Fms3Ir3EYqzJryw9tRvsSw==}
     engines: {node: '>=18'}
 
   labeled-stream-splicer@2.0.2:
@@ -16455,7 +16455,7 @@ snapshots:
 
   kleur@3.0.3: {}
 
-  ky@1.7.2: {}
+  ky@1.7.3: {}
 
   labeled-stream-splicer@2.0.2:
     dependencies:
