@@ -204,7 +204,7 @@ importers:
         version: 3.0.2
       '@cypress/code-coverage':
         specifier: ^3.12.39
-        version: 3.13.8(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(babel-loader@9.2.1(@babel/core@7.26.0)(webpack@5.96.1(@swc/core@1.10.1(@swc/helpers@0.5.15))))(cypress@13.16.1)(webpack@5.96.1(@swc/core@1.10.1(@swc/helpers@0.5.15)))
+        version: 3.13.9(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(babel-loader@9.2.1(@babel/core@7.26.0)(webpack@5.96.1(@swc/core@1.10.1(@swc/helpers@0.5.15))))(cypress@13.16.1)(webpack@5.96.1(@swc/core@1.10.1(@swc/helpers@0.5.15)))
       '@happy-dom/jest-environment':
         specifier: ^15.0.0
         version: 15.11.7
@@ -1234,8 +1234,8 @@ packages:
     resolution: {integrity: sha512-y6mlFR+IR2cqcm3HabSp7AEcX9QfF1EUL4eOaw/7xexdhmdQU8ez6piyRopZQob4BK8oKTsc9PkupsU2rzjqMA==}
     engines: {node: '>=8'}
 
-  '@cypress/code-coverage@3.13.8':
-    resolution: {integrity: sha512-liUtYL42nbEUkMKtB8H2sudI7gREeKNSTO1VbvFRjiRxj+2hurEkxgbVB8fmjm10iQrDeiX6XGEIL2IefcdC0A==}
+  '@cypress/code-coverage@3.13.9':
+    resolution: {integrity: sha512-VnsBLmhRLE3xgeX5hdN7aWCU3l8UHttUCMO7b+2OrRvs+R3kpBwjejfSC0/H7ErXz5o6r99biClIaS5bqo60uQ==}
     peerDependencies:
       '@babel/core': ^7.0.1
       '@babel/preset-env': ^7.0.0
@@ -9249,7 +9249,7 @@ snapshots:
       '@babel/core': 7.26.0
       '@babel/helper-compilation-targets': 7.25.9
       '@babel/helper-plugin-utils': 7.25.9
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.4.0
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -10192,7 +10192,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@cypress/code-coverage@3.13.8(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(babel-loader@9.2.1(@babel/core@7.26.0)(webpack@5.96.1(@swc/core@1.10.1(@swc/helpers@0.5.15))))(cypress@13.16.1)(webpack@5.96.1(@swc/core@1.10.1(@swc/helpers@0.5.15)))':
+  '@cypress/code-coverage@3.13.9(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(babel-loader@9.2.1(@babel/core@7.26.0)(webpack@5.96.1(@swc/core@1.10.1(@swc/helpers@0.5.15))))(cypress@13.16.1)(webpack@5.96.1(@swc/core@1.10.1(@swc/helpers@0.5.15)))':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/preset-env': 7.26.0(@babel/core@7.26.0)
@@ -10281,7 +10281,7 @@ snapshots:
   '@eslint/eslintrc@2.1.4':
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.4.0
       espree: 9.6.1
       globals: 13.24.0
       ignore: 5.3.2
@@ -10393,7 +10393,7 @@ snapshots:
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.4.0
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -12270,7 +12270,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 8.17.0(typescript@5.7.2)
       '@typescript-eslint/utils': 8.17.0(eslint@9.16.0(jiti@1.21.6))(typescript@5.7.2)
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.4.0
       eslint: 9.16.0(jiti@1.21.6)
       ts-api-utils: 1.4.3(typescript@5.7.2)
     optionalDependencies:
@@ -12465,7 +12465,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.4.0
     transitivePeerDependencies:
       - supports-color
 
@@ -14506,7 +14506,7 @@ snapshots:
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.6
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.4.0
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.2.2
@@ -15393,7 +15393,7 @@ snapshots:
     dependencies:
       '@tootallnate/once': 2.0.0
       agent-base: 6.0.2
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.4.0
     transitivePeerDependencies:
       - supports-color
 
@@ -15423,7 +15423,7 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.4.0
     transitivePeerDependencies:
       - supports-color
 
@@ -15889,7 +15889,7 @@ snapshots:
 
   istanbul-lib-source-maps@4.0.1:
     dependencies:
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.4.0
       istanbul-lib-coverage: 3.2.2
       source-map: 0.6.1
     transitivePeerDependencies:
