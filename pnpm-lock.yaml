@@ -273,7 +273,7 @@ importers:
         version: 2.2.1(@babel/core@7.26.0)
       canvas:
         specifier: ^3.0.0
-        version: 3.0.0
+        version: 3.0.1
       commitizen:
         specifier: ^4.3.0
         version: 4.3.1(@types/node@22.10.2)(typescript@5.7.2)
@@ -375,7 +375,7 @@ importers:
         version: 29.7.0(@types/node@22.10.2)
       jest-environment-jsdom:
         specifier: ^29.7.0
-        version: 29.7.0(canvas@3.0.0)
+        version: 29.7.0(canvas@3.0.1)
       jest-fetch-mock:
         specifier: ^3.0.3
         version: 3.0.3
@@ -2658,6 +2658,9 @@ packages:
   '@types/node@22.10.2':
     resolution: {integrity: sha512-Xxr6BBRCAOQixvonOye19wnzyDiUtTeqldOOmj3CkeblonbccA12PFwlufvRdrpjXxqnmUaeiU5EOA+7s5diUQ==}
 
+  '@types/node@22.10.3':
+    resolution: {integrity: sha512-DifAyw4BkrufCILvD3ucnuN8eydUfc/C1GlyrnI+LK6543w5/L3VeVgf05o3B4fqSXP1dKYLOZsKfutpxPzZrw==}
+
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
 
@@ -3500,8 +3503,8 @@ packages:
   caniuse-lite@1.0.30001690:
     resolution: {integrity: sha512-5ExiE3qQN6oF8Clf8ifIDcMRCRE/dMGcETG/XGMD8/XiXm6HXQgQTh1yZYLXXpSOsEUlJm1Xr7kGULZTuGtP/w==}
 
-  canvas@3.0.0:
-    resolution: {integrity: sha512-NtcIBY88FjymQy+g2g5qnuP5IslrbWCQ3A6rSr1PeuYxVRapRZ3BZCrDyAakvI6CuDYidgZaf55ygulFVwROdg==}
+  canvas@3.0.1:
+    resolution: {integrity: sha512-PcpVF4f8RubAeN/jCQQ/UymDKzOiLmRPph8fOTzDnlsUihkO/AUlxuhaa7wGRc3vMcCbV1fzuvyu5cWZlIcn1w==}
     engines: {node: ^18.12.0 || >= 20.9.0}
 
   cardinal@2.1.1:
@@ -12042,6 +12045,10 @@ snapshots:
     dependencies:
       undici-types: 6.20.0
 
+  '@types/node@22.10.3':
+    dependencies:
+      undici-types: 6.20.0
+
   '@types/normalize-package-data@2.4.4': {}
 
   '@types/nprogress@0.2.3': {}
@@ -13140,7 +13147,7 @@ snapshots:
 
   caniuse-lite@1.0.30001690: {}
 
-  canvas@3.0.0:
+  canvas@3.0.1:
     dependencies:
       node-addon-api: 7.1.1
       prebuild-install: 7.1.2
@@ -15957,7 +15964,7 @@ snapshots:
       jest-util: 29.7.0
       pretty-format: 29.7.0
 
-  jest-environment-jsdom@29.7.0(canvas@3.0.0):
+  jest-environment-jsdom@29.7.0(canvas@3.0.1):
     dependencies:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
@@ -15966,9 +15973,9 @@ snapshots:
       '@types/node': 22.10.2
       jest-mock: 29.7.0
       jest-util: 29.7.0
-      jsdom: 20.0.3(canvas@3.0.0)
+      jsdom: 20.0.3(canvas@3.0.1)
     optionalDependencies:
-      canvas: 3.0.0
+      canvas: 3.0.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -16178,7 +16185,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.10.2
+      '@types/node': 22.10.3
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -16226,7 +16233,7 @@ snapshots:
 
   jsbn@0.1.1: {}
 
-  jsdom@20.0.3(canvas@3.0.0):
+  jsdom@20.0.3(canvas@3.0.1):
     dependencies:
       abab: 2.0.6
       acorn: 8.14.0
@@ -16255,7 +16262,7 @@ snapshots:
       ws: 8.18.0
       xml-name-validator: 4.0.0
     optionalDependencies:
-      canvas: 3.0.0
+      canvas: 3.0.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
