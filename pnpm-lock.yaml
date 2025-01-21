@@ -231,7 +231,7 @@ importers:
         version: 0.2.37(@swc/core@1.10.8(@swc/helpers@0.5.15))
       '@testing-library/cypress':
         specifier: ^10.0.1
-        version: 10.0.2(cypress@14.0.0)
+        version: 10.0.3(cypress@14.0.0)
       '@testing-library/jest-dom':
         specifier: ^6.0.0
         version: 6.6.3
@@ -2549,11 +2549,11 @@ packages:
   '@tanstack/virtual-core@3.11.2':
     resolution: {integrity: sha512-vTtpNt7mKCiZ1pwU9hfKPhpdVO2sVzFQsxoVBGtOSHxlrRRzYr8iQ2TlwbAcRYCcEiZ9ECAM8kBzH0v2+VzfKw==}
 
-  '@testing-library/cypress@10.0.2':
-    resolution: {integrity: sha512-dKv95Bre5fDmNb9tOIuWedhGUryxGu1GWYWtXDqUsDPcr9Ekld0fiTb+pcBvSsFpYXAZSpmyEjhoXzLbhh06yQ==}
+  '@testing-library/cypress@10.0.3':
+    resolution: {integrity: sha512-TeZJMCNtiS59cPWalra7LgADuufO5FtbqQBYxuAgdX6ZFAR2D9CtQwAG8VbgvFcchW3K414va/+7P4OkQ80UVg==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
-      cypress: ^12.0.0 || ^13.0.0
+      cypress: ^12.0.0 || ^13.0.0 || ^14.0.0
 
   '@testing-library/dom@10.4.0':
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
@@ -11942,7 +11942,7 @@ snapshots:
 
   '@tanstack/virtual-core@3.11.2': {}
 
-  '@testing-library/cypress@10.0.2(cypress@14.0.0)':
+  '@testing-library/cypress@10.0.3(cypress@14.0.0)':
     dependencies:
       '@babel/runtime': 7.26.0
       '@testing-library/dom': 10.4.0
