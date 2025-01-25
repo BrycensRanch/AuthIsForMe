@@ -207,7 +207,7 @@ importers:
         version: 3.13.10(@babel/core@7.26.0)(@babel/preset-env@7.26.0(@babel/core@7.26.0))(babel-loader@9.2.1(@babel/core@7.26.0)(webpack@5.97.1(@swc/core@1.10.9(@swc/helpers@0.5.15))))(cypress@14.0.0)(webpack@5.97.1(@swc/core@1.10.9(@swc/helpers@0.5.15)))
       '@happy-dom/jest-environment':
         specifier: ^16.0.0
-        version: 16.7.1
+        version: 16.7.2
       '@jest/globals':
         specifier: ^29.7.0
         version: 29.7.0
@@ -1329,8 +1329,8 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@happy-dom/jest-environment@16.7.1':
-    resolution: {integrity: sha512-SyHI/CUezvRj18BdAcCvg+5YUDJwuOSSZxnVLYv/FAhGCh5Myi6ugfbOmrSqb1DD+zBGgbuJm8FPcKFIaDHXGQ==}
+  '@happy-dom/jest-environment@16.7.2':
+    resolution: {integrity: sha512-09DFa1o+FbeLuxt3Cw/bY/XTIuCyc32wW26AXkFKG0lCNsDJKFj/+nNLlmFVuQhmvULmt6FQ/dcu3loG6ouC/A==}
     engines: {node: '>=18.0.0'}
 
   '@headlessui/react@2.2.0':
@@ -2653,6 +2653,9 @@ packages:
 
   '@types/mysql@2.15.26':
     resolution: {integrity: sha512-DSLCOXhkvfS5WNNPbfn2KdICAmk8lLc+/PNvnPnF7gOdMZCxopXduqv0OQ13y/yA/zXTSikZZqVgybUxOEg6YQ==}
+
+  '@types/node@22.10.10':
+    resolution: {integrity: sha512-X47y/mPNzxviAGY5TcYPtYL8JsY3kAq2n8fMmKoRCxq/c4v4pyGNCzM2R6+M5/umG4ZfHuT+sgqDYqWc9rJ6ww==}
 
   '@types/node@22.10.7':
     resolution: {integrity: sha512-V09KvXxFiutGp6B7XkpaDXlNadZxrzajcY50EuoLIpQ6WWYCSvf19lVIazzfIzQvhUN2HjX12spLojTnhuKlGg==}
@@ -5155,8 +5158,8 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@16.7.1:
-    resolution: {integrity: sha512-VdkAsz+en07rDTepV6HmcL4sBR+86S9HNZ+nsbxsFsOOZ6mgErOMMnONGwRW8Kwg3ozeshktvAP8yp7Ol7hPIA==}
+  happy-dom@16.7.2:
+    resolution: {integrity: sha512-zOzw0xyYlDaF/ylwbAsduYZZVRTd5u7IwlFkGbEathIeJMLp3vrN3cHm3RS7PZpD9gr/IO16bHEswcgNyWTsqw==}
     engines: {node: '>=18.0.0'}
 
   hard-rejection@2.1.0:
@@ -10276,12 +10279,12 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@happy-dom/jest-environment@16.7.1':
+  '@happy-dom/jest-environment@16.7.2':
     dependencies:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      happy-dom: 16.7.1
+      happy-dom: 16.7.2
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -12002,6 +12005,10 @@ snapshots:
   '@types/mysql@2.15.26':
     dependencies:
       '@types/node': 22.10.7
+
+  '@types/node@22.10.10':
+    dependencies:
+      undici-types: 6.20.0
 
   '@types/node@22.10.7':
     dependencies:
@@ -15177,7 +15184,7 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.19.3
 
-  happy-dom@16.7.1:
+  happy-dom@16.7.2:
     dependencies:
       webidl-conversions: 7.0.0
       whatwg-mimetype: 3.0.0
@@ -16153,7 +16160,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.10.7
+      '@types/node': 22.10.10
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
