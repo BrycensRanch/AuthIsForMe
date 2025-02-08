@@ -207,7 +207,7 @@ importers:
         version: 3.13.11(@babel/core@7.26.7)(@babel/preset-env@7.26.7(@babel/core@7.26.7))(babel-loader@9.2.1(@babel/core@7.26.7)(webpack@5.97.1(@swc/core@1.10.14(@swc/helpers@0.5.15))))(cypress@14.0.2)(webpack@5.97.1(@swc/core@1.10.14(@swc/helpers@0.5.15)))
       '@happy-dom/jest-environment':
         specifier: ^17.0.0
-        version: 17.0.0
+        version: 17.0.2
       '@jest/globals':
         specifier: ^29.7.0
         version: 29.7.0
@@ -1336,8 +1336,8 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@happy-dom/jest-environment@17.0.0':
-    resolution: {integrity: sha512-1uD8l0YSsFrQFHk4RLkOTp5m6Cyx56YleWCwVUzeluw5eu4nAla3DoaonGJCucL/AduQb/6RMsZu5ZwyePeJVw==}
+  '@happy-dom/jest-environment@17.0.2':
+    resolution: {integrity: sha512-LL7urwlpdvrmsccXDD/3b7QG2aumhdAIFdLPdd1QDfQrO5s5hZW9XDgnCnPNlSm241Ym0MKh4mtkOTxeyO/FPw==}
     engines: {node: '>=18.0.0'}
 
   '@headlessui/react@2.2.0':
@@ -5173,8 +5173,8 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@17.0.0:
-    resolution: {integrity: sha512-jGuUr3UrgMzt1Mopyof3RzD49/GudAp1suP5KFU+EvNXmqUAMXpxux2zEJbabE1YXs0APrY61iRZ0BKMMWCGTg==}
+  happy-dom@17.0.2:
+    resolution: {integrity: sha512-PWXllOadphR7angD3ndG5/Ax3yg1PFRvnN8Zu+xVtRsZjJE4RtJF1RBeWN9JFvF5EJmHOCiekdYVTxJr2NBibA==}
     engines: {node: '>=18.0.0'}
 
   hard-rejection@2.1.0:
@@ -7685,6 +7685,10 @@ packages:
 
   registry-auth-token@5.0.3:
     resolution: {integrity: sha512-1bpc9IyC+e+CNFRaWyn77tk4xGG4PPUyfakSmA6F6cvUDjrm58dfyJ3II+9yb10EDkHoy1LaPSmHaWLOH3m6HA==}
+    engines: {node: '>=14'}
+
+  registry-auth-token@5.1.0:
+    resolution: {integrity: sha512-GdekYuwLXLxMuFTwAPg5UKGLW/UXzQrZvH/Zj791BQif5T05T0RsaLfHc9q3ZOKi7n+BoprPD9mJ0O0k4xzUlw==}
     engines: {node: '>=14'}
 
   regjsgen@0.8.0:
@@ -10903,12 +10907,12 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@happy-dom/jest-environment@17.0.0':
+  '@happy-dom/jest-environment@17.0.2':
     dependencies:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      happy-dom: 17.0.0
+      happy-dom: 17.0.2
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -12141,7 +12145,7 @@ snapshots:
       npm: 8.19.4
       rc: 1.2.8
       read-pkg: 5.2.0
-      registry-auth-token: 5.0.3
+      registry-auth-token: 5.1.0
       semantic-release: 24.2.1(typescript@5.7.3)
       semver: 7.7.1
       tempy: 1.0.1
@@ -15830,7 +15834,7 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.19.3
 
-  happy-dom@17.0.0:
+  happy-dom@17.0.2:
     dependencies:
       webidl-conversions: 7.0.0
       whatwg-mimetype: 3.0.0
@@ -18499,6 +18503,10 @@ snapshots:
       unicode-match-property-value-ecmascript: 2.2.0
 
   registry-auth-token@5.0.3:
+    dependencies:
+      '@pnpm/npm-conf': 2.3.1
+
+  registry-auth-token@5.1.0:
     dependencies:
       '@pnpm/npm-conf': 2.3.1
 
