@@ -107,7 +107,7 @@ importers:
         version: 5.0.2
       flowbite:
         specifier: ^3.0.0
-        version: 3.1.1(rollup@3.29.5)
+        version: 3.1.2(rollup@3.29.5)
       flowbite-react:
         specifier: ^0.10.0
         version: 0.10.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(rollup@3.29.5)(tailwindcss@4.0.3)
@@ -4892,8 +4892,8 @@ packages:
   flowbite@2.5.2:
     resolution: {integrity: sha512-kwFD3n8/YW4EG8GlY3Od9IoKND97kitO+/ejISHSqpn3vw2i5K/+ZI8Jm2V+KC4fGdnfi0XZ+TzYqQb4Q1LshA==}
 
-  flowbite@3.1.1:
-    resolution: {integrity: sha512-ZYj519lS7Ls+ek6jOi12JRJytDtwekJdnwSjDXhiS8G+k2j3X8HfFOGtbdrYey6h2+z/seEDSqsSjDca/wClxw==}
+  flowbite@3.1.2:
+    resolution: {integrity: sha512-MkwSgbbybCYgMC+go6Da5idEKUFfMqc/AmSjm/2ZbdmvoKf5frLPq/eIhXc9P+rC8t9boZtUXzHDgt5whZ6A/Q==}
 
   follow-redirects@1.15.9:
     resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
@@ -8452,8 +8452,8 @@ packages:
       uglify-js:
         optional: true
 
-  terser@5.38.0:
-    resolution: {integrity: sha512-a4GD5R1TjEeuCT6ZRiYMHmIf7okbCPEuhQET8bczV6FrQMMlFXA1n+G0KKjdlFCm3TEHV77GxfZB3vZSUQGFpg==}
+  terser@5.38.1:
+    resolution: {integrity: sha512-GWANVlPM/ZfYzuPHjq0nxT+EbOEDDN3Jwhwdg1D8TU8oSkktp8w64Uq4auuGLxFSoNTRDncTq2hQHX1Ld9KHkA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -15507,7 +15507,7 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  flowbite@3.1.1(rollup@3.29.5):
+  flowbite@3.1.2(rollup@3.29.5):
     dependencies:
       '@popperjs/core': 2.11.8
       flowbite-datepicker: 1.3.2(rollup@3.29.5)
@@ -19411,12 +19411,12 @@ snapshots:
       jest-worker: 27.5.1
       schema-utils: 4.3.0
       serialize-javascript: 6.0.2
-      terser: 5.38.0
+      terser: 5.38.1
       webpack: 5.97.1(@swc/core@1.10.14(@swc/helpers@0.5.15))
     optionalDependencies:
       '@swc/core': 1.10.14(@swc/helpers@0.5.15)
 
-  terser@5.38.0:
+  terser@5.38.1:
     dependencies:
       '@jridgewell/source-map': 0.3.6
       acorn: 8.14.0
