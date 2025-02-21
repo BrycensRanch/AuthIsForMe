@@ -98,7 +98,7 @@ importers:
         version: 0.12.0(typescript@5.7.3)(zod@3.24.2)
       apexcharts:
         specifier: ^4.0.0
-        version: 4.4.0
+        version: 4.5.0
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.20(postcss@8.5.3)
@@ -143,7 +143,7 @@ importers:
         version: 15.8.1
       react-apexcharts:
         specifier: ^1.4.1
-        version: 1.7.0(apexcharts@4.4.0)(react@19.0.0)
+        version: 1.7.0(apexcharts@4.5.0)(react@19.0.0)
       react-icons:
         specifier: ^5.2.1
         version: 5.5.0(react@19.0.0)
@@ -3021,8 +3021,8 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
-  apexcharts@4.4.0:
-    resolution: {integrity: sha512-JGsHeQEKDlQh1rob8aBai9/HKvXIpbZ83TnobKZAcdOELf+oQZaxZyAnbbldr6PPBdCgG2zzzLaP1dtEsJxzWw==}
+  apexcharts@4.5.0:
+    resolution: {integrity: sha512-E7ZkrVqPNBUWy/Rmg8DEIqHNBmElzICE/oxOX5Ekvs2ICQUOK/VkEkMH09JGJu+O/EA0NL31hxlmF+wrwrSLaQ==}
 
   append-transform@2.0.0:
     resolution: {integrity: sha512-7yeyCEurROLQJFv5Xj4lEGTy0borxepjFv1g22oAdqFu//SrAlDl1O1Nxx15SH1RoliUml6p8dwJW9jvZughhg==}
@@ -12478,7 +12478,7 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
-  apexcharts@4.4.0:
+  apexcharts@4.5.0:
     dependencies:
       '@svgdotjs/svg.draggable.js': 3.0.6(@svgdotjs/svg.js@3.2.4)
       '@svgdotjs/svg.filter.js': 3.0.8
@@ -17711,9 +17711,9 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-apexcharts@1.7.0(apexcharts@4.4.0)(react@19.0.0):
+  react-apexcharts@1.7.0(apexcharts@4.5.0)(react@19.0.0):
     dependencies:
-      apexcharts: 4.4.0
+      apexcharts: 4.5.0
       prop-types: 15.8.1
       react: 19.0.0
 
