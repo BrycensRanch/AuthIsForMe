@@ -167,7 +167,7 @@
 		"jest-globals": "link:@testing-library/jest-dom/jest-globals",
 		"jest-mock-fetch": "^2.0.5",
 		"lint-staged": "^15.2.5",
-		"next": "15.2.0",
+		"next": "15.2.1",
 		"node-mocks-http": "^1.14.1",
 		"npm-run-all2": "^7.0.0",
 		"nyc": "^17.0.0",
