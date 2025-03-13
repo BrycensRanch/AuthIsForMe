@@ -207,7 +207,7 @@ importers:
         version: 3.13.12(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(babel-loader@9.2.1(@babel/core@7.26.10)(webpack@5.98.0(@swc/core@1.11.8(@swc/helpers@0.5.15))))(cypress@14.1.0)(webpack@5.98.0(@swc/core@1.11.8(@swc/helpers@0.5.15)))
       '@happy-dom/jest-environment':
         specifier: ^17.0.0
-        version: 17.3.0
+        version: 17.4.4
       '@jest/globals':
         specifier: ^29.7.0
         version: 29.7.0
@@ -1318,8 +1318,8 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@happy-dom/jest-environment@17.3.0':
-    resolution: {integrity: sha512-zHTDD2X8Yilu5SXXEWx4aKF3imsWps1QRRAoO0AVaU9Zv6jHhrKb0espawJ3KZOZkSqkFeSbkBynRrg06pRwNQ==}
+  '@happy-dom/jest-environment@17.4.4':
+    resolution: {integrity: sha512-5imA+SpP7ZcIwE1u2swWZq6UJhyZIWNtlE/gnqhVz+y91G6hgF+t9hVSsWH29Tfib+wg/zC9ryJPDDyAuqXfEg==}
     engines: {node: '>=18.0.0'}
 
   '@headlessui/react@2.2.0':
@@ -5273,8 +5273,8 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@17.3.0:
-    resolution: {integrity: sha512-dTwlpUHrhE0usQOd1Df9k461SOYQUWNl0G31mXCDj+N9//oPcDb+cchrSJzrXN6qxZ5sZSrLf5AfY702Zvddfw==}
+  happy-dom@17.4.4:
+    resolution: {integrity: sha512-/Pb0ctk3HTZ5xEL3BZ0hK1AqDSAUuRQitOmROPHhfUYEWpmTImwfD8vFDGADmMAX0JYgbcgxWoLFKtsWhcpuVA==}
     engines: {node: '>=18.0.0'}
 
   hard-rejection@2.1.0:
@@ -10421,12 +10421,12 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@happy-dom/jest-environment@17.3.0':
+  '@happy-dom/jest-environment@17.4.4':
     dependencies:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      happy-dom: 17.3.0
+      happy-dom: 17.4.4
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -15398,7 +15398,7 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.19.3
 
-  happy-dom@17.3.0:
+  happy-dom@17.4.4:
     dependencies:
       webidl-conversions: 7.0.0
       whatwg-mimetype: 3.0.0
