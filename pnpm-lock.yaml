@@ -222,7 +222,7 @@ importers:
         version: 1.30.7(typescript@5.8.2)
       '@percy/cypress':
         specifier: ^3.1.2
-        version: 3.1.4(cypress@14.2.0)
+        version: 3.1.5(cypress@14.2.0)
       '@swc/core':
         specifier: ^1.5.7
         version: 1.11.11(@swc/helpers@0.5.15)
@@ -2022,8 +2022,8 @@ packages:
     resolution: {integrity: sha512-FPoY6+bEe8dtIThbpvRVEbqtUU3Iimlpf1aOqqMTMQ0QTRxZ4wlhod+2a2X5lLfVPRw+ojtbPprQRWALsYJWiQ==}
     engines: {node: '>=14'}
 
-  '@percy/cypress@3.1.4':
-    resolution: {integrity: sha512-lPhmyHTRJmF252NAHc8rSTyPaSu7Ff4H51ZADpgSmwKuiD+j2t2PDOxIoi824qz4eC/RehmOlYzO2YitJzGPhA==}
+  '@percy/cypress@3.1.5':
+    resolution: {integrity: sha512-COOqq8GdT+YaKSNV8pMb4JDvypGojlriDwuNe6Z55EZx3ryWhvCJop7iZGEk+jDegjapg6F0izgL/P21Uzt83g==}
     peerDependencies:
       cypress: '>=3'
 
@@ -11482,7 +11482,7 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@percy/cypress@3.1.4(cypress@14.2.0)':
+  '@percy/cypress@3.1.5(cypress@14.2.0)':
     dependencies:
       '@percy/sdk-utils': 1.30.8
       cypress: 14.2.0
