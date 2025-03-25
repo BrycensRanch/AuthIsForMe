@@ -330,7 +330,7 @@ importers:
         version: 17.16.2(eslint@9.23.0(jiti@2.4.2))
       eslint-plugin-prettier:
         specifier: ^5.1.3
-        version: 5.2.4(@types/eslint@9.6.1)(eslint-config-prettier@10.1.1(eslint@9.23.0(jiti@2.4.2)))(eslint@9.23.0(jiti@2.4.2))(prettier@3.5.3)
+        version: 5.2.5(@types/eslint@9.6.1)(eslint-config-prettier@10.1.1(eslint@9.23.0(jiti@2.4.2)))(eslint@9.23.0(jiti@2.4.2))(prettier@3.5.3)
       eslint-plugin-react:
         specifier: ^7.34.1
         version: 7.37.4(eslint@9.23.0(jiti@2.4.2))
@@ -2740,6 +2740,9 @@ packages:
   '@types/node@22.13.12':
     resolution: {integrity: sha512-ixiWrCSRi33uqBMRuICcKECW7rtgY43TbsHDpM2XK7lXispd48opW+0IXrBVxv9NMhaz/Ue9kyj6r3NTVyXm8A==}
 
+  '@types/node@22.13.13':
+    resolution: {integrity: sha512-ClsL5nMwKaBRwPcCvH8E7+nU4GxHVx1axNvMZTFHMEfNI7oahimt26P5zjVCRrjiIWj6YFXfE1v3dEp94wLcGQ==}
+
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
 
@@ -4617,13 +4620,13 @@ packages:
     peerDependencies:
       eslint: '>=8.23.0'
 
-  eslint-plugin-prettier@5.2.4:
-    resolution: {integrity: sha512-SFtuYmnhwYCtuCDTKPoK+CEzCnEgKTU2qTLwoCxvrC0MFBTIXo1i6hDYOI4cwHaE5GZtlWmTN3YfucYi7KJwPw==}
+  eslint-plugin-prettier@5.2.5:
+    resolution: {integrity: sha512-IKKP8R87pJyMl7WWamLgPkloB16dagPIdd2FjBDbyRYPKo93wS/NbCOPh6gH+ieNLC+XZrhJt/kWj0PS/DFdmg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       '@types/eslint': '>=8.0.0'
       eslint: '>=8.0.0'
-      eslint-config-prettier: '*'
+      eslint-config-prettier: '>= 7.0.0 <10.0.0 || >=10.1.0'
       prettier: '>=3.0.0'
     peerDependenciesMeta:
       '@types/eslint':
@@ -12251,6 +12254,10 @@ snapshots:
     dependencies:
       undici-types: 6.20.0
 
+  '@types/node@22.13.13':
+    dependencies:
+      undici-types: 6.20.0
+
   '@types/normalize-package-data@2.4.4': {}
 
   '@types/nprogress@0.2.3': {}
@@ -14530,7 +14537,7 @@ snapshots:
       minimatch: 9.0.5
       semver: 7.7.1
 
-  eslint-plugin-prettier@5.2.4(@types/eslint@9.6.1)(eslint-config-prettier@10.1.1(eslint@9.23.0(jiti@2.4.2)))(eslint@9.23.0(jiti@2.4.2))(prettier@3.5.3):
+  eslint-plugin-prettier@5.2.5(@types/eslint@9.6.1)(eslint-config-prettier@10.1.1(eslint@9.23.0(jiti@2.4.2)))(eslint@9.23.0(jiti@2.4.2))(prettier@3.5.3):
     dependencies:
       eslint: 9.23.0(jiti@2.4.2)
       prettier: 3.5.3
@@ -16447,7 +16454,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.13.12
+      '@types/node': 22.13.13
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
