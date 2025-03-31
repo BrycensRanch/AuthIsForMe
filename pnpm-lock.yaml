@@ -64,8 +64,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0(prettier@3.5.3)
       prettier-plugin-sh:
-        specifier: ^0.15.0
-        version: 0.15.0(prettier@3.5.3)
+        specifier: ^0.16.0
+        version: 0.16.0(prettier@3.5.3)
       semantic-release:
         specifier: ^24.2.0
         version: 24.2.3(typescript@5.8.2)
@@ -7605,8 +7605,8 @@ packages:
     peerDependencies:
       prettier: '>=2 || >=3'
 
-  prettier-plugin-sh@0.15.0:
-    resolution: {integrity: sha512-U0PikJr/yr2bzzARl43qI0mApBj0C1xdAfA04AZa6LnvIKawXHhuy2fFo6LNA7weRzGlAiNbaEFfKMFo0nZr/A==}
+  prettier-plugin-sh@0.16.0:
+    resolution: {integrity: sha512-QaVH0X56IUy9niNczUQ0TxqVezcGzACz9XObbyxyAZ6NU/VCKnR9RUAcETyzCiPgcHKq/tjerCsqxn5nL3yo/w==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       prettier: ^3.0.3
@@ -17954,7 +17954,7 @@ snapshots:
       '@prisma/prisma-schema-wasm': 4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584
       prettier: 3.5.3
 
-  prettier-plugin-sh@0.15.0(prettier@3.5.3):
+  prettier-plugin-sh@0.16.0(prettier@3.5.3):
     dependencies:
       mvdan-sh: 0.10.1
       prettier: 3.5.3
