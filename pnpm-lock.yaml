@@ -408,7 +408,7 @@ importers:
         version: 3.5.3
       prettier-eslint-cli:
         specifier: ^8.0.1
-        version: 8.0.1(prettier-eslint@16.3.0)
+        version: 8.0.1(prettier-eslint@16.4.1(typescript@5.8.2))(typescript@5.8.2)
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -7691,8 +7691,8 @@ packages:
       prettier-eslint:
         optional: true
 
-  prettier-eslint@16.3.0:
-    resolution: {integrity: sha512-Lh102TIFCr11PJKUMQ2kwNmxGhTsv/KzUg9QYF2Gkw259g/kPgndZDWavk7/ycbRvj2oz4BPZ1gCU8bhfZH/Xg==}
+  prettier-eslint@16.4.1:
+    resolution: {integrity: sha512-qf8Grhq68kg0tyhXVik2aOx72W8Jxre2ABXgV1pC3OCb3jOo40UZuvk3f/I3/ZA7Qw6qydZX4b7ySSCSgv4/8A==}
     engines: {node: '>=16.10.0'}
     peerDependencies:
       prettier-plugin-svelte: ^3.0.0
@@ -8177,8 +8177,8 @@ packages:
   scheduler@0.26.0:
     resolution: {integrity: sha512-NlHwttCI/l5gCPR3D1nNXtWABUmBwvZpEQiD4IXSbIDq8BzLIK/7Ir5gTFSGZDUu37K5cMNp0hFtzO38sC7gWA==}
 
-  schema-utils@4.3.0:
-    resolution: {integrity: sha512-Gf9qqc58SpCA/xdziiHz35F4GNIWYWZrEshUc/G/r5BnLph6xpKuLeoJoQuj5WfBIx/eQLf+hmVPYHaxJu7V2g==}
+  schema-utils@4.3.1:
+    resolution: {integrity: sha512-jjlZ7UknkyQxGnHF1w8wDgWfdtnW0hBX7tmDp04zBwDBZ/6tPJI1+RWfBHGMA4+0nAjGptp+eDpIYP6mldJbqg==}
     engines: {node: '>= 10.13.0'}
 
   scslre@0.3.0:
@@ -13276,7 +13276,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.26.10
       find-cache-dir: 4.0.0
-      schema-utils: 4.3.0
+      schema-utils: 4.3.1
       webpack: 5.98.0(@swc/core@1.11.13(@swc/helpers@0.5.15))
 
   babel-plugin-add-module-exports@1.0.4: {}
@@ -18224,10 +18224,10 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-eslint-cli@8.0.1(prettier-eslint@16.3.0):
+  prettier-eslint-cli@8.0.1(prettier-eslint@16.4.1(typescript@5.8.2))(typescript@5.8.2):
     dependencies:
       '@messageformat/core': 3.4.0
-      '@prettier/eslint': prettier-eslint@16.3.0
+      '@prettier/eslint': prettier-eslint@16.4.1(typescript@5.8.2)
       arrify: 2.0.1
       boolify: 1.0.1
       camelcase-keys: 9.1.3
@@ -18245,13 +18245,14 @@ snapshots:
       rxjs: 7.8.2
       yargs: 17.7.2
     optionalDependencies:
-      prettier-eslint: 16.3.0
+      prettier-eslint: 16.4.1(typescript@5.8.2)
     transitivePeerDependencies:
       - prettier-plugin-svelte
       - supports-color
       - svelte-eslint-parser
+      - typescript
 
-  prettier-eslint@16.3.0:
+  prettier-eslint@16.4.1(typescript@5.8.2):
     dependencies:
       '@typescript-eslint/parser': 6.21.0(eslint@8.57.1)(typescript@5.8.2)
       common-tags: 1.8.2
@@ -18263,10 +18264,10 @@ snapshots:
       prettier: 3.5.3
       pretty-format: 29.7.0
       require-relative: 0.8.7
-      typescript: 5.8.2
       vue-eslint-parser: 9.4.3(eslint@8.57.1)
     transitivePeerDependencies:
       - supports-color
+      - typescript
 
   prettier-linter-helpers@1.0.0:
     dependencies:
@@ -18779,7 +18780,7 @@ snapshots:
 
   scheduler@0.26.0: {}
 
-  schema-utils@4.3.0:
+  schema-utils@4.3.1:
     dependencies:
       '@types/json-schema': 7.0.15
       ajv: 8.17.1
@@ -19560,7 +19561,7 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
-      schema-utils: 4.3.0
+      schema-utils: 4.3.1
       serialize-javascript: 6.0.2
       terser: 5.39.0
       webpack: 5.98.0(@swc/core@1.11.13(@swc/helpers@0.5.15))
@@ -20076,7 +20077,7 @@ snapshots:
       loader-runner: 4.3.0
       mime-types: 2.1.35
       neo-async: 2.6.2
-      schema-utils: 4.3.0
+      schema-utils: 4.3.1
       tapable: 2.2.1
       terser-webpack-plugin: 5.3.14(@swc/core@1.11.13(@swc/helpers@0.5.15))(webpack@5.98.0(@swc/core@1.11.13(@swc/helpers@0.5.15)))
       watchpack: 2.4.2
