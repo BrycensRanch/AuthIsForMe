@@ -128,7 +128,7 @@ importers:
         version: 8.0.0
       next-recompose-plugins:
         specifier: ^3.0.0
-        version: 3.0.0(next@15.3.1(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
+        version: 3.0.1(next@15.3.1(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
       next-seo:
         specifier: ^6.5.0
         version: 6.6.0(next@15.3.1(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -6871,8 +6871,8 @@ packages:
     resolution: {integrity: sha512-dBpDMdxv9Irdq66304OLfEmQ9tbNRFnFTuZiLo+bD+r332bBmMJ8GBLXklIXXgxd3+v9+KUnZaUR5PJMa75Gsg==}
     engines: {node: '>= 0.4.0'}
 
-  next-recompose-plugins@3.0.0:
-    resolution: {integrity: sha512-a+Y6mKyuvcocdNek5RE1wdDi5YwtLoVLAJoD1/UDKSowFDTKkVGGl0Ax3xgeDBfPNIh2ta10VvdkhMAPiMbWlQ==}
+  next-recompose-plugins@3.0.1:
+    resolution: {integrity: sha512-bhA9PaAyWI74anm2z0LTglDU/QTzANK8PDaWEPlT1v2jW/r0BMJ+Nk9pJ1qhIGPKqLeBx+3uBLrkbFdiim2SxA==}
     peerDependencies:
       next: '>=14'
 
@@ -17386,8 +17386,9 @@ snapshots:
 
   netmask@2.0.2: {}
 
-  next-recompose-plugins@3.0.0(next@15.3.1(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)):
+  next-recompose-plugins@3.0.1(next@15.3.1(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)):
     dependencies:
+      deepmerge: 4.3.1
       enhanced-exception: 1.0.2
       is-promise: 4.0.0
       next: 15.3.1(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
