@@ -160,8 +160,8 @@ importers:
         specifier: ^0.34.0
         version: 0.34.1
       skinview3d:
-        specifier: 3.2.0
-        version: 3.2.0
+        specifier: 3.3.0
+        version: 3.3.0
       sort-by:
         specifier: ^1.2.0
         version: 1.2.0
@@ -8364,8 +8364,8 @@ packages:
   skinview-utils@0.7.1:
     resolution: {integrity: sha512-4eLrMqR526ehlZbsd8SuZ/CHpS9GiH0xUMoV+PYlJVi95ZFz5HJu7Spt5XYa72DRS7wgt5qquvHZf0XZJgmu9Q==}
 
-  skinview3d@3.2.0:
-    resolution: {integrity: sha512-SDyg3V3xhXD7BHufXbfNDruONGICMIfQ2yO4UtxCOLvtlZcS3QE/RewrNwEM1OJt/RGbatlE5EFbh8D6Ojr3jQ==}
+  skinview3d@3.3.0:
+    resolution: {integrity: sha512-Zz7SeRNKMpOBa0AC8vbU0NF1N3F3t2sA2tJEoEd5M7KbVslYS/1l36n3aiI0+1fj5qK+S6YI+zzhd0Tm+rMrrg==}
 
   slash@2.0.0:
     resolution: {integrity: sha512-ZYKh3Wh2z1PpEXWr0MpSBZ0V6mZHAQfYevttO11c51CaWjGTaadiKZ+wVt1PbMlDV5qhMFslpZCemhwOK7C89A==}
@@ -18999,7 +18999,7 @@ snapshots:
 
   skinview-utils@0.7.1: {}
 
-  skinview3d@3.2.0:
+  skinview3d@3.3.0:
     dependencies:
       '@types/three': 0.156.0
       skinview-utils: 0.7.1
