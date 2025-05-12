@@ -207,7 +207,7 @@ importers:
         version: 3.14.1(@babel/core@7.27.1)(@babel/preset-env@7.27.2(@babel/core@7.27.1))(babel-loader@9.2.1(@babel/core@7.27.1)(webpack@5.98.0(@swc/core@1.11.24)))(cypress@14.3.3)(webpack@5.98.0(@swc/core@1.11.24))
       '@happy-dom/jest-environment':
         specifier: ^17.0.0
-        version: 17.4.6
+        version: 17.4.7
       '@jest/globals':
         specifier: ^29.7.0
         version: 29.7.0
@@ -1389,8 +1389,8 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@happy-dom/jest-environment@17.4.6':
-    resolution: {integrity: sha512-1BxUjcLZh9bxa38WTYjd1qK5yOdt75YCkhldSIylUF4R3L3jmhwa1uKZb1iMZ927w239vgp9ZAjdwIVvY47jiQ==}
+  '@happy-dom/jest-environment@17.4.7':
+    resolution: {integrity: sha512-/4QIfSPOYjTcCkmiAPJJLMJUrFS5gFW1WQmrjHzvvBxJ4WrSVR7FboQfeFWIufSKQ1udw7tvlvf44nyiJvrSmw==}
     engines: {node: '>=18.0.0'}
 
   '@headlessui/react@2.2.2':
@@ -5577,8 +5577,8 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@17.4.6:
-    resolution: {integrity: sha512-OEV1hDe9i2rFr66+WZNiwy1S8rAJy6bRXmXql68YJDjdfHBRbN76om+qVh68vQACf6y5Bcr90e/oK53RQxsDdg==}
+  happy-dom@17.4.7:
+    resolution: {integrity: sha512-NZypxadhCiV5NT4A+Y86aQVVKQ05KDmueja3sz008uJfDRwz028wd0aTiJPwo4RQlvlz0fznkEEBBCHVNWc08g==}
     engines: {node: '>=18.0.0'}
 
   hard-rejection@2.1.0:
@@ -10940,12 +10940,12 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@happy-dom/jest-environment@17.4.6':
+  '@happy-dom/jest-environment@17.4.7':
     dependencies:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      happy-dom: 17.4.6
+      happy-dom: 17.4.7
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -16172,7 +16172,7 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.19.3
 
-  happy-dom@17.4.6:
+  happy-dom@17.4.7:
     dependencies:
       webidl-conversions: 7.0.0
       whatwg-mimetype: 3.0.0
