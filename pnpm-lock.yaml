@@ -86,16 +86,16 @@ importers:
         version: 2.2.0(react@19.1.0)
       '@sentry/nextjs':
         specifier: ^9.0.0
-        version: 9.25.0(@opentelemetry/context-async-hooks@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/core@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.57.2(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(next@15.3.3(@babel/core@7.27.4)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17)))
+        version: 9.25.1(@opentelemetry/context-async-hooks@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/core@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.57.2(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(next@15.3.3(@babel/core@7.27.4)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17)))
       '@sentry/profiling-node':
         specifier: ^9.0.0
-        version: 9.25.0
+        version: 9.25.1
       '@socialgouv/matomo-next':
         specifier: ^1.9.0
         version: 1.9.2(next@15.3.3(@babel/core@7.27.4)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
       '@t3-oss/env-nextjs':
         specifier: ^0.13.0
-        version: 0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.49)
+        version: 0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.50)
       apexcharts:
         specifier: ^4.0.0
         version: 4.7.0
@@ -176,7 +176,7 @@ importers:
         version: 1.1.3(react@19.1.0)
       zod:
         specifier: ^3.23.8
-        version: 3.25.49
+        version: 3.25.50
     devDependencies:
       '@babel/core':
         specifier: ^7.24.6
@@ -189,7 +189,7 @@ importers:
         version: 7.27.2(@babel/core@7.27.4)
       '@bahmutov/cypress-code-coverage':
         specifier: ^2.6.1
-        version: 2.7.2(cypress@14.4.0)
+        version: 2.7.2(cypress@14.4.1)
       '@commitlint/cli':
         specifier: ^19.0.0
         version: 19.8.1(@types/node@22.15.29)(typescript@5.8.3)
@@ -204,10 +204,10 @@ importers:
         version: 3.0.2
       '@cypress/code-coverage':
         specifier: ^3.12.39
-        version: 3.14.4(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(babel-loader@9.2.1(@babel/core@7.27.4)(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17))))(cypress@14.4.0)(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17)))
+        version: 3.14.4(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(babel-loader@9.2.1(@babel/core@7.27.4)(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17))))(cypress@14.4.1)(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17)))
       '@happy-dom/jest-environment':
         specifier: ^17.0.0
-        version: 17.6.1
+        version: 17.6.3
       '@jest/globals':
         specifier: ^29.7.0
         version: 29.7.0
@@ -222,7 +222,7 @@ importers:
         version: 1.30.11(typescript@5.8.3)
       '@percy/cypress':
         specifier: ^3.1.2
-        version: 3.1.6(cypress@14.4.0)
+        version: 3.1.6(cypress@14.4.1)
       '@swc/core':
         specifier: ^1.5.7
         version: 1.11.29(@swc/helpers@0.5.17)
@@ -231,7 +231,7 @@ importers:
         version: 0.2.38(@swc/core@1.11.29(@swc/helpers@0.5.17))
       '@testing-library/cypress':
         specifier: ^10.0.1
-        version: 10.0.3(cypress@14.4.0)
+        version: 10.0.3(cypress@14.4.1)
       '@testing-library/jest-dom':
         specifier: ^6.0.0
         version: 6.6.3
@@ -252,7 +252,7 @@ importers:
         version: 7.7.0
       '@types/testing-library__cypress':
         specifier: ^7.0.0
-        version: 7.0.0(cypress@14.4.0)
+        version: 7.0.0(cypress@14.4.1)
       '@types/testing-library__jest-dom':
         specifier: ^6.0.0
         version: 6.0.0
@@ -270,7 +270,7 @@ importers:
         version: 7.0.0
       babel-plugin-transform-import-meta:
         specifier: ^2.2.1
-        version: 2.3.2(@babel/core@7.27.4)
+        version: 2.3.3(@babel/core@7.27.4)
       canvas:
         specifier: ^3.0.0
         version: 3.1.0
@@ -288,7 +288,7 @@ importers:
         version: 7.0.3
       cypress:
         specifier: ^14.0.0
-        version: 14.4.0
+        version: 14.4.1
       dotenv-mono:
         specifier: ^1.3.14
         version: 1.3.14
@@ -309,7 +309,7 @@ importers:
         version: 10.1.5(eslint@9.28.0(jiti@2.4.2))
       eslint-plugin-cypress:
         specifier: ^5.0.0
-        version: 5.0.1(eslint@9.28.0(jiti@2.4.2))
+        version: 5.1.0(eslint@9.28.0(jiti@2.4.2))
       eslint-plugin-import:
         specifier: ^2.29.1
         version: 2.31.0(@typescript-eslint/parser@8.33.1(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.0)(eslint@9.28.0(jiti@2.4.2))
@@ -1403,9 +1403,9 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@happy-dom/jest-environment@17.6.1':
-    resolution: {integrity: sha512-8vfNW2rI52dqPCbYdplS6DAjfyn2HeMX1mpP6wV7x4JqKxCmjBGRm4NmXRmWUplSdOy+rctNpX4kXZyeMNUODA==}
-    engines: {node: '>=18.0.0'}
+  '@happy-dom/jest-environment@17.6.3':
+    resolution: {integrity: sha512-HXuHKvpHLo9/GQ/yKMmKFyS1AYL2t9pL67+GfpYZfOAb29qD80EMozi50zRZk82KmNRBcA2A0/ErjpOwUxJrNg==}
+    engines: {node: '>=20.0.0'}
 
   '@headlessui/react@2.2.4':
     resolution: {integrity: sha512-lz+OGcAH1dK93rgSMzXmm1qKOJkBUqZf1L4M8TWLNplftQD3IkoEDdUFNfAn4ylsN6WOTVtWaLmvmaHOUk1dTA==}
@@ -2423,32 +2423,32 @@ packages:
     peerDependencies:
       semantic-release: '>=20.1.0'
 
-  '@sentry-internal/browser-utils@9.25.0':
-    resolution: {integrity: sha512-pPlIXHcXNKjVsN/hMeh6ujBkDBMKfxFSdPHHshMSj9tRNc5SI1A1pxWK6QaEMAXor74ICYWt/fazJDw9wE2shg==}
+  '@sentry-internal/browser-utils@9.25.1':
+    resolution: {integrity: sha512-/E8NKoGpkZCiGfZ7OuROWjnhBDKs22JpeiLDpbvl+zdA11zJXOl/i99fDzwZZmx/yGH737Ai7KSLiw3HVcsH5A==}
     engines: {node: '>=18'}
 
-  '@sentry-internal/feedback@9.25.0':
-    resolution: {integrity: sha512-myrU1H1IR3EjRPo/66+Jjy5xHq9xEuosI8iRKN/0dSMeS6TZQ+PF0ixNHlwtyxhJn3z0o1gobB1Oawi7W/EDeQ==}
+  '@sentry-internal/feedback@9.25.1':
+    resolution: {integrity: sha512-wPyX68izXUGRHIpE2vz/LzgIJXtfnEL+LXjKJW11RA2yzAvd8SSmX+raBTuIr4dFhUJ8fn08OlYSAo4L1fY1RQ==}
     engines: {node: '>=18'}
 
   '@sentry-internal/node-cpu-profiler@2.2.0':
     resolution: {integrity: sha512-oLHVYurqZfADPh5hvmQYS5qx8t0UZzT2u6+/68VXsFruQEOnYJTODKgU3BVLmemRs3WE6kCJjPeFdHVYOQGSzQ==}
     engines: {node: '>=18'}
 
-  '@sentry-internal/replay-canvas@9.25.0':
-    resolution: {integrity: sha512-eNjfS40OyU1Ca74YmDRm8PlLmwIH4N0EyIw7FScc92cr7ip+Y4UzRDEa2zJGwHPPuTRXexUI3vaZqmMQkWQP1g==}
+  '@sentry-internal/replay-canvas@9.25.1':
+    resolution: {integrity: sha512-KR/zvg9Oe7pH0OBioHNSYOsk/Og6Ih7emkfIUvN6RmVkVeycOERDqJyXmKM8mKC9wFXDpivBZRhrWgg/dtAAPw==}
     engines: {node: '>=18'}
 
-  '@sentry-internal/replay@9.25.0':
-    resolution: {integrity: sha512-aSk4cUv8KasQd8Gb2NHDH/c6IHRZwTq4gx9oo5rCYzMAHRQGNjGU18ecHOtLKKueQGCfrmF1Xv76LgjJVYsVOw==}
+  '@sentry-internal/replay@9.25.1':
+    resolution: {integrity: sha512-m5e2t8TolKeRYwZkUQ19Z9sjntVnEHomfI5ggiGyMGLobOgRpG40q1+BVwuO6sjaT7jMvDSZeIbjeEl/f+jABA==}
     engines: {node: '>=18'}
 
   '@sentry/babel-plugin-component-annotate@3.5.0':
     resolution: {integrity: sha512-s2go8w03CDHbF9luFGtBHKJp4cSpsQzNVqgIa9Pfa4wnjipvrK6CxVT4icpLA3YO6kg5u622Yoa5GF3cJdippw==}
     engines: {node: '>= 14'}
 
-  '@sentry/browser@9.25.0':
-    resolution: {integrity: sha512-IkeGKrTX2nX0POgZATLiYJEIyjcwtf5z40fvuSofVSnONrnSuJmlkDI2grRLX+OhQh4MJaq8gwPhTMqf9koRTQ==}
+  '@sentry/browser@9.25.1':
+    resolution: {integrity: sha512-wIpRGtwlO4SBqlO0E2xjM0ag3/J6H/zIySMz/zyG9onYThtjKVuM0I1IIWt4PN0cEO8eznBO/6cPSECVnIrQZA==}
     engines: {node: '>=18'}
 
   '@sentry/bundler-plugin-core@3.5.0':
@@ -2501,22 +2501,22 @@ packages:
     engines: {node: '>= 10'}
     hasBin: true
 
-  '@sentry/core@9.25.0':
-    resolution: {integrity: sha512-k0AgzR6RIf6OEwkVz09zer8GcK1s7RothlS1R6Z4x1wAJ+brtx4HqWnbLp05LDNDNrjTzK30HXvuCGGusnZuig==}
+  '@sentry/core@9.25.1':
+    resolution: {integrity: sha512-c87MOAJ7nAdysQgMFCnQXoKgWx30poLTJRsK+N72ZQhGiLIzp25xuIhCsTLuftxR852tZShd9X11yU0NuolmkA==}
     engines: {node: '>=18'}
 
-  '@sentry/nextjs@9.25.0':
-    resolution: {integrity: sha512-XPTD4aX+NLn8N3JZJ3tW8o+leclL7v9N8jBqH9byay6iXaJxdKi27dokFs2GpwqIAZAqm3RIihECKtUnv8utmQ==}
+  '@sentry/nextjs@9.25.1':
+    resolution: {integrity: sha512-2gWvgoe5L7OsqRYLRTjuEFNXFwXKJYuorN6jEKlNfcAvuPEt4TOW1+V7iXn94TxNZkQnmBpk03eWFfkvU1mJNg==}
     engines: {node: '>=18'}
     peerDependencies:
       next: ^13.2.0 || ^14.0 || ^15.0.0-rc.0
 
-  '@sentry/node@9.25.0':
-    resolution: {integrity: sha512-Z7nkj7kwH1/kbsETmNN12pMD3Npe9X0bCKV3jlTv6KkEdVvklc1+/pT7Bz+4iYqHUysZTrNomQxdzjcQbIb2aw==}
+  '@sentry/node@9.25.1':
+    resolution: {integrity: sha512-GJPMjZugHk0zgBfeyczWXLHu1kIbYmfL2gyQZ/gTwlNiPdtjECtW54zhIh7itrl1spet+XI8On7H/rN7TULKyg==}
     engines: {node: '>=18'}
 
-  '@sentry/opentelemetry@9.25.0':
-    resolution: {integrity: sha512-yzl/DnlQMkpOsEHlZJeTXdJ8GJNyonUjM+d3jhAXDjsvG2yXXBrda0PhNkxCN+rScbP/sJEbvfGPtcnnysh7NA==}
+  '@sentry/opentelemetry@9.25.1':
+    resolution: {integrity: sha512-8U6H6xSvTPVSGXbn8phJ02NQPq0FcLLr25h9Mnpefh5NasFQakd5lQhbbvpTHkz2hta8JU5Lv8Ek0wkSdcoi+w==}
     engines: {node: '>=18'}
     peerDependencies:
       '@opentelemetry/api': ^1.9.0
@@ -2526,19 +2526,19 @@ packages:
       '@opentelemetry/sdk-trace-base': ^1.30.1 || ^2.0.0
       '@opentelemetry/semantic-conventions': ^1.34.0
 
-  '@sentry/profiling-node@9.25.0':
-    resolution: {integrity: sha512-18rPithGNEVRSzVAoMe7ynPe31id4pQjlnjgyXuKLogDP8ATy2wIZqAjIgE27EBGrREgR3V5ySCxTaiTTM70/w==}
+  '@sentry/profiling-node@9.25.1':
+    resolution: {integrity: sha512-Y+xnpPHh2bnvtwmi4uy9vP9oG5OTVdzWjov7d+jmxL4s5yRGZOgdGCq3GC/IXnSLq0yYloXpwi7sJ9vxL4hjcw==}
     engines: {node: '>=18'}
     hasBin: true
 
-  '@sentry/react@9.25.0':
-    resolution: {integrity: sha512-J7IXIubVl09lNVQy7xO7xLrTgL6SNe4aZPBw5j7aUF5MrskloCtJ86C20LMo8X+x1ZOoHshSFUdv1dt3ayDt7g==}
+  '@sentry/react@9.25.1':
+    resolution: {integrity: sha512-6rXImkzIUQ+c077xN31SYgM0TYGjT1iVqS/Affpq09zJGuWr/HDcIZru+YnrwUju0H7AdIcB1Fnv1uSFW4ggVQ==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^16.14.0 || 17.x || 18.x || 19.x
 
-  '@sentry/vercel-edge@9.25.0':
-    resolution: {integrity: sha512-4bkJU6bJRx8qrabMqFHBk2IHmNpd89eRiS7Vr8u9QKsc/6cwqNRwpZnqw6znfkNFCtPIbXf+6FpP2xrhzGB3yA==}
+  '@sentry/vercel-edge@9.25.1':
+    resolution: {integrity: sha512-cDfeP6c9ffVrzifpd0PG+rNWcPLC8wTRjQpM8b3W2T8XWFdtfjV0tpDw7yT5PtVG499gYGoXzlf5rH9ZCWIxIA==}
     engines: {node: '>=18'}
 
   '@sentry/webpack-plugin@3.5.0':
@@ -3563,8 +3563,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
 
-  babel-plugin-transform-import-meta@2.3.2:
-    resolution: {integrity: sha512-902o4GiQqI1GqAXfD5rEoz0PJamUfJ3VllpdWaNsFTwdaNjFSFHawvBO+cp5K2j+g2h3bZ4lnM1Xb6yFYGihtA==}
+  babel-plugin-transform-import-meta@2.3.3:
+    resolution: {integrity: sha512-bbh30qz1m6ZU1ybJoNOhA2zaDvmeXMnGNBMVMDOJ1Fni4+wMBoy/j7MTRVmqAUCIcy54/rEnr9VEBsfcgbpm3Q==}
     peerDependencies:
       '@babel/core': ^7.10.0
 
@@ -4278,8 +4278,8 @@ packages:
     resolution: {integrity: sha512-/fITjgjGU50vjQ4FH6eUoYu+iUoUKIXws2hL15JJpIR+BbTxaXQsMuuyjtNh2WqsSBS5nsaZHFsFecyw5CCAng==}
     engines: {node: '>=0.10.0'}
 
-  cypress@14.4.0:
-    resolution: {integrity: sha512-/I59Fqxo7fqdiDi3IM2QKA65gZ7+PVejXg404/I8ZSq+NOnrmw+2pnMUJzpoNyg7KABcEBmgpkfAqhV98p7wJA==}
+  cypress@14.4.1:
+    resolution: {integrity: sha512-YSGvVXtTqSGRTyHbaxHI5dHU/9xc5ymaTIM4BU85GKhj980y6XgA3fShSpj5DatS8knXMsAvYItQxVQFHGpUtw==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
 
@@ -4799,8 +4799,8 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
 
-  eslint-plugin-cypress@5.0.1:
-    resolution: {integrity: sha512-m1OlIo/tqlCQmxLNC+FE/ObDEB4GuGZqu0dO3+XdwJVErmQC1Wlw2jlBSV+jOdsTRdhjpT0qz49vdlIFKyU4dg==}
+  eslint-plugin-cypress@5.1.0:
+    resolution: {integrity: sha512-tdLXm4aq9vX2hTtKJTUFD3gdNseMKqsf8+P6hI4TtOPdz1LU4xvTpQBd1++qPAsPZP2lyYh71B5mvzu2lBr4Ow==}
     peerDependencies:
       eslint: '>=9'
 
@@ -5550,9 +5550,9 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@17.6.1:
-    resolution: {integrity: sha512-x2Iie2VWObB283X/KXwJ7g5f+4acfm8Pmf9KWUn6gujFUvFlSWytZYTv74bdFH40fPDedbI6/V6U3dYYMtW4SQ==}
-    engines: {node: '>=18.0.0'}
+  happy-dom@17.6.3:
+    resolution: {integrity: sha512-UVIHeVhxmxedbWPCfgS55Jg2rDfwf2BCKeylcPSqazLz5w3Kri7Q4xdBJubsr/+VUzFLh0VjIvh13RaDA2/Xug==}
+    engines: {node: '>=20.0.0'}
 
   hard-rejection@2.1.0:
     resolution: {integrity: sha512-VIZB+ibDhx7ObhAe7OVtoEbuP4h/MuOTHJ+J8h/eBXotJYl0fBgR72xDFCKgIh22OJZIOVNxBMWuhAr10r8HdA==}
@@ -9577,8 +9577,8 @@ packages:
     resolution: {integrity: sha512-GQHQqAopRhwU8Kt1DDM8NjibDXHC8eoh1erhGAJPEyveY9qqVeXvVikNKrDz69sHowPMorbPUrH/mx8c50eiBQ==}
     engines: {node: '>=18'}
 
-  zod@3.25.49:
-    resolution: {integrity: sha512-JMMPMy9ZBk3XFEdbM3iL1brx4NUSejd6xr3ELrrGEfGb355gjhiAWtG3K5o+AViV/3ZfkIrCzXsZn6SbLwTR8Q==}
+  zod@3.25.50:
+    resolution: {integrity: sha512-VstOnRxf4tlSq0raIwbn0n+LA34SxVoZ8r3pkwSUM0jqNiA/HCMQEVjTuS5FZmHsge+9MDGTiAuHyml5T0um6A==}
 
 snapshots:
 
@@ -10509,13 +10509,13 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
 
-  '@bahmutov/cypress-code-coverage@2.7.2(cypress@14.4.0)':
+  '@bahmutov/cypress-code-coverage@2.7.2(cypress@14.4.1)':
     dependencies:
       '@actions/core': 1.11.1
       '@cypress/browserify-preprocessor': 3.0.2
       chalk: 4.1.2
       console.table: 0.10.0
-      cypress: 14.4.0
+      cypress: 14.4.1
       dayjs: 1.10.7
       debug: 4.3.7
       execa: 4.1.0
@@ -10684,14 +10684,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@cypress/code-coverage@3.14.4(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(babel-loader@9.2.1(@babel/core@7.27.4)(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17))))(cypress@14.4.0)(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17)))':
+  '@cypress/code-coverage@3.14.4(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(babel-loader@9.2.1(@babel/core@7.27.4)(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17))))(cypress@14.4.1)(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17)))':
     dependencies:
       '@babel/core': 7.27.4
       '@babel/preset-env': 7.27.2(@babel/core@7.27.4)
       '@cypress/webpack-preprocessor': 6.0.4(@babel/core@7.27.4)(@babel/preset-env@7.27.2(@babel/core@7.27.4))(babel-loader@9.2.1(@babel/core@7.27.4)(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17))))(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17)))
       babel-loader: 9.2.1(@babel/core@7.27.4)(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17)))
       chalk: 4.1.2
-      cypress: 14.4.0
+      cypress: 14.4.1
       dayjs: 1.11.13
       debug: 4.4.0(supports-color@8.1.1)
       execa: 4.1.0
@@ -10887,12 +10887,12 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@happy-dom/jest-environment@17.6.1':
+  '@happy-dom/jest-environment@17.6.3':
     dependencies:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      happy-dom: 17.6.1
+      happy-dom: 17.6.3
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -11815,10 +11815,10 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@percy/cypress@3.1.6(cypress@14.4.0)':
+  '@percy/cypress@3.1.6(cypress@14.4.1)':
     dependencies:
       '@percy/sdk-utils': 1.30.9
-      cypress: 14.4.0
+      cypress: 14.4.1
 
   '@percy/dom@1.30.11': {}
 
@@ -12199,38 +12199,38 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sentry-internal/browser-utils@9.25.0':
+  '@sentry-internal/browser-utils@9.25.1':
     dependencies:
-      '@sentry/core': 9.25.0
+      '@sentry/core': 9.25.1
 
-  '@sentry-internal/feedback@9.25.0':
+  '@sentry-internal/feedback@9.25.1':
     dependencies:
-      '@sentry/core': 9.25.0
+      '@sentry/core': 9.25.1
 
   '@sentry-internal/node-cpu-profiler@2.2.0':
     dependencies:
       detect-libc: 2.0.4
       node-abi: 3.75.0
 
-  '@sentry-internal/replay-canvas@9.25.0':
+  '@sentry-internal/replay-canvas@9.25.1':
     dependencies:
-      '@sentry-internal/replay': 9.25.0
-      '@sentry/core': 9.25.0
+      '@sentry-internal/replay': 9.25.1
+      '@sentry/core': 9.25.1
 
-  '@sentry-internal/replay@9.25.0':
+  '@sentry-internal/replay@9.25.1':
     dependencies:
-      '@sentry-internal/browser-utils': 9.25.0
-      '@sentry/core': 9.25.0
+      '@sentry-internal/browser-utils': 9.25.1
+      '@sentry/core': 9.25.1
 
   '@sentry/babel-plugin-component-annotate@3.5.0': {}
 
-  '@sentry/browser@9.25.0':
+  '@sentry/browser@9.25.1':
     dependencies:
-      '@sentry-internal/browser-utils': 9.25.0
-      '@sentry-internal/feedback': 9.25.0
-      '@sentry-internal/replay': 9.25.0
-      '@sentry-internal/replay-canvas': 9.25.0
-      '@sentry/core': 9.25.0
+      '@sentry-internal/browser-utils': 9.25.1
+      '@sentry-internal/feedback': 9.25.1
+      '@sentry-internal/replay': 9.25.1
+      '@sentry-internal/replay-canvas': 9.25.1
+      '@sentry/core': 9.25.1
 
   '@sentry/bundler-plugin-core@3.5.0':
     dependencies:
@@ -12286,19 +12286,19 @@ snapshots:
       - encoding
       - supports-color
 
-  '@sentry/core@9.25.0': {}
+  '@sentry/core@9.25.1': {}
 
-  '@sentry/nextjs@9.25.0(@opentelemetry/context-async-hooks@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/core@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.57.2(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(next@15.3.3(@babel/core@7.27.4)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17)))':
+  '@sentry/nextjs@9.25.1(@opentelemetry/context-async-hooks@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/core@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.57.2(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(next@15.3.3(@babel/core@7.27.4)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17)))':
     dependencies:
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/semantic-conventions': 1.34.0
       '@rollup/plugin-commonjs': 28.0.1(rollup@4.35.0)
-      '@sentry-internal/browser-utils': 9.25.0
-      '@sentry/core': 9.25.0
-      '@sentry/node': 9.25.0
-      '@sentry/opentelemetry': 9.25.0(@opentelemetry/api@1.9.0)(@opentelemetry/context-async-hooks@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/core@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.57.2(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.34.0)
-      '@sentry/react': 9.25.0(react@19.1.0)
-      '@sentry/vercel-edge': 9.25.0
+      '@sentry-internal/browser-utils': 9.25.1
+      '@sentry/core': 9.25.1
+      '@sentry/node': 9.25.1
+      '@sentry/opentelemetry': 9.25.1(@opentelemetry/api@1.9.0)(@opentelemetry/context-async-hooks@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/core@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.57.2(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.34.0)
+      '@sentry/react': 9.25.1(react@19.1.0)
+      '@sentry/vercel-edge': 9.25.1
       '@sentry/webpack-plugin': 3.5.0(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17)))
       chalk: 3.0.0
       next: 15.3.3(@babel/core@7.27.4)(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -12315,7 +12315,7 @@ snapshots:
       - supports-color
       - webpack
 
-  '@sentry/node@9.25.0':
+  '@sentry/node@9.25.1':
     dependencies:
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/context-async-hooks': 1.30.1(@opentelemetry/api@1.9.0)
@@ -12347,14 +12347,14 @@ snapshots:
       '@opentelemetry/sdk-trace-base': 1.30.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/semantic-conventions': 1.34.0
       '@prisma/instrumentation': 6.8.2(@opentelemetry/api@1.9.0)
-      '@sentry/core': 9.25.0
-      '@sentry/opentelemetry': 9.25.0(@opentelemetry/api@1.9.0)(@opentelemetry/context-async-hooks@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/core@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.57.2(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.34.0)
+      '@sentry/core': 9.25.1
+      '@sentry/opentelemetry': 9.25.1(@opentelemetry/api@1.9.0)(@opentelemetry/context-async-hooks@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/core@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.57.2(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.34.0)
       import-in-the-middle: 1.14.0
       minimatch: 9.0.5
     transitivePeerDependencies:
       - supports-color
 
-  '@sentry/opentelemetry@9.25.0(@opentelemetry/api@1.9.0)(@opentelemetry/context-async-hooks@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/core@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.57.2(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.34.0)':
+  '@sentry/opentelemetry@9.25.1(@opentelemetry/api@1.9.0)(@opentelemetry/context-async-hooks@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/core@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.57.2(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.34.0)':
     dependencies:
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/context-async-hooks': 1.30.1(@opentelemetry/api@1.9.0)
@@ -12362,27 +12362,27 @@ snapshots:
       '@opentelemetry/instrumentation': 0.57.2(@opentelemetry/api@1.9.0)
       '@opentelemetry/sdk-trace-base': 1.30.1(@opentelemetry/api@1.9.0)
       '@opentelemetry/semantic-conventions': 1.34.0
-      '@sentry/core': 9.25.0
+      '@sentry/core': 9.25.1
 
-  '@sentry/profiling-node@9.25.0':
+  '@sentry/profiling-node@9.25.1':
     dependencies:
       '@sentry-internal/node-cpu-profiler': 2.2.0
-      '@sentry/core': 9.25.0
-      '@sentry/node': 9.25.0
+      '@sentry/core': 9.25.1
+      '@sentry/node': 9.25.1
     transitivePeerDependencies:
       - supports-color
 
-  '@sentry/react@9.25.0(react@19.1.0)':
+  '@sentry/react@9.25.1(react@19.1.0)':
     dependencies:
-      '@sentry/browser': 9.25.0
-      '@sentry/core': 9.25.0
+      '@sentry/browser': 9.25.1
+      '@sentry/core': 9.25.1
       hoist-non-react-statics: 3.3.2
       react: 19.1.0
 
-  '@sentry/vercel-edge@9.25.0':
+  '@sentry/vercel-edge@9.25.1':
     dependencies:
       '@opentelemetry/api': 1.9.0
-      '@sentry/core': 9.25.0
+      '@sentry/core': 9.25.1
 
   '@sentry/webpack-plugin@3.5.0(webpack@5.98.0(@swc/core@1.11.29(@swc/helpers@0.5.17)))':
     dependencies:
@@ -12509,19 +12509,19 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
 
-  '@t3-oss/env-core@0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.49)':
+  '@t3-oss/env-core@0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.50)':
     optionalDependencies:
       arktype: 2.1.20
       typescript: 5.8.3
-      zod: 3.25.49
+      zod: 3.25.50
 
-  '@t3-oss/env-nextjs@0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.49)':
+  '@t3-oss/env-nextjs@0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.50)':
     dependencies:
-      '@t3-oss/env-core': 0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.49)
+      '@t3-oss/env-core': 0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.50)
     optionalDependencies:
       arktype: 2.1.20
       typescript: 5.8.3
-      zod: 3.25.49
+      zod: 3.25.50
 
   '@tanstack/react-virtual@3.13.9(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
@@ -12531,11 +12531,11 @@ snapshots:
 
   '@tanstack/virtual-core@3.13.9': {}
 
-  '@testing-library/cypress@10.0.3(cypress@14.4.0)':
+  '@testing-library/cypress@10.0.3(cypress@14.4.1)':
     dependencies:
       '@babel/runtime': 7.27.0
       '@testing-library/dom': 10.4.0
-      cypress: 14.4.0
+      cypress: 14.4.1
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -12709,9 +12709,9 @@ snapshots:
     dependencies:
       '@types/node': 22.15.29
 
-  '@types/testing-library__cypress@7.0.0(cypress@14.4.0)':
+  '@types/testing-library__cypress@7.0.0(cypress@14.4.1)':
     dependencies:
-      '@testing-library/cypress': 10.0.3(cypress@14.4.0)
+      '@testing-library/cypress': 10.0.3(cypress@14.4.1)
     transitivePeerDependencies:
       - cypress
 
@@ -13471,7 +13471,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  babel-plugin-transform-import-meta@2.3.2(@babel/core@7.27.4):
+  babel-plugin-transform-import-meta@2.3.3(@babel/core@7.27.4):
     dependencies:
       '@babel/core': 7.27.4
       '@babel/template': 7.27.0
@@ -14406,7 +14406,7 @@ snapshots:
     dependencies:
       array-find-index: 1.0.2
 
-  cypress@14.4.0:
+  cypress@14.4.1:
     dependencies:
       '@cypress/request': 3.0.8
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
@@ -14999,7 +14999,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-cypress@5.0.1(eslint@9.28.0(jiti@2.4.2)):
+  eslint-plugin-cypress@5.1.0(eslint@9.28.0(jiti@2.4.2)):
     dependencies:
       eslint: 9.28.0(jiti@2.4.2)
       globals: 16.2.0
@@ -16032,7 +16032,7 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.19.3
 
-  happy-dom@17.6.1:
+  happy-dom@17.6.3:
     dependencies:
       webidl-conversions: 7.0.0
       whatwg-mimetype: 3.0.0
@@ -20401,4 +20401,4 @@ snapshots:
 
   yoctocolors@2.1.1: {}
 
-  zod@3.25.49: {}
+  zod@3.25.50: {}
