@@ -20,7 +20,7 @@ importers:
         version: 19.8.1
       '@commitlint/cz-commitlint':
         specifier: ^19.5.0
-        version: 19.8.1(@types/node@22.15.29)(commitizen@4.3.1(@types/node@22.15.29)(typescript@5.8.3))(inquirer@8.2.5)(typescript@5.8.3)
+        version: 19.8.1(commitizen@4.3.1(typescript@5.8.3))(inquirer@8.2.5)(typescript@5.8.3)
       '@semantic-release-plus/docker':
         specifier: ^3.1.3
         version: 3.1.3(semantic-release-plus@19.0.2(semantic-release@24.2.5(typescript@5.8.3)))
@@ -44,7 +44,7 @@ importers:
         version: 6.6.3
       commitizen:
         specifier: ^4.3.1
-        version: 4.3.1(@types/node@22.15.29)(typescript@5.8.3)
+        version: 4.3.1(typescript@5.8.3)
       commitlint-config-monorepo:
         specifier: ^2.0.2
         version: 2.0.2
@@ -169,8 +169,8 @@ importers:
         specifier: ^2.10.1
         version: 2.12.2
       three:
-        specifier: ^0.176.0
-        version: 0.176.0
+        specifier: ^0.177.0
+        version: 0.177.0
       use-prefers-color-scheme:
         specifier: ^1.1.3
         version: 1.1.3(react@19.1.0)
@@ -257,8 +257,8 @@ importers:
         specifier: ^6.0.0
         version: 6.0.0
       '@types/three':
-        specifier: ^0.176.0
-        version: 0.176.0
+        specifier: ^0.177.0
+        version: 0.177.0
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.0.0
         version: 8.33.1(@typescript-eslint/parser@8.33.1(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3)
@@ -2907,8 +2907,8 @@ packages:
   '@types/three@0.156.0':
     resolution: {integrity: sha512-733bXDSRdlrxqOmQuOmfC1UBRuJ2pREPk8sWnx9MtIJEVDQMx8U0NQO5MVVaOrjzDPyLI+cFPim2X/ss9v0+LQ==}
 
-  '@types/three@0.176.0':
-    resolution: {integrity: sha512-FwfPXxCqOtP7EdYMagCFePNKoG1AGBDUEVKtluv2BTVRpSt7b+X27xNsirPCTCqY1pGYsPUzaM3jgWP7dXSxlw==}
+  '@types/three@0.177.0':
+    resolution: {integrity: sha512-/ZAkn4OLUijKQySNci47lFO+4JLE1TihEjsGWPUT+4jWqxtwOPPEwJV1C3k5MEx0mcBPCdkFjzRzDOnHEI1R+A==}
 
   '@types/tough-cookie@4.0.5':
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
@@ -8904,8 +8904,8 @@ packages:
   three@0.156.1:
     resolution: {integrity: sha512-kP7H0FK9d/k6t/XvQ9FO6i+QrePoDcNhwl0I02+wmUJRNSLCUIDMcfObnzQvxb37/0Uc9TDT0T1HgsRRrO6SYQ==}
 
-  three@0.176.0:
-    resolution: {integrity: sha512-PWRKYWQo23ojf9oZSlRGH8K09q7nRSWx6LY/HF/UUrMdYgN9i1e2OwJYHoQjwc6HF/4lvvYLC5YC1X8UJL2ZpA==}
+  three@0.177.0:
+    resolution: {integrity: sha512-EiXv5/qWAaGI+Vz2A+JfavwYCMdGjxVsrn3oBwllUoqYeaBO75J63ZfyaQKoiLrqNHoTlUc6PFgMXnS0kI45zg==}
 
   throttleit@1.0.1:
     resolution: {integrity: sha512-vDZpf9Chs9mAdfY046mcPt8fg5QSZr37hEH4TXYBnDF+izxgrbRGUAAaBvIk/fJm9aOFCGFd1EsNg5AZCbnQCQ==}
@@ -10568,6 +10568,20 @@ snapshots:
       '@commitlint/types': 19.8.1
       chalk: 5.4.1
       commitizen: 4.3.1(@types/node@22.15.29)(typescript@5.8.3)
+      inquirer: 8.2.5
+      lodash.isplainobject: 4.0.6
+      word-wrap: 1.2.5
+    transitivePeerDependencies:
+      - '@types/node'
+      - typescript
+
+  '@commitlint/cz-commitlint@19.8.1(commitizen@4.3.1(typescript@5.8.3))(inquirer@8.2.5)(typescript@5.8.3)':
+    dependencies:
+      '@commitlint/ensure': 19.8.1
+      '@commitlint/load': 19.8.1(@types/node@22.15.29)(typescript@5.8.3)
+      '@commitlint/types': 19.8.1
+      chalk: 5.4.1
+      commitizen: 4.3.1(typescript@5.8.3)
       inquirer: 8.2.5
       lodash.isplainobject: 4.0.6
       word-wrap: 1.2.5
@@ -12729,7 +12743,7 @@ snapshots:
       fflate: 0.6.10
       meshoptimizer: 0.18.1
 
-  '@types/three@0.176.0':
+  '@types/three@0.177.0':
     dependencies:
       '@dimforge/rapier3d-compat': 0.12.0
       '@tweenjs/tween.js': 23.1.3
@@ -14135,6 +14149,26 @@ snapshots:
       - '@types/node'
       - typescript
 
+  commitizen@4.3.1(typescript@5.8.3):
+    dependencies:
+      cachedir: 2.3.0
+      cz-conventional-changelog: 3.3.0(typescript@5.8.3)
+      dedent: 0.7.0
+      detect-indent: 6.1.0
+      find-node-modules: 2.1.3
+      find-root: 1.1.0
+      fs-extra: 9.1.0
+      glob: 7.2.3
+      inquirer: 8.2.5
+      is-utf8: 0.2.1
+      lodash: 4.17.21
+      minimist: 1.2.7
+      strip-bom: 4.0.0
+      strip-json-comments: 3.1.1
+    transitivePeerDependencies:
+      - '@types/node'
+      - typescript
+
   commitlint-config-monorepo@2.0.2: {}
 
   common-path-prefix@3.0.0: {}
@@ -14461,6 +14495,20 @@ snapshots:
     dependencies:
       chalk: 2.4.2
       commitizen: 4.3.1(@types/node@22.15.29)(typescript@5.8.3)
+      conventional-commit-types: 3.0.0
+      lodash.map: 4.6.0
+      longest: 2.0.1
+      word-wrap: 1.2.5
+    optionalDependencies:
+      '@commitlint/load': 19.8.1(@types/node@22.15.29)(typescript@5.8.3)
+    transitivePeerDependencies:
+      - '@types/node'
+      - typescript
+
+  cz-conventional-changelog@3.3.0(typescript@5.8.3):
+    dependencies:
+      chalk: 2.4.2
+      commitizen: 4.3.1(typescript@5.8.3)
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
@@ -19698,7 +19746,7 @@ snapshots:
 
   three@0.156.1: {}
 
-  three@0.176.0: {}
+  three@0.177.0: {}
 
   throttleit@1.0.1: {}
 
