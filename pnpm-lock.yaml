@@ -204,7 +204,7 @@ importers:
         version: 3.0.2
       '@cypress/code-coverage':
         specifier: ^3.12.39
-        version: 3.14.4(@babel/core@7.28.0)(@babel/preset-env@7.28.0(@babel/core@7.28.0))(babel-loader@9.2.1(@babel/core@7.28.0)(webpack@5.98.0(@swc/core@1.11.31(@swc/helpers@0.5.17))))(cypress@14.4.1)(webpack@5.98.0(@swc/core@1.11.31(@swc/helpers@0.5.17)))
+        version: 3.14.5(@babel/core@7.28.0)(@babel/preset-env@7.28.0(@babel/core@7.28.0))(babel-loader@9.2.1(@babel/core@7.28.0)(webpack@5.98.0(@swc/core@1.11.31(@swc/helpers@0.5.17))))(cypress@14.4.1)(webpack@5.98.0(@swc/core@1.11.31(@swc/helpers@0.5.17)))
       '@happy-dom/jest-environment':
         specifier: ^18.0.0
         version: 18.0.1
@@ -1269,8 +1269,8 @@ packages:
     resolution: {integrity: sha512-y6mlFR+IR2cqcm3HabSp7AEcX9QfF1EUL4eOaw/7xexdhmdQU8ez6piyRopZQob4BK8oKTsc9PkupsU2rzjqMA==}
     engines: {node: '>=8'}
 
-  '@cypress/code-coverage@3.14.4':
-    resolution: {integrity: sha512-XIjBmx4zMb+b1sSOvrQyLoq0vROSSpm0quXE9PoE0bdIOfTTStVDLdjwpmnjP62bF7e72PGX1p7vyEfs3j/62A==}
+  '@cypress/code-coverage@3.14.5':
+    resolution: {integrity: sha512-sSyCSiYpChgKIaO7Bglxp1Pjf1l6EQDejq6yIc4REcGXCVxrtjP5G5j2TsjH/zcceDvyShXH5DyLD21M9ryaeg==}
     peerDependencies:
       '@babel/core': ^7.0.1
       '@babel/preset-env': ^7.0.0
@@ -4731,6 +4731,9 @@ packages:
   end-of-stream@1.4.4:
     resolution: {integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==}
 
+  end-of-stream@1.4.5:
+    resolution: {integrity: sha512-ooEGc6HP26xXq/N+GCGOT0JKCLDGrq2bQUZrQ7gyrJiZANJ/8YDTxTpQBXGMn+WbIQXNVpyWymm7KYVICQnyOg==}
+
   enhanced-exception@1.0.2:
     resolution: {integrity: sha512-wxcuNOKPZ+THvc/lByuenDj1YT74Eh0DKC86h/HEYOv++dj65BgwqDp//K062kUpIlYjBpqT8ovq5OR8tukYPQ==}
 
@@ -8035,6 +8038,9 @@ packages:
   pump@3.0.2:
     resolution: {integrity: sha512-tUPXtzlGM8FE3P0ZL6DVs/3P58k9nk8/jZeQCurTJylQA8qFYzHFfhBJkuqyE0FifOsQ0uKWekiZ5g8wtr28cw==}
 
+  pump@3.0.3:
+    resolution: {integrity: sha512-todwxLMY7/heScKmntwQG8CXVkWUOdYxIvY2s0VWAAMh/nd8SoYiRaKjlr7+iCs984f2P8zvrfWcDDYVb73NfA==}
+
   punycode@1.4.1:
     resolution: {integrity: sha512-jmYNElW7yvO7TV33CjSmvSiE2yco3bV2czu/OzDKdMNVZQWfxCblURLhf+47syQRBntjfLdd/H0egrzIG+oaFQ==}
 
@@ -10824,7 +10830,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@cypress/code-coverage@3.14.4(@babel/core@7.28.0)(@babel/preset-env@7.28.0(@babel/core@7.28.0))(babel-loader@9.2.1(@babel/core@7.28.0)(webpack@5.98.0(@swc/core@1.11.31(@swc/helpers@0.5.17))))(cypress@14.4.1)(webpack@5.98.0(@swc/core@1.11.31(@swc/helpers@0.5.17)))':
+  '@cypress/code-coverage@3.14.5(@babel/core@7.28.0)(@babel/preset-env@7.28.0(@babel/core@7.28.0))(babel-loader@9.2.1(@babel/core@7.28.0)(webpack@5.98.0(@swc/core@1.11.31(@swc/helpers@0.5.17))))(cypress@14.4.1)(webpack@5.98.0(@swc/core@1.11.31(@swc/helpers@0.5.17)))':
     dependencies:
       '@babel/core': 7.28.0
       '@babel/preset-env': 7.28.0(@babel/core@7.28.0)
@@ -15076,6 +15082,10 @@ snapshots:
     dependencies:
       once: 1.4.0
 
+  end-of-stream@1.4.5:
+    dependencies:
+      once: 1.4.0
+
   enhanced-exception@1.0.2: {}
 
   enhanced-resolve@5.18.2:
@@ -16150,11 +16160,11 @@ snapshots:
 
   get-stream@4.1.0:
     dependencies:
-      pump: 3.0.2
+      pump: 3.0.3
 
   get-stream@5.2.0:
     dependencies:
-      pump: 3.0.2
+      pump: 3.0.3
 
   get-stream@6.0.1: {}
 
@@ -18887,6 +18897,11 @@ snapshots:
   pump@3.0.2:
     dependencies:
       end-of-stream: 1.4.4
+      once: 1.4.0
+
+  pump@3.0.3:
+    dependencies:
+      end-of-stream: 1.4.5
       once: 1.4.0
 
   punycode@1.4.1: {}
