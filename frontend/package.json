@@ -68,7 +68,7 @@
 		"@sentry/profiling-node": "^9.0.0",
 		"@socialgouv/matomo-next": "^1.9.0",
 		"@t3-oss/env-nextjs": "^0.13.0",
-		"apexcharts": "^4.0.0",
+		"apexcharts": "^5.0.0",
 		"autoprefixer": "^10.4.19",
 		"dotenv-defaults": "^5.0.2",
 		"flowbite": "^3.0.0",
