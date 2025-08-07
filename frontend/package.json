@@ -160,7 +160,7 @@
 		"extend-expect": "link:@testing-library/jest-dom/extend-expect",
 		"husky": "^9.0.11",
 		"identity-obj-proxy": "^3.0.0",
-		"ignore-walk": "^7.0.0",
+		"ignore-walk": "^8.0.0",
 		"jest": "^30.0.0",
 		"jest-environment-jsdom": "^30.0.0",
 		"jest-fetch-mock": "^3.0.3",
