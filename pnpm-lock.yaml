@@ -273,7 +273,7 @@ importers:
         version: 2.3.3(@babel/core@7.28.3)
       canvas:
         specifier: ^3.0.0
-        version: 3.1.2
+        version: 3.2.0
       commitizen:
         specifier: ^4.3.0
         version: 4.3.1(@types/node@22.17.2)(typescript@5.9.2)
@@ -375,7 +375,7 @@ importers:
         version: 30.0.5(@types/node@22.17.2)
       jest-environment-jsdom:
         specifier: ^30.0.0
-        version: 30.0.5(canvas@3.1.2)
+        version: 30.0.5(canvas@3.2.0)
       jest-fetch-mock:
         specifier: ^3.0.3
         version: 3.0.3
@@ -3881,8 +3881,8 @@ packages:
   caniuse-lite@1.0.30001735:
     resolution: {integrity: sha512-EV/laoX7Wq2J9TQlyIXRxTJqIw4sxfXS4OYgudGxBYRuTv0q7AM6yMEpU/Vo1I94thg9U6EZ2NfZx9GJq83u7w==}
 
-  canvas@3.1.2:
-    resolution: {integrity: sha512-Z/tzFAcBzoCvJlOSlCnoekh1Gu8YMn0J51+UAuXJAbW1Z6I9l2mZgdD7738MepoeeIcUdDtbMnOg6cC7GJxy/g==}
+  canvas@3.2.0:
+    resolution: {integrity: sha512-jk0GxrLtUEmW/TmFsk2WghvgHe8B0pxGilqCL21y8lHkPUGa6FTsnCNtHPOzT8O3y+N+m3espawV80bbBlgfTA==}
     engines: {node: ^18.12.0 || >= 20.9.0}
 
   cardinal@2.1.1:
@@ -11066,7 +11066,7 @@ snapshots:
 
   '@jest/diff-sequences@30.0.1': {}
 
-  '@jest/environment-jsdom-abstract@30.0.5(canvas@3.1.2)(jsdom@26.1.0(canvas@3.1.2))':
+  '@jest/environment-jsdom-abstract@30.0.5(canvas@3.2.0)(jsdom@26.1.0(canvas@3.2.0))':
     dependencies:
       '@jest/environment': 30.0.5
       '@jest/fake-timers': 30.0.5
@@ -11075,9 +11075,9 @@ snapshots:
       '@types/node': 22.17.2
       jest-mock: 30.0.5
       jest-util: 30.0.5
-      jsdom: 26.1.0(canvas@3.1.2)
+      jsdom: 26.1.0(canvas@3.2.0)
     optionalDependencies:
-      canvas: 3.1.2
+      canvas: 3.2.0
 
   '@jest/environment@29.7.0':
     dependencies:
@@ -13952,7 +13952,7 @@ snapshots:
 
   caniuse-lite@1.0.30001735: {}
 
-  canvas@3.1.2:
+  canvas@3.2.0:
     dependencies:
       node-addon-api: 7.1.1
       prebuild-install: 7.1.3
@@ -16887,15 +16887,15 @@ snapshots:
       jest-util: 30.0.5
       pretty-format: 30.0.5
 
-  jest-environment-jsdom@30.0.5(canvas@3.1.2):
+  jest-environment-jsdom@30.0.5(canvas@3.2.0):
     dependencies:
       '@jest/environment': 30.0.5
-      '@jest/environment-jsdom-abstract': 30.0.5(canvas@3.1.2)(jsdom@26.1.0(canvas@3.1.2))
+      '@jest/environment-jsdom-abstract': 30.0.5(canvas@3.2.0)(jsdom@26.1.0(canvas@3.2.0))
       '@types/jsdom': 21.1.7
       '@types/node': 22.17.2
-      jsdom: 26.1.0(canvas@3.1.2)
+      jsdom: 26.1.0(canvas@3.2.0)
     optionalDependencies:
-      canvas: 3.1.2
+      canvas: 3.2.0
     transitivePeerDependencies:
       - bufferutil
       - supports-color
@@ -17190,7 +17190,7 @@ snapshots:
 
   jsbn@1.1.0: {}
 
-  jsdom@26.1.0(canvas@3.1.2):
+  jsdom@26.1.0(canvas@3.2.0):
     dependencies:
       cssstyle: 4.6.0
       data-urls: 5.0.0
@@ -17213,7 +17213,7 @@ snapshots:
       ws: 8.18.3
       xml-name-validator: 5.0.0
     optionalDependencies:
-      canvas: 3.1.2
+      canvas: 3.2.0
     transitivePeerDependencies:
       - bufferutil
       - supports-color
