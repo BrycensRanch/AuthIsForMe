@@ -189,7 +189,7 @@ importers:
         version: 7.28.3(@babel/core@7.28.3)
       '@bahmutov/cypress-code-coverage':
         specifier: ^2.6.1
-        version: 2.7.2(cypress@15.0.0)
+        version: 2.7.2(cypress@15.1.0)
       '@commitlint/cli':
         specifier: ^19.0.0
         version: 19.8.1(@types/node@22.18.0)(typescript@5.9.2)
@@ -204,7 +204,7 @@ importers:
         version: 3.0.2
       '@cypress/code-coverage':
         specifier: ^3.12.39
-        version: 3.14.6(@babel/core@7.28.3)(@babel/preset-env@7.28.3(@babel/core@7.28.3))(babel-loader@10.0.0(@babel/core@7.28.3)(webpack@5.101.0(@swc/core@1.13.5(@swc/helpers@0.5.17))))(cypress@15.0.0)(webpack@5.101.0(@swc/core@1.13.5(@swc/helpers@0.5.17)))
+        version: 3.14.6(@babel/core@7.28.3)(@babel/preset-env@7.28.3(@babel/core@7.28.3))(babel-loader@10.0.0(@babel/core@7.28.3)(webpack@5.101.0(@swc/core@1.13.5(@swc/helpers@0.5.17))))(cypress@15.1.0)(webpack@5.101.0(@swc/core@1.13.5(@swc/helpers@0.5.17)))
       '@happy-dom/jest-environment':
         specifier: ^18.0.0
         version: 18.0.1
@@ -222,7 +222,7 @@ importers:
         version: 1.31.1(typescript@5.9.2)
       '@percy/cypress':
         specifier: ^3.1.2
-        version: 3.1.6(cypress@15.0.0)
+        version: 3.1.6(cypress@15.1.0)
       '@swc/core':
         specifier: ^1.5.7
         version: 1.13.5(@swc/helpers@0.5.17)
@@ -231,7 +231,7 @@ importers:
         version: 0.2.39(@swc/core@1.13.5(@swc/helpers@0.5.17))
       '@testing-library/cypress':
         specifier: ^10.0.1
-        version: 10.1.0(cypress@15.0.0)
+        version: 10.1.0(cypress@15.1.0)
       '@testing-library/jest-dom':
         specifier: ^6.0.0
         version: 6.8.0
@@ -252,7 +252,7 @@ importers:
         version: 7.7.0
       '@types/testing-library__cypress':
         specifier: ^7.0.0
-        version: 7.0.0(cypress@15.0.0)
+        version: 7.0.0(cypress@15.1.0)
       '@types/testing-library__jest-dom':
         specifier: ^6.0.0
         version: 6.0.0
@@ -288,7 +288,7 @@ importers:
         version: 10.0.0
       cypress:
         specifier: ^15.0.0
-        version: 15.0.0
+        version: 15.1.0
       dotenv-mono:
         specifier: ^1.3.14
         version: 1.5.1
@@ -2917,6 +2917,9 @@ packages:
   '@types/node@22.18.0':
     resolution: {integrity: sha512-m5ObIqwsUp6BZzyiy4RdZpzWGub9bqLJMvZDD0QMXhxjqMHMENlj+SqF5QxoUwaQNFe+8kz8XM8ZQhqkQPTgMQ==}
 
+  '@types/node@22.18.1':
+    resolution: {integrity: sha512-rzSDyhn4cYznVG+PCzGe1lwuMYJrcBS1fc3JqSa2PvtABwWo+dZ1ij5OVok3tqfpEBCBoaR4d7upFJk73HRJDw==}
+
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
 
@@ -2947,8 +2950,8 @@ packages:
   '@types/sinonjs__fake-timers@8.1.1':
     resolution: {integrity: sha512-0kSuKjAS0TrGLJ0M/+8MaFkGsQhZpB6pxOmvS3K8FYI72K//YmdfoW9X2qPsAKh1mkwxGD5zib9s1FIFed6E8g==}
 
-  '@types/sizzle@2.3.9':
-    resolution: {integrity: sha512-xzLEyKB50yqCUPUJkIsrVvoWNfFUbIZI+RspLWt8u+tIW/BetMBZtgV2LY/2o+tYH8dRvQ+eoPf3NdhQCcLE2w==}
+  '@types/sizzle@2.3.10':
+    resolution: {integrity: sha512-TC0dmN0K8YcWEAEfiPi5gJP14eJe30TTGjkvek3iM/1NdHHsdCA/Td6GvNndMOo/iSnIsZ4HuuhrYPDAmbxzww==}
 
   '@types/sortablejs@1.15.8':
     resolution: {integrity: sha512-b79830lW+RZfwaztgs1aVPgbasJ8e7AXtZYHTELNXZPsERt4ymJdjV4OccDbHQAvHrCcFpbF78jkm0R6h/pZVg==}
@@ -3614,9 +3617,6 @@ packages:
   async-function@1.0.0:
     resolution: {integrity: sha512-hsU18Ae8CDTR6Kgu9DYf0EbCr/a5iGL0rytQDobUcdpYOKokk8LEjVphnXkDkgpi0wYVsqrXuP0bZxJaTqdgoA==}
     engines: {node: '>= 0.4'}
-
-  async@3.2.6:
-    resolution: {integrity: sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA==}
 
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
@@ -4397,8 +4397,8 @@ packages:
     resolution: {integrity: sha512-/fITjgjGU50vjQ4FH6eUoYu+iUoUKIXws2hL15JJpIR+BbTxaXQsMuuyjtNh2WqsSBS5nsaZHFsFecyw5CCAng==}
     engines: {node: '>=0.10.0'}
 
-  cypress@15.0.0:
-    resolution: {integrity: sha512-OH5Srk10qTzHYYt3BsP9V1DPYIAzms55s3xQn4mGmYO4k6pi25MCajDyPbiULfNDhNcthNQ2xmYvu1JdeEw1Hw==}
+  cypress@15.1.0:
+    resolution: {integrity: sha512-jS4EfyOa2W5KXCN02WBdmy4bpBBmLGe+INhZeCvzRksfJuzBSYp3rNg2G+hfOwPzM+wwMwOYCo/kEnH+5RsSjA==}
     engines: {node: ^20.0.0 || ^22.0.0 || >=24.0.0}
     hasBin: true
 
@@ -4448,6 +4448,9 @@ packages:
 
   dayjs@1.11.13:
     resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
+
+  dayjs@1.11.18:
+    resolution: {integrity: sha512-zFBQ7WFRvVRhKcWoUh+ZA1g2HVgUbsZm9sbddh8EC5iv93sui8DVVz1Npvz+r6meo9VKfa8NyLWBsQK1VvIKPA==}
 
   debounce@2.2.0:
     resolution: {integrity: sha512-Xks6RUDLZFdz8LIdR6q0MTH44k7FikOmnh5xkSjMig6ch45afc8sjTjRQf3P6ax8dMgcQrYO/AR2RGWURrruqw==}
@@ -5517,9 +5520,6 @@ packages:
     resolution: {integrity: sha512-Ln0UQDlxH1BapMu3GPtf7CuYNwRZf2gwCuPqbyG6pB8WfmFpzqcy4xtAaAMUhnNqjMKTiCPZG2oMT3YSx8U2NA==}
     engines: {node: '>=0.10.0'}
 
-  getos@3.2.1:
-    resolution: {integrity: sha512-U56CfOK17OKgTVqozZjUKNdkfEv6jk5WISBJ8SHoagjE6L69zOwl3Z+O8myjY9MEW3i2HPWQBt/LTbCgcC973Q==}
-
   getpass@0.1.7:
     resolution: {integrity: sha512-0fzj9JxOLfJ+XGLhR8ze3unN0KZCgZwiSSDz168VERjK8Wl8kVSdcu2kspd4s4wtAa1y/qrVRiAA0WclVsu0ng==}
 
@@ -6565,6 +6565,9 @@ packages:
 
   jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
+
+  jsonfile@6.2.0:
+    resolution: {integrity: sha512-FGuPw30AdOIUTRMC2OMRtQV+jkVj2cfPqSeWXv1NEAJ1qZ5zb1X6z1mFhbfOB/iy3ssJCD+3KuZ8r8C3uVFlAg==}
 
   jsonify@0.0.1:
     resolution: {integrity: sha512-2/Ki0GcmuqSrgFyelQq9M05y7PS0mEwuIzrf3f1fPqkVDVRvZrPZtVSMHxdgo8Aq0sxAOb/cr2aqqA3LeWHVPg==}
@@ -8907,6 +8910,12 @@ packages:
     os: [darwin, linux, win32, freebsd, openbsd, netbsd, sunos, android]
     hasBin: true
 
+  systeminformation@5.27.8:
+    resolution: {integrity: sha512-d3Z0gaQO1MlUxzDUKsmXz5y4TOBCMZ8IyijzaYOykV3AcNOTQ7mT+tpndUOXYNSxzLK3la8G32xiUFvZ0/s6PA==}
+    engines: {node: '>=8.0.0'}
+    os: [darwin, linux, win32, freebsd, openbsd, netbsd, sunos, android]
+    hasBin: true
+
   tabbable@6.2.0:
     resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
 
@@ -10519,13 +10528,13 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
 
-  '@bahmutov/cypress-code-coverage@2.7.2(cypress@15.0.0)':
+  '@bahmutov/cypress-code-coverage@2.7.2(cypress@15.1.0)':
     dependencies:
       '@actions/core': 1.11.1
       '@cypress/browserify-preprocessor': 3.0.2
       chalk: 4.1.2
       console.table: 0.10.0
-      cypress: 15.0.0
+      cypress: 15.1.0
       dayjs: 1.10.7
       debug: 4.3.7
       execa: 4.1.0
@@ -10728,14 +10737,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@cypress/code-coverage@3.14.6(@babel/core@7.28.3)(@babel/preset-env@7.28.3(@babel/core@7.28.3))(babel-loader@10.0.0(@babel/core@7.28.3)(webpack@5.101.0(@swc/core@1.13.5(@swc/helpers@0.5.17))))(cypress@15.0.0)(webpack@5.101.0(@swc/core@1.13.5(@swc/helpers@0.5.17)))':
+  '@cypress/code-coverage@3.14.6(@babel/core@7.28.3)(@babel/preset-env@7.28.3(@babel/core@7.28.3))(babel-loader@10.0.0(@babel/core@7.28.3)(webpack@5.101.0(@swc/core@1.13.5(@swc/helpers@0.5.17))))(cypress@15.1.0)(webpack@5.101.0(@swc/core@1.13.5(@swc/helpers@0.5.17)))':
     dependencies:
       '@babel/core': 7.28.3
       '@babel/preset-env': 7.28.3(@babel/core@7.28.3)
       '@cypress/webpack-preprocessor': 6.0.4(@babel/core@7.28.3)(@babel/preset-env@7.28.3(@babel/core@7.28.3))(babel-loader@10.0.0(@babel/core@7.28.3)(webpack@5.101.0(@swc/core@1.13.5(@swc/helpers@0.5.17))))(webpack@5.101.0(@swc/core@1.13.5(@swc/helpers@0.5.17)))
       babel-loader: 10.0.0(@babel/core@7.28.3)(webpack@5.101.0(@swc/core@1.13.5(@swc/helpers@0.5.17)))
       chalk: 4.1.2
-      cypress: 15.0.0
+      cypress: 15.1.0
       dayjs: 1.11.13
       debug: 4.4.0
       execa: 4.1.0
@@ -11950,10 +11959,10 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@percy/cypress@3.1.6(cypress@15.0.0)':
+  '@percy/cypress@3.1.6(cypress@15.1.0)':
     dependencies:
       '@percy/sdk-utils': 1.30.9
-      cypress: 15.0.0
+      cypress: 15.1.0
 
   '@percy/dom@1.31.1': {}
 
@@ -11968,7 +11977,7 @@ snapshots:
       '@percy/config': 1.31.1(typescript@5.9.2)
       '@percy/logger': 1.31.1
       '@percy/sdk-utils': 1.31.1
-      systeminformation: 5.27.7
+      systeminformation: 5.27.8
     transitivePeerDependencies:
       - typescript
 
@@ -12693,11 +12702,11 @@ snapshots:
 
   '@tanstack/virtual-core@3.13.12': {}
 
-  '@testing-library/cypress@10.1.0(cypress@15.0.0)':
+  '@testing-library/cypress@10.1.0(cypress@15.1.0)':
     dependencies:
       '@babel/runtime': 7.28.3
       '@testing-library/dom': 10.4.1
-      cypress: 15.0.0
+      cypress: 15.1.0
 
   '@testing-library/dom@10.4.1':
     dependencies:
@@ -12833,6 +12842,10 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
+  '@types/node@22.18.1':
+    dependencies:
+      undici-types: 6.21.0
+
   '@types/normalize-package-data@2.4.4': {}
 
   '@types/nprogress@0.2.3': {}
@@ -12861,7 +12874,7 @@ snapshots:
 
   '@types/sinonjs__fake-timers@8.1.1': {}
 
-  '@types/sizzle@2.3.9': {}
+  '@types/sizzle@2.3.10': {}
 
   '@types/sortablejs@1.15.8': {}
 
@@ -12873,9 +12886,9 @@ snapshots:
     dependencies:
       '@types/node': 22.18.0
 
-  '@types/testing-library__cypress@7.0.0(cypress@15.0.0)':
+  '@types/testing-library__cypress@7.0.0(cypress@15.1.0)':
     dependencies:
-      '@testing-library/cypress': 10.1.0(cypress@15.0.0)
+      '@testing-library/cypress': 10.1.0(cypress@15.1.0)
     transitivePeerDependencies:
       - cypress
 
@@ -13600,8 +13613,6 @@ snapshots:
   astral-regex@2.0.0: {}
 
   async-function@1.0.0: {}
-
-  async@3.2.6: {}
 
   asynckit@0.4.0: {}
 
@@ -14630,12 +14641,12 @@ snapshots:
     dependencies:
       array-find-index: 1.0.2
 
-  cypress@15.0.0:
+  cypress@15.1.0:
     dependencies:
       '@cypress/request': 3.0.9
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
       '@types/sinonjs__fake-timers': 8.1.1
-      '@types/sizzle': 2.3.9
+      '@types/sizzle': 2.3.10
       arch: 2.2.0
       blob-util: 2.0.2
       bluebird: 3.7.2
@@ -14648,7 +14659,7 @@ snapshots:
       cli-table3: 0.6.1
       commander: 6.2.1
       common-tags: 1.8.2
-      dayjs: 1.11.13
+      dayjs: 1.11.18
       debug: 4.4.1(supports-color@8.1.1)
       enquirer: 2.4.1
       eventemitter2: 6.4.7
@@ -14657,7 +14668,6 @@ snapshots:
       extract-zip: 2.0.1(supports-color@8.1.1)
       figures: 3.2.0
       fs-extra: 9.1.0
-      getos: 3.2.1
       hasha: 5.2.2
       is-installed-globally: 0.4.0
       lazy-ass: 1.6.0
@@ -14672,6 +14682,7 @@ snapshots:
       request-progress: 3.0.0
       semver: 7.7.2
       supports-color: 8.1.1
+      systeminformation: 5.27.7
       tmp: 0.2.5
       tree-kill: 1.2.2
       untildify: 4.0.0
@@ -14745,6 +14756,8 @@ snapshots:
   dayjs@1.10.7: {}
 
   dayjs@1.11.13: {}
+
+  dayjs@1.11.18: {}
 
   debounce@2.2.0: {}
 
@@ -15996,7 +16009,7 @@ snapshots:
     dependencies:
       at-least-node: 1.0.0
       graceful-fs: 4.2.11
-      jsonfile: 6.1.0
+      jsonfile: 6.2.0
       universalify: 2.0.1
 
   fs.realpath@1.0.0: {}
@@ -16089,10 +16102,6 @@ snapshots:
       - supports-color
 
   get-value@2.0.6: {}
-
-  getos@3.2.1:
-    dependencies:
-      async: 3.2.6
 
   getpass@0.1.7:
     dependencies:
@@ -17281,7 +17290,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.18.0
+      '@types/node': 22.18.1
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -17395,6 +17404,12 @@ snapshots:
   jsonc-parser@3.3.1: {}
 
   jsonfile@6.1.0:
+    dependencies:
+      universalify: 2.0.1
+    optionalDependencies:
+      graceful-fs: 4.2.11
+
+  jsonfile@6.2.0:
     dependencies:
       universalify: 2.0.1
     optionalDependencies:
@@ -19853,6 +19868,8 @@ snapshots:
       acorn-node: 1.8.2
 
   systeminformation@5.27.7: {}
+
+  systeminformation@5.27.8: {}
 
   tabbable@6.2.0: {}
 
