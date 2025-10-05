@@ -110,7 +110,7 @@ importers:
         version: 3.1.2(rollup@4.52.3)
       flowbite-react:
         specifier: ^0.12.0
-        version: 0.12.9(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.13)(typescript@5.9.3)
+        version: 0.12.9(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.14)(typescript@5.9.3)
       http-proxy:
         specifier: ^1.18.1
         version: 1.18.1
@@ -345,7 +345,7 @@ importers:
         version: 3.0.5(eslint@9.36.0(jiti@2.6.1))
       eslint-plugin-tailwindcss:
         specifier: ^3.17.0
-        version: 3.18.2(tailwindcss@4.1.13)
+        version: 3.18.2(tailwindcss@4.1.14)
       eslint-plugin-testing-library:
         specifier: ^7.0.0
         version: 7.11.0(eslint@9.36.0(jiti@2.6.1))(typescript@5.9.3)
@@ -429,7 +429,7 @@ importers:
         version: 2.7.0
       tailwindcss:
         specifier: ^4.0.0
-        version: 4.1.13
+        version: 4.1.14
       ts-jest:
         specifier: ^29.1.3
         version: 29.4.4(@babel/core@7.28.4)(@jest/transform@30.2.0)(@jest/types@30.2.0)(babel-jest@30.2.0(@babel/core@7.28.4))(jest-util@30.2.0)(jest@30.2.0(@types/node@22.18.8))(typescript@5.9.3)
@@ -3670,8 +3670,8 @@ packages:
     resolution: {integrity: sha512-5T6P4xPgpp0YDFvSWwEZ4NoE3aM4QBQXDzmVbraCkFj8zHM+mba8SyqB5DbZWyR7mYHo6Y7BdQo3MoA4m0TeQg==}
     engines: {node: '>=0.10.0'}
 
-  baseline-browser-mapping@2.8.11:
-    resolution: {integrity: sha512-i+sRXGhz4+QW8aACZ3+r1GAKMt0wlFpeA8M5rOQd0HEYw9zhDrlx9Wc8uQ0IdXakjJRthzglEwfB/yqIjO6iDg==}
+  baseline-browser-mapping@2.8.12:
+    resolution: {integrity: sha512-vAPMQdnyKCBtkmQA6FMCBvU9qFIppS3nzyXnEM+Lo2IAhG4Mpjv9cCxMudhgV3YdNNJv6TNqXy97dfRVL2LmaQ==}
     hasBin: true
 
   baseline-browser-mapping@2.8.6:
@@ -7140,6 +7140,9 @@ packages:
   node-releases@2.0.21:
     resolution: {integrity: sha512-5b0pgg78U3hwXkCM8Z9b2FJdPZlr9Psr9V2gQPESdGHqbntyFJKFW4r5TeWGFzafGY3hzs1JC62VEQMbl1JFkw==}
 
+  node-releases@2.0.23:
+    resolution: {integrity: sha512-cCmFDMSm26S6tQSDpBCg/NR8NENrVPhAJSf+XbxBG4rPFaaonlEoE9wHQmun+cls499TQGSb7ZyPBRlzgKfpeg==}
+
   normalize-package-data@2.5.0:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
 
@@ -8839,8 +8842,8 @@ packages:
   tailwind-merge@3.0.1:
     resolution: {integrity: sha512-AvzE8FmSoXC7nC+oU5GlQJbip2UO7tmOhOfQyOmPhrStOGXHU08j8mZEHZ4BmCqY5dWTCo4ClWkNyRNx1wpT0g==}
 
-  tailwindcss@4.1.13:
-    resolution: {integrity: sha512-i+zidfmTqtwquj4hMEwdjshYYgMbOrPzb9a0M3ZgNa0JMoZeFC6bxZvO8yr8ozS6ix2SDz0+mvryPeBs2TFE+w==}
+  tailwindcss@4.1.14:
+    resolution: {integrity: sha512-b7pCxjGO98LnxVkKjaZSDeNuljC4ueKUddjENJOADtubtdo8llTaJy7HwBMeLNSSo2N5QIAgklslK1+Ir8r6CA==}
 
   take-n-pipe@1.1.2:
     resolution: {integrity: sha512-PFkCips2WFAToQ6x+qcOKdOV6/OV28di1axYJzSkSuwWPOFjqflwFficMzNoxJwoKm2AcwmCMEgp+kgjWDVTUw==}
@@ -13572,7 +13575,7 @@ snapshots:
       mixin-deep: 1.3.2
       pascalcase: 0.1.1
 
-  baseline-browser-mapping@2.8.11: {}
+  baseline-browser-mapping@2.8.12: {}
 
   baseline-browser-mapping@2.8.6: {}
 
@@ -13808,10 +13811,10 @@ snapshots:
 
   browserslist@4.26.3:
     dependencies:
-      baseline-browser-mapping: 2.8.11
+      baseline-browser-mapping: 2.8.12
       caniuse-lite: 1.0.30001747
       electron-to-chromium: 1.5.230
-      node-releases: 2.0.21
+      node-releases: 2.0.23
       update-browserslist-db: 1.1.3(browserslist@4.26.3)
 
   bs-logger@0.2.6:
@@ -15200,11 +15203,11 @@ snapshots:
       semver: 7.7.2
       typescript: 5.9.3
 
-  eslint-plugin-tailwindcss@3.18.2(tailwindcss@4.1.13):
+  eslint-plugin-tailwindcss@3.18.2(tailwindcss@4.1.14):
     dependencies:
       fast-glob: 3.3.3
       postcss: 8.5.6
-      tailwindcss: 4.1.13
+      tailwindcss: 4.1.14
 
   eslint-plugin-testing-library@7.11.0(eslint@9.36.0(jiti@2.6.1))(typescript@5.9.3):
     dependencies:
@@ -15714,7 +15717,7 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  flowbite-react@0.12.9(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.13)(typescript@5.9.3):
+  flowbite-react@0.12.9(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.14)(typescript@5.9.3):
     dependencies:
       '@floating-ui/core': 1.6.9
       '@floating-ui/react': 0.27.3(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -15732,7 +15735,7 @@ snapshots:
       recast: 0.23.11
       tailwind-merge-v2: tailwind-merge@2.6.0
       tailwind-merge-v3: tailwind-merge@3.0.1
-      tailwindcss: 4.1.13
+      tailwindcss: 4.1.14
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -17847,6 +17850,8 @@ snapshots:
 
   node-releases@2.0.21: {}
 
+  node-releases@2.0.23: {}
+
   normalize-package-data@2.5.0:
     dependencies:
       hosted-git-info: 2.8.9
@@ -19661,7 +19666,7 @@ snapshots:
 
   tailwind-merge@3.0.1: {}
 
-  tailwindcss@4.1.13: {}
+  tailwindcss@4.1.14: {}
 
   take-n-pipe@1.1.2: {}
 
