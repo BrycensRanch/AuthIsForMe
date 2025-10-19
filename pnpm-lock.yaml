@@ -189,7 +189,7 @@ importers:
         version: 7.28.3(@babel/core@7.28.4)
       '@bahmutov/cypress-code-coverage':
         specifier: ^2.6.1
-        version: 2.7.2(cypress@15.4.0)
+        version: 2.7.2(cypress@15.5.0)
       '@commitlint/cli':
         specifier: ^20.0.0
         version: 20.1.0(@types/node@22.18.11)(typescript@5.9.3)
@@ -204,7 +204,7 @@ importers:
         version: 3.0.2
       '@cypress/code-coverage':
         specifier: ^3.12.39
-        version: 3.14.7(@babel/core@7.28.4)(@babel/preset-env@7.28.3(@babel/core@7.28.4))(babel-loader@10.0.0(@babel/core@7.28.4)(webpack@5.102.1(@swc/core@1.13.5(@swc/helpers@0.5.17))))(cypress@15.4.0)(webpack@5.102.1(@swc/core@1.13.5(@swc/helpers@0.5.17)))
+        version: 3.14.7(@babel/core@7.28.4)(@babel/preset-env@7.28.3(@babel/core@7.28.4))(babel-loader@10.0.0(@babel/core@7.28.4)(webpack@5.102.1(@swc/core@1.13.5(@swc/helpers@0.5.17))))(cypress@15.5.0)(webpack@5.102.1(@swc/core@1.13.5(@swc/helpers@0.5.17)))
       '@happy-dom/jest-environment':
         specifier: ^20.0.0
         version: 20.0.5(@jest/environment@30.2.0)(@jest/fake-timers@30.2.0)(@jest/types@30.2.0)(jest-mock@30.2.0)(jest-util@30.2.0)
@@ -222,7 +222,7 @@ importers:
         version: 1.31.4(typescript@5.9.3)
       '@percy/cypress':
         specifier: ^3.1.2
-        version: 3.1.6(cypress@15.4.0)
+        version: 3.1.6(cypress@15.5.0)
       '@swc/core':
         specifier: ^1.5.7
         version: 1.13.5(@swc/helpers@0.5.17)
@@ -231,7 +231,7 @@ importers:
         version: 0.2.39(@swc/core@1.13.5(@swc/helpers@0.5.17))
       '@testing-library/cypress':
         specifier: ^10.0.1
-        version: 10.1.0(cypress@15.4.0)
+        version: 10.1.0(cypress@15.5.0)
       '@testing-library/jest-dom':
         specifier: ^6.0.0
         version: 6.9.1
@@ -252,7 +252,7 @@ importers:
         version: 7.7.1
       '@types/testing-library__cypress':
         specifier: ^7.0.0
-        version: 7.0.0(cypress@15.4.0)
+        version: 7.0.0(cypress@15.5.0)
       '@types/testing-library__jest-dom':
         specifier: ^6.0.0
         version: 6.0.0
@@ -288,7 +288,7 @@ importers:
         version: 10.1.0
       cypress:
         specifier: ^15.0.0
-        version: 15.4.0
+        version: 15.5.0
       dotenv-mono:
         specifier: ^1.3.14
         version: 1.5.1
@@ -4282,8 +4282,8 @@ packages:
     resolution: {integrity: sha512-/fITjgjGU50vjQ4FH6eUoYu+iUoUKIXws2hL15JJpIR+BbTxaXQsMuuyjtNh2WqsSBS5nsaZHFsFecyw5CCAng==}
     engines: {node: '>=0.10.0'}
 
-  cypress@15.4.0:
-    resolution: {integrity: sha512-+GC/Y/LXAcaMCzfuM7vRx5okRmonceZbr0ORUAoOrZt/5n2eGK8yh04bok1bWSjZ32wRHrZESqkswQ6biArN5w==}
+  cypress@15.5.0:
+    resolution: {integrity: sha512-7jXBsh5hTfjxr9QQONC2IbdTj0nxSyU8x4eiarMZBzXzCj3pedKviUx8JnLcE4vL8e0TsOzp70WSLRORjEssRA==}
     engines: {node: ^20.1.0 || ^22.0.0 || >=24.0.0}
     hasBin: true
 
@@ -10360,13 +10360,13 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
 
-  '@bahmutov/cypress-code-coverage@2.7.2(cypress@15.4.0)':
+  '@bahmutov/cypress-code-coverage@2.7.2(cypress@15.5.0)':
     dependencies:
       '@actions/core': 1.11.1
       '@cypress/browserify-preprocessor': 3.0.2
       chalk: 4.1.2
       console.table: 0.10.0
-      cypress: 15.4.0
+      cypress: 15.5.0
       dayjs: 1.10.7
       debug: 4.3.7
       execa: 4.1.0
@@ -10569,14 +10569,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@cypress/code-coverage@3.14.7(@babel/core@7.28.4)(@babel/preset-env@7.28.3(@babel/core@7.28.4))(babel-loader@10.0.0(@babel/core@7.28.4)(webpack@5.102.1(@swc/core@1.13.5(@swc/helpers@0.5.17))))(cypress@15.4.0)(webpack@5.102.1(@swc/core@1.13.5(@swc/helpers@0.5.17)))':
+  '@cypress/code-coverage@3.14.7(@babel/core@7.28.4)(@babel/preset-env@7.28.3(@babel/core@7.28.4))(babel-loader@10.0.0(@babel/core@7.28.4)(webpack@5.102.1(@swc/core@1.13.5(@swc/helpers@0.5.17))))(cypress@15.5.0)(webpack@5.102.1(@swc/core@1.13.5(@swc/helpers@0.5.17)))':
     dependencies:
       '@babel/core': 7.28.4
       '@babel/preset-env': 7.28.3(@babel/core@7.28.4)
       '@cypress/webpack-preprocessor': 6.0.4(@babel/core@7.28.4)(@babel/preset-env@7.28.3(@babel/core@7.28.4))(babel-loader@10.0.0(@babel/core@7.28.4)(webpack@5.102.1(@swc/core@1.13.5(@swc/helpers@0.5.17))))(webpack@5.102.1(@swc/core@1.13.5(@swc/helpers@0.5.17)))
       babel-loader: 10.0.0(@babel/core@7.28.4)(webpack@5.102.1(@swc/core@1.13.5(@swc/helpers@0.5.17)))
       chalk: 4.1.2
-      cypress: 15.4.0
+      cypress: 15.5.0
       dayjs: 1.11.13
       debug: 4.4.0
       execa: 4.1.0
@@ -11776,10 +11776,10 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@percy/cypress@3.1.6(cypress@15.4.0)':
+  '@percy/cypress@3.1.6(cypress@15.5.0)':
     dependencies:
       '@percy/sdk-utils': 1.30.9
-      cypress: 15.4.0
+      cypress: 15.5.0
 
   '@percy/dom@1.31.4': {}
 
@@ -12520,11 +12520,11 @@ snapshots:
 
   '@tanstack/virtual-core@3.13.12': {}
 
-  '@testing-library/cypress@10.1.0(cypress@15.4.0)':
+  '@testing-library/cypress@10.1.0(cypress@15.5.0)':
     dependencies:
       '@babel/runtime': 7.28.4
       '@testing-library/dom': 10.4.1
-      cypress: 15.4.0
+      cypress: 15.5.0
 
   '@testing-library/dom@10.4.1':
     dependencies:
@@ -12699,9 +12699,9 @@ snapshots:
     dependencies:
       '@types/node': 22.18.11
 
-  '@types/testing-library__cypress@7.0.0(cypress@15.4.0)':
+  '@types/testing-library__cypress@7.0.0(cypress@15.5.0)':
     dependencies:
-      '@testing-library/cypress': 10.1.0(cypress@15.4.0)
+      '@testing-library/cypress': 10.1.0(cypress@15.5.0)
     transitivePeerDependencies:
       - cypress
 
@@ -14323,7 +14323,7 @@ snapshots:
     dependencies:
       array-find-index: 1.0.2
 
-  cypress@15.4.0:
+  cypress@15.5.0:
     dependencies:
       '@cypress/request': 3.0.9
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
