@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: JustinBeckwith/linkinator-action@v1
+      - uses: JustinBeckwith/linkinator-action@v2
   await-for-vercel-deployment:
     name: Await current deployment to be ready (Ubuntu 18.04)
     runs-on: ubuntu-latest
