@@ -152,17 +152,17 @@ jobs:
         if: ${{ !github.event.act }}
         uses: codecov/codecov-action@v5
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: failure()
         with:
           name: cypress-screenshots
           path: ./frontend/cypress/screenshots
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: failure()
         with:
           name: cypress-videos
           path: ./frontend/cypress/videos
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: ${{ !github.event.act }}
         with:
           name: Frontend Build
@@ -170,7 +170,7 @@ jobs:
             ./frontend/.next
             ./frontend/out
             ./frontend/public
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: ${{ !github.event.act }}
         with:
           name: Backend Build
