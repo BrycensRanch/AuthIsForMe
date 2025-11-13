@@ -106,8 +106,8 @@ importers:
         specifier: ^5.0.2
         version: 5.0.2
       flowbite:
-        specifier: ^3.0.0
-        version: 3.1.2(rollup@4.52.5)
+        specifier: ^4.0.0
+        version: 4.0.0(rollup@4.52.5)
       flowbite-react:
         specifier: ^0.12.0
         version: 0.12.10(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(tailwindcss@4.1.17)(typescript@5.9.3)
@@ -5373,8 +5373,8 @@ packages:
   flowbite@2.5.2:
     resolution: {integrity: sha512-kwFD3n8/YW4EG8GlY3Od9IoKND97kitO+/ejISHSqpn3vw2i5K/+ZI8Jm2V+KC4fGdnfi0XZ+TzYqQb4Q1LshA==}
 
-  flowbite@3.1.2:
-    resolution: {integrity: sha512-MkwSgbbybCYgMC+go6Da5idEKUFfMqc/AmSjm/2ZbdmvoKf5frLPq/eIhXc9P+rC8t9boZtUXzHDgt5whZ6A/Q==}
+  flowbite@4.0.0:
+    resolution: {integrity: sha512-xHJ0zTJKExOKHYZ+NehRcKIgdJUvhsr8Fy+X6+9WG/K77SbPZkvNrR+laSruocG1FUt9TNxXVwL9g5JhCtv4HA==}
 
   follow-redirects@1.15.11:
     resolution: {integrity: sha512-deG2P0JfjrTxl50XGCDyfI97ZGVCxIpfKYmfyrQ54n5FO/0gfIES8C/Psl6kWVDolizcaaxZJnTS0QSMxvnsBQ==}
@@ -16005,12 +16005,13 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  flowbite@3.1.2(rollup@4.52.5):
+  flowbite@4.0.0(rollup@4.52.5):
     dependencies:
       '@popperjs/core': 2.11.8
       flowbite-datepicker: 1.3.2(rollup@4.52.5)
       mini-svg-data-uri: 1.4.4
       postcss: 8.5.6
+      tailwindcss: 4.1.17
     transitivePeerDependencies:
       - rollup
 
