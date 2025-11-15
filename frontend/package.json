@@ -85,7 +85,7 @@
 		"prop-types": "^15.8.1",
 		"react-apexcharts": "^1.4.1",
 		"react-icons": "^5.2.1",
-		"react-lite-youtube-embed": "^2.4.0",
+		"react-lite-youtube-embed": "^3.0.0",
 		"react-sortablejs": "^6.1.4",
 		"semver": "^7.6.2",
 		"sharp": "^0.34.0",
