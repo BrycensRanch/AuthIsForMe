@@ -222,7 +222,7 @@ importers:
         version: 1.31.4(typescript@5.9.3)
       '@percy/cypress':
         specifier: ^3.1.2
-        version: 3.1.6(cypress@15.7.0)
+        version: 3.1.7(cypress@15.7.0)
       '@swc/core':
         specifier: ^1.5.7
         version: 1.15.3(@swc/helpers@0.5.17)
@@ -2154,8 +2154,8 @@ packages:
     resolution: {integrity: sha512-rqQBt8m1/jdh0xwplepj56eHnabT12GBabfOesy3LXH+1jMBm8zwqoDap9fm8MQXUhbaDdb3rWAr/u/fWOTeKQ==}
     engines: {node: '>=14'}
 
-  '@percy/cypress@3.1.6':
-    resolution: {integrity: sha512-kMc2tXQ7LAH31lB7FckqMpdvguIyxwV4MLTs7s8QLXVChQjpE78HbKyvLtYh5uLOF6Ka6mWyMvD2bkhmd0JJJg==}
+  '@percy/cypress@3.1.7':
+    resolution: {integrity: sha512-UXPE7egnOOX/nv5oSwhTG7BEGio/HjnFdMuBR1Vbm2Izj3pUwMkxGqZRJsNtFuGl2iVckwbh9SuFoeKIdcaTcg==}
     peerDependencies:
       cypress: '>=3'
 
@@ -2172,10 +2172,6 @@ packages:
 
   '@percy/monitoring@1.31.4':
     resolution: {integrity: sha512-B/Ek1OxJsDBrrs4rolpCU5SrVf9Fnvo5yIF3m1GWIVfcvpuslmysxLtMDpJTo6+3PbHBjuAVBFV4SxQFbnQ7Vg==}
-    engines: {node: '>=14'}
-
-  '@percy/sdk-utils@1.30.9':
-    resolution: {integrity: sha512-vgzWUa1eDWRS+q/zlVILwP4QDFdmxPIiH7FbQ2UGA4rh3mDYporIq5OY+x2YMMV9/Q4uhi1p3ZxXW2Svg6cOHw==}
     engines: {node: '>=14'}
 
   '@percy/sdk-utils@1.31.4':
@@ -6003,8 +5999,8 @@ packages:
     resolution: {integrity: sha512-2dYz766i9HprMBasCMvHMuazJ7u4WzhJwo5kb3iPSiW/iRYV6uPari3zHoqZlnuaR7V1bEiNMxikhp37rdBXbw==}
     engines: {node: '>=12'}
 
-  ip-address@10.0.1:
-    resolution: {integrity: sha512-NWv9YLW4PoW2B7xtzaS3NCot75m6nK7Icdv0o3lfMceJVRfSoQwqD4wEH5rLwoKJwUiZ/rfpiVBhnaF0FK4HoA==}
+  ip-address@10.1.0:
+    resolution: {integrity: sha512-XXADHxXmvT9+CRxhXg56LJovE+bmWnEWB78LB83VZTprKTmaC5QfruXocxzTZ2Kl0DNwKuBdlIhjL8LeY8Sf8Q==}
     engines: {node: '>= 12'}
 
   is-accessor-descriptor@1.0.1:
@@ -12079,10 +12075,12 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@percy/cypress@3.1.6(cypress@15.7.0)':
+  '@percy/cypress@3.1.7(cypress@15.7.0)':
     dependencies:
-      '@percy/sdk-utils': 1.30.9
+      '@percy/sdk-utils': 1.31.4
       cypress: 15.7.0
+    transitivePeerDependencies:
+      - supports-color
 
   '@percy/dom@1.31.4': {}
 
@@ -12101,8 +12099,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
-
-  '@percy/sdk-utils@1.30.9': {}
 
   '@percy/sdk-utils@1.31.4':
     dependencies:
@@ -16703,7 +16699,7 @@ snapshots:
       from2: 2.3.0
       p-is-promise: 3.0.0
 
-  ip-address@10.0.1: {}
+  ip-address@10.1.0: {}
 
   is-accessor-descriptor@1.0.1:
     dependencies:
@@ -19662,7 +19658,7 @@ snapshots:
 
   socks@2.8.7:
     dependencies:
-      ip-address: 10.0.1
+      ip-address: 10.1.0
       smart-buffer: 4.2.0
 
   sort-array@4.1.5:
