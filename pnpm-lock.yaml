@@ -92,7 +92,7 @@ importers:
         version: 10.27.0
       '@socialgouv/matomo-next':
         specifier: ^1.9.0
-        version: 1.10.0(next@16.0.7(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))
+        version: 1.11.0(next@16.0.7(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))
       '@t3-oss/env-nextjs':
         specifier: ^0.13.0
         version: 0.13.8(typescript@5.9.3)(zod@4.1.13)
@@ -2645,8 +2645,8 @@ packages:
   '@sinonjs/fake-timers@13.0.5':
     resolution: {integrity: sha512-36/hTbH2uaWuGVERyC6da9YwGWnzUZXuPro/F2LfsdOsLnCojz/iSH8MxUt/FD2S5XBSVPhmArFUXcpCQ2Hkiw==}
 
-  '@socialgouv/matomo-next@1.10.0':
-    resolution: {integrity: sha512-Cp4EMnpzPO2JAinW56QrT6t+AJnM7pxUS3RUmfBWs9SIxHsqxivdmb+wSS8bUd/lkUXtLgBVw9dGOaK0EMwSEg==}
+  '@socialgouv/matomo-next@1.11.0':
+    resolution: {integrity: sha512-48XLGnq4LzwOHf2wgm76UXFnGGKOKeOal4+QHeewQH+VY/gxJiIZ1k0o8LuUvKOHThW5Mqco8yAGNe25f7s28g==}
     peerDependencies:
       next: '>= 9.5.5'
 
@@ -3003,6 +3003,9 @@ packages:
 
   '@types/node@24.10.1':
     resolution: {integrity: sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==}
+
+  '@types/node@24.10.2':
+    resolution: {integrity: sha512-WOhQTZ4G8xZ1tjJTvKOpyEVSGgOTvJAfDK3FNFgELyaTpzhdgHVHeqW8V+UJvzF5BT+/B54T/1S2K6gd9c7bbA==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -12763,7 +12766,7 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.1
 
-  '@socialgouv/matomo-next@1.10.0(next@16.0.7(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))':
+  '@socialgouv/matomo-next@1.11.0(next@16.0.7(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1))':
     dependencies:
       next: 16.0.7(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
 
@@ -13077,6 +13080,10 @@ snapshots:
       undici-types: 6.21.0
 
   '@types/node@24.10.1':
+    dependencies:
+      undici-types: 7.16.0
+
+  '@types/node@24.10.2':
     dependencies:
       undici-types: 7.16.0
 
@@ -17487,7 +17494,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 24.10.1
+      '@types/node': 24.10.2
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
