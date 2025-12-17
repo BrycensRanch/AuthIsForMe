@@ -110,7 +110,7 @@ importers:
         version: 4.0.1(rollup@4.53.5)
       flowbite-react:
         specifier: ^0.12.0
-        version: 0.12.13(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(tailwindcss@4.1.18)(typescript@5.9.3)
+        version: 0.12.14(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(tailwindcss@4.1.18)(typescript@5.9.3)
       http-proxy:
         specifier: ^1.18.1
         version: 1.18.1
@@ -5390,8 +5390,8 @@ packages:
   flowbite-datepicker@2.0.0:
     resolution: {integrity: sha512-m81hl0Bimq45MUg4maJLOnXrX+C9lZ0AkjMb9uotuVUSr729k/YiymWDfVAm63AYDH7g7y3rI3ke3XaBzWWqLw==}
 
-  flowbite-react@0.12.13:
-    resolution: {integrity: sha512-ReWH7Lw8tkuBMNf1AaQ8oFJ01SOv9cCnbx6ZoL5gwwZqiYDCnIsGev3yj4L8DlscvuvB4p0t6RVvMYHPJFSrFA==}
+  flowbite-react@0.12.14:
+    resolution: {integrity: sha512-+dr/9xGOmVa/iS6gp2tzorifpNjo+wZX3ON/Wshwvoo5//g5k9zQ7oQWlZMntqrvPJFACthOEy4xgMYMHbuFNA==}
     hasBin: true
     peerDependencies:
       react: ^18 || ^19
@@ -16033,7 +16033,7 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  flowbite-react@0.12.13(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(tailwindcss@4.1.18)(typescript@5.9.3):
+  flowbite-react@0.12.14(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(tailwindcss@4.1.18)(typescript@5.9.3):
     dependencies:
       '@floating-ui/core': 1.7.3
       '@floating-ui/react': 0.27.16(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
