@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: 🛑 Cancel Previous Runs
         if: ${{ !github.event.act }}
-        uses: styfle/cancel-workflow-action@0.12.1
+        uses: styfle/cancel-workflow-action@0.13.0
 
       - uses: actions/checkout@v6
 
