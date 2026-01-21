@@ -167,7 +167,7 @@ importers:
         version: 1.2.0
       svgmap:
         specifier: ^2.10.1
-        version: 2.18.3
+        version: 2.18.4
       three:
         specifier: ^0.182.0
         version: 0.182.0
@@ -9022,8 +9022,8 @@ packages:
   svg-pan-zoom@3.6.2:
     resolution: {integrity: sha512-JwnvRWfVKw/Xzfe6jriFyfey/lWJLq4bUh2jwoR5ChWQuQoOH8FEh1l/bEp46iHHKHEJWIyFJETbazraxNWECg==}
 
-  svgmap@2.18.3:
-    resolution: {integrity: sha512-922pyizVtLCF78nhSmD8DxC52Q0+T04MWoS5YmE6LfTbF6NPuHy6ncOooIkwKsBYNhsI9Fej06jp8mChUEJ7ow==}
+  svgmap@2.18.4:
+    resolution: {integrity: sha512-MJnu3xawvNPa8XZP99TPwhFjY5LbI+l2+9kT7+kmDSkfqpNzJbvK5MhR55ioS2ezhr3Xd3O0sbKxgdSwPuu5zg==}
 
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
@@ -20071,7 +20071,7 @@ snapshots:
 
   svg-pan-zoom@3.6.2: {}
 
-  svgmap@2.18.3:
+  svgmap@2.18.4:
     dependencies:
       svg-pan-zoom: 3.6.2
 
