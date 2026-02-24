@@ -341,8 +341,8 @@ importers:
         specifier: ^12.1.0
         version: 12.1.1(eslint@10.0.2(jiti@2.6.1))
       eslint-plugin-sonarjs:
-        specifier: ^3.0.0
-        version: 3.0.7(eslint@10.0.2(jiti@2.6.1))
+        specifier: ^4.0.0
+        version: 4.0.0(eslint@10.0.2(jiti@2.6.1))
       eslint-plugin-tailwindcss:
         specifier: ^3.17.0
         version: 3.18.2(tailwindcss@4.2.1)
@@ -1621,10 +1621,6 @@ packages:
 
   '@isaacs/brace-expansion@5.0.0':
     resolution: {integrity: sha512-ZT55BDLV0yv0RBm2czMiZ+SqCGO7AvmOM3G/w2xhVPH+te0aKgFjmBvGlL1dH+ql2tgGO3MVrbb3jCKyvpgnxA==}
-    engines: {node: 20 || >=22}
-
-  '@isaacs/brace-expansion@5.0.1':
-    resolution: {integrity: sha512-WMz71T1JS624nWj2n2fnYAuPovhv7EUhk69R6i9dsVyzxt5eM3bjwvgk9L+APE1TRscGysAVMANkB0jh0LQZrQ==}
     engines: {node: 20 || >=22}
 
   '@isaacs/cliui@8.0.2':
@@ -5342,10 +5338,10 @@ packages:
     peerDependencies:
       eslint: '>=5.0.0'
 
-  eslint-plugin-sonarjs@3.0.7:
-    resolution: {integrity: sha512-62jB20krIPvcwBLAyG3VVKa2ce2j2lL1yCb8Y0ylMRR/dLvCCTiQx8gQbXb+G81k1alPZ2/I3muZinqWQdBbzw==}
+  eslint-plugin-sonarjs@4.0.0:
+    resolution: {integrity: sha512-ihyH9HO52OeeWer/gWRndkW/ZhGqx9HDg+Iptu+ApSfiomT2LzhHgHCoyJrhh7DjCyKhjU3Hmmz1pzcXRf7B3g==}
     peerDependencies:
-      eslint: ^8.0.0 || ^9.0.0
+      eslint: ^8.0.0 || ^9.0.0 || ^10.0.0
 
   eslint-plugin-tailwindcss@3.18.2:
     resolution: {integrity: sha512-QbkMLDC/OkkjFQ1iz/5jkMdHfiMu/uwujUHLAJK5iwNHD8RTxVTlsUezE0toTZ6VhybNBsk+gYGPDq2agfeRNA==}
@@ -7403,8 +7399,8 @@ packages:
     resolution: {integrity: sha512-enIvLvRAFZYXJzkCYG5RKmPfrFArdLv+R+lbQ53BmIMLIry74bjKzX6iHAm8WYamJkhSSEabrWN5D97XnKObjQ==}
     engines: {node: 20 || >=22}
 
-  minimatch@10.1.2:
-    resolution: {integrity: sha512-fu656aJ0n2kcXwsnwnv9g24tkU5uSmOlTjd6WyyaKm2Z+h1qmY6bAjrcaIxF/BslFqbZ8UBtbJi7KgQOZD2PTw==}
+  minimatch@10.2.1:
+    resolution: {integrity: sha512-MClCe8IL5nRRmawL6ib/eT4oLyeKMGCghibcDWK+J0hh0Q8kqSdia6BvbRMVk6mPa6WqUa5uR2oxt6C5jd533A==}
     engines: {node: 20 || >=22}
 
   minimatch@10.2.2:
@@ -11527,10 +11523,6 @@ snapshots:
   '@isaacs/balanced-match@4.0.1': {}
 
   '@isaacs/brace-expansion@5.0.0':
-    dependencies:
-      '@isaacs/balanced-match': 4.0.1
-
-  '@isaacs/brace-expansion@5.0.1':
     dependencies:
       '@isaacs/balanced-match': 4.0.1
 
@@ -15980,18 +15972,20 @@ snapshots:
     dependencies:
       eslint: 10.0.2(jiti@2.6.1)
 
-  eslint-plugin-sonarjs@3.0.7(eslint@10.0.2(jiti@2.6.1)):
+  eslint-plugin-sonarjs@4.0.0(eslint@10.0.2(jiti@2.6.1)):
     dependencies:
       '@eslint-community/regexpp': 4.12.2
       builtin-modules: 3.3.0
       bytes: 3.1.2
       eslint: 10.0.2(jiti@2.6.1)
       functional-red-black-tree: 1.0.1
+      globals: 17.3.0
       jsx-ast-utils-x: 0.1.0
       lodash.merge: 4.6.2
-      minimatch: 10.1.2
+      minimatch: 10.2.1
       scslre: 0.3.0
       semver: 7.7.4
+      ts-api-utils: 2.4.0(typescript@5.9.3)
       typescript: 5.9.3
 
   eslint-plugin-tailwindcss@3.18.2(tailwindcss@4.2.1):
@@ -18422,9 +18416,9 @@ snapshots:
     dependencies:
       '@isaacs/brace-expansion': 5.0.0
 
-  minimatch@10.1.2:
+  minimatch@10.2.1:
     dependencies:
-      '@isaacs/brace-expansion': 5.0.1
+      brace-expansion: 5.0.3
 
   minimatch@10.2.2:
     dependencies:
