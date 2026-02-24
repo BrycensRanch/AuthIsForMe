@@ -110,7 +110,7 @@ importers:
         version: 4.0.1(rollup@4.57.0)
       flowbite-react:
         specifier: ^0.12.0
-        version: 0.12.17(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(tailwindcss@4.1.18)
+        version: 0.12.17(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(tailwindcss@4.2.1)
       http-proxy:
         specifier: ^1.18.1
         version: 1.18.1
@@ -345,7 +345,7 @@ importers:
         version: 3.0.7(eslint@10.0.2(jiti@2.6.1))
       eslint-plugin-tailwindcss:
         specifier: ^3.17.0
-        version: 3.18.2(tailwindcss@4.1.18)
+        version: 3.18.2(tailwindcss@4.2.1)
       eslint-plugin-testing-library:
         specifier: ^7.0.0
         version: 7.15.4(eslint@10.0.2(jiti@2.6.1))(typescript@5.9.3)
@@ -429,7 +429,7 @@ importers:
         version: 2.7.0
       tailwindcss:
         specifier: ^4.0.0
-        version: 4.1.18
+        version: 4.2.1
       ts-jest:
         specifier: ^29.1.3
         version: 29.4.6(@babel/core@7.29.0)(@jest/transform@30.2.0)(@jest/types@30.2.0)(babel-jest@30.2.0(@babel/core@7.29.0))(jest-util@30.2.0)(jest@30.2.0(@types/node@24.10.13))(typescript@5.9.3)
@@ -9279,6 +9279,9 @@ packages:
   tailwindcss@4.1.18:
     resolution: {integrity: sha512-4+Z+0yiYyEtUVCScyfHCxOYP06L5Ne+JiHhY2IjR2KWMIWhJOYZKLSGZaP5HkZ8+bY0cxfzwDE5uOmzFXyIwxw==}
 
+  tailwindcss@4.2.1:
+    resolution: {integrity: sha512-/tBrSQ36vCleJkAOsy9kbNTgaxvGbyOamC30PRePTQe/o1MFwEKHQk4Cn7BNGaPtjp+PuUrByJehM1hgxfq4sw==}
+
   take-n-pipe@1.1.2:
     resolution: {integrity: sha512-PFkCips2WFAToQ6x+qcOKdOV6/OV28di1axYJzSkSuwWPOFjqflwFficMzNoxJwoKm2AcwmCMEgp+kgjWDVTUw==}
 
@@ -15968,11 +15971,11 @@ snapshots:
       semver: 7.7.4
       typescript: 5.9.3
 
-  eslint-plugin-tailwindcss@3.18.2(tailwindcss@4.1.18):
+  eslint-plugin-tailwindcss@3.18.2(tailwindcss@4.2.1):
     dependencies:
       fast-glob: 3.3.3
       postcss: 8.5.6
-      tailwindcss: 4.1.18
+      tailwindcss: 4.2.1
 
   eslint-plugin-testing-library@7.15.4(eslint@10.0.2(jiti@2.6.1))(typescript@5.9.3):
     dependencies:
@@ -16464,7 +16467,7 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
-  flowbite-react@0.12.17(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(tailwindcss@4.1.18):
+  flowbite-react@0.12.17(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(tailwindcss@4.2.1):
     dependencies:
       '@floating-ui/core': 1.7.4
       '@floating-ui/react': 0.27.17(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -16481,7 +16484,7 @@ snapshots:
       react-dom: 19.2.4(react@19.2.4)
       tailwind-merge-v2: tailwind-merge@2.6.1
       tailwind-merge-v3: tailwind-merge@3.4.0
-      tailwindcss: 4.1.18
+      tailwindcss: 4.2.1
 
   flowbite@4.0.1(rollup@4.57.0):
     dependencies:
@@ -16489,7 +16492,7 @@ snapshots:
       flowbite-datepicker: 2.0.0(rollup@4.57.0)
       mini-svg-data-uri: 1.4.4
       postcss: 8.5.6
-      tailwindcss: 4.1.18
+      tailwindcss: 4.2.1
     transitivePeerDependencies:
       - rollup
 
@@ -20418,6 +20421,8 @@ snapshots:
   tailwind-merge@3.4.0: {}
 
   tailwindcss@4.1.18: {}
+
+  tailwindcss@4.2.1: {}
 
   take-n-pipe@1.1.2: {}
 
