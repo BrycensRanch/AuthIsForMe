@@ -56,7 +56,7 @@ importers:
         version: 9.1.7
       lint-staged:
         specifier: ^16.0.0
-        version: 16.2.7
+        version: 16.3.0
       npm-run-all2:
         specifier: ^8.0.0
         version: 8.0.4
@@ -387,7 +387,7 @@ importers:
         version: 2.0.5
       lint-staged:
         specifier: ^16.0.0
-        version: 16.2.7
+        version: 16.3.0
       next:
         specifier: 16.1.6
         version: 16.1.6(@babel/core@7.29.0)(@opentelemetry/api@1.9.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -3753,6 +3753,10 @@ packages:
     resolution: {integrity: sha512-g6LhBsl+GBPRWGWsBtutpzBYuIIdBkLEvad5C/va/74Db018+5TZiyA26cZJAr3Rft5lprVqOIPxf5Vid6tqAw==}
     engines: {node: '>=18'}
 
+  ansi-escapes@7.3.0:
+    resolution: {integrity: sha512-BvU8nYgGQBxcmMuEeUEmNTvrMVjJNSH7RgW24vXexN4Ven6qCvy4TntnvlnwnMLTVlcRQQdbRY8NKnaIoeWDNg==}
+    engines: {node: '>=18'}
+
   ansi-regex@2.1.1:
     resolution: {integrity: sha512-TIGnTpdo+E3+pCyAluZvtED5p5wCqLdezCyhPZzKPcxvFplEt4i+W7OONCKgeZFT3+y5NZZfOOS/Bdcanm1MYA==}
     engines: {node: '>=0.10.0'}
@@ -4487,8 +4491,8 @@ packages:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
     engines: {node: '>= 0.8'}
 
-  commander@14.0.2:
-    resolution: {integrity: sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ==}
+  commander@14.0.3:
+    resolution: {integrity: sha512-H+y0Jo/T1RZ9qPP4Eh1pkcQcLRglraJaSLoyOtHxu6AapkjWVCy2Sit1QQ4x3Dng8qDlSsZEet7g5Pq06MvTgw==}
     engines: {node: '>=20'}
 
   commander@2.20.3:
@@ -5047,6 +5051,10 @@ packages:
     resolution: {integrity: sha512-phv3E1Xl4tQOShqSte26C7Fl84EwUdZsyOuSSk9qtAGyyQs2s3jJzComh+Abf4g187lUUAvH+H26omrqia2aGg==}
     engines: {node: '>=10.13.0'}
 
+  enhanced-resolve@5.20.0:
+    resolution: {integrity: sha512-/ce7+jQ1PQ6rVXwe+jKEg5hW5ciicHwIQUagZkp6IufBoY3YDgdTTY1azVs0qoRgVmvsNB+rbjLJxDAeHHtwsQ==}
+    engines: {node: '>=10.13.0'}
+
   enquirer@2.4.1:
     resolution: {integrity: sha512-rRqJg/6gd538VHvR3PSrdRBb/1Vy2YfzHqzvbhGIQpDRKIa4FgV/54b5Q1xYSxOOwKvjXweS26E0Q+nAMwp2pQ==}
     engines: {node: '>=8.6'}
@@ -5426,8 +5434,8 @@ packages:
   eventemitter3@4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
 
-  eventemitter3@5.0.1:
-    resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
+  eventemitter3@5.0.4:
+    resolution: {integrity: sha512-mlsTRyGaPBjPedk6Bvw+aqbsXDtoAyAzm5MO7JgU+yVRyMQ5O8bD4Kcci7BS85f93veegeCPkL8R4GLClnjLFw==}
 
   events@2.1.0:
     resolution: {integrity: sha512-3Zmiobend8P9DjmKAty0Era4jV8oJ0yGYe2nJJAxgymF9+N8F2m0hhZiMoWtcfepExzNKZumFU3ksdQbInGWCg==}
@@ -7002,8 +7010,8 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  lint-staged@16.2.7:
-    resolution: {integrity: sha512-lDIj4RnYmK7/kXMya+qJsmkRFkGolciXjrsZ6PC25GdTfWOAWetR0ZbsNXRAj1EHHImRSalc+whZFg56F5DVow==}
+  lint-staged@16.3.0:
+    resolution: {integrity: sha512-YVHHy/p6U4/No9Af+35JLh3umJ9dPQnGTvNCbfO/T5fC60us0jFnc+vw33cqveI+kqxIFJQakcMVTO2KM+653A==}
     engines: {node: '>=20.17'}
     hasBin: true
 
@@ -14010,6 +14018,10 @@ snapshots:
     dependencies:
       environment: 1.1.0
 
+  ansi-escapes@7.3.0:
+    dependencies:
+      environment: 1.1.0
+
   ansi-regex@2.1.1: {}
 
   ansi-regex@5.0.1: {}
@@ -14902,7 +14914,7 @@ snapshots:
     dependencies:
       delayed-stream: 1.0.0
 
-  commander@14.0.2: {}
+  commander@14.0.3: {}
 
   commander@2.20.3: {}
 
@@ -15559,6 +15571,11 @@ snapshots:
       graceful-fs: 4.2.11
       tapable: 2.3.0
 
+  enhanced-resolve@5.20.0:
+    dependencies:
+      graceful-fs: 4.2.11
+      tapable: 2.3.0
+
   enquirer@2.4.1:
     dependencies:
       ansi-colors: 4.1.3
@@ -16140,7 +16157,7 @@ snapshots:
 
   eventemitter3@4.0.7: {}
 
-  eventemitter3@5.0.1: {}
+  eventemitter3@5.0.4: {}
 
   events@2.1.0: {}
 
@@ -17214,7 +17231,7 @@ snapshots:
 
   is-fullwidth-code-point@5.1.0:
     dependencies:
-      get-east-asian-width: 1.4.0
+      get-east-asian-width: 1.5.0
 
   is-generator-fn@2.1.0: {}
 
@@ -18030,14 +18047,14 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  lint-staged@16.2.7:
+  lint-staged@16.3.0:
     dependencies:
-      commander: 14.0.2
+      commander: 14.0.3
       listr2: 9.0.5
       micromatch: 4.0.8
       nano-spawn: 2.0.0
-      pidtree: 0.6.0
       string-argv: 0.3.2
+      tinyexec: 1.0.2
       yaml: 2.8.2
 
   listr2@3.14.0(enquirer@2.4.1):
@@ -18057,7 +18074,7 @@ snapshots:
     dependencies:
       cli-truncate: 5.1.1
       colorette: 2.0.20
-      eventemitter3: 5.0.1
+      eventemitter3: 5.0.4
       log-update: 6.1.0
       rfdc: 1.4.1
       wrap-ansi: 9.0.2
@@ -18163,7 +18180,7 @@ snapshots:
 
   log-update@6.1.0:
     dependencies:
-      ansi-escapes: 7.2.0
+      ansi-escapes: 7.3.0
       cli-cursor: 5.0.0
       slice-ansi: 7.1.2
       strip-ansi: 7.2.0
@@ -21054,7 +21071,7 @@ snapshots:
       acorn-import-phases: 1.0.4(acorn@8.16.0)
       browserslist: 4.28.1
       chrome-trace-event: 1.0.4
-      enhanced-resolve: 5.19.0
+      enhanced-resolve: 5.20.0
       es-module-lexer: 1.7.0
       eslint-scope: 5.1.1
       events: 3.3.0
