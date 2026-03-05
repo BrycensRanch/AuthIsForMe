@@ -187,7 +187,7 @@ jobs:
           git_tag_gpgsign: false
           git_push_gpgsign: false
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
