@@ -143,7 +143,7 @@ importers:
         version: 15.8.1
       react-apexcharts:
         specifier: ^2.0.0
-        version: 2.0.1(apexcharts@5.10.1)(react@19.2.4)
+        version: 2.1.0(apexcharts@5.10.1)(react@19.2.4)
       react-icons:
         specifier: ^5.2.1
         version: 5.6.0(react@19.2.4)
@@ -3229,6 +3229,9 @@ packages:
 
   '@types/node@24.11.0':
     resolution: {integrity: sha512-fPxQqz4VTgPI/IQ+lj9r0h+fDR66bzoeMGHp8ASee+32OSGIkeASsoZuJixsQoVef1QJbeubcPBxKk22QVoWdw==}
+
+  '@types/node@24.11.2':
+    resolution: {integrity: sha512-HTsxyfkxTNxOXBsEdgIOzbMgBjDGPvkTfw0B1m09j1LFPk8u3tSL8SNBRTSc381wXXX/Wp93qPi1kQXwnWuHgA==}
 
   '@types/node@25.3.2':
     resolution: {integrity: sha512-RpV6r/ij22zRRdyBPcxDeKAzH43phWVKEjL2iksqo1Vz3CuBUrgmPpPhALKiRfU7OMCmeeO9vECBMsV0hMTG8Q==}
@@ -8453,10 +8456,10 @@ packages:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
 
-  react-apexcharts@2.0.1:
-    resolution: {integrity: sha512-AN9u5C0kDAkQyMyJP6yXORexiuiaTa0GaxR5dOaF075vWLTTbQxxtYF/kXyvUo4jjtBEIe4lLoCZTo/kB3bRoA==}
+  react-apexcharts@2.1.0:
+    resolution: {integrity: sha512-xrmeTKRKHh3cvvLc8SasqFjlOgIqGpyHc81qjnRtcjUM0Fu7qEjgVRWGPokGFjqhwRZVgEym8zmuEyYr5LMYIg==}
     peerDependencies:
-      apexcharts: '>=5.6.0'
+      apexcharts: '>=5.10.1'
       react: '>=16.8.0'
 
   react-dom@19.2.4:
@@ -13450,6 +13453,10 @@ snapshots:
     dependencies:
       undici-types: 7.16.0
 
+  '@types/node@24.11.2':
+    dependencies:
+      undici-types: 7.16.0
+
   '@types/node@25.3.2':
     dependencies:
       undici-types: 7.18.2
@@ -17861,7 +17868,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 24.11.0
+      '@types/node': 24.11.2
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -19446,7 +19453,7 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-apexcharts@2.0.1(apexcharts@5.10.1)(react@19.2.4):
+  react-apexcharts@2.1.0(apexcharts@5.10.1)(react@19.2.4):
     dependencies:
       apexcharts: 5.10.1
       prop-types: 15.8.1
