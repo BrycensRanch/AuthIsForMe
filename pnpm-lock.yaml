@@ -98,7 +98,7 @@ importers:
         version: 0.13.10(typescript@5.9.3)(zod@4.3.6)
       apexcharts:
         specifier: ^5.0.0
-        version: 5.10.3
+        version: 5.10.4
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.27(postcss@8.5.8)
@@ -143,7 +143,7 @@ importers:
         version: 15.8.1
       react-apexcharts:
         specifier: ^2.0.0
-        version: 2.1.0(apexcharts@5.10.3)(react@19.2.4)
+        version: 2.1.0(apexcharts@5.10.4)(react@19.2.4)
       react-icons:
         specifier: ^5.2.1
         version: 5.6.0(react@19.2.4)
@@ -3734,9 +3734,6 @@ packages:
   '@xtuc/long@4.2.2':
     resolution: {integrity: sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==}
 
-  '@yr/monotone-cubic-spline@1.0.3':
-    resolution: {integrity: sha512-FQXkOta0XBSUPHndIKON2Y9JeQz5ZeMqLYZVVK93FliNBFm7LNMIZmY6FrMEB9XPcDbE2bekMbZD6kzDkxwYjA==}
-
   JSONStream@1.3.5:
     resolution: {integrity: sha512-E+iruNOY8VV9s4JEbe1aNEm6MiszPRr/UfcHMz0TQh1BXSxHK+ASV1R6W4HpjBhSeS+54PIsAMCBmwD06LLsqQ==}
     hasBin: true
@@ -3880,8 +3877,8 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
-  apexcharts@5.10.3:
-    resolution: {integrity: sha512-wwvkSLsodNOc/rHo5MJsn3GPM4Krc5Gs0zKX4Lfzq4LohcTbyKylYUGEqJFmXXxGR7yLbZQz31sB5RTqT5mv1g==}
+  apexcharts@5.10.4:
+    resolution: {integrity: sha512-gt0VUqZ2+mr25ScbUcKZgJr96jKYm4vjOcxEWCEh/E5F4dWqhyo3dBhPRvNNnkKiWxkMd2cBwj3ZYH3rK39fkA==}
 
   append-transform@2.0.0:
     resolution: {integrity: sha512-7yeyCEurROLQJFv5Xj4lEGTy0borxepjFv1g22oAdqFu//SrAlDl1O1Nxx15SH1RoliUml6p8dwJW9jvZughhg==}
@@ -14121,8 +14118,6 @@ snapshots:
 
   '@xtuc/long@4.2.2': {}
 
-  '@yr/monotone-cubic-spline@1.0.3': {}
-
   JSONStream@1.3.5:
     dependencies:
       jsonparse: 1.3.1
@@ -14247,9 +14242,7 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
-  apexcharts@5.10.3:
-    dependencies:
-      '@yr/monotone-cubic-spline': 1.0.3
+  apexcharts@5.10.4: {}
 
   append-transform@2.0.0:
     dependencies:
@@ -19657,9 +19650,9 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-apexcharts@2.1.0(apexcharts@5.10.3)(react@19.2.4):
+  react-apexcharts@2.1.0(apexcharts@5.10.4)(react@19.2.4):
     dependencies:
-      apexcharts: 5.10.3
+      apexcharts: 5.10.4
       prop-types: 15.8.1
       react: 19.2.4
 
