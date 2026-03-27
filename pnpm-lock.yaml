@@ -207,7 +207,7 @@ importers:
         version: 4.0.3(@babel/core@7.29.0)(@babel/preset-env@7.29.2(@babel/core@7.29.0))(babel-loader@10.0.0(@babel/core@7.29.0)(webpack@5.103.0(@swc/core@1.15.21(@swc/helpers@0.5.17))))(cypress@15.13.0)(webpack@5.103.0(@swc/core@1.15.21(@swc/helpers@0.5.17)))
       '@happy-dom/jest-environment':
         specifier: ^20.0.0
-        version: 20.8.4(@jest/environment@30.3.0)(@jest/fake-timers@30.3.0)(@jest/types@30.3.0)(jest-mock@30.3.0)(jest-util@30.3.0)
+        version: 20.8.9(@jest/environment@30.3.0)(@jest/fake-timers@30.3.0)(@jest/types@30.3.0)(jest-mock@30.3.0)(jest-util@30.3.0)
       '@jest/globals':
         specifier: ^30.0.0
         version: 30.3.0
@@ -1442,8 +1442,8 @@ packages:
   '@hapi/topo@6.0.2':
     resolution: {integrity: sha512-KR3rD5inZbGMrHmgPxsJ9dbi6zEK+C3ZwUwTa+eMwWLz7oijWUTWD2pMSNNYJAU6Qq+65NkxXjqHr/7LM2Xkqg==}
 
-  '@happy-dom/jest-environment@20.8.4':
-    resolution: {integrity: sha512-eA1RiPyM1gskWGjZ2pk422GOp1espmTS0a2FTLRJlTml90uUbkS/apMO/SUrLoBU+dfbOQs9nXIzxesUNHxVPA==}
+  '@happy-dom/jest-environment@20.8.9':
+    resolution: {integrity: sha512-E0E7+n/BuyongNR+jLExaAeXs50lYBVD/QJYYpi2+qLFt2PxQtjknw/26YDIWjP/nwFDlCY3/P0YCSFCQ68Zxw==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       '@jest/environment': '>=25.0.0'
@@ -5944,8 +5944,8 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@20.8.4:
-    resolution: {integrity: sha512-GKhjq4OQCYB4VLFBzv8mmccUadwlAusOZOI7hC1D9xDIT5HhzkJK17c4el2f6R6C715P9xB4uiMxeKUa2nHMwQ==}
+  happy-dom@20.8.9:
+    resolution: {integrity: sha512-Tz23LR9T9jOGVZm2x1EPdXqwA37G/owYMxRwU0E4miurAtFsPMQ1d2Jc2okUaSjZqAFz2oEn3FLXC5a0a+siyA==}
     engines: {node: '>=20.0.0'}
 
   hard-rejection@2.1.0:
@@ -11437,12 +11437,12 @@ snapshots:
     dependencies:
       '@hapi/hoek': 11.0.7
 
-  '@happy-dom/jest-environment@20.8.4(@jest/environment@30.3.0)(@jest/fake-timers@30.3.0)(@jest/types@30.3.0)(jest-mock@30.3.0)(jest-util@30.3.0)':
+  '@happy-dom/jest-environment@20.8.9(@jest/environment@30.3.0)(@jest/fake-timers@30.3.0)(@jest/types@30.3.0)(jest-mock@30.3.0)(jest-util@30.3.0)':
     dependencies:
       '@jest/environment': 30.3.0
       '@jest/fake-timers': 30.3.0
       '@jest/types': 30.3.0
-      happy-dom: 20.8.4
+      happy-dom: 20.8.9
       jest-mock: 30.3.0
       jest-util: 30.3.0
     transitivePeerDependencies:
@@ -12425,7 +12425,10 @@ snapshots:
     dependencies:
       '@percy/cli-command': 1.31.10(typescript@6.0.2)
     transitivePeerDependencies:
+      - bufferutil
+      - supports-color
       - typescript
+      - utf-8-validate
 
   '@percy/cli-command@1.31.10(typescript@6.0.2)':
     dependencies:
@@ -12442,7 +12445,10 @@ snapshots:
     dependencies:
       '@percy/cli-command': 1.31.10(typescript@6.0.2)
     transitivePeerDependencies:
+      - bufferutil
+      - supports-color
       - typescript
+      - utf-8-validate
 
   '@percy/cli-doctor@1.31.10(typescript@6.0.2)':
     dependencies:
@@ -12478,7 +12484,10 @@ snapshots:
       '@percy/cli-command': 1.31.10(typescript@6.0.2)
       yaml: 2.8.3
     transitivePeerDependencies:
+      - bufferutil
+      - supports-color
       - typescript
+      - utf-8-validate
 
   '@percy/cli-upload@1.31.10(typescript@6.0.2)':
     dependencies:
@@ -12486,7 +12495,10 @@ snapshots:
       fast-glob: 3.3.3
       image-size: 1.2.1
     transitivePeerDependencies:
+      - bufferutil
+      - supports-color
       - typescript
+      - utf-8-validate
 
   '@percy/cli@1.31.10(typescript@6.0.2)':
     dependencies:
@@ -16787,14 +16799,14 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.19.3
 
-  happy-dom@20.8.4:
+  happy-dom@20.8.9:
     dependencies:
       '@types/node': 24.12.0
       '@types/whatwg-mimetype': 3.0.2
       '@types/ws': 8.18.1
       entities: 7.0.1
       whatwg-mimetype: 3.0.0
-      ws: 8.19.0
+      ws: 8.20.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
