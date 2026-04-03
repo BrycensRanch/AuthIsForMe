@@ -14,13 +14,13 @@ importers:
     devDependencies:
       '@commitlint/cli':
         specifier: ^20.0.0
-        version: 20.5.0(@types/node@24.12.0)(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)(typescript@6.0.2)
+        version: 20.5.0(@types/node@24.12.0)(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)(typescript@6.0.2)
       '@commitlint/config-conventional':
         specifier: ^20.0.0
         version: 20.5.0
       '@commitlint/cz-commitlint':
         specifier: ^20.0.0
-        version: 20.5.0(commitizen@4.3.1(typescript@6.0.2))(inquirer@8.2.5)(typescript@6.0.2)
+        version: 20.5.1(commitizen@4.3.1(typescript@6.0.2))(inquirer@8.2.5)(typescript@6.0.2)
       '@semantic-release-plus/docker':
         specifier: ^3.1.3
         version: 3.1.3(semantic-release-plus@19.0.2(semantic-release@25.0.3(typescript@6.0.2)))
@@ -192,13 +192,13 @@ importers:
         version: 2.7.2(cypress@15.13.0)
       '@commitlint/cli':
         specifier: ^20.0.0
-        version: 20.5.0(@types/node@24.12.0)(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)(typescript@6.0.2)
+        version: 20.5.0(@types/node@24.12.0)(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)(typescript@6.0.2)
       '@commitlint/config-conventional':
         specifier: ^20.0.0
         version: 20.5.0
       '@commitlint/cz-commitlint':
         specifier: ^20.0.0
-        version: 20.5.0(@types/node@24.12.0)(commitizen@4.3.1(@types/node@24.12.0)(typescript@6.0.2))(inquirer@8.2.5)(typescript@6.0.2)
+        version: 20.5.1(@types/node@24.12.0)(commitizen@4.3.1(@types/node@24.12.0)(typescript@6.0.2))(inquirer@8.2.5)(typescript@6.0.2)
       '@cypress/browserify-preprocessor':
         specifier: ^3.0.2
         version: 3.0.2
@@ -1172,8 +1172,8 @@ packages:
     resolution: {integrity: sha512-T/Uh6iJUzyx7j35GmHWdIiGRQB+ouZDk0pwAaYq4SXgB54KZhFdJ0vYmxiW6AMYICTIWuyMxDBl1jK74oFp/Gw==}
     engines: {node: '>=v18'}
 
-  '@commitlint/cz-commitlint@20.5.0':
-    resolution: {integrity: sha512-DqhcftvM+gqAUfidJ91Vq7RUj+czVk/PepJydThY95MsTFBiJVM1NEGfPlhWa9ZVeNNtcRNhXez3dt6+ZXWrSw==}
+  '@commitlint/cz-commitlint@20.5.1':
+    resolution: {integrity: sha512-tvcHpk/DQRF749PuaYKPeLhml4grD4h8qEIW5uoboKy0tfnJxmAy99xOo2U1xpQj5uo3LH7pjnVv1xvuhzLWRw==}
     engines: {node: '>=v18'}
     peerDependencies:
       commitizen: ^4.0.3
@@ -3292,6 +3292,9 @@ packages:
   '@types/node@24.12.0':
     resolution: {integrity: sha512-GYDxsZi3ChgmckRT9HPU0WEhKLP08ev/Yfcq2AstjrDASOYCSXeyjDsHg4v5t4jOj7cyDX3vmprafKlWIG9MXQ==}
 
+  '@types/node@24.12.2':
+    resolution: {integrity: sha512-A1sre26ke7HDIuY/M23nd9gfB+nrmhtYyMINbjI1zHJxYteKR6qSMX56FsmjMcDb3SMcjJg5BiRRgOCC/yBD0g==}
+
   '@types/node@25.3.5':
     resolution: {integrity: sha512-oX8xrhvpiyRCQkG1MFchB09f+cXftgIXb3a7UUa4Y3wpmZPw5tyZGTLWhlESOLq1Rq6oDlc8npVU2/9xiCuXMA==}
 
@@ -4608,8 +4611,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  conventional-commits-parser@6.3.0:
-    resolution: {integrity: sha512-RfOq/Cqy9xV9bOA8N+ZH6DlrDR+5S3Mi0B5kACEjESpE+AviIpAptx9a9cFpWCCvgRtWT+0BbUw+e1BZfts9jg==}
+  conventional-commits-parser@6.4.0:
+    resolution: {integrity: sha512-tvRg7FIBNlyPzjdG8wWRlPHQJJHI7DylhtRGeU9Lq+JuoPh5BKpPRX83ZdLrvXuOSu5Eo/e7SzOQhU4Hd2Miuw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -11031,12 +11034,12 @@ snapshots:
   '@colors/colors@1.5.0':
     optional: true
 
-  '@commitlint/cli@20.5.0(@types/node@24.12.0)(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)(typescript@6.0.2)':
+  '@commitlint/cli@20.5.0(@types/node@24.12.0)(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)(typescript@6.0.2)':
     dependencies:
       '@commitlint/format': 20.5.0
       '@commitlint/lint': 20.5.0
       '@commitlint/load': 20.5.0(@types/node@24.12.0)(typescript@6.0.2)
-      '@commitlint/read': 20.5.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)
+      '@commitlint/read': 20.5.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)
       '@commitlint/types': 20.5.0
       tinyexec: 1.0.4
       yargs: 17.7.2
@@ -11056,7 +11059,7 @@ snapshots:
       '@commitlint/types': 20.5.0
       ajv: 8.18.0
 
-  '@commitlint/cz-commitlint@20.5.0(@types/node@24.12.0)(commitizen@4.3.1(@types/node@24.12.0)(typescript@6.0.2))(inquirer@8.2.5)(typescript@6.0.2)':
+  '@commitlint/cz-commitlint@20.5.1(@types/node@24.12.0)(commitizen@4.3.1(@types/node@24.12.0)(typescript@6.0.2))(inquirer@8.2.5)(typescript@6.0.2)':
     dependencies:
       '@commitlint/ensure': 20.5.0
       '@commitlint/load': 20.5.0(@types/node@24.12.0)(typescript@6.0.2)
@@ -11070,7 +11073,7 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@commitlint/cz-commitlint@20.5.0(commitizen@4.3.1(typescript@6.0.2))(inquirer@8.2.5)(typescript@6.0.2)':
+  '@commitlint/cz-commitlint@20.5.1(commitizen@4.3.1(typescript@6.0.2))(inquirer@8.2.5)(typescript@6.0.2)':
     dependencies:
       '@commitlint/ensure': 20.5.0
       '@commitlint/load': 20.5.0(@types/node@24.12.0)(typescript@6.0.2)
@@ -11133,13 +11136,13 @@ snapshots:
     dependencies:
       '@commitlint/types': 20.5.0
       conventional-changelog-angular: 8.3.0
-      conventional-commits-parser: 6.3.0
+      conventional-commits-parser: 6.4.0
 
-  '@commitlint/read@20.5.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)':
+  '@commitlint/read@20.5.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)':
     dependencies:
       '@commitlint/top-level': 20.4.3
       '@commitlint/types': 20.5.0
-      git-raw-commits: 5.0.1(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)
+      git-raw-commits: 5.0.1(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)
       minimist: 1.2.8
       tinyexec: 1.0.4
     transitivePeerDependencies:
@@ -11170,17 +11173,17 @@ snapshots:
 
   '@commitlint/types@20.5.0':
     dependencies:
-      conventional-commits-parser: 6.3.0
+      conventional-commits-parser: 6.4.0
       picocolors: 1.1.1
 
-  '@conventional-changelog/git-client@2.6.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)':
+  '@conventional-changelog/git-client@2.6.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)':
     dependencies:
       '@simple-libs/child-process-utils': 1.0.2
       '@simple-libs/stream-utils': 1.2.0
       semver: 7.7.4
     optionalDependencies:
       conventional-commits-filter: 5.0.0
-      conventional-commits-parser: 6.3.0
+      conventional-commits-parser: 6.4.0
 
   '@corex/deepmerge@4.0.43': {}
 
@@ -12836,7 +12839,7 @@ snapshots:
       conventional-changelog-angular: 8.1.0
       conventional-changelog-writer: 8.2.0
       conventional-commits-filter: 5.0.0
-      conventional-commits-parser: 6.3.0
+      conventional-commits-parser: 6.4.0
       debug: 4.4.3(supports-color@8.1.1)
       import-from-esm: 2.0.0
       lodash-es: 4.17.23
@@ -13523,6 +13526,10 @@ snapshots:
       '@types/node': 24.12.0
 
   '@types/node@24.12.0':
+    dependencies:
+      undici-types: 7.16.0
+
+  '@types/node@24.12.2':
     dependencies:
       undici-types: 7.16.0
 
@@ -15092,7 +15099,7 @@ snapshots:
     dependencies:
       meow: 13.2.0
 
-  conventional-commits-parser@6.3.0:
+  conventional-commits-parser@6.4.0:
     dependencies:
       '@simple-libs/stream-utils': 1.2.0
       meow: 13.2.0
@@ -16701,9 +16708,9 @@ snapshots:
       through2: 2.0.5
       traverse: 0.6.8
 
-  git-raw-commits@5.0.1(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0):
+  git-raw-commits@5.0.1(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0):
     dependencies:
-      '@conventional-changelog/git-client': 2.6.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)
+      '@conventional-changelog/git-client': 2.6.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.4.0)
       meow: 13.2.0
     transitivePeerDependencies:
       - conventional-commits-filter
@@ -17884,7 +17891,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 24.12.0
+      '@types/node': 24.12.2
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
