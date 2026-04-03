@@ -222,7 +222,7 @@ importers:
         version: 1.31.11(typescript@6.0.2)
       '@percy/cypress':
         specifier: ^3.1.2
-        version: 3.1.7(cypress@15.13.0)
+        version: 3.1.8(cypress@15.13.0)
       '@swc/core':
         specifier: ^1.5.7
         version: 1.15.21(@swc/helpers@0.5.17)
@@ -2392,8 +2392,8 @@ packages:
     resolution: {integrity: sha512-3wIqC8zGocKXzTEWhauOy1xL8/adkUISgd7kix2zJvM6CPsiaxQWJdNszVKF26EKV7pvSuZWhnnAfnuS4a62+Q==}
     engines: {node: '>=14'}
 
-  '@percy/cypress@3.1.7':
-    resolution: {integrity: sha512-UXPE7egnOOX/nv5oSwhTG7BEGio/HjnFdMuBR1Vbm2Izj3pUwMkxGqZRJsNtFuGl2iVckwbh9SuFoeKIdcaTcg==}
+  '@percy/cypress@3.1.8':
+    resolution: {integrity: sha512-0eSgzkU4S19giir/PKpWPCEnUDSqBaRrTB/flBMbkhXRv/OP2b66dZsA68Im6t/xZ8UpKYvJ4l643Bh1toSoyg==}
     peerDependencies:
       cypress: '>=3'
 
@@ -2414,10 +2414,6 @@ packages:
 
   '@percy/sdk-utils@1.31.11':
     resolution: {integrity: sha512-I4/Bx2RqSx/k00qVU0t/wcYudeyVRARQPdMnRZ/JvEZRZmXo0u+mHHpvZ5liHvnlpvWq6dv2WRA5MVy+GZHUhA==}
-    engines: {node: '>=14'}
-
-  '@percy/sdk-utils@1.31.4':
-    resolution: {integrity: sha512-IBzSQZ8jx1pnSyyn7tF4UX8BVffbw0xjsNsPl/MuYuFuE5rW/D8arc+sH6xI1Kog0+tECt2XdAf4hMGWij2lxw==}
     engines: {node: '>=14'}
 
   '@percy/webdriver-utils@1.31.11':
@@ -3291,6 +3287,9 @@ packages:
 
   '@types/node@24.12.0':
     resolution: {integrity: sha512-GYDxsZi3ChgmckRT9HPU0WEhKLP08ev/Yfcq2AstjrDASOYCSXeyjDsHg4v5t4jOj7cyDX3vmprafKlWIG9MXQ==}
+
+  '@types/node@24.12.2':
+    resolution: {integrity: sha512-A1sre26ke7HDIuY/M23nd9gfB+nrmhtYyMINbjI1zHJxYteKR6qSMX56FsmjMcDb3SMcjJg5BiRRgOCC/yBD0g==}
 
   '@types/node@25.3.5':
     resolution: {integrity: sha512-oX8xrhvpiyRCQkG1MFchB09f+cXftgIXb3a7UUa4Y3wpmZPw5tyZGTLWhlESOLq1Rq6oDlc8npVU2/9xiCuXMA==}
@@ -12576,9 +12575,9 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@percy/cypress@3.1.7(cypress@15.13.0)':
+  '@percy/cypress@3.1.8(cypress@15.13.0)':
     dependencies:
-      '@percy/sdk-utils': 1.31.4
+      '@percy/sdk-utils': 1.31.11
       cypress: 15.13.0
     transitivePeerDependencies:
       - supports-color
@@ -12602,12 +12601,6 @@ snapshots:
       - typescript
 
   '@percy/sdk-utils@1.31.11':
-    dependencies:
-      pac-proxy-agent: 7.2.0
-    transitivePeerDependencies:
-      - supports-color
-
-  '@percy/sdk-utils@1.31.4':
     dependencies:
       pac-proxy-agent: 7.2.0
     transitivePeerDependencies:
@@ -13523,6 +13516,10 @@ snapshots:
       '@types/node': 24.12.0
 
   '@types/node@24.12.0':
+    dependencies:
+      undici-types: 7.16.0
+
+  '@types/node@24.12.2':
     dependencies:
       undici-types: 7.16.0
 
@@ -17884,7 +17881,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 24.12.0
+      '@types/node': 24.12.2
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
