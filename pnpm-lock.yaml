@@ -207,7 +207,7 @@ importers:
         version: 4.0.3(@babel/core@7.29.0)(@babel/preset-env@7.29.2(@babel/core@7.29.0))(babel-loader@10.0.0(@babel/core@7.29.0)(webpack@5.103.0(@swc/core@1.15.24(@swc/helpers@0.5.21))))(cypress@15.13.1)(webpack@5.103.0(@swc/core@1.15.24(@swc/helpers@0.5.21)))
       '@happy-dom/jest-environment':
         specifier: ^20.0.0
-        version: 20.8.9(@jest/environment@30.3.0)(@jest/fake-timers@30.3.0)(@jest/types@30.3.0)(jest-mock@30.3.0)(jest-util@30.3.0)
+        version: 20.9.0(@jest/environment@30.3.0)(@jest/fake-timers@30.3.0)(@jest/types@30.3.0)(jest-mock@30.3.0)(jest-util@30.3.0)
       '@jest/globals':
         specifier: ^30.0.0
         version: 30.3.0
@@ -1444,8 +1444,8 @@ packages:
   '@hapi/topo@6.0.2':
     resolution: {integrity: sha512-KR3rD5inZbGMrHmgPxsJ9dbi6zEK+C3ZwUwTa+eMwWLz7oijWUTWD2pMSNNYJAU6Qq+65NkxXjqHr/7LM2Xkqg==}
 
-  '@happy-dom/jest-environment@20.8.9':
-    resolution: {integrity: sha512-E0E7+n/BuyongNR+jLExaAeXs50lYBVD/QJYYpi2+qLFt2PxQtjknw/26YDIWjP/nwFDlCY3/P0YCSFCQ68Zxw==}
+  '@happy-dom/jest-environment@20.9.0':
+    resolution: {integrity: sha512-6FjF0leAEPLuUOkeN63HmV4kbVHAaddz3I5au44ZtV3WyJS2nxXhH1Xx9mXA/0vIgIEVD20SYzmDtixap2LSpQ==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       '@jest/environment': '>=25.0.0'
@@ -5033,8 +5033,8 @@ packages:
   electron-to-chromium@1.5.302:
     resolution: {integrity: sha512-sM6HAN2LyK82IyPBpznDRqlTQAtuSaO+ShzFiWTvoMJLHyZ+Y39r8VMfHzwbU8MVBzQ4Wdn85+wlZl2TLGIlwg==}
 
-  electron-to-chromium@1.5.335:
-    resolution: {integrity: sha512-q9n5T4BR4Xwa2cwbrwcsDJtHD/enpQ5S1xF1IAtdqf5AAgqDFmR/aakqH3ChFdqd/QXJhS3rnnXFtexU7rax6Q==}
+  electron-to-chromium@1.5.336:
+    resolution: {integrity: sha512-AbH9q9J455r/nLmdNZes0G0ZKcRX73FicwowalLs6ijwOmCJSRRrLX63lcAlzy9ux3dWK1w1+1nsBJEWN11hcQ==}
 
   elliptic@6.6.1:
     resolution: {integrity: sha512-RaddvvMatK2LJHqFJ+YA4WysVN5Ita9E35botqIYspQ4TkRAlCicdzKOjlyv/1Za5RyTNn7di//eEV0uTAfe3g==}
@@ -5982,8 +5982,8 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@20.8.9:
-    resolution: {integrity: sha512-Tz23LR9T9jOGVZm2x1EPdXqwA37G/owYMxRwU0E4miurAtFsPMQ1d2Jc2okUaSjZqAFz2oEn3FLXC5a0a+siyA==}
+  happy-dom@20.9.0:
+    resolution: {integrity: sha512-GZZ9mKe8r646NUAf/zemnGbjYh4Bt8/MqASJY+pSm5ZDtc3YQox+4gsLI7yi1hba6o+eCsGxpHn5+iEVn31/FQ==}
     engines: {node: '>=20.0.0'}
 
   hard-rejection@2.1.0:
@@ -11482,12 +11482,12 @@ snapshots:
     dependencies:
       '@hapi/hoek': 11.0.7
 
-  '@happy-dom/jest-environment@20.8.9(@jest/environment@30.3.0)(@jest/fake-timers@30.3.0)(@jest/types@30.3.0)(jest-mock@30.3.0)(jest-util@30.3.0)':
+  '@happy-dom/jest-environment@20.9.0(@jest/environment@30.3.0)(@jest/fake-timers@30.3.0)(@jest/types@30.3.0)(jest-mock@30.3.0)(jest-util@30.3.0)':
     dependencies:
       '@jest/environment': 30.3.0
       '@jest/fake-timers': 30.3.0
       '@jest/types': 30.3.0
-      happy-dom: 20.8.9
+      happy-dom: 20.9.0
       jest-mock: 30.3.0
       jest-util: 30.3.0
     transitivePeerDependencies:
@@ -14640,7 +14640,7 @@ snapshots:
     dependencies:
       baseline-browser-mapping: 2.10.18
       caniuse-lite: 1.0.30001787
-      electron-to-chromium: 1.5.335
+      electron-to-chromium: 1.5.336
       node-releases: 2.0.37
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
 
@@ -15601,7 +15601,7 @@ snapshots:
 
   electron-to-chromium@1.5.302: {}
 
-  electron-to-chromium@1.5.335: {}
+  electron-to-chromium@1.5.336: {}
 
   elliptic@6.6.1:
     dependencies:
@@ -16890,7 +16890,7 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.19.3
 
-  happy-dom@20.8.9:
+  happy-dom@20.9.0:
     dependencies:
       '@types/node': 24.12.2
       '@types/whatwg-mimetype': 3.0.2
