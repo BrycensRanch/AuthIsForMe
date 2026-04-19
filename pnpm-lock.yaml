@@ -101,7 +101,7 @@ importers:
         version: 5.10.6
       autoprefixer:
         specifier: ^10.4.19
-        version: 10.5.0(postcss@8.5.9)
+        version: 10.5.0(postcss@8.5.10)
       dotenv-defaults:
         specifier: ^6.0.0
         version: 6.0.0
@@ -402,7 +402,7 @@ importers:
         version: 18.0.0
       postcss:
         specifier: ^8.4.21
-        version: 8.5.9
+        version: 8.5.10
       prettier:
         specifier: ^3.2.5
         version: 3.8.2
@@ -8344,8 +8344,8 @@ packages:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
 
-  postcss@8.5.9:
-    resolution: {integrity: sha512-7a70Nsot+EMX9fFU3064K/kdHWZqGVY+BADLyXc8Dfv+mTLLVl6JzJpPaCZ2kQL9gIJvKXSLMHhqdRRjwQeFtw==}
+  postcss@8.5.10:
+    resolution: {integrity: sha512-pMMHxBOZKFU6HgAZ4eyGnwXF/EvPGGqUr0MnZ5+99485wwW41kW91A4LOGxSHhgugZmSChL5AlElNdwlNgcnLQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   postgres-array@2.0.0:
@@ -13481,7 +13481,7 @@ snapshots:
       '@alloc/quick-lru': 5.2.0
       '@tailwindcss/node': 4.1.18
       '@tailwindcss/oxide': 4.1.18
-      postcss: 8.5.9
+      postcss: 8.5.10
       tailwindcss: 4.1.18
 
   '@tanstack/react-virtual@3.13.23(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
@@ -14407,13 +14407,13 @@ snapshots:
 
   atob@2.1.2: {}
 
-  autoprefixer@10.5.0(postcss@8.5.9):
+  autoprefixer@10.5.0(postcss@8.5.10):
     dependencies:
       browserslist: 4.28.2
       caniuse-lite: 1.0.30001788
       fraction.js: 5.3.4
       picocolors: 1.1.1
-      postcss: 8.5.9
+      postcss: 8.5.10
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -16221,7 +16221,7 @@ snapshots:
   eslint-plugin-tailwindcss@3.18.3(tailwindcss@4.2.2):
     dependencies:
       fast-glob: 3.3.3
-      postcss: 8.5.9
+      postcss: 8.5.10
       synckit: 0.11.12
       tailwind-api-utils: 1.0.3(tailwindcss@4.2.2)
       tailwindcss: 4.2.2
@@ -16739,7 +16739,7 @@ snapshots:
       '@popperjs/core': 2.11.8
       flowbite-datepicker: 2.0.0(rollup@4.60.1)
       mini-svg-data-uri: 1.4.4
-      postcss: 8.5.9
+      postcss: 8.5.10
       tailwindcss: 4.2.2
     transitivePeerDependencies:
       - rollup
@@ -19508,7 +19508,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  postcss@8.5.9:
+  postcss@8.5.10:
     dependencies:
       nanoid: 3.3.11
       picocolors: 1.1.1
