@@ -119,7 +119,7 @@ importers:
         version: 1.7.0
       ky:
         specifier: ^2.0.0
-        version: 2.0.1
+        version: 2.0.2
       localforage:
         specifier: ^1.10.0
         version: 1.10.0
@@ -7041,8 +7041,8 @@ packages:
     resolution: {integrity: sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==}
     engines: {node: '>= 8'}
 
-  ky@2.0.1:
-    resolution: {integrity: sha512-HJPEjEpQPZQ5M3G5eu90/LWZDwysCnvqcfbLvq9FUvfizBZRi58WEixswyyI32LOLcFQd43w7kcfgkCPFxDt/Q==}
+  ky@2.0.2:
+    resolution: {integrity: sha512-/GmXpo9F9W+f8n4Ivr2iH+7h7wL7jLbLKWkMlpflcCRb6kGjBfTlASEXaZ9qUgNTn4VgS0P2pwxxzQ4EM6Ulgg==}
     engines: {node: '>=22'}
 
   labeled-stream-splicer@2.0.2:
@@ -18355,7 +18355,7 @@ snapshots:
 
   klona@2.0.6: {}
 
-  ky@2.0.1: {}
+  ky@2.0.2: {}
 
   labeled-stream-splicer@2.0.2:
     dependencies:
