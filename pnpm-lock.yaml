@@ -98,7 +98,7 @@ importers:
         version: 0.13.11(typescript@6.0.3)(zod@4.4.3)
       apexcharts:
         specifier: ^5.0.0
-        version: 5.10.6
+        version: 5.11.0
       autoprefixer:
         specifier: ^10.4.19
         version: 10.5.0(postcss@8.5.14)
@@ -143,7 +143,7 @@ importers:
         version: 15.8.1
       react-apexcharts:
         specifier: ^2.0.0
-        version: 2.1.0(apexcharts@5.10.6)(react@19.2.6)
+        version: 2.1.0(apexcharts@5.11.0)(react@19.2.6)
       react-icons:
         specifier: ^5.2.1
         version: 5.6.0(react@19.2.6)
@@ -3893,8 +3893,8 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
-  apexcharts@5.10.6:
-    resolution: {integrity: sha512-FJQGbso3iRuOwUYnj0yUhkWeKeJE6aboVol+ae09lsc+lbLMWZqSRbrAWVa/qishLiaeG2icxdvmVkm+9n6kOQ==}
+  apexcharts@5.11.0:
+    resolution: {integrity: sha512-iIXnZ1DhndVgY4G5fmAbyUtGBTR5j4LlMEb561eAd4+wkJB7wJXXKLMr9u+4V5aQEPXeVYWgkAbuw9Y1z6MIrg==}
 
   append-transform@2.0.0:
     resolution: {integrity: sha512-7yeyCEurROLQJFv5Xj4lEGTy0borxepjFv1g22oAdqFu//SrAlDl1O1Nxx15SH1RoliUml6p8dwJW9jvZughhg==}
@@ -5140,8 +5140,8 @@ packages:
     resolution: {integrity: sha512-otxSQPw4lkOZWkHpB3zaEQs6gWYEsmX4xQF68ElXC/TWvGxGMSGOvoNbaLXm6/cS/fSfHtsEdw90y20PCd+sCA==}
     engines: {node: '>=10.13.0'}
 
-  enhanced-resolve@5.21.1:
-    resolution: {integrity: sha512-8p7DUVq6XJnZEz9W4oSwiwycxBIjHjRzYb3Je3zVN+geKTRQKzAkR/K4PBExlS0090d9nshak6phMUxr3PDjmQ==}
+  enhanced-resolve@5.21.2:
+    resolution: {integrity: sha512-xe9vQb5kReirPUxgQrXA3ihgbCqssmTiM7cOZ+Gzu+VeGWgpV98lLZvp0dl4yriyAePcewxGUs9UpKD8PET9KQ==}
     engines: {node: '>=10.13.0'}
 
   entities@6.0.1:
@@ -14300,7 +14300,7 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.2
 
-  apexcharts@5.10.6: {}
+  apexcharts@5.11.0: {}
 
   append-transform@2.0.0:
     dependencies:
@@ -15831,7 +15831,7 @@ snapshots:
       graceful-fs: 4.2.11
       tapable: 2.3.3
 
-  enhanced-resolve@5.21.1:
+  enhanced-resolve@5.21.2:
     dependencies:
       graceful-fs: 4.2.11
       tapable: 2.3.3
@@ -19732,9 +19732,9 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-apexcharts@2.1.0(apexcharts@5.10.6)(react@19.2.6):
+  react-apexcharts@2.1.0(apexcharts@5.11.0)(react@19.2.6):
     dependencies:
-      apexcharts: 5.10.6
+      apexcharts: 5.11.0
       prop-types: 15.8.1
       react: 19.2.6
 
@@ -21418,7 +21418,7 @@ snapshots:
       acorn-import-phases: 1.0.4(acorn@8.16.0)
       browserslist: 4.28.2
       chrome-trace-event: 1.0.4
-      enhanced-resolve: 5.21.1
+      enhanced-resolve: 5.21.2
       es-module-lexer: 1.7.0
       eslint-scope: 5.1.1
       events: 3.3.0
