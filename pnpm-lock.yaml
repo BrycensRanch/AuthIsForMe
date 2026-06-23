@@ -59,7 +59,7 @@ importers:
         version: 17.0.8
       npm-run-all2:
         specifier: ^9.0.0
-        version: 9.0.1
+        version: 9.0.2
       prettier-plugin-prisma:
         specifier: ^5.0.0
         version: 5.0.0(prettier@3.8.3)
@@ -396,7 +396,7 @@ importers:
         version: 1.17.2(@types/node@24.12.4)
       npm-run-all2:
         specifier: ^9.0.0
-        version: 9.0.1
+        version: 9.0.2
       nyc:
         specifier: ^18.0.0
         version: 18.0.0
@@ -7600,8 +7600,8 @@ packages:
     resolution: {integrity: sha512-tdt4aFn9QamlhdN3HV2D2ccpBwO5/fyjjbXUxYA6uBjyekMZcZvDq0aSj9t5Jo+tih6AYFnt/cuIRn9013e0Uw==}
     engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
 
-  npm-run-all2@9.0.1:
-    resolution: {integrity: sha512-ZtK8WXZBUA9x0XD6nxYdFLe86FxpkCTq2LiQxzX0LeXQY/vyAigQZXjjj/xfTwgV4Yqe/vYNIq2W09lrHKTcuQ==}
+  npm-run-all2@9.0.2:
+    resolution: {integrity: sha512-+dd4SO2jAlLE06OzmJKzIe6QvvjXezcbmobnh8usR0a8BzQCABTdqTXqVPji0ICOhSQpIIrkGd7IzNl5iDaRSA==}
     engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0, npm: '>= 10'}
     hasBin: true
 
@@ -8136,9 +8136,9 @@ packages:
     resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
     engines: {node: '>=12'}
 
-  pidtree@0.6.0:
-    resolution: {integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==}
-    engines: {node: '>=0.10'}
+  pidtree@1.0.0:
+    resolution: {integrity: sha512-avfAvjB9Dd0wdj3rjJX//yS+G79OO0KrS5pJHFJENjYGX6N4SMgEDBBI/yFy0lloOYSaC6XQxzpOAMPfSYFV/Q==}
+    engines: {node: '>=18'}
     hasBin: true
 
   pify@2.3.0:
@@ -10056,6 +10056,10 @@ packages:
   yargs@15.4.1:
     resolution: {integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==}
     engines: {node: '>=8'}
+
+  yargs@16.2.2:
+    resolution: {integrity: sha512-Nt9ZJjXTv5R8MHbqby/wXQ6Gi0Bb3TcYZkR1bzuL4yB2OxWPkXknz513gEF0GoA6tn00UpbPvERW8rzCuWCA6w==}
+    engines: {node: '>=10'}
 
   yargs@16.2.2:
     resolution: {integrity: sha512-Nt9ZJjXTv5R8MHbqby/wXQ6Gi0Bb3TcYZkR1bzuL4yB2OxWPkXknz513gEF0GoA6tn00UpbPvERW8rzCuWCA6w==}
@@ -18719,13 +18723,13 @@ snapshots:
 
   npm-normalize-package-bin@6.0.0: {}
 
-  npm-run-all2@9.0.1:
+  npm-run-all2@9.0.2:
     dependencies:
       ansi-styles: 6.2.3
       cross-spawn: 7.0.6
       memorystream: 0.3.1
       picomatch: 4.0.4
-      pidtree: 0.6.0
+      pidtree: 1.0.0
       read-package-json-fast: 6.0.0
       shell-quote: 1.8.4
       which: 7.0.0
@@ -19180,7 +19184,7 @@ snapshots:
 
   picomatch@4.0.4: {}
 
-  pidtree@0.6.0: {}
+  pidtree@1.0.0: {}
 
   pify@2.3.0: {}
 
@@ -21329,6 +21333,16 @@ snapshots:
       which-module: 2.0.1
       y18n: 4.0.3
       yargs-parser: 18.1.3
+
+  yargs@16.2.2:
+    dependencies:
+      cliui: 7.0.4
+      escalade: 3.2.0
+      get-caller-file: 2.0.5
+      require-directory: 2.1.1
+      string-width: 4.2.3
+      y18n: 5.0.8
+      yargs-parser: 20.2.9
 
   yargs@16.2.2:
     dependencies:
