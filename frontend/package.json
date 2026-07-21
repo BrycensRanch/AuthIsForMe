@@ -127,7 +127,7 @@
 		"@typescript-eslint/eslint-plugin": "^8.0.0",
 		"@typescript-eslint/parser": "^8.0.0",
 		"babel-plugin-istanbul": "^8.0.0",
-		"babel-plugin-transform-import-meta": "^2.2.1",
+		"babel-plugin-transform-import-meta": "^3.0.0",
 		"canvas": "^3.0.0",
 		"commitizen": "^4.3.0",
 		"commitlint-config-monorepo": "^2.0.2",
