@@ -152,7 +152,7 @@
 		"eslint-plugin-react-hooks": "^7.0.0",
 		"eslint-plugin-simple-import-sort": "^13.0.0",
 		"eslint-plugin-sonarjs": "^4.0.0",
-		"eslint-plugin-tailwindcss": "^3.17.0",
+		"eslint-plugin-tailwindcss": "^4.0.0",
 		"eslint-plugin-testing-library": "^7.0.0",
 		"eslint-plugin-unicorn": "^64.0.0",
 		"eslint-plugin-unused-imports": "^4.0.0",
