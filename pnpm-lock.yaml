@@ -64,8 +64,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0(prettier@3.9.5)
       prettier-plugin-sh:
-        specifier: ^0.18.0
-        version: 0.18.1(prettier@3.9.5)
+        specifier: ^0.19.0
+        version: 0.19.0(prettier@3.9.5)
       semantic-release:
         specifier: ^25.0.0
         version: 25.0.8(typescript@6.0.3)
@@ -8065,8 +8065,8 @@ packages:
     peerDependencies:
       prettier: '>=2 || >=3'
 
-  prettier-plugin-sh@0.18.1:
-    resolution: {integrity: sha512-uZmU22wBMevjh3rmCatNQqiEer2+5KLa0xYCBX6zQQUQkcNzVL+s6FbPKK6ZSUNUbQk6jMAcQHrYPvuL2W6ihQ==}
+  prettier-plugin-sh@0.19.0:
+    resolution: {integrity: sha512-39VXFZH/cOGtcuu8aeSvqp/hhwomOR4QroZUj+jBz2cNb3os9s0sqFZSNlYts6jdtLLDU7D2YT3Z1+abtb7adQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       prettier: ^3.6.0
@@ -8619,8 +8619,8 @@ packages:
     resolution: {integrity: sha512-JxHc1weCN68wRY0fhCoXpyK55m/XPHafOmK4UWD7m2CI14GMcFypt4w/0+NV5f/ZMby2F6S2wwA7fgynh9gWSw==}
     engines: {node: '>=0.10.0'}
 
-  sh-syntax@0.5.8:
-    resolution: {integrity: sha512-JfVoxf4FxQI5qpsPbkHhZo+n6N9YMJobyl4oGEUBb/31oQYlgTjkXQD8PBiafS2UbWoxrTO0Z5PJUBXEPAG1Zw==}
+  sh-syntax@0.6.0:
+    resolution: {integrity: sha512-52VK6z/cdZHv7UURjIcwfBUQZrAhIEEe0bY4lrkfypjnFIKsDZdD3Uaz/dBiw/sF8BeX0Mssv140s8EnrsJ9dQ==}
     engines: {node: '>=16.0.0'}
 
   sha.js@2.4.12:
@@ -11914,10 +11914,7 @@ snapshots:
     dependencies:
       '@percy/cli-command': 1.32.4(typescript@6.0.3)
     transitivePeerDependencies:
-      - bufferutil
-      - supports-color
       - typescript
-      - utf-8-validate
 
   '@percy/cli-command@1.32.4(typescript@6.0.3)':
     dependencies:
@@ -11934,10 +11931,7 @@ snapshots:
     dependencies:
       '@percy/cli-command': 1.32.4(typescript@6.0.3)
     transitivePeerDependencies:
-      - bufferutil
-      - supports-color
       - typescript
-      - utf-8-validate
 
   '@percy/cli-doctor@1.32.4(typescript@6.0.3)':
     dependencies:
@@ -11973,10 +11967,7 @@ snapshots:
       '@percy/cli-command': 1.32.4(typescript@6.0.3)
       yaml: 2.9.0
     transitivePeerDependencies:
-      - bufferutil
-      - supports-color
       - typescript
-      - utf-8-validate
 
   '@percy/cli-upload@1.32.4(typescript@6.0.3)':
     dependencies:
@@ -11984,10 +11975,7 @@ snapshots:
       fast-glob: 3.3.3
       image-size: 1.0.2
     transitivePeerDependencies:
-      - bufferutil
-      - supports-color
       - typescript
-      - utf-8-validate
 
   '@percy/cli@1.32.4(typescript@6.0.3)':
     dependencies:
@@ -18626,11 +18614,11 @@ snapshots:
       '@prisma/prisma-schema-wasm': 4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584
       prettier: 3.9.5
 
-  prettier-plugin-sh@0.18.1(prettier@3.9.5):
+  prettier-plugin-sh@0.19.0(prettier@3.9.5):
     dependencies:
       '@reteps/dockerfmt': 0.5.4
       prettier: 3.9.5
-      sh-syntax: 0.5.8
+      sh-syntax: 0.6.0
 
   prettier@3.9.5: {}
 
@@ -19302,9 +19290,7 @@ snapshots:
       is-plain-object: 2.0.4
       split-string: 3.1.0
 
-  sh-syntax@0.5.8:
-    dependencies:
-      tslib: 2.8.1
+  sh-syntax@0.6.0: {}
 
   sha.js@2.4.12:
     dependencies:
