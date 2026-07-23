@@ -97,9 +97,9 @@
 		"zod": "^4.0.0"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.24.6",
-		"@babel/plugin-transform-modules-commonjs": "^7.24.6",
-		"@babel/preset-env": "^7.24.6",
+		"@babel/core": "^8.0.0",
+		"@babel/plugin-transform-modules-commonjs": "^8.0.0",
+		"@babel/preset-env": "^8.0.0",
 		"@bahmutov/cypress-code-coverage": "^2.6.1",
 		"@commitlint/cli": "^21.0.0",
 		"@commitlint/config-conventional": "^21.0.0",
