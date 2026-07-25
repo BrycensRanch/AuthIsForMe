@@ -92,7 +92,7 @@ importers:
         version: 10.67.0(@opentelemetry/core@2.10.0(@opentelemetry/api@1.9.1))
       '@socialgouv/matomo-next':
         specifier: ^1.9.0
-        version: 1.13.1(next@16.2.11(@babel/core@8.0.1)(@opentelemetry/api@1.9.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
+        version: 1.14.2(next@16.2.11(@babel/core@8.0.1)(@opentelemetry/api@1.9.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)
       '@t3-oss/env-nextjs':
         specifier: ^0.13.0
         version: 0.13.11(typescript@6.0.3)(zod@4.4.3)
@@ -3430,8 +3430,8 @@ packages:
   '@sinonjs/fake-timers@15.4.0':
     resolution: {integrity: sha512-DsG+8/LscQIQg68J6Ef3dv10u6nVyetYn923s3/sus5eaGfTo1of5WMZSLf0UJc9KDuKPilPH0UDJCjvNbDNCA==}
 
-  '@socialgouv/matomo-next@1.13.1':
-    resolution: {integrity: sha512-X1772JUsZmGVFfE+rG2k+eWelW1HcEUqq6J8YxviKX4nRDh/jS0Royjft1vKMYPEEdTLrLJK/gvIftq6Rwk+ng==}
+  '@socialgouv/matomo-next@1.14.2':
+    resolution: {integrity: sha512-K7blGIQdkV9+ihxxtR/ABxeMsTTet/MiIluPW7BMkBBmoTOhWKzIfxzjc1MrLvZHC5aInCLeuNdW8hRMi4jkog==}
     engines: {node: '>=24.0.0', pnpm: '>=10.0.0'}
     peerDependencies:
       next: '>= 13.0.0'
@@ -14233,7 +14233,7 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.1
 
-  '@socialgouv/matomo-next@1.13.1(next@16.2.11(@babel/core@8.0.1)(@opentelemetry/api@1.9.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)':
+  '@socialgouv/matomo-next@1.14.2(next@16.2.11(@babel/core@8.0.1)(@opentelemetry/api@1.9.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react@19.2.8)':
     dependencies:
       next: 16.2.11(@babel/core@8.0.1)(@opentelemetry/api@1.9.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       react: 19.2.8
