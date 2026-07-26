@@ -173,7 +173,7 @@
 		"nyc": "^18.0.0",
 		"postcss": "^8.4.21",
 		"prettier": "^3.2.5",
-		"prettier-eslint-cli": "^8.0.1",
+		"prettier-eslint-cli": "^9.0.0",
 		"react": "19.2.8",
 		"react-dom": "19.2.8",
 		"rimraf": "^6.0.0",
