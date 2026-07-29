@@ -318,7 +318,7 @@ importers:
         version: 29.16.0(@typescript-eslint/eslint-plugin@8.65.0(@typescript-eslint/parser@8.65.0(eslint@10.8.0(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1)(typescript@7.0.2))(eslint@10.8.0(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1)(typescript@7.0.2))(eslint@10.8.0(jiti@2.7.0)(supports-color@8.1.1))(jest@30.4.2(@types/node@24.13.3)(supports-color@8.1.1))(supports-color@8.1.1)(typescript@7.0.2)
       eslint-plugin-jest-dom:
         specifier: ^5.4.0
-        version: 5.5.0(@testing-library/dom@10.4.1)(eslint@10.8.0(jiti@2.7.0)(supports-color@8.1.1))
+        version: 5.6.0(@testing-library/dom@10.4.1)(eslint@10.8.0(jiti@2.7.0)(supports-color@8.1.1))
       eslint-plugin-jest-formatting:
         specifier: ^3.1.0
         version: 3.1.0(eslint@10.8.0(jiti@2.7.0)(supports-color@8.1.1))
@@ -5945,12 +5945,12 @@ packages:
       '@typescript-eslint/parser':
         optional: true
 
-  eslint-plugin-jest-dom@5.5.0:
-    resolution: {integrity: sha512-CRlXfchTr7EgC3tDI7MGHY6QjdJU5Vv2RPaeeGtkXUHnKZf04kgzMPIJUXt4qKCvYWVVIEo9ut9Oq1vgXAykEA==}
+  eslint-plugin-jest-dom@5.6.0:
+    resolution: {integrity: sha512-XPiFH5COhV2NgMP2lkGs1rDUBlbzwuzWIMddTrb4ynbRu4yZdryWMzts2lQqoZIUlA3//cPGFW8FwYUYoRyswg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0, npm: '>=6', yarn: '>=1'}
     peerDependencies:
       '@testing-library/dom': ^8.0.0 || ^9.0.0 || ^10.0.0
-      eslint: ^6.8.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
+      eslint: ^6.8.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0
     peerDependenciesMeta:
       '@testing-library/dom':
         optional: true
@@ -17124,7 +17124,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-jest-dom@5.5.0(@testing-library/dom@10.4.1)(eslint@10.8.0(jiti@2.7.0)(supports-color@8.1.1)):
+  eslint-plugin-jest-dom@5.6.0(@testing-library/dom@10.4.1)(eslint@10.8.0(jiti@2.7.0)(supports-color@8.1.1)):
     dependencies:
       '@babel/runtime': 7.29.7
       eslint: 10.8.0(jiti@2.7.0)(supports-color@8.1.1)
