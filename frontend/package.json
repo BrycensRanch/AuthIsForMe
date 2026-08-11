@@ -185,7 +185,7 @@
 		"typescript": "^7.0.0"
 	},
 	"license": "MIT",
-	"packageManager": "pnpm@11.20.0",
+	"packageManager": "pnpm@11.21.0",
 	"engines": {
 		"node": ">=16",
 		"pnpm": ">=7",
