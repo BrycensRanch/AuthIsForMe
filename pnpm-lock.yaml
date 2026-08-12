@@ -149,7 +149,7 @@ importers:
         version: 5.7.0(react@19.2.8)
       react-lite-youtube-embed:
         specifier: ^3.0.0
-        version: 3.6.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        version: 3.6.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       react-sortablejs:
         specifier: ^6.1.4
         version: 6.1.4(@types/sortablejs@1.15.9)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(sortablejs@1.15.7)
@@ -9103,8 +9103,8 @@ packages:
   react-is@19.2.8:
     resolution: {integrity: sha512-s5un28nYxKJw5gvUHyW5PCC28CvBqLu9r3cWgzHT4Vo/5fqqkFcdRYsGcKf50WMPpjjFZS5d76fn3YCo2njKwQ==}
 
-  react-lite-youtube-embed@3.6.0:
-    resolution: {integrity: sha512-LnMu5xtvIDe7BOgcSldClh3nQGjr0RsTCLDOhJwXG2sF79BPHniLaxz/qcQckfpV/k9mj06j8zPM5RAJ+AbNeA==}
+  react-lite-youtube-embed@3.6.2:
+    resolution: {integrity: sha512-MHWk05Dfj9myFwsMocMbARNx35JZLwyxRcGlcKDhCL3k8vVzFdCYAK+5s3iWFRvJZTI+IYFj5hs2o9dM5uixCQ==}
     peerDependencies:
       react: '>=18.2.0'
       react-dom: '>=18.2.0'
@@ -20701,7 +20701,7 @@ snapshots:
 
   react-is@19.2.8: {}
 
-  react-lite-youtube-embed@3.6.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
+  react-lite-youtube-embed@3.6.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
