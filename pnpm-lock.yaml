@@ -207,7 +207,7 @@ importers:
         version: 4.0.3(@babel/core@8.0.1)(@babel/preset-env@8.0.2(@babel/core@8.0.1))(babel-loader@10.1.1(@babel/core@8.0.1)(webpack@5.108.4(@swc/core@1.16.1(@swc/helpers@0.5.23))(lightningcss@1.32.0)(postcss@8.5.26)(uglify-js@3.19.3)))(cypress@15.21.1)(supports-color@8.1.1)(webpack@5.108.4(@swc/core@1.16.1(@swc/helpers@0.5.23))(lightningcss@1.32.0)(postcss@8.5.26)(uglify-js@3.19.3))
       '@happy-dom/jest-environment':
         specifier: ^20.0.0
-        version: 20.11.6(@jest/environment@30.5.0)(@jest/fake-timers@30.5.0)(@jest/types@30.4.1)(jest-mock@30.5.0)(jest-util@30.4.1)
+        version: 20.12.0(@jest/environment@30.5.0)(@jest/fake-timers@30.5.0)(@jest/types@30.5.0)(jest-mock@30.5.0)(jest-util@30.5.0)
       '@jest/globals':
         specifier: ^30.0.0
         version: 30.5.0(supports-color@8.1.1)
@@ -1893,8 +1893,8 @@ packages:
   '@hapi/topo@6.0.2':
     resolution: {integrity: sha512-KR3rD5inZbGMrHmgPxsJ9dbi6zEK+C3ZwUwTa+eMwWLz7oijWUTWD2pMSNNYJAU6Qq+65NkxXjqHr/7LM2Xkqg==}
 
-  '@happy-dom/jest-environment@20.11.6':
-    resolution: {integrity: sha512-ru5TUqUL5SXFYiamrysFu03mcnFuAsiPLyDfrT2JEUmdwpDXWkoKO17rgvjA3vEYMAx9grbMogcHCjiIGktduA==}
+  '@happy-dom/jest-environment@20.12.0':
+    resolution: {integrity: sha512-zZy4jOOY+2qZCyapoD34ddLKhruLL/tlmVRA8UP5i8qOqXt98FisFEcFtsU0+yrAxS1daXMagFNIGlQ86MJXNw==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       '@jest/environment': '>=25.0.0'
@@ -6807,8 +6807,8 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@20.11.6:
-    resolution: {integrity: sha512-Hldbg8AdAa5a5oDcZpjqnGitp7JB0hqWmfv/8qr+kft4vzSD8BHsbdRfzYvL/0QcbKcURC/yyoygbeDQarPvYg==}
+  happy-dom@20.12.0:
+    resolution: {integrity: sha512-7uMYJu2SEwwL8vVcKp0C0lnt6d2LSGGe+T+oY79PiCJNNSgFpbxW8n5KuzpDQvrU4mt+fYiK1+Jy7Z2v39YR6g==}
     engines: {node: '>=20.0.0'}
 
   hard-rejection@2.1.0:
@@ -13066,14 +13066,14 @@ snapshots:
     dependencies:
       '@hapi/hoek': 11.0.7
 
-  '@happy-dom/jest-environment@20.11.6(@jest/environment@30.5.0)(@jest/fake-timers@30.5.0)(@jest/types@30.4.1)(jest-mock@30.5.0)(jest-util@30.4.1)':
+  '@happy-dom/jest-environment@20.12.0(@jest/environment@30.5.0)(@jest/fake-timers@30.5.0)(@jest/types@30.5.0)(jest-mock@30.5.0)(jest-util@30.5.0)':
     dependencies:
       '@jest/environment': 30.5.0
       '@jest/fake-timers': 30.5.0
-      '@jest/types': 30.4.1
-      happy-dom: 20.11.6
+      '@jest/types': 30.5.0
+      happy-dom: 20.12.0
       jest-mock: 30.5.0
-      jest-util: 30.4.1
+      jest-util: 30.5.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -18755,7 +18755,7 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.19.3
 
-  happy-dom@20.11.6:
+  happy-dom@20.12.0:
     dependencies:
       '@types/node': 24.13.3
       '@types/whatwg-mimetype': 3.0.2
@@ -21379,7 +21379,7 @@ snapshots:
       indent-string: 5.0.0
       loglevel-colored-level-prefix: 1.0.0
       prettier: 3.9.6
-      pretty-format: 30.4.1
+      pretty-format: 30.5.0
       stable-hash-x: 0.2.0
       tslib: 2.8.1
       vue-eslint-parser: 10.4.1(eslint@10.9.1(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1)
