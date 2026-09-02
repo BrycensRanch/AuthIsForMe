@@ -98,7 +98,7 @@ importers:
         version: 0.13.11(typescript@7.0.2)(zod@4.5.4)
       apexcharts:
         specifier: ^7.0.0
-        version: 7.0.0
+        version: 7.1.0
       autoprefixer:
         specifier: ^10.4.19
         version: 10.5.4(postcss@8.5.26)
@@ -143,7 +143,7 @@ importers:
         version: 15.8.1
       react-apexcharts:
         specifier: ^2.0.0
-        version: 2.1.1(apexcharts@7.0.0)(react@19.2.8)
+        version: 2.1.1(apexcharts@7.1.0)(react@19.2.8)
       react-icons:
         specifier: ^5.2.1
         version: 5.7.0(react@19.2.8)
@@ -3987,13 +3987,6 @@ packages:
       eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
       typescript: '>=4.8.4 <6.1.0'
 
-  '@typescript-eslint/parser@8.68.0':
-    resolution: {integrity: sha512-fHq2VC1kpyYfvEcbiMjOpySY4WS7voEp89yAThrHRX5sm9j2lzYppCb2umFMEed4fWcyeLjHxrz0mpjNBaBxMQ==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    peerDependencies:
-      eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
-      typescript: '>=4.8.4 <6.1.0'
-
   '@typescript-eslint/parser@8.69.0':
     resolution: {integrity: sha512-l4b0DhWioGg6Gt2ebGlvfkFMOjRsauxtsnDRwUSRX1qHq3HdTfQHV8wW9zEXeciai6HfeaKOedQn2Zoofx3WBw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -4627,8 +4620,8 @@ packages:
   apex-commons@0.5.0:
     resolution: {integrity: sha512-xz83SgPREE1wGtoflvxjwJtcjzl5bKTz2/bDxWCZNL6QVjUNE47kMg/1Zqt0bSh6eOnmFCWlTDc3RU8o85N+wg==}
 
-  apexcharts@7.0.0:
-    resolution: {integrity: sha512-wX0LP5WajZXIAvQpCcDMVOlBUhlfhzUmEaKxPkUs54WFm0/GBbEyYCpw4G6iK7W5nU/R+kRzk+NHQSWlmp0qCA==}
+  apexcharts@7.1.0:
+    resolution: {integrity: sha512-zO43jUhHBNz+riahvkVvlqYw8Zpog5KtpdVSc9PbvOiXAmPBaSSoleUtO83NktObHZ9LnNt3M4MdYx7m+aSDMw==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
 
   append-transform@2.0.0:
@@ -15368,18 +15361,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@typescript-eslint/parser@8.68.0(eslint@10.9.1(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1)(typescript@7.0.2)':
-    dependencies:
-      '@typescript-eslint/scope-manager': 8.68.0
-      '@typescript-eslint/types': 8.68.0
-      '@typescript-eslint/typescript-estree': 8.68.0(supports-color@8.1.1)(typescript@7.0.2)
-      '@typescript-eslint/visitor-keys': 8.68.0
-      debug: 4.4.3(supports-color@8.1.1)
-      eslint: 10.9.1(jiti@2.7.0)(supports-color@8.1.1)
-      typescript: 7.0.2
-    transitivePeerDependencies:
-      - supports-color
-
   '@typescript-eslint/parser@8.69.0(eslint@10.9.1(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1)(typescript@7.0.2)':
     dependencies:
       '@typescript-eslint/scope-manager': 8.69.0
@@ -16021,7 +16002,7 @@ snapshots:
 
   apex-commons@0.5.0: {}
 
-  apexcharts@7.0.0:
+  apexcharts@7.1.0:
     dependencies:
       apex-commons: 0.5.0
 
@@ -21473,7 +21454,7 @@ snapshots:
 
   prettier-eslint@17.1.1(jiti@2.7.0)(supports-color@8.1.1)(typescript@7.0.2):
     dependencies:
-      '@typescript-eslint/parser': 8.68.0(eslint@10.9.1(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1)(typescript@7.0.2)
+      '@typescript-eslint/parser': 8.69.0(eslint@10.9.1(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1)(typescript@7.0.2)
       common-tags: 1.8.2
       eslint: 10.9.1(jiti@2.7.0)(supports-color@8.1.1)
       indent-string: 5.0.0
@@ -21639,9 +21620,9 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-apexcharts@2.1.1(apexcharts@7.0.0)(react@19.2.8):
+  react-apexcharts@2.1.1(apexcharts@7.1.0)(react@19.2.8):
     dependencies:
-      apexcharts: 7.0.0
+      apexcharts: 7.1.0
       prop-types: 15.8.1
       react: 19.2.8
 
