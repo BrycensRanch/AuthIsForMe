@@ -100,7 +100,7 @@
 		"@babel/core": "^8.0.0",
 		"@babel/plugin-transform-modules-commonjs": "^8.0.0",
 		"@babel/preset-env": "^8.0.0",
-		"@bahmutov/cypress-code-coverage": "^2.6.1",
+		"@bahmutov/cypress-code-coverage": "^3.0.0",
 		"@commitlint/cli": "^21.0.0",
 		"@commitlint/config-conventional": "^21.0.0",
 		"@commitlint/cz-commitlint": "^21.0.0",
