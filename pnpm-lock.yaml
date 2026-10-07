@@ -289,8 +289,8 @@ importers:
         specifier: ^8.0.0
         version: 8.0.6(@babel/core@8.0.6)
       '@bahmutov/cypress-code-coverage':
-        specifier: ^2.6.1
-        version: 2.7.2(cypress@16.0.0)(supports-color@8.1.1)
+        specifier: ^3.0.0
+        version: 3.0.0(cypress@16.0.0)(supports-color@8.1.1)
       '@commitlint/cli':
         specifier: ^21.0.0
         version: 21.2.3(@types/node@24.19.1)(conventional-commits-parser@7.1.2)(typescript@7.0.2)
@@ -1755,11 +1755,11 @@ packages:
     resolution: {integrity: sha512-c+xgSWboV2pdwXP67BUWDVRHi2BO5Q3KwxyFVs7taVTY+fsK47/L51ZXQoV9rozHJDNHvJ4v4WEsI/IlxV2l2A==}
     engines: {node: ^22.18.0 || >=24.11.0}
 
-  '@bahmutov/cypress-code-coverage@2.7.2':
-    resolution: {integrity: sha512-/sM6689A8qr9o6TZwI371L9fp3XCZsyuxP8toxRRehAE1YeOeWaPtp2mbfebE8DFgH6zUnXQjaUa1Nxkgxo+zQ==}
+  '@bahmutov/cypress-code-coverage@3.0.0':
+    resolution: {integrity: sha512-j7ehnh94zSlio7XwKSLJ59GgMpQJdE0qHSAGddlbQxbRW0o01t1bWWd5jQBN+RNUwaf10Is6/9lQ3aQe1O+CZw==}
     hasBin: true
     peerDependencies:
-      cypress: '>=10.0.0'
+      cypress: '>=15.10.0'
 
   '@bcoe/v8-coverage@0.2.3':
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
@@ -12849,7 +12849,7 @@ snapshots:
       '@babel/helper-string-parser': 8.0.6
       '@babel/helper-validator-identifier': 8.0.6
 
-  '@bahmutov/cypress-code-coverage@2.7.2(cypress@16.0.0)(supports-color@8.1.1)':
+  '@bahmutov/cypress-code-coverage@3.0.0(cypress@16.0.0)(supports-color@8.1.1)':
     dependencies:
       '@actions/core': 1.11.1
       '@cypress/browserify-preprocessor': 3.0.2(supports-color@8.1.1)
@@ -20985,7 +20985,7 @@ snapshots:
       foreground-child: 3.3.1
       get-package-type: 0.1.0
       glob: 7.2.3
-      istanbul-lib-coverage: 3.0.0
+      istanbul-lib-coverage: 3.2.2
       istanbul-lib-hook: 3.0.0
       istanbul-lib-instrument: 6.0.3(supports-color@8.1.1)
       istanbul-lib-processinfo: 2.0.3
