@@ -365,7 +365,7 @@ importers:
         version: 4.0.3(@babel/core@8.0.6)(@babel/preset-env@8.0.6(@babel/core@8.0.6))(babel-loader@10.1.1(@babel/core@8.0.6)(webpack@5.108.4(@swc/core@1.16.13(@swc/helpers@0.5.23))(lightningcss@1.32.0)(postcss@8.5.29)(uglify-js@3.19.3)))(cypress@16.0.0)(supports-color@8.1.1)(webpack@5.108.4(@swc/core@1.16.13(@swc/helpers@0.5.23))(lightningcss@1.32.0)(postcss@8.5.29)(uglify-js@3.19.3))
       '@happy-dom/jest-environment':
         specifier: ^20.0.0
-        version: 20.14.5(@jest/environment@30.5.2)(@jest/fake-timers@30.5.2)(@jest/types@30.5.1)(jest-mock@30.5.2)(jest-util@30.5.1)
+        version: 20.14.6(@jest/environment@30.5.2)(@jest/fake-timers@30.5.2)(@jest/types@30.5.1)(jest-mock@30.5.2)(jest-util@30.5.1)
       '@jest/globals':
         specifier: ^30.0.0
         version: 30.5.2(supports-color@8.1.1)
@@ -2131,8 +2131,8 @@ packages:
   '@hapi/topo@6.0.2':
     resolution: {integrity: sha512-KR3rD5inZbGMrHmgPxsJ9dbi6zEK+C3ZwUwTa+eMwWLz7oijWUTWD2pMSNNYJAU6Qq+65NkxXjqHr/7LM2Xkqg==}
 
-  '@happy-dom/jest-environment@20.14.5':
-    resolution: {integrity: sha512-SJKhrvxqmiHgPahB4OD0sVgyInmPEU4XBcqLll41URSxCRgvBi2cPK65WO9wcsH5a+vUOiDj0uyQbXMDjBqgZg==}
+  '@happy-dom/jest-environment@20.14.6':
+    resolution: {integrity: sha512-u5Nys8dPx1af3ed3Dl44hssYAMx055UZDzc9nbrH8+IIovvIx2JzBvz48u9hcvWw3ZVX32qibMNjTaKicB5Lyw==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       '@jest/environment': '>=25.0.0'
@@ -7021,8 +7021,8 @@ packages:
     engines: {node: '>=0.4.7'}
     hasBin: true
 
-  happy-dom@20.14.5:
-    resolution: {integrity: sha512-x/RzkpWO40bTjIoT30iQtt64FLLmH/iRcUCN2X//bLx7H3ifkdfPXyqsro/OYtqzIAhiLMMA7mmiOR9C3NOKjQ==}
+  happy-dom@20.14.6:
+    resolution: {integrity: sha512-5DDsf4QmEIlRL6NkCv/fxSjYHHkZceL/IaYQdJc2h3G7DRTEai++VTjbfL0LB9geW2VrA3+vrjF3Efx+OTtX0Q==}
     engines: {node: '>=20.0.0'}
 
   hard-rejection@2.1.0:
@@ -13344,12 +13344,12 @@ snapshots:
     dependencies:
       '@hapi/hoek': 11.0.7
 
-  '@happy-dom/jest-environment@20.14.5(@jest/environment@30.5.2)(@jest/fake-timers@30.5.2)(@jest/types@30.5.1)(jest-mock@30.5.2)(jest-util@30.5.1)':
+  '@happy-dom/jest-environment@20.14.6(@jest/environment@30.5.2)(@jest/fake-timers@30.5.2)(@jest/types@30.5.1)(jest-mock@30.5.2)(jest-util@30.5.1)':
     dependencies:
       '@jest/environment': 30.5.2
       '@jest/fake-timers': 30.5.2
       '@jest/types': 30.5.1
-      happy-dom: 20.14.5
+      happy-dom: 20.14.6
       jest-mock: 30.5.2
       jest-util: 30.5.1
     transitivePeerDependencies:
@@ -18966,7 +18966,7 @@ snapshots:
     optionalDependencies:
       uglify-js: 3.19.3
 
-  happy-dom@20.14.5:
+  happy-dom@20.14.6:
     dependencies:
       '@types/node': 24.19.1
       '@types/whatwg-mimetype': 3.0.2
