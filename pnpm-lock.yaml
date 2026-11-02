@@ -428,7 +428,7 @@ importers:
         version: 8.0.0(supports-color@8.1.1)
       babel-plugin-transform-import-meta:
         specifier: ^3.0.0
-        version: 3.0.0(@babel/core@8.0.6)
+        version: 3.1.0(@babel/core@8.0.6)
       canvas:
         specifier: ^3.0.0
         version: 3.2.3
@@ -5091,8 +5091,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
 
-  babel-plugin-transform-import-meta@3.0.0:
-    resolution: {integrity: sha512-zFtfF6Fx8QMDlPrmuIvgxXGSPG5h+M/T6NUUy4lbnrKptoK+PH0zTEa2PgaGseLTJpBmZ+iLOys7c7NidYmvPQ==}
+  babel-plugin-transform-import-meta@3.1.0:
+    resolution: {integrity: sha512-2OecCfO/6alqJf+ZISiJclv9n5ujX7DG05wa6iohXRn4pcuL2+sIFITXBWPTAj+Gc3uWcQh4Yf9vO1P1RPD/jQ==}
     peerDependencies:
       '@babel/core': ^8.0.1
 
@@ -16460,7 +16460,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  babel-plugin-transform-import-meta@3.0.0(@babel/core@8.0.6):
+  babel-plugin-transform-import-meta@3.1.0(@babel/core@8.0.6):
     dependencies:
       '@babel/core': 8.0.6
       '@babel/template': 8.0.0
