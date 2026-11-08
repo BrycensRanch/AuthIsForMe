@@ -283,7 +283,7 @@ importers:
         version: 1.10.0
       match-sorter:
         specifier: ^8.0.0
-        version: 8.3.0
+        version: 8.3.1
       next-recompose-plugins:
         specifier: ^3.0.0
         version: 3.0.1(next@16.4.1(@babel/core@8.0.6)(@opentelemetry/api@1.9.1)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
@@ -8403,8 +8403,8 @@ packages:
     engines: {node: '>= 12'}
     hasBin: true
 
-  match-sorter@8.3.0:
-    resolution: {integrity: sha512-8Py1GbZi5zsclYSFcPAH4H5xfTbeD0bOREA7qP/t8bW4MbOSlPl8sbqHOedEV7O+Bxyvxm6xs/v6BXJGe+JDNA==}
+  match-sorter@8.3.1:
+    resolution: {integrity: sha512-tHtqmEREd+8EQHERElN1xp3eCnCJu2VnXpluj8bwsQvuRfLj5hldq/Mc3UhILZxT1Cff6o+ZdP4frAetZbqNbQ==}
 
   math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
@@ -20591,7 +20591,7 @@ snapshots:
 
   marked@3.0.8: {}
 
-  match-sorter@8.3.0:
+  match-sorter@8.3.1:
     dependencies:
       '@babel/runtime': 7.29.7
       remove-accents: 0.5.0
