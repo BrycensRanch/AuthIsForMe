@@ -71,7 +71,7 @@
 		"frontend",
 		"backend"
 	],
-	"packageManager": "pnpm@12.9.1",
+	"packageManager": "pnpm@12.18.0",
 	"engines": {
 		"node": ">=18",
 		"pnpm": ">=7",
