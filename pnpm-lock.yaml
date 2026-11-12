@@ -255,8 +255,8 @@ importers:
         specifier: ^0.13.0
         version: 0.13.11(typescript@7.0.2)(zod@4.6.7)
       apexcharts:
-        specifier: ^7.0.0
-        version: 7.9.1
+        specifier: ^8.0.0
+        version: 8.8.1
       autoprefixer:
         specifier: ^10.4.19
         version: 10.6.2(postcss@8.5.32)
@@ -301,7 +301,7 @@ importers:
         version: 15.8.1
       react-apexcharts:
         specifier: ^2.0.0
-        version: 2.2.0(apexcharts@7.9.1)(react@19.3.1)
+        version: 2.2.0(apexcharts@8.8.1)(react@19.3.1)
       react-icons:
         specifier: ^5.2.1
         version: 5.7.0(react@19.3.1)
@@ -4800,11 +4800,11 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
-  apex-commons@0.8.4:
-    resolution: {integrity: sha512-RRv31MAzpSW3Dmjx/hLuuOZFCstFnBnhkIoQ7iodaZY3WSZKCXzQ41ypBhMcvy+6LxENt/rTANvTqt5NR+trTA==}
+  apex-commons@0.10.0:
+    resolution: {integrity: sha512-mBXqK6wykMnWV4TzT9636k4aaeEvE8PmBIfa2bHx91eQoit8RjJrOlBpGxNGz1Bmt6gq2U3CoqPAUZftBbYdLQ==}
 
-  apexcharts@7.9.1:
-    resolution: {integrity: sha512-sZkeiES5fCFzkQ7bkyxXhX/nRF1a0mYie5+NTQUMap9ePsW6pWjGjNSFYMnvVeeWzp/bXVI4d1OKy2vOE1M/PQ==}
+  apexcharts@8.8.1:
+    resolution: {integrity: sha512-Aeha39Wdrg4pTdJTpM+QsQemLoCRpwC5tEgwHYzbvtRxo4E9EmQ6zdTZbhcYia24HyPhqx3IATd1evgS0lRtzw==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
 
   append-transform@2.0.0:
@@ -16103,11 +16103,11 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.2
 
-  apex-commons@0.8.4: {}
+  apex-commons@0.10.0: {}
 
-  apexcharts@7.9.1:
+  apexcharts@8.8.1:
     dependencies:
-      apex-commons: 0.8.4
+      apex-commons: 0.10.0
 
   append-transform@2.0.0:
     dependencies:
@@ -21684,9 +21684,9 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-apexcharts@2.2.0(apexcharts@7.9.1)(react@19.3.1):
+  react-apexcharts@2.2.0(apexcharts@8.8.1)(react@19.3.1):
     dependencies:
-      apexcharts: 7.9.1
+      apexcharts: 8.8.1
       prop-types: 15.8.1
       react: 19.3.1
 
