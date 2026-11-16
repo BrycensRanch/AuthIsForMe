@@ -301,7 +301,7 @@ importers:
         version: 15.8.1
       react-apexcharts:
         specifier: ^2.0.0
-        version: 2.2.0(apexcharts@8.8.2)(react@19.3.1)
+        version: 2.2.1(apexcharts@8.8.2)(react@19.3.1)
       react-icons:
         specifier: ^5.2.1
         version: 5.7.0(react@19.3.1)
@@ -9763,8 +9763,8 @@ packages:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
 
-  react-apexcharts@2.2.0:
-    resolution: {integrity: sha512-MEiH/T65ooUNf8V7Cq7fCu1femP3+lN9Svzsv+jNNS6AcRSciyA1LLvc1VETWqAiqMxQyX8NYEhZxOYnMf262g==}
+  react-apexcharts@2.2.1:
+    resolution: {integrity: sha512-cRx+RpRk6WG0SZelOvqDOqbJOWoUSHWAreAkgpNJwsG9axV+uEtTh8zOATW2uK0IjfmFZA8KenSIipslbras4g==}
     peerDependencies:
       apexcharts: '>=5.10.1'
       react: '>=16.8.0'
@@ -18327,8 +18327,8 @@ snapshots:
     dependencies:
       '@typescript-eslint/utils': 8.67.0(eslint@10.14.0(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1)(typescript@7.0.2)
       eslint: 10.14.0(jiti@2.7.0)(supports-color@8.1.1)
-      postcss: 8.5.32
-      postcss-nested: 7.0.2(postcss@8.5.32)
+      postcss: 8.5.33
+      postcss-nested: 7.0.2(postcss@8.5.33)
       synckit: 0.11.13
       tailwind-api-utils: 1.0.3(tailwindcss@4.3.5)
       tailwindcss: 4.3.5
@@ -18807,7 +18807,7 @@ snapshots:
       '@popperjs/core': 2.11.8
       flowbite-datepicker: 2.0.0(rollup@4.62.4)
       mini-svg-data-uri: 1.4.4
-      postcss: 8.5.32
+      postcss: 8.5.33
       tailwindcss: 4.3.5
     transitivePeerDependencies:
       - rollup
@@ -21811,9 +21811,9 @@ snapshots:
 
   possible-typed-array-names@1.1.0: {}
 
-  postcss-nested@7.0.2(postcss@8.5.32):
+  postcss-nested@7.0.2(postcss@8.5.33):
     dependencies:
-      postcss: 8.5.32
+      postcss: 8.5.33
       postcss-selector-parser: 7.1.5
 
   postcss-selector-parser@7.1.5:
@@ -22052,7 +22052,7 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-apexcharts@2.2.0(apexcharts@8.8.2)(react@19.3.1):
+  react-apexcharts@2.2.1(apexcharts@8.8.2)(react@19.3.1):
     dependencies:
       apexcharts: 8.8.2
       prop-types: 15.8.1
