@@ -536,7 +536,7 @@ importers:
         version: 3.0.0
       ignore-walk:
         specifier: ^9.0.0
-        version: 9.0.0
+        version: 9.0.1
       jest:
         specifier: ^30.0.0
         version: 30.5.2(@types/node@26.6.6)(supports-color@8.1.1)
@@ -7267,8 +7267,8 @@ packages:
   ieee754@1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
 
-  ignore-walk@9.0.0:
-    resolution: {integrity: sha512-tCBEZV2z2FNpIDl2vrhiWzIHzs4qOAuIDEO85eS02vZ3L1U3P56qpPL8GuGGAijDktAEaq2swMkO/Fmbo7YmfQ==}
+  ignore-walk@9.0.1:
+    resolution: {integrity: sha512-2SvJvF/GIOPrVy3wT7w4PXWUI9sSk4naOTlO3f0Dblf/UM51ISAKz4FIvtj3Um9WhvcKy1MySJN+sGjpE2AznQ==}
     engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
 
   ignore@4.0.6:
@@ -19201,9 +19201,9 @@ snapshots:
 
   ieee754@1.2.1: {}
 
-  ignore-walk@9.0.0:
+  ignore-walk@9.0.1:
     dependencies:
-      minimatch: 10.2.5
+      minimatch: 11.0.5
 
   ignore@4.0.6: {}
 
