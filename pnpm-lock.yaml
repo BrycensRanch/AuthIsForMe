@@ -265,7 +265,7 @@ importers:
         version: 0.13.11(typescript@7.0.2)(zod@4.6.7)
       apexcharts:
         specifier: ^8.0.0
-        version: 8.8.2
+        version: 8.9.1
       autoprefixer:
         specifier: ^10.4.19
         version: 10.6.2(postcss@8.5.33)
@@ -310,7 +310,7 @@ importers:
         version: 15.8.1
       react-apexcharts:
         specifier: ^2.0.0
-        version: 2.2.1(apexcharts@8.8.2)(react@19.3.1)
+        version: 2.2.1(apexcharts@8.9.1)(react@19.3.1)
       react-icons:
         specifier: ^5.2.1
         version: 5.7.0(react@19.3.1)
@@ -4840,8 +4840,8 @@ packages:
   apex-commons@0.11.0:
     resolution: {integrity: sha512-r0t1hq4eNzjqRHlf0qG9jiwhd3g/68A9QvgVyjres4oif72NWA1pcvFizpx7gjc/SPECALq0KkL5f12ODIDBPA==}
 
-  apexcharts@8.8.2:
-    resolution: {integrity: sha512-aKrasrtwiMULc9wYW8OyxZwBztfEEkOwHiNDEE39pDsMm79g3C+Zq0CSeXhgeVxPOKCo8E+KR6OqXPgzes1vsg==}
+  apexcharts@8.9.1:
+    resolution: {integrity: sha512-0SsOUfiEsJblL9tB8IoHfpSMq1cxBnA3v8TNDPA9zfe7gDUVXEfNQte1kdVztsWVQuNPIoZZ3/591LkEwgxuLA==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
 
   append-transform@2.0.0:
@@ -16143,7 +16143,7 @@ snapshots:
 
   apex-commons@0.11.0: {}
 
-  apexcharts@8.8.2:
+  apexcharts@8.9.1:
     dependencies:
       apex-commons: 0.11.0
 
@@ -21756,9 +21756,9 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-apexcharts@2.2.1(apexcharts@8.8.2)(react@19.3.1):
+  react-apexcharts@2.2.1(apexcharts@8.9.1)(react@19.3.1):
     dependencies:
-      apexcharts: 8.8.2
+      apexcharts: 8.9.1
       prop-types: 15.8.1
       react: 19.3.1
 
