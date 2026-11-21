@@ -485,7 +485,7 @@ importers:
         version: 29.17.1(@typescript-eslint/eslint-plugin@8.73.0(@typescript-eslint/parser@8.73.0(eslint@10.15.0(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1)(typescript@7.0.2))(eslint@10.15.0(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1)(typescript@7.0.2))(eslint@10.15.0(jiti@2.7.0)(supports-color@8.1.1))(jest@30.5.2(@types/node@26.6.6)(supports-color@8.1.1))(supports-color@8.1.1)(typescript@7.0.2)
       eslint-plugin-jest-dom:
         specifier: ^5.4.0
-        version: 5.10.2(@testing-library/dom@10.4.1)(eslint@10.15.0(jiti@2.7.0)(supports-color@8.1.1))
+        version: 5.11.0(@testing-library/dom@10.4.1)(eslint@10.15.0(jiti@2.7.0)(supports-color@8.1.1))
       eslint-plugin-jest-formatting:
         specifier: ^4.0.0
         version: 4.0.0(eslint@10.15.0(jiti@2.7.0)(supports-color@8.1.1))
@@ -6495,8 +6495,8 @@ packages:
       '@typescript-eslint/parser':
         optional: true
 
-  eslint-plugin-jest-dom@5.10.2:
-    resolution: {integrity: sha512-Ij9pCRrBNPEUKqg0oMUv8aMjGzPKdpayOarDW3zWmYdtQ2dt7lZ7myppA2KwJMUJhhHAtSWY5Pgg7iMjC6w6JA==}
+  eslint-plugin-jest-dom@5.11.0:
+    resolution: {integrity: sha512-w6ejV2uyb9vLpII6ga8J62IKjHIbU68V4cBWkqNylTXxAPn5uAJ71OlLJhZ9kJF2UJZtAQSxcgH/SR0HjxnHtg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0, npm: '>=6', yarn: '>=1'}
     peerDependencies:
       '@testing-library/dom': ^8.0.0 || ^9.0.0 || ^10.0.0
@@ -18408,7 +18408,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-jest-dom@5.10.2(@testing-library/dom@10.4.1)(eslint@10.15.0(jiti@2.7.0)(supports-color@8.1.1)):
+  eslint-plugin-jest-dom@5.11.0(@testing-library/dom@10.4.1)(eslint@10.15.0(jiti@2.7.0)(supports-color@8.1.1)):
     dependencies:
       eslint: 10.15.0(jiti@2.7.0)(supports-color@8.1.1)
       requireindex: 1.2.0
